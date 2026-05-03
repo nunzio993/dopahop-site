@@ -12,11 +12,10 @@
 
 backend:
   name: github
-  repo: nunzio993/dopahop-site         # cambia se diverso
+  repo: nunzio993/dopahop-site
   branch: main
-  base_url: https://api.netlify.com    # OAuth proxy gratuito Netlify (no need di hosting)
-  auth_endpoint: auth
-  site_domain: verdant-zabaione-bc977b.netlify.app  # Netlify site che ospita l'OAuth provider
+  # Sveltia CMS usa il suo proxy OAuth gratuito ufficiale (sveltia-cms.dev)
+  # Niente Netlify, niente popup cross-origin, niente cookie 3rd party hell.
 
 # Per setup iniziale veloce senza OAuth, usare:
 #   backend:
