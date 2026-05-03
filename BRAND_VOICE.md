@@ -135,7 +135,66 @@ In caso di crisi suicidaria mai parlare in dettaglio. Link: 800 86 00 22 (Telefo
 
 ---
 
-## 5. Esempi concreti DopaHop da usare
+## 5. Feature di DopaHop — ground truth
+
+**Verità di base sull'app, NON inventare niente oltre questa lista.** Ogni CTA o riferimento al prodotto deve venire da qui.
+
+### Cosa l'app HA (in produzione, citabile)
+
+| Modulo | Cosa fa concretamente |
+|---|---|
+| **Pomodoro** | Timer 25 min focus + 5 min pausa. Premi avvio, parte da solo. |
+| **Promemoria farmaci** | Notifiche all'ora giusta con 3 bottoni dalla notifica (Presa / Tra 10 min / Saltata). Niente "loop di sgridate" se salti. |
+| **Brain dump** | In 10 secondi butti fuori un pensiero. Lo rivedi quando vuoi e lo trasformi in task o lista spesa con un gesto. |
+| **Spacca-task** | Wizard manuale: decomponi un task troppo grande in 5 passi concreti. (NB: non è AI-powered al momento.) |
+| **Routine** | Costruisci routine trascinando i passi nell'ordine che vuoi. Premi "Avvia" e l'app ti accompagna uno alla volta. |
+| **Mood check-in** | 3 tap: come stai, energia, un tag opzionale. Grafico settimanale. |
+| **Focus sounds** | 14 suoni in sottofondo (pioggia, lofi, brown noise, caffè, oceano, ecc.). Si fermano con un tocco dalla home. |
+| **"Quando l'ho fatto l'ultima volta"** | Per attività saltuarie (lenzuola, farmacia, telefonata a mamma). Vedi a colpo d'occhio da quanti giorni. |
+| **Casa una stanza alla volta** | Cose brevi raggruppate per stanza, timer ADHD-friendly. Hop sceglie una task se non sai da dove partire. |
+| **Hop (la mascotte)** | Coniglio digitale che cresce con te. Niente streak, niente colpa: ti aspetta anche dopo settimane storte. 20+ stadi di evoluzione. |
+| **Widget Android** | 9 widget per la home Android (Brain dump, Routine, Farmaci, Mood, Focus, Time, Casa, Spacca-task). Una task, un tap. |
+| **Onboarding 3-step** | Avvio facile, attivi solo i moduli che ti servono. |
+| **Privacy on-device** | Tutto resta sul telefono. Nessun account, nessun server, nessuna analisi dei tuoi contenuti. |
+| **5 lingue native** | Italiano, English, Español, Deutsch, Français. Detection automatica. |
+| **Pubblicità non invasiva** | Solo banner piccoli in zone neutre. **Mai durante respiro, farmaci, mood, focus**. |
+
+### Cosa l'app NON HA (mai promettere)
+
+- ❌ **Sincronizzazione cloud / multi-device** (è on-device, by design)
+- ❌ **Account / login / social** (non esistono)
+- ❌ **Versione iOS / Web** (Android-only, by design — almeno per ora)
+- ❌ **AI: voice transcription, task automation, decomposizione AI** (in roadmap futura, NON disponibile ora)
+- ❌ **Calendar integration / sync con Google Calendar** (in roadmap, NON disponibile ora)
+- ❌ **Backup / export su Drive** (in roadmap, NON disponibile ora)
+- ❌ **Streak, leaderboard, social comparison** (mai. È contro brand.)
+- ❌ **Coaching umano, sessioni con terapisti** (DopaHop è uno strumento, non un servizio di salute)
+- ❌ **Diagnosi ADHD / test clinici** (mai. Per diagnosi serve un professionista.)
+- ❌ **Abbonamenti premium** (al momento è 100% gratis. Un piano opzionale arriverà ma non lo nominare come se fosse già qui.)
+
+### Pattern CTA accettabili
+
+CTA naturali, mai pushy. Mai oltre 1 CTA inline + 1 in chiusura per articolo.
+
+✅ Esempi corretti:
+- *"Se ti capita spesso, prova [il Pomodoro di DopaHop](/#cosa-fa) — il timer parte da solo, tu pensi solo a fare."*
+- *"Per buttare fuori i pensieri prima che svaniscano, c'è [il brain dump di DopaHop](/#cosa-fa) — 10 secondi e l'hai fissato."*
+- *"DopaHop è gratis su Google Play, e Hop ti aspetta sempre — anche se torni dopo una settimana storta."*
+
+❌ Da evitare:
+- "Sincronizza il tuo Pomodoro tra dispositivi con DopaHop" (non esiste)
+- "Usa l'AI di DopaHop per spaccare i task automaticamente" (non esiste ora)
+- "Iscriviti a DopaHop Premium" (non esiste ora)
+- "DopaHop ti diagnostica l'ADHD" (mai)
+- "Mantieni la tua streak con Hop!" (anti-brand)
+
+### Quando in dubbio
+
+Se l'articolo richiede una feature che non sei sicuro esista, **NON inventarla**. Scrivi un'introduzione/strategia generale senza CTA al prodotto, oppure cita solo i moduli sicuramente presenti dalla tabella sopra.
+
+---
+
+## 5b. Esempi concreti DopaHop da usare
 
 Quando l'articolo parla di un sintomo o difficoltà, **collega a un modulo DopaHop concreto** (internal linking + valore):
 
