@@ -254,5 +254,9 @@ export const de: LandingStrings = {
     relatedPosts: 'Verwandte Artikel',
     tags: 'Tags',
     by: 'von',
+    latestArticles: 'Neueste Artikel',
+    appCardTitle: 'DopaHop laden',
+    appCardSubtitle: 'Die sanfte ADHS-App. Kostenlos bei Google Play.',
+    appCardCta: 'Kostenlos laden',
   },
 };

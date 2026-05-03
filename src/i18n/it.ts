@@ -254,5 +254,9 @@ export const it: LandingStrings = {
     relatedPosts: 'Articoli correlati',
     tags: 'Tag',
     by: 'di',
+    latestArticles: 'Articoli recenti',
+    appCardTitle: 'Scarica DopaHop',
+    appCardSubtitle: "L'app ADHD gentile. Gratis su Google Play.",
+    appCardCta: 'Scarica gratis',
   },
 };

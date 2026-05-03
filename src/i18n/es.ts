@@ -254,5 +254,9 @@ export const es: LandingStrings = {
     relatedPosts: 'Artículos relacionados',
     tags: 'Etiquetas',
     by: 'por',
+    latestArticles: 'Artículos recientes',
+    appCardTitle: 'Descarga DopaHop',
+    appCardSubtitle: 'La app TDAH amable. Gratis en Google Play.',
+    appCardCta: 'Descarga gratis',
   },
 };

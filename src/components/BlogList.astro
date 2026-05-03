@@ -28,7 +28,9 @@ const sortedPosts = [...posts].sort(
   (a, b) => b.data.pubDate.getTime() - a.data.pubDate.getTime(),
 );
 
-const [featuredPost, ...restPosts] = sortedPosts;
+const latestForSidebar = sortedPosts.slice(0, 5);
+
+const playStoreUrl = 'https://play.google.com/store/apps/details?id=com.dopahop.android';
 
 function postUrl(post: CollectionEntry<'blog'>): string {
   const cleanSlug = post.slug.replace(new RegExp(`^${post.data.locale}/`), '');
@@ -151,72 +153,24 @@ const blogListSchema = {
       </div>
     </section>
 
-    {sortedPosts.length === 0 ? (
-      <section class="blog-grid-section">
-        <div class="container">
-          <div class="blog-empty reveal">
-            <div class="blog-empty-icon">📝</div>
-            <p>{t.blog.emptyState}</p>
-          </div>
-        </div>
-      </section>
-    ) : (
-      <>
-        {featuredPost && (
-          <section class="blog-featured-section">
-            <div class="container">
-              <a href={postUrl(featuredPost)} class="blog-featured reveal" aria-label={featuredPost.data.title}>
-                <div class:list={['blog-featured-cover', { 'is-placeholder': !featuredPost.data.cover }]}>
-                  {featuredPost.data.cover ? (
-                    <img src={featuredPost.data.cover} alt={featuredPost.data.title} loading="eager" />
-                  ) : (
-                    <div class="blog-cover-glyph" aria-hidden="true">
-                      <span>{featuredPost.data.title.slice(0, 1)}</span>
-                    </div>
-                  )}
-                </div>
-                <div class="blog-featured-body">
-                  {featuredPost.data.tags.length > 0 && (
-                    <div class="blog-card-tags">
-                      {featuredPost.data.tags.map((tag) => {
-                        const c = tagColor(tag);
-                        return (
-                          <a href={tagUrl(tag)} class="blog-card-tag" style={`background: ${c.bg}; color: ${c.fg};`}>{tag}</a>
-                        );
-                      })}
-                    </div>
-                  )}
-                  <h2 class="blog-featured-title">{featuredPost.data.title}</h2>
-                  <p class="blog-featured-excerpt">{featuredPost.data.excerpt ?? featuredPost.data.description}</p>
-                  <div class="blog-card-meta">
-                    <time datetime={featuredPost.data.pubDate.toISOString()}>
-                      {dateFormatter.format(featuredPost.data.pubDate)}
-                    </time>
-                    <span aria-hidden="true">·</span>
-                    <span>{readingMinutes(featuredPost)} {t.blog.minRead}</span>
-                  </div>
-                  <span class="blog-card-link">{t.blog.readMore} →</span>
-                </div>
-              </a>
-            </div>
-          </section>
-        )}
-
-        {restPosts.length > 0 && (
-          <section class="blog-grid-section">
-            <div class="container">
+    <section class="blog-main-section">
+      <div class="container">
+        <div class="blog-layout">
+          <div class="blog-main">
+            {sortedPosts.length === 0 ? (
+              <div class="blog-empty reveal">
+                <div class="blog-empty-icon">📝</div>
+                <p>{t.blog.emptyState}</p>
+              </div>
+            ) : (
               <div class="blog-grid">
-                {restPosts.map((post) => (
+                {sortedPosts.map((post) => (
                   <a href={postUrl(post)} class="blog-card reveal" aria-label={post.data.title}>
-                    <div class:list={['blog-card-cover', { 'is-placeholder': !post.data.cover }]}>
-                      {post.data.cover ? (
+                    {post.data.cover && (
+                      <div class="blog-card-cover">
                         <img src={post.data.cover} alt={post.data.title} loading="lazy" />
-                      ) : (
-                        <div class="blog-cover-glyph" aria-hidden="true">
-                          <span>{post.data.title.slice(0, 1)}</span>
-                        </div>
-                      )}
-                    </div>
+                      </div>
+                    )}
                     <div class="blog-card-body">
                       {post.data.tags.length > 0 && (
                         <div class="blog-card-tags">
@@ -239,11 +193,41 @@ const blogListSchema = {
                   </a>
                 ))}
               </div>
+            )}
+          </div>
+
+          <aside class="blog-sidebar reveal">
+            <div class="sidebar-card sidebar-app">
+              <img src="/img/icon.png" alt="DopaHop" class="sidebar-app-icon" width="56" height="56" />
+              <h3 class="sidebar-app-title">{t.blog.appCardTitle}</h3>
+              <p class="sidebar-app-subtitle">{t.blog.appCardSubtitle}</p>
+              <a href={playStoreUrl} class="sidebar-app-cta">
+                <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3.6 1.5L13.5 12 3.6 22.5c-.6-.4-1-1-1-1.7V3.2c0-.7.4-1.3 1-1.7zM14.6 13.1l2.5 2.6-12.4 7.1 9.9-9.7zm0-2.2l-9.9-9.7 12.4 7.1-2.5 2.6zm6.6.7c.8.4 1.3 1.2 1.3 2.1 0 .9-.5 1.7-1.3 2.1l-2.7 1.6-2.8-2.7 2.8-2.7 2.7 1.6z"/></svg>
+                {t.blog.appCardCta}
+              </a>
             </div>
-          </section>
-        )}
-      </>
-    )}
+
+            {latestForSidebar.length > 0 && (
+              <div class="sidebar-card">
+                <h3 class="sidebar-title">{t.blog.latestArticles}</h3>
+                <ul class="sidebar-list">
+                  {latestForSidebar.map((post) => (
+                    <li class="sidebar-list-item">
+                      <a href={postUrl(post)} class="sidebar-list-link">
+                        <h4 class="sidebar-list-title">{post.data.title}</h4>
+                        <time datetime={post.data.pubDate.toISOString()} class="sidebar-list-date">
+                          {dateFormatter.format(post.data.pubDate)}
+                        </time>
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            )}
+          </aside>
+        </div>
+      </div>
+    </section>
   </main>
 
   <SiteFooter locale={locale} strings={t} />
@@ -315,84 +299,144 @@ const blogListSchema = {
     line-height: 1.6;
   }
 
-  /* ── FEATURED ── */
-  .blog-featured-section {
-    padding: 24px 0 32px;
+  /* ── 2-COL LAYOUT ── */
+  .blog-main-section {
+    padding: 16px 0 96px;
   }
-  .blog-featured {
+  .blog-layout {
     display: grid;
-    grid-template-columns: 1.1fr 1fr;
-    background: var(--surface);
-    border: 1px solid var(--border);
-    border-radius: var(--radius-xl);
-    overflow: hidden;
-    transition: border-color 0.25s ease, transform 0.25s ease, box-shadow 0.25s ease;
-    position: relative;
+    grid-template-columns: minmax(0, 1fr) 320px;
+    gap: 40px;
+    align-items: start;
   }
-  .blog-featured::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    border-radius: var(--radius-xl);
-    background: linear-gradient(135deg, rgba(255, 183, 3, 0.0), rgba(255, 183, 3, 0.0));
-    pointer-events: none;
-    transition: background 0.3s ease;
-  }
-  .blog-featured:hover {
-    border-color: var(--primary);
-    transform: translateY(-3px);
-    box-shadow: var(--shadow-lg);
-  }
-  .blog-featured:hover::before {
-    background: linear-gradient(135deg, rgba(255, 183, 3, 0.05), rgba(78, 205, 196, 0.04));
-  }
-  .blog-featured-cover {
-    aspect-ratio: 4 / 3;
-    overflow: hidden;
-    background: var(--surface-elevated);
-  }
-  .blog-featured-cover img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: transform 0.4s ease;
-  }
-  .blog-featured:hover .blog-featured-cover img {
-    transform: scale(1.04);
-  }
-  .blog-featured-body {
-    padding: 36px 40px 36px;
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
-    justify-content: center;
-  }
-  .blog-featured-title {
-    font-size: clamp(24px, 3vw, 32px);
-    font-weight: 800;
-    letter-spacing: -0.025em;
-    line-height: 1.15;
-    color: var(--ink);
-  }
-  .blog-featured-excerpt {
-    font-size: 16px;
-    color: var(--ink-soft);
-    line-height: 1.6;
-  }
-  @media (max-width: 880px) {
-    .blog-featured { grid-template-columns: 1fr; }
-    .blog-featured-cover { aspect-ratio: 16 / 9; }
-    .blog-featured-body { padding: 28px 26px 30px; gap: 12px; }
+  @media (max-width: 960px) {
+    .blog-layout {
+      grid-template-columns: 1fr;
+      gap: 32px;
+    }
   }
 
-  /* ── GRID ── */
-  .blog-grid-section {
-    padding: 32px 0 96px;
+  .blog-main {
+    min-width: 0;
   }
   .blog-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-    gap: 24px;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 20px;
+  }
+
+  /* ── SIDEBAR ── */
+  .blog-sidebar {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    position: sticky;
+    top: 88px;
+  }
+  @media (max-width: 960px) {
+    .blog-sidebar { position: static; }
+  }
+  .sidebar-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    padding: 22px 24px;
+  }
+  .sidebar-title {
+    font-size: 13px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--ink-muted);
+    margin-bottom: 16px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid var(--border);
+  }
+
+  /* App download card */
+  .sidebar-app {
+    background: linear-gradient(160deg, var(--surface) 0%, rgba(255, 183, 3, 0.08) 100%);
+    border-color: rgba(255, 183, 3, 0.28);
+    text-align: center;
+    padding: 28px 22px;
+  }
+  .sidebar-app-icon {
+    border-radius: 14px;
+    box-shadow: var(--shadow-brand);
+    margin: 0 auto 14px;
+    display: block;
+  }
+  .sidebar-app-title {
+    font-size: 19px;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    color: var(--ink);
+    margin-bottom: 8px;
+  }
+  .sidebar-app-subtitle {
+    font-size: 13.5px;
+    color: var(--ink-soft);
+    line-height: 1.5;
+    margin-bottom: 18px;
+  }
+  .sidebar-app-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--primary);
+    color: var(--bg);
+    padding: 11px 20px;
+    border-radius: var(--radius-md);
+    font-weight: 700;
+    font-size: 14px;
+    box-shadow: var(--shadow-brand);
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+  }
+  .sidebar-app-cta:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 8px 24px rgba(255, 183, 3, 0.4);
+  }
+  .sidebar-app-cta svg {
+    width: 14px;
+    height: 14px;
+  }
+
+  /* Latest articles list */
+  .sidebar-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+  .sidebar-list-item + .sidebar-list-item {
+    padding-top: 14px;
+    border-top: 1px solid var(--border);
+  }
+  .sidebar-list-link {
+    display: block;
+    color: inherit;
+    transition: color 0.15s ease;
+  }
+  .sidebar-list-link:hover .sidebar-list-title {
+    color: var(--primary);
+  }
+  .sidebar-list-title {
+    font-size: 14.5px;
+    font-weight: 600;
+    line-height: 1.35;
+    color: var(--ink);
+    letter-spacing: -0.01em;
+    margin-bottom: 4px;
+    transition: color 0.15s ease;
+  }
+  .sidebar-list-date {
+    font-size: 11.5px;
+    color: var(--ink-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    font-weight: 600;
   }
   .blog-card {
     background: var(--surface);
@@ -490,27 +534,9 @@ const blogListSchema = {
     color: var(--primary);
     transition: gap 0.2s ease;
   }
-  .blog-featured:hover .blog-card-link,
   .blog-card:hover .blog-card-link {
     color: var(--primary-light);
   }
-
-  /* ── COVER PLACEHOLDER (no image) ── */
-  .blog-card-cover.is-placeholder,
-  .blog-featured-cover.is-placeholder {
-    background: linear-gradient(135deg, #1A1A2E 0%, #232340 60%, rgba(255, 183, 3, 0.18) 100%);
-    display: grid;
-    place-items: center;
-  }
-  .blog-cover-glyph {
-    font-family: var(--serif);
-    font-size: clamp(64px, 14vw, 140px);
-    line-height: 1;
-    color: var(--primary);
-    opacity: 0.4;
-    font-style: italic;
-  }
-  .blog-cover-glyph span { display: inline-block; }
 
   /* ── EMPTY ── */
   .blog-empty {

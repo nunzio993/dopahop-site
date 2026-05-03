@@ -254,5 +254,9 @@ export const en: LandingStrings = {
     relatedPosts: 'Related articles',
     tags: 'Tags',
     by: 'by',
+    latestArticles: 'Latest articles',
+    appCardTitle: 'Get DopaHop',
+    appCardSubtitle: 'The gentle ADHD app. Free on Google Play.',
+    appCardCta: 'Download free',
   },
 };

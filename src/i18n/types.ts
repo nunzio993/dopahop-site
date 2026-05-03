@@ -59,6 +59,10 @@ export interface BlogStrings {
   relatedPosts: string;
   tags: string;
   by: string;
+  latestArticles: string;
+  appCardTitle: string;
+  appCardSubtitle: string;
+  appCardCta: string;
 }
 
 export interface LandingStrings {
