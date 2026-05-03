@@ -116,7 +116,6 @@ const breadcrumbSchema = {
   image={post.data.cover ?? '/img/feature-graphic.png'}
   alternateLocales={alternateLocales}
   ogType="article"
-  theme="light"
   articleMeta={{
     publishedTime: post.data.pubDate.toISOString(),
     modifiedTime: (post.data.updatedDate ?? post.data.pubDate).toISOString(),
@@ -322,7 +321,7 @@ const breadcrumbSchema = {
     content: '';
     position: absolute;
     inset: 0;
-    background: linear-gradient(180deg, rgba(255, 255, 255, 0.45) 0%, var(--bg) 100%);
+    background: linear-gradient(180deg, rgba(15, 15, 35, 0.55) 0%, var(--bg) 100%);
   }
   .post-hero .container {
     position: relative;
