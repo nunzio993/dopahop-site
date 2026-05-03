@@ -16,6 +16,7 @@ backend:
   branch: main
   base_url: https://api.netlify.com    # OAuth proxy gratuito Netlify (no need di hosting)
   auth_endpoint: auth
+  site_domain: verdant-zabaione-bc977b.netlify.app  # Netlify site che ospita l'OAuth provider
 
 # Per setup iniziale veloce senza OAuth, usare:
 #   backend:
