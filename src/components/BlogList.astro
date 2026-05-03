@@ -9,9 +9,10 @@ export interface Props {
   locale: Locale;
   strings: LandingStrings;
   posts: CollectionEntry<'blog'>[];
+  tagFilter?: string;
 }
 
-const { locale, strings: t, posts } = Astro.props;
+const { locale, strings: t, posts, tagFilter } = Astro.props;
 
 const homePathByLocale: Record<Locale, string> = {
   it: '/',
@@ -32,6 +33,10 @@ const [featuredPost, ...restPosts] = sortedPosts;
 function postUrl(post: CollectionEntry<'blog'>): string {
   const cleanSlug = post.slug.replace(new RegExp(`^${post.data.locale}/`), '');
   return `${blogHref}${cleanSlug}/`.replace(/\/+/g, '/');
+}
+
+function tagUrl(tag: string): string {
+  return `${blogHref}tag/${encodeURIComponent(tag.toLowerCase())}/`.replace(/\/+/g, '/');
 }
 
 function readingMinutes(post: CollectionEntry<'blog'>): number {
@@ -62,16 +67,28 @@ const dateFormatter = new Intl.DateTimeFormat(locale, {
 });
 
 const siteUrl = 'https://dopahop.app';
-const canonical = new URL(blogHref, siteUrl).toString();
+const pageBlogPath = tagFilter
+  ? `${blogHref}tag/${encodeURIComponent(tagFilter.toLowerCase())}/`.replace(/\/+/g, '/')
+  : blogHref;
+const canonical = new URL(pageBlogPath, siteUrl).toString();
 
-const alternateLocales = [
-  { code: 'it', href: new URL('/blog/', siteUrl).toString() },
-  { code: 'en', href: new URL('/en/blog/', siteUrl).toString() },
-  { code: 'es', href: new URL('/es/blog/', siteUrl).toString() },
-  { code: 'de', href: new URL('/de/blog/', siteUrl).toString() },
-  { code: 'fr', href: new URL('/fr/blog/', siteUrl).toString() },
-  { code: 'x-default', href: new URL('/blog/', siteUrl).toString() },
-];
+const alternateLocales = tagFilter
+  ? undefined  // tag pages: hreflang only between same-tag pages, but tags may differ per language → no alternates
+  : [
+      { code: 'it', href: new URL('/blog/', siteUrl).toString() },
+      { code: 'en', href: new URL('/en/blog/', siteUrl).toString() },
+      { code: 'es', href: new URL('/es/blog/', siteUrl).toString() },
+      { code: 'de', href: new URL('/de/blog/', siteUrl).toString() },
+      { code: 'fr', href: new URL('/fr/blog/', siteUrl).toString() },
+      { code: 'x-default', href: new URL('/blog/', siteUrl).toString() },
+    ];
+
+const pageTitle = tagFilter
+  ? `${t.blog.tags}: ${tagFilter} — ${t.blog.metaTitle}`
+  : t.blog.metaTitle;
+const pageDescription = tagFilter
+  ? `${t.blog.metaDescription} — Tag: ${tagFilter}`
+  : t.blog.metaDescription;
 
 const blogListSchema = {
   '@context': 'https://schema.org',
@@ -91,8 +108,8 @@ const blogListSchema = {
 ---
 
 <BaseLayout
-  title={t.blog.metaTitle}
-  description={t.blog.metaDescription}
+  title={pageTitle}
+  description={pageDescription}
   locale={locale}
   canonical={canonical}
   alternateLocales={alternateLocales}
@@ -113,12 +130,23 @@ const blogListSchema = {
         <div class="blog-hero-inner reveal">
           <span class="blog-hero-pill">
             <span class="blog-hero-dot"></span>
-            {t.blog.pageTitle}
+            {tagFilter ? t.blog.tags : t.blog.pageTitle}
           </span>
           <h1 class="blog-hero-title">
-            {t.blog.metaTitle.replace('DopaHop Blog — ', '').replace('Blog DopaHop — ', '')}
+            {tagFilter
+              ? `#${tagFilter}`
+              : t.blog.metaTitle.replace('DopaHop Blog — ', '').replace('Blog DopaHop — ', '')}
           </h1>
-          <p class="blog-hero-subtitle">{t.blog.pageSubtitle}</p>
+          <p class="blog-hero-subtitle">
+            {tagFilter
+              ? `${sortedPosts.length} ${sortedPosts.length === 1 ? 'articolo' : 'articoli'}`
+              : t.blog.pageSubtitle}
+          </p>
+          {tagFilter && (
+            <p class="blog-hero-back">
+              <a href={blogHref}>{t.blog.backToBlog}</a>
+            </p>
+          )}
         </div>
       </div>
     </section>
@@ -153,7 +181,7 @@ const blogListSchema = {
                       {featuredPost.data.tags.map((tag) => {
                         const c = tagColor(tag);
                         return (
-                          <span class="blog-card-tag" style={`background: ${c.bg}; color: ${c.fg};`}>{tag}</span>
+                          <a href={tagUrl(tag)} class="blog-card-tag" style={`background: ${c.bg}; color: ${c.fg};`}>{tag}</a>
                         );
                       })}
                     </div>
@@ -195,7 +223,7 @@ const blogListSchema = {
                           {post.data.tags.slice(0, 2).map((tag) => {
                             const c = tagColor(tag);
                             return (
-                              <span class="blog-card-tag" style={`background: ${c.bg}; color: ${c.fg};`}>{tag}</span>
+                              <a href={tagUrl(tag)} class="blog-card-tag" style={`background: ${c.bg}; color: ${c.fg};`}>{tag}</a>
                             );
                           })}
                         </div>
@@ -441,6 +469,20 @@ const blogListSchema = {
     border-radius: var(--radius-full);
     text-transform: uppercase;
     letter-spacing: 0.06em;
+    display: inline-block;
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+  }
+  a.blog-card-tag:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+  }
+  .blog-hero-back {
+    margin-top: 16px;
+    font-size: 14px;
+  }
+  .blog-hero-back a {
+    color: var(--primary);
+    font-weight: 700;
   }
   .blog-card-link {
     font-size: 14px;

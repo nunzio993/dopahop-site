@@ -33,6 +33,10 @@ function postUrl(p: CollectionEntry<'blog'>): string {
   return `${prefix}blog/${cleanSlugFor(p)}/`.replace(/\/+/g, '/');
 }
 
+function tagUrl(tag: string): string {
+  return `${blogHref}tag/${encodeURIComponent(tag.toLowerCase())}/`.replace(/\/+/g, '/');
+}
+
 const cleanSlug = cleanSlugFor(post);
 const siteUrl = 'https://dopahop.app';
 const canonical = new URL(`${blogHref}${cleanSlug}/`.replace(/\/+/g, '/'), siteUrl).toString();
@@ -106,6 +110,52 @@ const breadcrumbSchema = {
     },
   ],
 };
+
+// Extract FAQ section from markdown body and emit FAQPage schema for rich snippets.
+// Looks for the localized FAQ H2 heading, then takes the H3 questions + bodies underneath.
+const faqHeadings: Record<Locale, RegExp> = {
+  it: /Domande frequenti|FAQ/i,
+  en: /Frequently Asked Questions|FAQ/i,
+  es: /Preguntas frecuentes|FAQ/i,
+  de: /Häufige Fragen|FAQ/i,
+  fr: /Foire aux questions|Questions fréquentes|FAQ/i,
+};
+
+function extractFAQ(body: string, lc: Locale): { q: string; a: string }[] {
+  const heading = faqHeadings[lc];
+  const sectionMatch = body.match(new RegExp(`^##\\s+(?:${heading.source})\\s*$([\\s\\S]*?)(?=^##\\s|$(?![\\s\\S]))`, 'mi'));
+  if (!sectionMatch) return [];
+  const sectionBody = sectionMatch[1];
+  const items: { q: string; a: string }[] = [];
+  const qaRegex = /^###\s+(.+?)\s*$\n+([\s\S]*?)(?=^###\s|^##\s|$(?![\s\S]))/gm;
+  let m: RegExpExecArray | null;
+  while ((m = qaRegex.exec(sectionBody)) !== null) {
+    const q = m[1].trim();
+    const a = m[2]
+      .trim()
+      .replace(/\n{2,}/g, ' ')
+      .replace(/\n/g, ' ')
+      .replace(/\[([^\]]+)\]\([^)]+\)/g, '$1')
+      .replace(/[*_`]/g, '')
+      .replace(/\s+/g, ' ')
+      .trim();
+    if (q && a) items.push({ q, a });
+  }
+  return items;
+}
+
+const faqItems = extractFAQ(post.body, locale);
+const faqSchema = faqItems.length > 0
+  ? {
+      '@context': 'https://schema.org',
+      '@type': 'FAQPage',
+      mainEntity: faqItems.map((it) => ({
+        '@type': 'Question',
+        name: it.q,
+        acceptedAnswer: { '@type': 'Answer', text: it.a },
+      })),
+    }
+  : null;
 ---
 
 <BaseLayout
@@ -126,6 +176,7 @@ const breadcrumbSchema = {
 >
   <script type="application/ld+json" set:html={JSON.stringify(blogPostingSchema)} />
   <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
+  {faqSchema && <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />}
 
   <div class="reading-progress" aria-hidden="true">
     <div class="reading-progress-bar" id="reading-progress-bar"></div>
@@ -159,7 +210,7 @@ const breadcrumbSchema = {
             {post.data.tags.length > 0 && (
               <div class="post-tags">
                 {post.data.tags.map((tag) => (
-                  <span class="post-tag">{tag}</span>
+                  <a href={tagUrl(tag)} class="post-tag">{tag}</a>
                 ))}
               </div>
             )}
@@ -388,6 +439,12 @@ const breadcrumbSchema = {
     color: var(--primary);
     text-transform: uppercase;
     letter-spacing: 0.08em;
+    display: inline-block;
+    transition: transform 0.15s ease, background 0.15s ease;
+  }
+  a.post-tag:hover {
+    background: rgba(255, 183, 3, 0.24);
+    transform: translateY(-1px);
   }
   .post-title {
     font-size: clamp(32px, 5.4vw, 56px);

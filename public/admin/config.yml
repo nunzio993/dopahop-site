@@ -74,10 +74,10 @@ collections:
       - { label: "Descrizione (meta description SEO, 150-160 char)", name: "description", widget: "text" }
       - { label: "Estratto (anteprima nella lista, breve)", name: "excerpt", widget: "text", required: false }
       - { label: "Data pubblicazione", name: "pubDate", widget: "datetime" }
-      - { label: "Data aggiornamento (opzionale)", name: "updatedDate", widget: "datetime", required: false }
+      - { label: "Data aggiornamento", name: "updatedDate", widget: "datetime", required: false }
       - { label: "Cover image", name: "cover", widget: "image", required: false }
       - { label: "Tag", name: "tags", widget: "list", default: [], required: false }
       - { label: "Autore", name: "author", widget: "string", default: "DopaHop Team" }
-      - { label: "Translation key (stesso valore per articoli equivalenti in lingue diverse — abilita hreflang)", name: "translationKey", widget: "string", required: false }
+      - { label: "Translation key — stesso valore tra lingue per abilitare hreflang", name: "translationKey", widget: "string", required: false }
       - { label: "Bozza", name: "draft", widget: "boolean", default: true }
       - { label: "Contenuto", name: "body", widget: "markdown" }

@@ -89,6 +89,17 @@ Quando l'articolo richiede di citare:
 
 NON menzionare l'Italia o riferimenti italiani a meno che il topic specificamente lo richieda.
 
+## Internal linking inter-blog (SEO)
+
+PRIMA di scrivere il body, esegui questo step:
+1. Lista i file in `D:/dopahop/site/src/content/blog/[LOCALE]/` (usa Glob)
+2. Per ogni file `.md` trovato, leggi il frontmatter (title + tags + slug). Considera SOLO i file che hanno `draft: false` (sono articoli pubblicati). Se il file è in `draft: true`, ignoralo.
+3. Identifica 1-2 articoli **già pubblicati** che siano tematicamente correlati al topic che stai per scrivere (es. stessi tag, argomenti vicini)
+4. Nel body dell'articolo che stai scrivendo, cita 1-2 di questi articoli con il pattern: `Vedi anche: [titolo articolo](/[LOCALE]/blog/<slug>/)` (per non-IT) oppure `Vedi anche: [titolo articolo](/blog/<slug>/)` (per IT). Inserisci il link in modo organico, non in fondo come elenco scarno.
+5. Se NON ci sono articoli pubblicati nella tua lingua (caso primo articolo, o tutti in `draft: true`), ometti l'internal linking inter-blog e scrivi solo i link a moduli DopaHop come al solito.
+
+Questo step è cruciale per il SEO: Google premia il sito con link interni inter-articolo (boost ranking + crawl).
+
 ## Output
 
 Scrivi un file Markdown completo a:
