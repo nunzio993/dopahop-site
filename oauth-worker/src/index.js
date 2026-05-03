@@ -138,6 +138,7 @@ function successPage(message, targetOrigin) {
   var status = document.getElementById('status');
   var title = document.getElementById('title');
   var debug = document.getElementById('debug');
+  var provider = 'github';
 
   function show(text, cls) {
     status.textContent = text;
@@ -148,39 +149,59 @@ function successPage(message, targetOrigin) {
     debug.textContent = typeof obj === 'string' ? obj : JSON.stringify(obj, null, 2);
   }
 
-  function trySend(target, label) {
-    try {
-      // Use '*' to avoid origin mismatch issues across host providers
-      target.postMessage(msg, '*');
-      return true;
-    } catch (e) {
-      showDebug('postMessage to ' + label + ' failed: ' + e.message);
-      return false;
-    }
-  }
-
-  // Decap responds with a handshake first, then the real message:
-  // 1. Send 'authorizing:github' as handshake
-  // 2. Decap responds with 'authorizing:github' on its side
-  // 3. Then we send the real message
-  // But many implementations just send the message directly. Do both.
-
-  if (window.opener && !window.opener.closed) {
-    title.textContent = 'Authorized';
-    show('Token sent. Window will close in 2 seconds.', 'ok');
-    // Send the real message immediately AND after 200ms (Decap handshake compat)
-    trySend(window.opener, 'opener');
-    setTimeout(function(){ trySend(window.opener, 'opener (retry)'); }, 200);
-    setTimeout(function(){ try { window.close(); } catch(e) {} }, 2000);
-  } else {
+  if (!window.opener || window.opener.closed) {
     title.textContent = 'No opener window';
-    show('window.opener is null. Either the popup was blocked, or COOP/COEP stripped it.', 'err');
-    showDebug({
-      message: msg,
-      windowOpener: window.opener === null ? 'null (blocked)' : 'undefined',
-      hint: 'If you opened /callback in a new tab manually, this is expected. Retry login from /admin/.'
-    });
+    show('window.opener is null — popup blocked or COOP stripped it. Retry from /admin/.', 'err');
+    showDebug({ message: msg });
+    return;
   }
+
+  title.textContent = 'Authorized';
+  show('Handshaking with opener…', 'ok');
+
+  // Decap CMS handshake protocol:
+  // 1. popup → opener:  "authorizing:github"
+  // 2. opener → popup:  "authorizing:github"   (Decap echoes back when listener is ready)
+  // 3. popup → opener:  "authorization:github:success:{token}"
+  //
+  // We must wait for step 2 before sending step 3, otherwise Decap's
+  // listener may not be attached yet and the real message gets lost.
+
+  function sendHandshake() {
+    window.opener.postMessage('authorizing:' + provider, '*');
+  }
+
+  function sendToken() {
+    window.opener.postMessage(msg, '*');
+    show('Token sent. Closing in 2 seconds.', 'ok');
+    setTimeout(function(){ try { window.close(); } catch(e) {} }, 2000);
+  }
+
+  var sent = false;
+  window.addEventListener('message', function(e) {
+    if (sent) return;
+    if (e.data === 'authorizing:' + provider) {
+      sent = true;
+      sendToken();
+    }
+  });
+
+  // Send handshake repeatedly until opener echoes back (or we give up)
+  var attempts = 0;
+  var ping = setInterval(function() {
+    if (sent || attempts++ > 20) {
+      clearInterval(ping);
+      if (!sent) {
+        // Fallback: opener didn't handshake — try a direct send anyway
+        show('Opener did not handshake. Sending token directly (fallback).', 'err');
+        window.opener.postMessage(msg, '*');
+        setTimeout(function(){ try { window.close(); } catch(e) {} }, 3000);
+      }
+      return;
+    }
+    sendHandshake();
+  }, 200);
+  sendHandshake();
 })();
 </script>
 </body>
