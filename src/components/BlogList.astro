@@ -166,11 +166,13 @@ const blogListSchema = {
               <div class="blog-grid">
                 {sortedPosts.map((post) => (
                   <a href={postUrl(post)} class="blog-card reveal" aria-label={post.data.title}>
-                    {post.data.cover && (
-                      <div class="blog-card-cover">
+                    <div class:list={['blog-card-cover', { 'is-placeholder': !post.data.cover }]}>
+                      {post.data.cover ? (
                         <img src={post.data.cover} alt={post.data.title} loading="lazy" />
-                      </div>
-                    )}
+                      ) : (
+                        <img src="/img/icon.png" alt="" class="blog-cover-placeholder-icon" aria-hidden="true" loading="lazy" />
+                      )}
+                    </div>
                     <div class="blog-card-body">
                       {post.data.tags.length > 0 && (
                         <div class="blog-card-tags">
@@ -467,6 +469,26 @@ const blogListSchema = {
   }
   .blog-card:hover .blog-card-cover img {
     transform: scale(1.04);
+  }
+  .blog-card-cover.is-placeholder {
+    background:
+      radial-gradient(circle at 30% 20%, rgba(255, 183, 3, 0.18), transparent 55%),
+      radial-gradient(circle at 75% 80%, rgba(78, 205, 196, 0.12), transparent 55%),
+      linear-gradient(135deg, #1A1A2E 0%, #232340 100%);
+    display: grid;
+    place-items: center;
+  }
+  .blog-card-cover.is-placeholder img {
+    width: 56px;
+    height: 56px;
+    object-fit: contain;
+    opacity: 0.7;
+    filter: drop-shadow(0 6px 18px rgba(0, 0, 0, 0.35));
+    transition: transform 0.3s ease, opacity 0.3s ease;
+  }
+  .blog-card:hover .blog-card-cover.is-placeholder img {
+    opacity: 1;
+    transform: scale(1.08);
   }
   .blog-card-body {
     padding: 20px 22px 22px;
