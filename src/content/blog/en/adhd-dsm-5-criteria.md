@@ -1,14 +1,19 @@
 ---
+locale: en
 title: "ADHD: DSM-5 Diagnostic Criteria, Explained Plainly"
-description: "ADHD diagnosis under DSM-5: the operational criteria, the three subtypes, what the cutoffs really mean for adults, and when to talk to a clinician."
-excerpt: "DSM-5 ADHD criteria, decoded by someone who's read them too many times."
+description: "ADHD diagnosis under DSM-5: the operational criteria, the three
+  subtypes, what the cutoffs really mean for adults, and when to talk to a
+  clinician."
+excerpt: DSM-5 ADHD criteria, decoded by someone who's read them too many times.
 pubDate: 2026-05-04
 updatedDate: 2026-05-04
-tags: ["ADHD", "diagnosis", "DSM-5"]
-locale: en
-draft: true
-author: "DopaHop Team"
-translationKey: "adhd-dsm-5-criteria"
+tags:
+  - ADHD
+  - diagnosis
+  - DSM-5
+author: DopaHop Team
+translationKey: adhd-dsm-5-criteria
+draft: false
 ---
 
 **ADHD diagnosis under the DSM-5** isn't a vibe check or a personality quiz. It's a specific list of behaviors, with thresholds, durations, and contexts attached. If you've spent a Tuesday night three layers deep in a checklist trying to figure out whether you "really have it" or you're just tired and bad at email, this article is for you. We'll walk through the actual operational criteria the DSM-5 uses, what each line means in plain English, where adults and kids differ, and which sources to trust when the internet gets weird about it. No self-diagnosis pressure, no gatekeeping — just the criteria, what they're checking for, and what to do with that information.
