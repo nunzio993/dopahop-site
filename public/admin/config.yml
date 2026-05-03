@@ -1,0 +1,81 @@
+# ────────────────────────────────────────────────────────────
+#  Decap CMS configuration — DopaHop blog
+# ────────────────────────────────────────────────────────────
+# Editor admin web. Pubblica articoli markdown nel repo git.
+# Astro fa build static automaticamente al commit.
+#
+# BACKEND (scegli uno):
+#   - github           OAuth GitHub (richiede auth proxy come netlify-cms-oauth)
+#   - git-gateway      Netlify Identity (più semplice se deploy su Netlify)
+#   - test-repo        Solo per test locale, no commit reali
+# ────────────────────────────────────────────────────────────
+
+backend:
+  name: github
+  repo: nunzio993/dopahop-site         # cambia se diverso
+  branch: main
+  base_url: https://api.netlify.com    # OAuth proxy gratuito Netlify (no need di hosting)
+  auth_endpoint: auth
+
+# Per setup iniziale veloce senza OAuth, usare:
+#   backend:
+#     name: test-repo
+# (non commit reale, solo simulazione editing)
+
+publish_mode: editorial_workflow       # draft → review → publish
+media_folder: "public/img/blog"        # dove le immagini caricate finiscono
+public_folder: "/img/blog"             # path pubblico
+
+site_url: https://dopahop.app
+display_url: https://dopahop.app
+logo_url: https://dopahop.app/img/icon.png
+locale: it
+
+# ────────────────────────────────────────────────────────────
+#  Collections
+# ────────────────────────────────────────────────────────────
+
+collections:
+  # ─── Blog post (multi-lingua) ─────────────────────────────
+  - name: "blog"
+    label: "Blog"
+    label_singular: "Articolo"
+    folder: "src/content/blog"
+    create: true
+    slug: "{{locale}}/{{year}}-{{month}}-{{day}}-{{slug}}"
+    extension: "md"
+    format: "frontmatter"
+    summary: "[{{locale}}] {{title}} — {{pubDate}}"
+    sortable_fields: ['pubDate', 'title']
+    view_filters:
+      - label: "Italiano"
+        field: locale
+        pattern: it
+      - label: "English"
+        field: locale
+        pattern: en
+      - label: "Español"
+        field: locale
+        pattern: es
+      - label: "Deutsch"
+        field: locale
+        pattern: de
+      - label: "Français"
+        field: locale
+        pattern: fr
+      - label: "Bozze"
+        field: draft
+        pattern: true
+    fields:
+      - { label: "Lingua", name: "locale", widget: "select", options: ["it", "en", "es", "de", "fr"], default: "it" }
+      - { label: "Titolo", name: "title", widget: "string" }
+      - { label: "Descrizione (meta description SEO, 150-160 char)", name: "description", widget: "text" }
+      - { label: "Estratto (anteprima nella lista, breve)", name: "excerpt", widget: "text", required: false }
+      - { label: "Data pubblicazione", name: "pubDate", widget: "datetime" }
+      - { label: "Data aggiornamento (opzionale)", name: "updatedDate", widget: "datetime", required: false }
+      - { label: "Cover image", name: "cover", widget: "image", required: false }
+      - { label: "Tag", name: "tags", widget: "list", default: [], required: false }
+      - { label: "Autore", name: "author", widget: "string", default: "DopaHop Team" }
+      - { label: "Translation key (stesso valore per articoli equivalenti in lingue diverse — abilita hreflang)", name: "translationKey", widget: "string", required: false }
+      - { label: "Bozza", name: "draft", widget: "boolean", default: true }
+      - { label: "Contenuto", name: "body", widget: "markdown" }

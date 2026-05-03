@@ -1,0 +1,9 @@
+---
+import { getCollection } from 'astro:content';
+import BlogList from '../../components/BlogList.astro';
+import { it } from '../../i18n/it';
+
+const posts = await getCollection('blog', ({ data }) => data.locale === 'it' && !data.draft);
+---
+
+<BlogList locale="it" strings={it} posts={posts} />

@@ -1,0 +1,34 @@
+---
+import { getCollection, type CollectionEntry } from 'astro:content';
+import BlogPost from '../../../components/BlogPost.astro';
+import { fr } from '../../../i18n/fr';
+
+export async function getStaticPaths() {
+  const allPosts = await getCollection('blog', ({ data }) => !data.draft);
+  const localePosts = allPosts.filter((p) => p.data.locale === 'fr');
+  return localePosts.map((post) => {
+    const cleanSlug = post.slug.replace(/^fr\//, '');
+    const translations = post.data.translationKey
+      ? allPosts.filter(
+          (p) => p.data.locale !== 'fr' && p.data.translationKey === post.data.translationKey,
+        )
+      : [];
+    return {
+      params: { slug: cleanSlug },
+      props: { post, translations },
+    };
+  });
+}
+
+interface Props {
+  post: CollectionEntry<'blog'>;
+  translations: CollectionEntry<'blog'>[];
+}
+
+const { post, translations } = Astro.props;
+const { Content } = await post.render();
+---
+
+<BlogPost locale="fr" strings={fr} post={post} translations={translations}>
+  <Content />
+</BlogPost>

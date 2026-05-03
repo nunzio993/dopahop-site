@@ -1,0 +1,430 @@
+---
+import type { CollectionEntry } from 'astro:content';
+import type { LandingStrings, Locale } from '../i18n/types';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import SiteHeader from './SiteHeader.astro';
+import SiteFooter from './SiteFooter.astro';
+
+export interface Props {
+  locale: Locale;
+  strings: LandingStrings;
+  post: CollectionEntry<'blog'>;
+  translations: CollectionEntry<'blog'>[];
+}
+
+const { locale, strings: t, post, translations } = Astro.props;
+
+const homePathByLocale: Record<Locale, string> = {
+  it: '/',
+  en: '/en/',
+  es: '/es/',
+  de: '/de/',
+  fr: '/fr/',
+};
+const homeHref = homePathByLocale[locale];
+const blogHref = `${homeHref}blog/`.replace(/\/+/g, '/');
+
+function cleanSlugFor(p: CollectionEntry<'blog'>): string {
+  return p.slug.replace(new RegExp(`^${p.data.locale}/`), '');
+}
+
+function postUrl(p: CollectionEntry<'blog'>): string {
+  const prefix = homePathByLocale[p.data.locale];
+  return `${prefix}blog/${cleanSlugFor(p)}/`.replace(/\/+/g, '/');
+}
+
+const cleanSlug = cleanSlugFor(post);
+const siteUrl = 'https://dopahop.app';
+const canonical = new URL(`${blogHref}${cleanSlug}/`.replace(/\/+/g, '/'), siteUrl).toString();
+const fullCoverUrl = post.data.cover
+  ? (post.data.cover.startsWith('http') ? post.data.cover : new URL(post.data.cover, siteUrl).toString())
+  : new URL('/img/feature-graphic.png', siteUrl).toString();
+
+const wordCount = post.body.split(/\s+/).filter(Boolean).length;
+const minRead = Math.max(1, Math.round(wordCount / 200));
+
+const dateFormatter = new Intl.DateTimeFormat(locale, {
+  year: 'numeric',
+  month: 'long',
+  day: 'numeric',
+});
+
+const alternateLocales = (() => {
+  const entries: { code: string; href: string }[] = [];
+  const allInGroup = [post, ...translations];
+  for (const p of allInGroup) {
+    entries.push({ code: p.data.locale, href: new URL(postUrl(p), siteUrl).toString() });
+  }
+  const itEntry = entries.find((e) => e.code === 'it');
+  if (itEntry) entries.push({ code: 'x-default', href: itEntry.href });
+  return entries;
+})();
+
+const blogPostingSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'BlogPosting',
+  headline: post.data.title,
+  description: post.data.description,
+  image: fullCoverUrl,
+  datePublished: post.data.pubDate.toISOString(),
+  dateModified: (post.data.updatedDate ?? post.data.pubDate).toISOString(),
+  author: { '@type': 'Person', name: post.data.author },
+  publisher: {
+    '@type': 'Organization',
+    name: 'DopaHop',
+    logo: {
+      '@type': 'ImageObject',
+      url: new URL('/img/icon.png', siteUrl).toString(),
+    },
+  },
+  mainEntityOfPage: { '@type': 'WebPage', '@id': canonical },
+  inLanguage: locale,
+  keywords: post.data.tags.join(', '),
+};
+
+const breadcrumbSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    {
+      '@type': 'ListItem',
+      position: 1,
+      name: 'DopaHop',
+      item: new URL(homeHref, siteUrl).toString(),
+    },
+    {
+      '@type': 'ListItem',
+      position: 2,
+      name: t.nav.blog,
+      item: new URL(blogHref, siteUrl).toString(),
+    },
+    {
+      '@type': 'ListItem',
+      position: 3,
+      name: post.data.title,
+      item: canonical,
+    },
+  ],
+};
+---
+
+<BaseLayout
+  title={`${post.data.title} — DopaHop`}
+  description={post.data.description}
+  locale={locale}
+  canonical={canonical}
+  image={post.data.cover ?? '/img/feature-graphic.png'}
+  alternateLocales={alternateLocales}
+  ogType="article"
+  articleMeta={{
+    publishedTime: post.data.pubDate.toISOString(),
+    modifiedTime: (post.data.updatedDate ?? post.data.pubDate).toISOString(),
+    author: post.data.author,
+    tags: post.data.tags,
+  }}
+>
+  <script type="application/ld+json" set:html={JSON.stringify(blogPostingSchema)} />
+  <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
+
+  <div class="ambient">
+    <div class="glow glow-1"></div>
+  </div>
+
+  <SiteHeader locale={locale} strings={t} showAnchorNav={false} />
+
+  <main>
+    <article class="post">
+      <div class="container container-narrow">
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+          <a href={homeHref}>DopaHop</a>
+          <span aria-hidden="true">›</span>
+          <a href={blogHref}>{t.nav.blog}</a>
+          <span aria-hidden="true">›</span>
+          <span aria-current="page">{post.data.title}</span>
+        </nav>
+
+        <header class="post-header reveal">
+          {post.data.tags.length > 0 && (
+            <div class="post-tags">
+              {post.data.tags.map((tag) => (
+                <span class="post-tag">{tag}</span>
+              ))}
+            </div>
+          )}
+          <h1 class="post-title">{post.data.title}</h1>
+          <p class="post-description">{post.data.description}</p>
+          <div class="post-meta">
+            <span>{t.blog.by} <strong>{post.data.author}</strong></span>
+            <span aria-hidden="true">·</span>
+            <time datetime={post.data.pubDate.toISOString()}>
+              {t.blog.publishedOn} {dateFormatter.format(post.data.pubDate)}
+            </time>
+            <span aria-hidden="true">·</span>
+            <span>{minRead} {t.blog.minRead}</span>
+          </div>
+        </header>
+
+        {post.data.cover && (
+          <div class="post-cover reveal">
+            <img src={post.data.cover} alt={post.data.title} />
+          </div>
+        )}
+
+        <div class="post-body reveal">
+          <slot />
+        </div>
+
+        {translations.length > 0 && (
+          <aside class="post-translations reveal" aria-label="Translations">
+            <span class="post-translations-label">{t.langSwitcher.label}:</span>
+            {translations.map((tr) => (
+              <a href={postUrl(tr)} hreflang={tr.data.locale}>
+                {tr.data.locale.toUpperCase()}
+              </a>
+            ))}
+          </aside>
+        )}
+
+        <div class="post-back reveal">
+          <a href={blogHref} class="post-back-link">{t.blog.backToBlog}</a>
+        </div>
+      </div>
+    </article>
+  </main>
+
+  <SiteFooter locale={locale} strings={t} />
+
+  <script>
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('in');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12 });
+    document.querySelectorAll('.reveal').forEach((el) => observer.observe(el));
+    const header = document.getElementById('header');
+    if (header) {
+      window.addEventListener('scroll', () => {
+        header.classList.toggle('scrolled', window.scrollY > 8);
+      });
+    }
+  </script>
+</BaseLayout>
+
+<style>
+  .post {
+    padding: 56px 0 96px;
+  }
+  .breadcrumb {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    align-items: center;
+    font-size: 13px;
+    color: var(--ink-muted);
+    margin-bottom: 32px;
+  }
+  .breadcrumb a {
+    color: var(--ink-soft);
+    transition: color 0.15s ease;
+  }
+  .breadcrumb a:hover { color: var(--primary); }
+  .breadcrumb span[aria-current] { color: var(--ink); }
+
+  .post-header {
+    margin-bottom: 40px;
+  }
+  .post-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 18px;
+  }
+  .post-tag {
+    font-size: 12px;
+    font-weight: 700;
+    padding: 4px 12px;
+    border-radius: var(--radius-full);
+    background: rgba(255, 183, 3, 0.12);
+    color: var(--primary);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+  }
+  .post-title {
+    font-size: clamp(32px, 5vw, 52px);
+    font-weight: 800;
+    letter-spacing: -0.03em;
+    line-height: 1.06;
+    margin-bottom: 18px;
+    color: var(--ink);
+  }
+  .post-description {
+    font-size: clamp(17px, 2vw, 20px);
+    color: var(--ink-soft);
+    line-height: 1.5;
+    margin-bottom: 22px;
+  }
+  .post-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    font-size: 13px;
+    color: var(--ink-muted);
+  }
+  .post-meta strong {
+    color: var(--ink-soft);
+    font-weight: 600;
+  }
+
+  .post-cover {
+    margin: 40px 0;
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    border: 1px solid var(--border);
+  }
+  .post-cover img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  .post-body {
+    font-size: 17px;
+    color: var(--ink);
+    line-height: 1.7;
+  }
+  .post-body :global(h2) {
+    font-size: clamp(24px, 3.5vw, 32px);
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    margin-top: 48px;
+    margin-bottom: 16px;
+    color: var(--ink);
+    line-height: 1.2;
+  }
+  .post-body :global(h3) {
+    font-size: clamp(19px, 2.5vw, 22px);
+    font-weight: 700;
+    letter-spacing: -0.015em;
+    margin-top: 32px;
+    margin-bottom: 12px;
+    color: var(--ink);
+    line-height: 1.3;
+  }
+  .post-body :global(p) {
+    margin-bottom: 18px;
+    color: var(--ink-soft);
+  }
+  .post-body :global(ul),
+  .post-body :global(ol) {
+    margin-bottom: 18px;
+    padding-left: 24px;
+    color: var(--ink-soft);
+  }
+  .post-body :global(li) {
+    margin-bottom: 8px;
+    line-height: 1.6;
+  }
+  .post-body :global(strong) {
+    color: var(--ink);
+    font-weight: 700;
+  }
+  .post-body :global(em) {
+    font-family: var(--serif);
+    font-style: italic;
+  }
+  .post-body :global(a) {
+    color: var(--primary);
+    border-bottom: 1px solid rgba(255, 183, 3, 0.4);
+    transition: border-color 0.15s ease;
+  }
+  .post-body :global(a:hover) {
+    border-bottom-color: var(--primary);
+  }
+  .post-body :global(blockquote) {
+    border-left: 3px solid var(--primary);
+    padding: 8px 22px;
+    margin: 24px 0;
+    color: var(--ink);
+    font-family: var(--serif);
+    font-size: 22px;
+    font-style: italic;
+    line-height: 1.45;
+  }
+  .post-body :global(code) {
+    background: var(--surface-elevated);
+    padding: 2px 8px;
+    border-radius: var(--radius-sm);
+    font-size: 0.9em;
+    color: var(--primary);
+  }
+  .post-body :global(pre) {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-md);
+    padding: 18px 22px;
+    overflow-x: auto;
+    margin-bottom: 22px;
+  }
+  .post-body :global(pre code) {
+    background: transparent;
+    padding: 0;
+    color: var(--ink);
+  }
+  .post-body :global(img) {
+    border-radius: var(--radius-md);
+    margin: 24px 0;
+    width: 100%;
+    height: auto;
+  }
+  .post-body :global(hr) {
+    border: 0;
+    height: 1px;
+    background: var(--border);
+    margin: 40px 0;
+  }
+
+  .post-translations {
+    margin-top: 56px;
+    padding: 16px 22px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-md);
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
+    align-items: center;
+    font-size: 13px;
+  }
+  .post-translations-label {
+    color: var(--ink-muted);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+  }
+  .post-translations a {
+    font-weight: 700;
+    padding: 4px 10px;
+    border-radius: var(--radius-full);
+    background: var(--surface-elevated);
+    color: var(--ink-soft);
+    transition: color 0.15s ease, background 0.15s ease;
+  }
+  .post-translations a:hover {
+    color: var(--bg);
+    background: var(--primary);
+  }
+
+  .post-back {
+    margin-top: 40px;
+    padding-top: 32px;
+    border-top: 1px solid var(--border);
+  }
+  .post-back-link {
+    color: var(--primary);
+    font-weight: 700;
+    font-size: 15px;
+  }
+</style>

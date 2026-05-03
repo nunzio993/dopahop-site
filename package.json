@@ -1,0 +1,21 @@
+{
+  "name": "dopahop-site",
+  "type": "module",
+  "version": "0.1.0",
+  "private": true,
+  "description": "DopaHop landing + blog. Astro + Decap CMS, multi-lingua, deploy Cloudflare Pages.",
+  "scripts": {
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview --port 4321",
+    "astro": "astro",
+    "check": "astro check"
+  },
+  "dependencies": {
+    "astro": "^5.1.0",
+    "@astrojs/check": "^0.9.0",
+    "@astrojs/sitemap": "^3.2.0",
+    "typescript": "^5.6.0"
+  }
+}

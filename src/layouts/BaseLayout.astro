@@ -1,0 +1,163 @@
+---
+export interface AlternateLocale {
+  code: string;
+  href: string;
+}
+
+export interface Props {
+  title?: string;
+  description?: string;
+  image?: string;
+  canonical?: string;
+  locale?: 'it' | 'en' | 'es' | 'de' | 'fr';
+  alternateLocales?: AlternateLocale[];
+  ogType?: 'website' | 'article';
+  articleMeta?: {
+    publishedTime?: string;
+    modifiedTime?: string;
+    author?: string;
+    tags?: string[];
+  };
+}
+
+const {
+  title = 'DopaHop — App ADHD gentile',
+  description = "DopaHop è l'app ADHD gentile: Pomodoro, routine, mood, farmaci, focus sounds. Niente streak, niente colpa. On-device privacy. 5 lingue.",
+  image = '/img/feature-graphic.png',
+  canonical,
+  locale = 'it',
+  alternateLocales: customAlternateLocales,
+  ogType = 'website',
+  articleMeta,
+} = Astro.props;
+
+const siteUrl = 'https://dopahop.app';
+const fullCanonical = canonical || new URL(Astro.url.pathname, siteUrl).toString();
+const fullImage = image.startsWith('http') ? image : new URL(image, siteUrl).toString();
+
+const alternateLocales: AlternateLocale[] = customAlternateLocales ?? [
+  { code: 'it', href: new URL('/', siteUrl).toString() },
+  { code: 'en', href: new URL('/en/', siteUrl).toString() },
+  { code: 'es', href: new URL('/es/', siteUrl).toString() },
+  { code: 'de', href: new URL('/de/', siteUrl).toString() },
+  { code: 'fr', href: new URL('/fr/', siteUrl).toString() },
+  { code: 'x-default', href: new URL('/', siteUrl).toString() },
+];
+---
+<!DOCTYPE html>
+<html lang={locale}>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="generator" content={Astro.generator} />
+  <link rel="icon" type="image/png" href="/img/icon.png" />
+  <link rel="canonical" href={fullCanonical} />
+
+  <title>{title}</title>
+  <meta name="description" content={description} />
+  <meta name="theme-color" content="#0F0F23" />
+
+  {alternateLocales.map(({ code, href }) => (
+    <link rel="alternate" hreflang={code} href={href} />
+  ))}
+
+  <meta property="og:title" content={title} />
+  <meta property="og:description" content={description} />
+  <meta property="og:type" content={ogType} />
+  <meta property="og:url" content={fullCanonical} />
+  <meta property="og:image" content={fullImage} />
+  <meta property="og:locale" content={locale === 'it' ? 'it_IT' : locale === 'en' ? 'en_US' : locale === 'es' ? 'es_ES' : locale === 'de' ? 'de_DE' : 'fr_FR'} />
+  {articleMeta?.publishedTime && <meta property="article:published_time" content={articleMeta.publishedTime} />}
+  {articleMeta?.modifiedTime && <meta property="article:modified_time" content={articleMeta.modifiedTime} />}
+  {articleMeta?.author && <meta property="article:author" content={articleMeta.author} />}
+  {articleMeta?.tags?.map((tag) => <meta property="article:tag" content={tag} />)}
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content={title} />
+  <meta name="twitter:description" content={description} />
+  <meta name="twitter:image" content={fullImage} />
+
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "MobileApplication",
+    "name": "DopaHop",
+    "operatingSystem": "Android",
+    "applicationCategory": "HealthApplication",
+    "description": description,
+    "url": "https://dopahop.app",
+    "downloadUrl": "https://play.google.com/store/apps/details?id=com.dopahop.android",
+    "image": fullImage,
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "EUR",
+    },
+  })} />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet" />
+
+  <link rel="sitemap" href="/sitemap-index.xml" />
+</head>
+<body>
+  <slot />
+</body>
+</html>
+
+<style is:global>
+  @import '../styles/global.css';
+
+  /* ─── Global tokens & reset ─── */
+  :root {
+    --primary: #FFB703;
+    --primary-light: #FFCE4A;
+    --primary-dark: #D99E00;
+    --secondary: #FF6B6B;
+    --tertiary: #4ECDC4;
+    --success: #66BB6A;
+    --warning: #FFA726;
+    --task-decomp: #C7BAFF;
+
+    --bg: #0F0F23;
+    --surface: #1A1A2E;
+    --surface-elevated: #232340;
+
+    --ink: #FAFAFA;
+    --ink-soft: #BDBDBD;
+    --ink-muted: #757575;
+
+    --border: rgba(255, 255, 255, 0.08);
+    --border-strong: rgba(255, 255, 255, 0.16);
+
+    --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.3), 0 2px 8px rgba(0, 0, 0, 0.2);
+    --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.35), 0 12px 28px rgba(0, 0, 0, 0.25);
+    --shadow-lg: 0 8px 32px rgba(0, 0, 0, 0.4), 0 24px 64px rgba(0, 0, 0, 0.35);
+    --shadow-brand: 0 8px 24px rgba(255, 183, 3, 0.25);
+
+    --radius-sm: 8px;
+    --radius-md: 12px;
+    --radius-lg: 20px;
+    --radius-xl: 28px;
+    --radius-full: 999px;
+
+    --serif: 'Instrument Serif', 'Times New Roman', serif;
+    --sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: var(--sans);
+    background: var(--bg);
+    color: var(--ink);
+    line-height: 1.55;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    letter-spacing: -0.011em;
+    overflow-x: hidden;
+  }
+  ::selection { background: var(--primary); color: var(--bg); }
+  a { color: inherit; text-decoration: none; }
+  img { display: block; max-width: 100%; }
+</style>

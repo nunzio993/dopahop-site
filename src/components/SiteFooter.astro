@@ -1,0 +1,56 @@
+---
+import type { LandingStrings, Locale } from '../i18n/types';
+
+export interface Props {
+  locale: Locale;
+  strings: LandingStrings;
+}
+
+const { locale, strings: t } = Astro.props;
+
+const homePathByLocale: Record<Locale, string> = {
+  it: '/',
+  en: '/en/',
+  es: '/es/',
+  de: '/de/',
+  fr: '/fr/',
+};
+const playStoreUrl = 'https://play.google.com/store/apps/details?id=com.dopahop.android';
+const privacyPolicyUrl = 'https://nunzio993.github.io/dopahop-assets/privacy-policy.html';
+const contactEmail = 'annunziatoco@gmail.com';
+const homeHref = homePathByLocale[locale];
+const blogHref = `${homeHref}blog/`.replace(/\/+/g, '/');
+---
+
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href={homeHref} class="logo">
+          <img src="/img/icon.png" alt="DopaHop" class="logo-img" width="34" height="34" />
+          DopaHop
+        </a>
+        <p>{t.footer.tagline}</p>
+      </div>
+      <div class="footer-col">
+        <h4>{t.footer.appHeader}</h4>
+        <a href={playStoreUrl}>{t.footer.appLinks.googlePlay}</a>
+        <a href={`${homeHref}#cosa-fa`}>{t.footer.appLinks.cosaFa}</a>
+        <a href={`${homeHref}#widget`}>{t.footer.appLinks.widget}</a>
+        <a href={blogHref}>{t.nav.blog}</a>
+        <a href={`${homeHref}#faq`}>{t.footer.appLinks.faq}</a>
+      </div>
+      <div class="footer-col">
+        <h4>{t.footer.privacyHeader}</h4>
+        <a href={privacyPolicyUrl}>{t.footer.privacyPolicy}</a>
+      </div>
+      <div class="footer-col">
+        <h4>{t.footer.contactHeader}</h4>
+        <a href={`mailto:${contactEmail}`}>{t.footer.email}</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 DopaHop</span>
+    </div>
+  </div>
+</footer>

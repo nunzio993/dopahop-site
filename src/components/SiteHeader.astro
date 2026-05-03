@@ -1,0 +1,114 @@
+---
+import type { LandingStrings, Locale } from '../i18n/types';
+
+export interface Props {
+  locale: Locale;
+  strings: LandingStrings;
+  showAnchorNav?: boolean;
+}
+
+const { locale, strings: t, showAnchorNav = true } = Astro.props;
+
+const homePathByLocale: Record<Locale, string> = {
+  it: '/',
+  en: '/en/',
+  es: '/es/',
+  de: '/de/',
+  fr: '/fr/',
+};
+const localeLabels: Record<Locale, string> = {
+  it: 'IT',
+  en: 'EN',
+  es: 'ES',
+  de: 'DE',
+  fr: 'FR',
+};
+const allLocales: Locale[] = ['it', 'en', 'es', 'de', 'fr'];
+
+const playStoreUrl = 'https://play.google.com/store/apps/details?id=com.dopahop.android';
+const homeHref = homePathByLocale[locale];
+const blogHref = `${homeHref}blog/`.replace(/\/+/g, '/');
+---
+
+<header id="header">
+  <div class="container">
+    <div class="header-inner">
+      <a href={homeHref} class="logo">
+        <img src="/img/icon.png" alt="DopaHop" class="logo-img" width="34" height="34" />
+        DopaHop
+      </a>
+      <nav class="nav">
+        {showAnchorNav ? (
+          <>
+            <a href={`${homeHref}#perche`}>{t.nav.perche}</a>
+            <a href={`${homeHref}#cosa-fa`}>{t.nav.cosaFa}</a>
+            <a href={`${homeHref}#widget`}>{t.nav.widget}</a>
+            <a href={blogHref}>{t.nav.blog}</a>
+            <a href={`${homeHref}#privacy`}>{t.nav.privacy}</a>
+            <a href={`${homeHref}#faq`}>{t.nav.faq}</a>
+          </>
+        ) : (
+          <>
+            <a href={homeHref}>{t.nav.cosaFa}</a>
+            <a href={blogHref} aria-current="page">{t.nav.blog}</a>
+            <a href={`${homeHref}#faq`}>{t.nav.faq}</a>
+          </>
+        )}
+      </nav>
+      <div class="header-right">
+        <div class="lang-switcher" aria-label={t.langSwitcher.label}>
+          {allLocales.map((lc) => (
+            <a
+              href={homePathByLocale[lc]}
+              class:list={['lang-link', { active: lc === locale }]}
+              hreflang={lc}
+              aria-current={lc === locale ? 'page' : undefined}
+            >
+              {localeLabels[lc]}
+            </a>
+          ))}
+        </div>
+        <a href={playStoreUrl} class="header-cta">
+          {t.nav.download}
+        </a>
+      </div>
+    </div>
+  </div>
+</header>
+
+<style>
+  .header-right {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+  }
+  .lang-switcher {
+    display: inline-flex;
+    align-items: center;
+    gap: 2px;
+    padding: 4px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-full);
+  }
+  .lang-link {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    padding: 5px 9px;
+    border-radius: var(--radius-full);
+    color: var(--ink-muted);
+    transition: color 0.15s ease, background 0.15s ease;
+  }
+  .lang-link:hover { color: var(--ink); }
+  .lang-link.active {
+    background: var(--primary);
+    color: var(--bg);
+  }
+  @media (max-width: 760px) {
+    .lang-switcher { gap: 0; padding: 3px; }
+    .lang-link { padding: 4px 7px; font-size: 10px; }
+    .header-right { gap: 8px; }
+    .header-cta { padding: 8px 14px; font-size: 13px; }
+  }
+</style>
