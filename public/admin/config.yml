@@ -14,10 +14,9 @@ backend:
   name: github
   repo: nunzio993/dopahop-site
   branch: main
-  base_url: https://dopahop-oauth.nunzio993.workers.dev
+  base_url: https://dopahop-oauth.annunziatoco.workers.dev
   auth_endpoint: auth
   # OAuth proxy: Cloudflare Worker self-hosted (vedi oauth-worker/src/index.js).
-  # Sostituisci nunzio993 nell'URL sopra col tuo subdominio Worker se diverso.
 
 # Per setup iniziale veloce senza OAuth, usare:
 #   backend:
