@@ -1,105 +1,101 @@
 # Workflow blog DopaHop — passi settimanali
 
-Pipeline operativa per produrre 1 articolo IT + 4 traduzioni in 5-35 min.
+Pipeline operativa per produrre 1 articolo in 5 lingue native (IT/EN/ES/DE/FR) in 5-35 min.
 
 ---
 
-## Setup iniziale (una volta)
+## Filosofia
 
-Già fatto — questi sono i file di riferimento nel repo:
-- `BLOG_TOPICS.md` — coda topic (290+ topic pre-caricati)
-- `BRAND_VOICE.md` — regole copy DopaHop
-- `BLOG_SEO_TEMPLATE.md` — struttura SEO articolo
-- `.claude/commands/draft-article.md` — comando per generare bozza IT
-- `.claude/commands/translate-article.md` — comando per generare 4 traduzioni
+**Niente "scrivi IT poi traduci"**. Cinque articoli "fratelli" scritti da 5 sub-agent madrelingua paralleli, ognuno **autonomo nel proprio paese**: cita risorse, enti, sistema sanitario, leggi, numeri emergenza, acronimi DEL PROPRIO paese, non quelli italiani.
 
-Per usare i Claude Projects (workflow alternativo, vedi sezione 5):
-- Vai su https://claude.ai/projects → New Project
-- Nome: "DopaHop Blog"
-- Project Knowledge: carica `BRAND_VOICE.md` + `BLOG_SEO_TEMPLATE.md` + `BLOG_TOPICS.md`
-- (Opzionale) System instructions: "Sei il sub-agent IT madrelingua di DopaHop. Usa BRAND_VOICE.md per voice e BLOG_SEO_TEMPLATE.md per struttura. Quando ti chiedo un articolo, prendi un topic da BLOG_TOPICS.md e scrivi la bozza IT con frontmatter completo."
+Condividono solo:
+- Topic (es. "ADHD: criteri DSM-5")
+- Brand voice DopaHop
+- Struttura macro (intro / definizione / sottotipi / miti / cosa fare / FAQ / disclaimer)
+- Slug (in inglese, universale per multi-lingua)
+- `translationKey` (uguale tra le 5 lingue, abilita hreflang reciproci)
+
+Non condividono: fonti, esempi, riferimenti culturali, percorsi sanitari, numeri emergenza.
 
 ---
 
-## Workflow settimanale (consigliato)
+## Setup iniziale (già fatto)
 
-### Step 1 — Genera bozza IT (~2 min automatici)
+File di riferimento nel repo:
+- `BLOG_TOPICS.md` — coda topic (~290 topic ADHD pre-caricati)
+- `BRAND_VOICE.md` — regole copy DopaHop + ground truth feature app
+- `BLOG_SEO_TEMPLATE.md` — struttura SEO articolo + benchmark Inflow
+- `.claude/commands/write-article.md` — slash command che genera 5 articoli paralleli
+
+---
+
+## Workflow settimanale
+
+### Step 1 — Genera 5 articoli paralleli (~3 min automatici)
 
 Apri Claude Code in `D:\dopahop\site\`, lancia:
 
 ```
-/draft-article
+/write-article
 ```
+
+(Senza argomenti = prende il primo topic dalla coda. Con argomento = topic specifico, non tocca la coda.)
 
 Cosa succede automaticamente:
-1. Legge il primo topic in `BLOG_TOPICS.md`
-2. Spawna sub-agent IT madrelingua con `BRAND_VOICE.md` + `BLOG_SEO_TEMPLATE.md` come context
-3. Genera bozza IT completa (frontmatter + body Markdown)
-4. Salva in `src/content/blog/it/<slug>.md` con `draft: true`
-5. Rimuove il topic da `BLOG_TOPICS.md`
-6. Commit automatico di entrambi i cambi
-7. Ti dice il path del file da editare
+1. Determina topic (queue o esplicito)
+2. Calcola slug in inglese universale (es. `adhd-dsm-5-criteria`)
+3. Spawna **5 sub-agent madrelingua paralleli** (IT, EN, ES, DE, FR)
+4. Ciascuno legge `BRAND_VOICE.md` + `BLOG_SEO_TEMPLATE.md` come context
+5. Ciascuno scrive un articolo NATIVO nel proprio paese (1.200-2.500 parole, 4-6 H2, frontmatter completo, `draft: true`)
+6. Validation: tutti i 5 file controllati per frontmatter / lunghezza / H2 / link interni
+7. Topic rimosso dalla coda (se preso da queue)
+8. Commit + push automatico
+9. Cloudflare Pages ribuilda → 5 pagine live in 1-2 min
 
-Variante con topic specifico (salta la coda):
-```
-/draft-article ADHD e procrastinazione: meccanismo reale
-```
-
-### Step 2 — Edit della bozza IT (5-30 min tuoi)
+### Step 2 — Edit IT (e EN spot-check se vuoi) (5-30 min tuoi)
 
 Apri il file `src/content/blog/it/<slug>.md` in IDE o nel pannello Decap CMS.
 
-**Editing necessario** (sempre):
-- Verifica accuratezza fattuale (l'AI può sparare cazzate)
-- Aggiungi 1-2 esempi concreti dalla tua esperienza o utenti DopaHop
-- Verifica che ci sia almeno 1 link a un modulo DopaHop
-- Se topic clinico: verifica le fonti citate, aggiungi disclaimer in fondo
-- Lettura ad alta voce: aggiusta frasi che suonano "tradotte"
+Il file IT è in `draft: true`. Edita liberamente:
+- Verifica accuratezza fattuale
+- Aggiungi 1-2 esempi concreti dalla tua esperienza o utenti DopaHop reali
+- Verifica che il tono sia "amico ADHD a amico ADHD", non clinico-paternalistico
+- Lettura ad alta voce: aggiusta frasi che suonano "tradotte" o asciutte
 
-**Editing opzionale** (consigliato):
-- Cambia titolo se non ti convince
-- Riscrivi l'intro (è il pezzo che ranka di più, vale tempo extra)
-- Aggiungi sezione FAQ a fine articolo se applicable
+Se padroneggi anche EN, fai uno spot-check del file `src/content/blog/en/<slug>.md`.
 
-### Step 3 — Promuovi a published
+**ES/DE/FR**: ti fidi del sub-agent madrelingua. Non puoi editarli (non parli quelle lingue) e va bene così. Se in futuro un madrelingua ti scrive "frase X è strana", correggi puntualmente.
 
-Cambia nel frontmatter del file:
+### Step 3 — Promuovi i 5 a published
+
+Cambia nel frontmatter di OGNI file delle 5 lingue:
 ```yaml
 draft: true  →  draft: false
 ```
 
-Salva.
+Il modo più rapido: aprilo da Decap CMS (vedi 5 articoli linkati al `translationKey` comune) e clicca "Publish" su ognuno. Oppure trova/sostituisci `draft: true` → `draft: false` su tutti i 5 file via IDE.
 
-### Step 4 — Genera le 4 traduzioni (~3 min automatici)
+### Step 4 — Commit + push (se non già automatico)
 
-In Claude Code:
-
-```
-/translate-article <slug>
-```
-
-Esempio:
-```
-/translate-article adhd-procrastinazione-meccanismo-reale
+Se hai editato manualmente:
+```bash
+git add src/content/blog/
+git commit -m "publish(blog): <slug> (5 langs)"
+git push
 ```
 
-Cosa succede:
-1. Legge `src/content/blog/it/<slug>.md`
-2. Spawna 4 sub-agent madrelingua in parallelo (EN/ES/DE/FR), ognuno con `BRAND_VOICE.md` come context + glossario ADHD localizzato
-3. Genera 4 traduzioni con frontmatter localizzato (title/description/excerpt tradotti, slug uguale, `translationKey` uguale, `draft: false`)
-4. Salva i 4 file in `src/content/blog/{en,es,de,fr}/<slug>.md`
-5. Commit automatico di tutti i 5 file (IT + 4 traduzioni)
-6. Push automatico al repo GitHub
-7. Cloudflare Pages ribuilda automaticamente in 1-2 min
+Cloudflare ribuilda. In 1-2 min sono tutti live.
 
-### Step 5 — Verifica live (opzionale)
+### Step 5 — Verifica (opzionale)
 
 Dopo 1-2 min controlla:
 - https://dopahop-site.pages.dev/blog/<slug>/ (IT)
 - https://dopahop-site.pages.dev/en/blog/<slug>/ (EN)
-- (idem per /es/, /de/, /fr/)
+- https://dopahop-site.pages.dev/es/blog/<slug>/ (ES)
+- https://dopahop-site.pages.dev/de/blog/<slug>/ (DE)
+- https://dopahop-site.pages.dev/fr/blog/<slug>/ (FR)
 
-Se qualcosa non rende (404, layout rotto), apri issue / fixa lì.
+Se uno non rende (404, layout rotto), apri l'issue e fix.
 
 ---
 
@@ -107,86 +103,74 @@ Se qualcosa non rende (404, layout rotto), apri issue / fixa lì.
 
 | Step | Tempo |
 |---|---|
-| 1. /draft-article | ~2 min (automatico, aspetti) |
-| 2. Edit IT | 5-30 min (tu) |
-| 3. draft → false | 5 sec |
-| 4. /translate-article | ~3 min (automatico, aspetti) |
+| 1. /write-article (5 sub-agent paralleli) | ~3 min (automatico) |
+| 2. Edit IT (+ EN spot-check) | 5-30 min |
+| 3. draft → false (5 file) | 1-2 min |
+| 4. Commit/push | 30 sec |
 | 5. Verifica live | 1-2 min |
-| **Totale** | **~12-37 min per articolo in 5 lingue** |
+| **Totale** | **~10-40 min per articolo in 5 lingue** |
 
-A 1-2 articoli/settimana → 4-8 articoli/mese → 20-40 pagine/mese (5 lingue ciascuno).
+A 1-2 articoli/settimana → 4-8 articoli/mese → **20-40 pagine/mese** in 5 lingue.
 
-In un anno con la coda attuale (290 topic): saremo a circa 100 articoli scritti, con ancora 190+ topic in coda.
-
----
-
-## Workflow alternativo (Claude Projects, no Claude Code)
-
-Se non vuoi aprire Claude Code ogni volta, puoi usare **claude.ai Projects** per il passo 1:
-
-1. Apri il Project DopaHop Blog su claude.ai
-2. New chat → "Genera articolo su [topic dalla lista]"
-3. Claude usa la project knowledge per generare la bozza
-4. Copi l'output (frontmatter + body) e crei manualmente il file `.md`
-5. Per il passo 4 (traduzioni), apri Claude Code e lancia `/translate-article <slug>` — quello richiede sempre Claude Code per i sub-agent paralleli
-
-Trade-off:
-- **Claude Code only** (`/draft-article` + `/translate-article`): tutto automatico, commit incluso, ma serve terminale aperto
-- **Hybrid Project + Claude Code**: scrittura più "conversazionale" ma copia/paste manuale
+Coda attuale: ~290 topic = oltre 5 anni di contenuti a 1 articolo/settimana.
 
 ---
 
 ## Pubblicazione bozze direttamente da Decap CMS
 
-In alternativa al flusso Markdown editing:
+In alternativa al flusso Markdown editing manuale:
 1. Apri https://dopahop-site.pages.dev/admin/
 2. Login GitHub
-3. Vai a Blog → l'articolo che hai generato con `/draft-article` ha già `draft: true`
-4. Edita visualmente (Decap mostra preview live)
-5. Quando pronto, sblocca `draft → false` e salva
+3. Vai a Blog → vedi i 5 articoli draft (uno per lingua, stesso `translationKey`)
+4. Edita visualmente quello IT (Decap mostra preview live)
+5. Quando pronto, sblocca `draft → false` e salva tutti e 5
 6. Decap committa automaticamente — Cloudflare ribuilda
-
-NB: Decap NON spawna sub-agent. Per le traduzioni torna in Claude Code.
 
 ---
 
 ## Troubleshooting
 
-### "/draft-article" dice "topic queue is empty"
+### `/write-article` dice "topic queue is empty"
 
-Hai esaurito la coda di `BLOG_TOPICS.md`. Aggiungi nuovi topic o usa la variante con argomento esplicito.
+Hai esaurito `BLOG_TOPICS.md`. Aggiungi nuovi topic o usa la variante con argomento esplicito.
+
+### Validation fallisce sull'output di un sub-agent
+
+Il comando fa retry singolo automatico. Se anche il retry fallisce, ferma e segnala. Sintomi: word count basso, H2 mancanti, frontmatter rotto. Tipicamente segnala che il topic è troppo specifico o ambiguo — riformulalo o saltalo.
 
 ### Le traduzioni hanno errori grammaticali
 
-Improbabile col pattern sub-agent madrelingua, ma se succede:
+Improbabile col pattern sub-agent madrelingua (ognuno scrive da zero nel proprio paese, non traduce). Se succede:
 - Apri il file della lingua incriminata
-- Fai una correzione manuale
+- Correzione manuale
 - Commit + push
 
-Se è un errore sistematico (es. il sub-agent DE traduce sempre male un termine), aggiorna il glossario in `BRAND_VOICE.md` sezione 9 con la traduzione corretta.
+Se è un errore sistematico (es. il sub-agent DE traduce sempre male un termine), aggiorna le indicazioni nel `LOCAL_GUIDANCE` di `/write-article` per quella lingua.
+
+### Voglio cambiare il tono di un articolo già pubblicato
+
+Apri il file nella lingua specifica, edita, commit. Astro ribuilda. Il cambio resta locale a quella lingua. Le altre 4 lingue NON si aggiornano automaticamente (sono articoli indipendenti, non traduzioni). Se vuoi propagare un cambio strutturale a tutte e 5, devi editare tutti e 5 i file (oppure cancellarli e rilanciare `/write-article` con lo stesso topic — sovrascrive tutto).
 
 ### Il sito non si aggiorna dopo push
 
 Verifica:
 1. https://dash.cloudflare.com/?to=/:account/workers-and-pages → Deploys del progetto `dopahop-site`
-2. Se il build è failed, leggi il log
-3. Se il build è success ma vedi vecchio contenuto: hard refresh (Ctrl+Shift+R)
-
-### Voglio cambiare il tono di un articolo già pubblicato
-
-Apri il file in `src/content/blog/<locale>/<slug>.md`, edita, commit. Astro ribuilda. La pagina si aggiorna in 1-2 min.
-
-Per cambiare tutte e 5 le lingue di un articolo: edita IT + lancia di nuovo `/translate-article <slug>`. Sovrascriverà le 4 traduzioni con la nuova versione.
+2. Se build failed, leggi log
+3. Se build success ma vecchio contenuto: hard refresh (Ctrl+Shift+R)
 
 ---
 
 ## File di riferimento
 
-- `BLOG_TOPICS.md` → coda topic (consumata da `/draft-article`)
-- `BRAND_VOICE.md` → regole voice (input dei sub-agent IT + traduttori)
-- `BLOG_SEO_TEMPLATE.md` → struttura SEO (input del sub-agent IT)
-- `.claude/commands/draft-article.md` → slash command bozza IT
-- `.claude/commands/translate-article.md` → slash command 4 traduzioni
-- `src/content/blog/it/*.md` → articoli IT
-- `src/content/blog/{en,es,de,fr}/*.md` → traduzioni
+- `BLOG_TOPICS.md` → coda topic (consumata da `/write-article`)
+- `BRAND_VOICE.md` → regole voice (input dei 5 sub-agent madrelingua)
+- `BLOG_SEO_TEMPLATE.md` → struttura SEO (input dei 5 sub-agent)
+- `.claude/commands/write-article.md` → slash command 5 articoli paralleli
+- `src/content/blog/{it,en,es,de,fr}/<slug>.md` → articoli per lingua
 - `src/content/config.ts` → schema frontmatter (NON modificare)
+
+## Nota sulla differenza dal vecchio setup
+
+Il setup precedente aveva 2 comandi separati: `/draft-article` (solo IT) + `/translate-article` (4 traduzioni). Pattern "scrivi IT bene, poi traduci" — falliva sui topic con riferimenti localizzati (sistema sanitario italiano, associazioni italiane, ecc.) perché il sub-agent traduttore traduceva quei riferimenti inutilmente per il lettore tedesco/inglese/etc.
+
+Il nuovo `/write-article` risolve strutturalmente: ogni lingua ha il proprio articolo nativo, scritto da zero per il proprio paese.

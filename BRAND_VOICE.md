@@ -265,16 +265,35 @@ Pattern di errore da intercettare prima di pubblicare:
 
 ---
 
-## 9. Lingua di destinazione
+## 9. Lingua di destinazione e localizzazione
 
-Articoli IT scritti rispettando questa doc.
+**Pattern strutturale**: ogni articolo blog DopaHop esiste in 5 lingue come **5 articoli nativi paralleli**, scritti da 5 sub-agent madrelingua indipendenti. Non sono "traduzioni" — sono articoli che condividono solo topic, brand voice, struttura macro, slug, e `translationKey`.
 
-Per traduzioni in EN/ES/DE/FR: **non tradurre, riscrivere da madrelingua**. Usa il pattern sub-agent dedicato (vedi `/translate-article` slash command). Glossario ADHD localizzato:
+Ogni sub-agent madrelingua scrive **NEL PROPRIO PAESE**:
+- Cita enti, associazioni, linee guida, sistema sanitario del proprio paese
+- Usa numeri emergenza locali
+- Sceglie esempi culturali familiari ai propri lettori
+- NON menziona l'Italia o riferimenti italiani a meno che il topic specificamente lo richieda
+
+Questo pattern è codificato in `/write-article` (vedi `.claude/commands/write-article.md`).
+
+### Acronimo ADHD per lingua
+
 - IT: ADHD, ADD, disfunzione esecutiva, neurodivergenza
 - EN: ADHD, ADD, executive dysfunction, neurodivergent
 - ES: TDAH, TDA, disfunción ejecutiva, neurodivergencia
 - DE: ADHS, ADS, exekutive Dysfunktion, Neurodivergenz
 - FR: TDAH, TDA, dysfonction exécutive, neuroatypie
+
+### Risorse per lingua (sintesi — il prompt `/write-article` ha la versione completa)
+
+- **IT**: ISS, AIDAI, CSM, percorso medico base→specialista, 112
+- **EN**: CHADD, ADDA, NICE/APA guidelines, GP→psychiatrist (UK) o PCP→psychiatrist (US), 999/911
+- **ES**: FEAADAH, Centro de Salud Mental, Guía MS, médico cabecera→especialista, 112
+- **DE**: ADHS Deutschland e.V., zentrales adhs-netz, S3-Leitlinie, Hausarzt→Facharzt, 112
+- **FR**: HyperSupers TDAH France, HAS, médecin traitant→psychiatre o CMP, 15/112
+
+Il sub-agent madrelingua è già "esperto" del proprio paese — il prompt gli dice solo di USARE le risorse locali, non gli serve un dizionario hardcoded.
 
 ---
 
