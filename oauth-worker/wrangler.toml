@@ -1,0 +1,8 @@
+name = "dopahop-oauth"
+main = "src/index.js"
+compatibility_date = "2026-01-01"
+
+# Variables (set via Cloudflare dashboard or `wrangler secret put`):
+#   GITHUB_CLIENT_ID
+#   GITHUB_CLIENT_SECRET   (use `wrangler secret put GITHUB_CLIENT_SECRET`)
+#   ALLOWED_ORIGINS        (csv of allowed postMessage targets)

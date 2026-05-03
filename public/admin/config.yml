@@ -11,11 +11,13 @@
 # ────────────────────────────────────────────────────────────
 
 backend:
-  name: git-gateway
+  name: github
+  repo: nunzio993/dopahop-site
   branch: main
-  # git-gateway: Netlify Identity proxy commit → GitHub repo nunzio993/dopahop-site.
-  # Apri il pannello da: https://verdant-zabaione-bc977b.netlify.app/admin/
-  # NON da dopahop-site.pages.dev/admin/ (Identity widget gira solo sul dominio Netlify).
+  base_url: https://dopahop-oauth.nunzio993.workers.dev
+  auth_endpoint: auth
+  # OAuth proxy: Cloudflare Worker self-hosted (vedi oauth-worker/src/index.js).
+  # Sostituisci nunzio993 nell'URL sopra col tuo subdominio Worker se diverso.
 
 # Per setup iniziale veloce senza OAuth, usare:
 #   backend:
