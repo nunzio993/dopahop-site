@@ -1,14 +1,20 @@
 ---
+locale: es
 title: "TDAH y DSM-5: criterios clínicos explicados sin jerga"
-description: "TDAH según el DSM-5: definición operativa, los 18 síntomas, subtipos, mitos frecuentes y cuándo pedir ayuda. Sin tono de manual, sin culpa."
-excerpt: "¿El TDAH es \"falta de voluntad\"? El DSM-5 dice otra cosa. Te lo cuento sin jerga."
+description: "TDAH según el DSM-5: definición operativa, los 18 síntomas,
+  subtipos, mitos frecuentes y cuándo pedir ayuda. Sin tono de manual, sin
+  culpa."
+excerpt: ¿El TDAH es "falta de voluntad"? El DSM-5 dice otra cosa. Te lo cuento
+  sin jerga.
 pubDate: 2026-05-04
 updatedDate: 2026-05-04
-tags: ["TDAH", "diagnóstico", "DSM-5"]
-locale: es
-draft: true
-author: "DopaHop Team"
-translationKey: "adhd-dsm-5-criteria"
+tags:
+  - TDAH
+  - diagnóstico
+  - DSM-5
+author: DopaHop Team
+translationKey: adhd-dsm-5-criteria
+draft: false
 ---
 
 **TDAH y DSM-5**: si has llegado hasta aquí buscando si "lo tuyo" cabe en una definición clínica, ya conoces la sensación. Esa de leer un listado de síntomas y reconocer una infancia entera, dos trabajos perdidos, las llaves que ayer aparecieron en la nevera. El DSM-5 (el manual que usan psiquiatras y neuropsicólogos en España y América Latina para diagnosticar) describe el TDAH con criterios concretos: cuántos síntomas, cuánto tiempo, en cuántos contextos. No es una etiqueta vaga, ni "estar un poco despistado". En este artículo repasamos qué dice el manual, qué no dice, los mitos que circulan y cuándo conviene pedir cita con un profesional.
