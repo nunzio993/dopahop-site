@@ -47,27 +47,35 @@ collections:
     path: "{{locale}}/{{slug}}"
     extension: "md"
     format: "frontmatter"
-    summary: "[{{locale}}] {{title}} — {{pubDate}}"
-    sortable_fields: ['pubDate', 'title']
+    summary: "{{title}} — {{pubDate | date('YYYY-MM-DD')}}"
+    sortable_fields: ['pubDate', 'title', 'locale', 'draft']
+    view_groups:
+      - label: "Lingua"
+        field: locale
+      - label: "Stato (bozza / pubblicato)"
+        field: draft
     view_filters:
-      - label: "Italiano"
+      - label: "Solo italiano"
         field: locale
         pattern: it
-      - label: "English"
+      - label: "Solo English"
         field: locale
         pattern: en
-      - label: "Español"
+      - label: "Solo Español"
         field: locale
         pattern: es
-      - label: "Deutsch"
+      - label: "Solo Deutsch"
         field: locale
         pattern: de
-      - label: "Français"
+      - label: "Solo Français"
         field: locale
         pattern: fr
-      - label: "Bozze"
+      - label: "Solo bozze"
         field: draft
         pattern: true
+      - label: "Solo pubblicati"
+        field: draft
+        pattern: false
     fields:
       - { label: "Lingua", name: "locale", widget: "select", options: ["it", "en", "es", "de", "fr"], default: "it" }
       - { label: "Titolo", name: "title", widget: "string" }
