@@ -507,6 +507,9 @@ const faqSchema = faqItems.length > 0
   /* ── BODY (editorial: serif + generous spacing) ── */
   .post-content-section {
     padding: 32px 0 96px;
+    background: var(--bg);
+    position: relative;
+    z-index: 2;
   }
   .post-body {
     font-family: var(--serif-body);
@@ -739,6 +742,16 @@ const faqSchema = faqItems.length > 0
     .post-hero { padding: 40px 0 24px; }
     .post-body :global(h2)::before { left: -12px; width: 2px; }
     .post-body { font-size: 18px; }
-    .post-body :global(p:first-of-type::first-letter) { font-size: 3.6em; }
+    /* Drop cap disabled on mobile — float + large font breaks layout on narrow viewports */
+    .post-body :global(p:first-of-type::first-letter) {
+      font-size: inherit;
+      float: none;
+      color: inherit;
+      font-family: inherit;
+      font-style: inherit;
+      padding: 0;
+      margin: 0;
+      line-height: inherit;
+    }
   }
 </style>
