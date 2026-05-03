@@ -1,14 +1,20 @@
 ---
+locale: fr
 title: "TDAH selon le DSM-5 : critères et définition opérationnelle"
-description: "TDAH et DSM-5 : critères diagnostiques précis, sous-types, mythes courants, et quand consulter. Sans jargon, sans culpabilité, par et pour des cerveaux TDAH."
-excerpt: "Tu te reconnais dans le TDAH mais tu doutes ? Voici ce que dit vraiment le DSM-5."
+description: "TDAH et DSM-5 : critères diagnostiques précis, sous-types, mythes
+  courants, et quand consulter. Sans jargon, sans culpabilité, par et pour des
+  cerveaux TDAH."
+excerpt: Tu te reconnais dans le TDAH mais tu doutes ? Voici ce que dit vraiment
+  le DSM-5.
 pubDate: 2026-05-04
 updatedDate: 2026-05-04
-tags: ["TDAH", "diagnostic", "DSM-5"]
-locale: fr
-draft: true
-author: "DopaHop Team"
-translationKey: "adhd-dsm-5-criteria"
+tags:
+  - TDAH
+  - diagnostic
+  - DSM-5
+author: DopaHop Team
+translationKey: adhd-dsm-5-criteria
+draft: false
 ---
 
 **TDAH et DSM-5** : si tu cherches ce que veut dire concrètement avoir un Trouble Déficitaire de l'Attention avec ou sans Hyperactivité, tu es probablement entre deux choses. D'un côté tu te reconnais dans des dizaines de listes Instagram qui parlent de "9 signes que tu as un TDAH". De l'autre tu te demandes si tout ça n'est pas un peu trop large, un peu trop tendance, un peu trop facile. Le DSM-5 — le manuel diagnostique utilisé par les psychiatres en France et dans la plupart des pays — fixe des critères précis, qui ne ressemblent pas vraiment à ce que tu trouves sur les réseaux. Ils sont plus exigeants, plus contextualisés, et — surprise — souvent plus humains. Dans cet article on regarde les critères réels, les trois sous-types, les mythes qui te font douter, et à quel moment ça vaut la peine d'aller voir quelqu'un.
