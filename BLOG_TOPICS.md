@@ -1,0 +1,308 @@
+# Blog topics queue — DopaHop
+
+Coda di topic per articoli del blog. Il comando `/draft-article` prende il primo topic della lista (saltando le righe commentate), genera la bozza IT, e rimuove il topic da qui.
+
+Ordina i topic come vuoi: il primo della lista è il prossimo a uscire.
+
+---
+
+- ADHD: definizione operativa e criteri clinici (DSM-5)
+- Differenza tra ADHD infantile e adulto
+- ADHD e funzioni esecutive: cosa si rompe davvero
+- ADHD inattentivo vs iperattivo: differenze funzionali
+- Diagnosi tardiva: perché succede e conseguenze
+- ADHD e dopamina: modello neurobiologico
+- ADHD e procrastinazione: meccanismo reale, non "pigrizia"
+- ADHD e disregolazione emotiva
+- ADHD e sonno: cicli circadiani alterati
+- ADHD e dipendenze comportamentali (gaming, social)
+- ADHD e uso di sostanze: rischio e pattern
+- ADHD e ansia: comorbidità e confusione diagnostica
+- ADHD e depressione: relazione bidirezionale
+- ADHD e autostima: costruzione e distorsioni
+- ADHD e relazioni: dinamiche tipiche
+- ADHD e lavoro: pattern di performance discontinua
+- ADHD e università: strategie reali di sopravvivenza
+- ADHD e multitasking: mito vs realtà
+- ADHD e iperfocus: vantaggio o trappola
+- ADHD e gestione del tempo: percezione distorta
+- ADHD e memoria di lavoro: limiti concreti
+- ADHD e decision making impulsivo
+- ADHD e creatività: correlazione reale o narrativa
+- ADHD e burnout: dinamica accelerata
+- ADHD e alimentazione: ruolo di zuccheri e stimolanti
+- ADHD e attività fisica: impatto su sintomi
+- ADHD e meditazione: cosa funziona davvero
+- ADHD e tecnologia: amplificazione dei sintomi
+- ADHD e ambienti di lavoro strutturati vs liberi
+- ADHD e imprenditorialità: rischio e opportunità
+- ADHD e parenting: crescere un figlio con ADHD
+- ADHD nei genitori: impatto sulla famiglia
+- ADHD e scuola italiana: limiti del sistema
+- ADHD e farmaci stimolanti: effetti reali
+- ADHD e non-stimolanti: quando servono
+- ADHD e terapia cognitivo-comportamentale
+- ADHD e coaching: utilità reale vs marketing
+- ADHD e strumenti digitali (task manager, reminder)
+- ADHD e routine: costruzione vs fallimento
+- ADHD e disciplina: perché i metodi standard falliscono
+- ADHD e gestione delle priorità
+- ADHD e overload cognitivo
+- ADHD e ambiente: design dello spazio di lavoro
+- ADHD e finanze personali: impulsività e debito
+- ADHD e carriera IT: vantaggi e criticità
+- ADHD e social media: loop dopaminergici
+- ADHD e relazioni sentimentali instabili
+- ADHD e mascheramento sociale
+- ADHD nelle donne: sottodiagnosi e bias
+- ADHD e diagnosi differenziale (bipolare, borderline, ansia)
+- ADHD e micro-tasking: scomposizione operativa del lavoro
+- ADHD e "task switching cost": impatto misurabile
+- ADHD e reward immediato: progettazione degli incentivi
+- ADHD e fallimento dei sistemi di produttività standard
+- ADHD e GTD: cosa non funziona
+- ADHD e Kanban personale: limiti pratici
+- ADHD e time blocking: adattamenti necessari
+- ADHD e "decision fatigue": amplificazione nel disturbo
+- ADHD e rumore ambientale: soglia di tolleranza
+- ADHD e musica durante il lavoro: effetti variabili
+- ADHD e notifiche: distruzione dell'attenzione residua
+- ADHD e contesto visivo: clutter vs focus
+- ADHD e minimalismo ambientale: utilità reale
+- ADHD e routine mattutina: stabilizzazione cognitiva
+- ADHD e routine serale: impatto sul giorno dopo
+- ADHD e ritardo cronico: meccanismo e correzione
+- ADHD e pianificazione settimanale: errori tipici
+- ADHD e priorità false: come emergono
+- ADHD e task avoidance: trigger cognitivi
+- ADHD e paura del compito: evitamento
+- ADHD e perfezionismo: forma disfunzionale
+- ADHD e "all or nothing": distorsione cognitiva
+- ADHD e senso del tempo interno
+- ADHD e timer esterni: efficacia reale
+- ADHD e accountability esterna
+- ADHD e lavoro remoto: rischio dispersione
+- ADHD e lavoro in ufficio: sovraccarico sensoriale
+- ADHD e meeting: perdita di informazione
+- ADHD e presa di appunti: sistemi compatibili
+- ADHD e lettura: retention ridotta
+- ADHD e scrittura: difficoltà di linearità
+- ADHD e studio tecnico: strategie ad alta densità
+- ADHD e coding: pattern di attenzione
+- ADHD e debugging: persistenza vs abbandono
+- ADHD e progetti lunghi: decadimento motivazionale
+- ADHD e deadline: effetto urgenza
+- ADHD e stress: attivazione utile vs dannosa
+- ADHD e sonnolenza diurna
+- ADHD e caffeina: uso strategico vs abuso
+- ADHD e nicotina: correlazioni
+- ADHD e integratori: evidenze vs marketing
+- ADHD e dieta iperproteica: effetti
+- ADHD e zuccheri: fluttuazioni cognitive
+- ADHD e digiuno intermittente: impatto
+- ADHD e idratazione: ruolo sottovalutato
+- ADHD e cronotipo serale
+- ADHD e esposizione alla luce
+- ADHD e ritmi circadiani sociali
+- ADHD e jet lag sociale
+- ADHD e recupero cognitivo
+- ADHD e pause: durata ottimale
+- ADHD e tecnica Pomodoro: limiti
+- ADHD e sprint brevi
+- ADHD e micro-ricompense
+- ADHD e gamification personale
+- ADHD e tracking dei progressi
+- ADHD e feedback immediato
+- ADHD e fallimento percepito
+- ADHD e resilienza cognitiva
+- ADHD e ruminazione
+- ADHD e autocritica
+- ADHD e narrazione interna
+- ADHD e bias attentivi
+- ADHD e bias temporali
+- ADHD e apprendimento non lineare
+- ADHD e memoria episodica
+- ADHD e memoria prospettica
+- ADHD e dimenticanze frequenti
+- ADHD e oggetti persi
+- ADHD e sistemi anti-perdita
+- ADHD e checklist fisiche
+- ADHD e checklist digitali
+- ADHD e ridondanza informativa
+- ADHD e overload di strumenti
+- ADHD e app di produttività: selezione minima
+- ADHD e dipendenza da tool
+- ADHD e automazione personale
+- ADHD e scripting quotidiano
+- ADHD e rituali cognitivi
+- ADHD e segnali di inizio lavoro
+- ADHD e segnali di stop
+- ADHD e transizioni tra attività
+- ADHD e contesti multipli
+- ADHD e travel: disorganizzazione
+- ADHD e valigie e preparazione
+- ADHD e gestione documenti
+- ADHD e email: overload
+- ADHD e inbox zero: sostenibilità
+- ADHD e notifiche push: eliminazione
+- ADHD e social scrolling
+- ADHD e contenuti brevi: effetto attenzione
+- ADHD e video lunghi: retention
+- ADHD e podcast: attenzione passiva
+- ADHD e apprendimento audio
+- ADHD e apprendimento visivo
+- ADHD e apprendimento attivo
+- ADHD e spaced repetition
+- ADHD e flashcard: utilità
+- ADHD e mappe mentali
+- ADHD e schemi lineari
+- ADHD e sintesi efficace
+- ADHD e revisione del lavoro
+- ADHD e errori ripetuti
+- ADHD e controllo qualità personale
+- ADHD e delega: difficoltà
+- ADHD e micro-management
+- ADHD e leadership
+- ADHD e lavoro in team
+- ADHD e conflitti
+- ADHD e comunicazione diretta
+- ADHD e comunicazione dispersiva
+- ADHD e ascolto attivo
+- ADHD e interruzioni
+- ADHD e conversazioni lunghe
+- ADHD e noia: trigger centrale
+- ADHD e ricerca di stimoli
+- ADHD e novelty seeking
+- ADHD e rischio
+- ADHD e decisioni rapide
+- ADHD e errori impulsivi
+- ADHD e controllo inibitorio
+- ADHD e training cognitivo
+- ADHD e neurofeedback
+- ADHD e biofeedback
+- ADHD e wearables
+- ADHD e monitoraggio fisiologico
+- ADHD e HRV
+- ADHD e respirazione
+- ADHD e tecniche di attivazione
+- ADHD e cold exposure
+- ADHD e stimoli forti
+- ADHD e ambienti estremi
+- ADHD e monotonia
+- ADHD e lavori ripetitivi
+- ADHD e lavori creativi
+- ADHD e freelancing
+- ADHD e instabilità economica
+- ADHD e budgeting
+- ADHD e spese impulsive
+- ADHD e debito accumulato
+- ADHD e sistemi di controllo spese
+- ADHD e conti separati
+- ADHD e automatismi finanziari
+- ADHD e investimenti: rischio impulsivo
+- ADHD e trading: bias specifici
+- ADHD e overtrading
+- ADHD e gestione del rischio
+- ADHD e regole rigide vs flessibili
+- ADHD e compliance alle regole
+- ADHD e costruzione di sistemi antifragili
+- ADHD e carico cognitivo cumulativo
+- ADHD e soglia di saturazione mentale
+- ADHD e recupero post-sovraccarico
+- ADHD e cicli ultradiani
+- ADHD e fluttuazioni intra-giornaliere
+- ADHD e stabilità attentiva
+- ADHD e deriva attentiva nel tempo
+- ADHD e segnali precoci di distrazione
+- ADHD e interventi immediati correttivi
+- ADHD e controllo top-down vs bottom-up
+- ADHD e gating attentivo
+- ADHD e salienza degli stimoli
+- ADHD e selezione attentiva
+- ADHD e inibizione di distrattori
+- ADHD e latenza di risposta
+- ADHD e variabilità della performance
+- ADHD e inconsistenza nei risultati
+- ADHD e effetto "giorno buono/giorno perso"
+- ADHD e misurazione oggettiva della produttività
+- ADHD e metriche operative personali
+- ADHD e logging comportamentale
+- ADHD e journaling strutturato
+- ADHD e error tracking
+- ADHD e audit settimanale
+- ADHD e retrospettiva mensile
+- ADHD e feedback loop corti
+- ADHD e sistemi chiusi vs aperti
+- ADHD e rigidità dei sistemi
+- ADHD e adattività operativa
+- ADHD e fallback strategies
+- ADHD e riduzione della complessità
+- ADHD e minimal viable routine
+- ADHD e standardizzazione delle azioni
+- ADHD e check pre-task
+- ADHD e check post-task
+- ADHD e definizione di "done"
+- ADHD e ambiguità del compito
+- ADHD e task mal definiti
+- ADHD e decomposizione ricorsiva
+- ADHD e granularità ottimale dei task
+- ADHD e attrito iniziale
+- ADHD e soglia di attivazione
+- ADHD e tecniche di avvio rapido
+- ADHD e countdown cognitivi
+- ADHD e regola dei 2 minuti: limiti
+- ADHD e commitment devices
+- ADHD e vincoli autoimposti
+- ADHD e penalità artificiali
+- ADHD e ricompense differite
+- ADHD e distorsione della ricompensa
+- ADHD e delay discounting
+- ADHD e impulsività temporale
+- ADHD e preferenza per il breve termine
+- ADHD e pianificazione a lungo termine
+- ADHD e fallimento dei piani annuali
+- ADHD e pianificazione trimestrale
+- ADHD e obiettivi settimanali realistici
+- ADHD e backlog personale
+- ADHD e priorità dinamiche
+- ADHD e contesto decisionale
+- ADHD e euristiche personali
+- ADHD e scorciatoie cognitive disfunzionali
+- ADHD e sovrastima delle capacità
+- ADHD e sottostima del tempo
+- ADHD e planning fallacy
+- ADHD e stima probabilistica
+- ADHD e gestione dell'incertezza
+- ADHD e avversione alla noia
+- ADHD e ricerca di novità continua
+- ADHD e abbandono prematuro dei progetti
+- ADHD e accumulo di progetti aperti
+- ADHD e chiusura dei task
+- ADHD e soddisfazione post-completamento
+- ADHD e rinforzo comportamentale
+- ADHD e abitudini instabili
+- ADHD e costruzione di abitudini robuste
+- ADHD e cue ambientali
+- ADHD e trigger contestuali
+- ADHD e stacking di abitudini
+- ADHD e interferenza tra abitudini
+- ADHD e discontinuità comportamentale
+- ADHD e reset periodici
+- ADHD e settimane di scarico cognitivo
+- ADHD e gestione della fatica mentale
+- ADHD e fatica decisionale cronica
+- ADHD e riduzione delle scelte
+- ADHD e uniformità operativa
+- ADHD e routine fisse vs variabili
+- ADHD e flessibilità controllata
+- ADHD e caos organizzato
+- ADHD e sistemi ibridi
+- ADHD e trade-off tra ordine e stimolo
+- ADHD e ambienti ad alta stimolazione
+- ADHD e ambienti a bassa stimolazione
+- ADHD e isolamento operativo
+- ADHD e co-working: effetti
+- ADHD e presenza di altri
+- ADHD e body doubling
+- ADHD e pressione sociale
+- ADHD e accountability pubblica
