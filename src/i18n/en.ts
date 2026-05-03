@@ -242,9 +242,10 @@ export const en: LandingStrings = {
     metaTitle: 'DopaHop Blog — ADHD, focus, gentle strategies',
     metaDescription:
       "Practical articles on ADHD, focus and gentle strategies for brains that work differently. No gurus, no guilt.",
-    pageTitle: 'Articles',
+    pageTitle: 'Blog',
+    pageHeading: 'DopaHop Blog',
     pageSubtitle:
-      "Practical strategies on ADHD, focus and gentle routines. No gurus, no guilt.",
+      'Articles on ADHD, focus, productivity, and practical strategies for adult brains.',
     emptyState: 'No articles yet. Check back soon.',
     readMore: 'Read',
     publishedOn: 'Published on',
@@ -256,7 +257,8 @@ export const en: LandingStrings = {
     by: 'by',
     latestArticles: 'Latest articles',
     appCardTitle: 'Get DopaHop',
-    appCardSubtitle: 'The gentle ADHD app. Free on Google Play.',
+    appCardSubtitle:
+      'Free Android app: Pomodoro, medication reminders, brain dump, focus sounds.',
     appCardCta: 'Download free',
   },
 };

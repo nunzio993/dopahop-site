@@ -242,9 +242,10 @@ export const it: LandingStrings = {
     metaTitle: 'Blog DopaHop — ADHD, focus, strategie gentili',
     metaDescription:
       "Articoli pratici su ADHD, focus e strategie gentili per cervelli che funzionano diversamente. Niente guru, niente colpa.",
-    pageTitle: 'Articoli',
+    pageTitle: 'Blog',
+    pageHeading: 'Blog DopaHop',
     pageSubtitle:
-      "Strategie pratiche su ADHD, focus e routine gentili. Niente guru, niente colpa.",
+      'Articoli su ADHD, focus, produttività e strategie pratiche per cervelli adulti.',
     emptyState: 'Nessun articolo ancora. Torna presto.',
     readMore: 'Leggi',
     publishedOn: 'Pubblicato il',
@@ -256,7 +257,8 @@ export const it: LandingStrings = {
     by: 'di',
     latestArticles: 'Articoli recenti',
     appCardTitle: 'Scarica DopaHop',
-    appCardSubtitle: "L'app ADHD gentile. Gratis su Google Play.",
+    appCardSubtitle:
+      'App gratuita per Android: Pomodoro, promemoria farmaci, brain dump, focus sounds.',
     appCardCta: 'Scarica gratis',
   },
 };

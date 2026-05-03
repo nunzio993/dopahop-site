@@ -242,9 +242,10 @@ export const fr: LandingStrings = {
     metaTitle: 'Blog DopaHop — TDAH, focus, stratégies bienveillantes',
     metaDescription:
       "Articles pratiques sur le TDAH, le focus et des stratégies bienveillantes pour les cerveaux qui fonctionnent autrement. Sans gourous, sans culpabilité.",
-    pageTitle: 'Articles',
+    pageTitle: 'Blog',
+    pageHeading: 'Blog DopaHop',
     pageSubtitle:
-      "Stratégies pratiques sur le TDAH, le focus et des routines bienveillantes. Sans gourous, sans culpabilité.",
+      'Articles sur le TDAH, le focus, la productivité et des stratégies pratiques pour cerveaux adultes.',
     emptyState: "Pas encore d'articles. Reviens bientôt.",
     readMore: 'Lire',
     publishedOn: 'Publié le',
@@ -256,7 +257,8 @@ export const fr: LandingStrings = {
     by: 'par',
     latestArticles: 'Articles récents',
     appCardTitle: 'Télécharger DopaHop',
-    appCardSubtitle: "L'app TDAH bienveillante. Gratuite sur Google Play.",
+    appCardSubtitle:
+      'App gratuite pour Android : Pomodoro, rappels médicaments, brain dump, focus sounds.',
     appCardCta: 'Télécharger gratuitement',
   },
 };

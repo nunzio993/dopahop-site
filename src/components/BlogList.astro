@@ -135,9 +135,7 @@ const blogListSchema = {
             {tagFilter ? t.blog.tags : t.blog.pageTitle}
           </span>
           <h1 class="blog-hero-title">
-            {tagFilter
-              ? `#${tagFilter}`
-              : t.blog.metaTitle.replace('DopaHop Blog — ', '').replace('Blog DopaHop — ', '')}
+            {tagFilter ? `#${tagFilter}` : t.blog.pageHeading}
           </h1>
           <p class="blog-hero-subtitle">
             {tagFilter

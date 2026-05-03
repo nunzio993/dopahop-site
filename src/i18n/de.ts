@@ -242,9 +242,10 @@ export const de: LandingStrings = {
     metaTitle: 'DopaHop Blog — ADHS, Fokus, sanfte Strategien',
     metaDescription:
       'Praktische Artikel über ADHS, Fokus und sanfte Strategien für Gehirne, die anders funktionieren. Keine Gurus, keine Schuld.',
-    pageTitle: 'Artikel',
+    pageTitle: 'Blog',
+    pageHeading: 'DopaHop Blog',
     pageSubtitle:
-      'Praktische Strategien zu ADHS, Fokus und sanften Routinen. Keine Gurus, keine Schuld.',
+      'Artikel über ADHS, Fokus, Produktivität und praktische Strategien für erwachsene Gehirne.',
     emptyState: 'Noch keine Artikel. Schau bald wieder vorbei.',
     readMore: 'Lesen',
     publishedOn: 'Veröffentlicht am',
@@ -256,7 +257,8 @@ export const de: LandingStrings = {
     by: 'von',
     latestArticles: 'Neueste Artikel',
     appCardTitle: 'DopaHop laden',
-    appCardSubtitle: 'Die sanfte ADHS-App. Kostenlos bei Google Play.',
+    appCardSubtitle:
+      'Kostenlose Android-App: Pomodoro, Medikamenten-Erinnerungen, Brain Dump, Focus Sounds.',
     appCardCta: 'Kostenlos laden',
   },
 };

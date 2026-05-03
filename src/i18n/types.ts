@@ -49,6 +49,7 @@ export interface BlogStrings {
   metaTitle: string;
   metaDescription: string;
   pageTitle: string;
+  pageHeading: string;
   pageSubtitle: string;
   emptyState: string;
   readMore: string;
