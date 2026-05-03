@@ -111,4 +111,27 @@ const blogHref = `${homeHref}blog/`.replace(/\/+/g, '/');
     .header-right { gap: 8px; }
     .header-cta { padding: 8px 14px; font-size: 13px; }
   }
+
+  /* When body is light themed (blog post), header stays dark — force light text */
+  :global(body.theme-light) header {
+    background: rgba(15, 15, 35, 0.92);
+    border-bottom-color: rgba(255, 255, 255, 0.08);
+  }
+  :global(body.theme-light) .logo { color: #FAFAFA; }
+  :global(body.theme-light) nav.nav a { color: #BDBDBD; }
+  :global(body.theme-light) nav.nav a:hover { color: #FAFAFA; }
+  :global(body.theme-light) .lang-switcher {
+    background: rgba(255, 255, 255, 0.06);
+    border-color: rgba(255, 255, 255, 0.1);
+  }
+  :global(body.theme-light) .lang-link { color: rgba(255, 255, 255, 0.5); }
+  :global(body.theme-light) .lang-link:hover { color: #FAFAFA; }
+  :global(body.theme-light) .lang-link.active {
+    background: var(--primary);
+    color: #0F0F23;
+  }
+  :global(body.theme-light) .header-cta {
+    background: var(--primary);
+    color: #0F0F23;
+  }
 </style>
