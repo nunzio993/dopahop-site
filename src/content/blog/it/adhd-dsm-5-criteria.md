@@ -1,14 +1,19 @@
 ---
+locale: it
 title: "ADHD: criteri DSM-5 e definizione operativa"
-description: "ADHD secondo il DSM-5: criteri diagnostici, sottotipi, miti, e il percorso reale per arrivare a una diagnosi in Italia. Senza jargon clinico."
-excerpt: "Cosa dice davvero il DSM-5 sull'ADHD, senza spaventarti e senza farti l'auto-diagnosi."
+description: "ADHD secondo il DSM-5: criteri diagnostici, sottotipi, miti, e il
+  percorso reale per arrivare a una diagnosi in Italia. Senza jargon clinico."
+excerpt: Cosa dice davvero il DSM-5 sull'ADHD, senza spaventarti e senza farti
+  l'auto-diagnosi.
 pubDate: 2026-05-04
 updatedDate: 2026-05-04
-tags: ["ADHD", "diagnosi", "DSM-5"]
-locale: it
-draft: true
-author: "DopaHop Team"
-translationKey: "adhd-dsm-5-criteria"
+tags:
+  - ADHD
+  - diagnosi
+  - DSM-5
+author: DopaHop Team
+translationKey: adhd-dsm-5-criteria
+draft: false
 ---
 
 **ADHD** sta per *Disturbo da Deficit di Attenzione/Iperattività*, e il manuale che lo definisce in modo operativo si chiama **DSM-5**. Se sei arrivato qui è probabile che tu stia cercando di capire se quello che senti — la mente che salta, la fatica a iniziare, il tempo che ti scappa fra le mani — abbia un nome. La risposta breve: forse sì, forse no, ma non te lo può dire un articolo. Quello che un articolo può fare è spiegarti come ragionano i clinici, quali criteri usano davvero, e come funziona il percorso diagnostico in Italia. Senza terrorismo, senza promesse, e senza farti sentire più sbagliato di quanto già ti senti.
