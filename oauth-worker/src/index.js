@@ -103,6 +103,9 @@ function htmlResponse(body) {
     headers: {
       'Content-Type': 'text/html; charset=utf-8',
       'Cache-Control': 'no-store',
+      // Relax COOP so window.opener stays usable for postMessage
+      'Cross-Origin-Opener-Policy': 'unsafe-none',
+      'Cross-Origin-Embedder-Policy': 'unsafe-none',
     },
   });
 }
@@ -114,32 +117,69 @@ function successPage(message, targetOrigin) {
 <meta charset="utf-8">
 <title>Authorizing…</title>
 <style>
-  body { font-family: -apple-system, system-ui, sans-serif; background: #0F0F23; color: #FAFAFA; display: grid; place-items: center; height: 100vh; margin: 0; }
-  .card { text-align: center; padding: 2rem; }
-  h1 { font-size: 1.4rem; margin: 0 0 .5rem; }
-  p { color: #BDBDBD; margin: 0; }
+  body { font-family: -apple-system, system-ui, sans-serif; background: #0F0F23; color: #FAFAFA; display: grid; place-items: center; min-height: 100vh; margin: 0; padding: 2rem; }
+  .card { text-align: center; max-width: 560px; }
+  h1 { font-size: 1.4rem; margin: 0 0 .8rem; }
+  p { color: #BDBDBD; margin: 0 0 .5rem; line-height: 1.5; }
+  pre { background: rgba(255,255,255,.05); padding: .8rem; border-radius: 8px; font-size: .75rem; overflow-x: auto; text-align: left; margin: 1rem 0 0; color: #888; }
+  .ok { color: #66BB6A; }
+  .err { color: #E63946; }
 </style>
 </head>
 <body>
 <div class="card">
-  <h1>Authorizing…</h1>
-  <p>You can close this window.</p>
+  <h1 id="title">Authorizing…</h1>
+  <p id="status">Sending token to opener…</p>
+  <pre id="debug" hidden></pre>
 </div>
 <script>
 (function() {
   var msg = ${JSON.stringify(message)};
-  var targetOrigin = ${targetOrigin};
-  function send(target) {
-    target.postMessage(msg, targetOrigin);
+  var status = document.getElementById('status');
+  var title = document.getElementById('title');
+  var debug = document.getElementById('debug');
+
+  function show(text, cls) {
+    status.textContent = text;
+    if (cls) status.className = cls;
   }
-  // Decap CMS pattern: opener listens for postMessage
-  if (window.opener) {
-    send(window.opener);
-    setTimeout(function(){ try { window.close(); } catch(e) {} }, 800);
-  } else if (window.parent && window.parent !== window) {
-    send(window.parent);
+  function showDebug(obj) {
+    debug.hidden = false;
+    debug.textContent = typeof obj === 'string' ? obj : JSON.stringify(obj, null, 2);
+  }
+
+  function trySend(target, label) {
+    try {
+      // Use '*' to avoid origin mismatch issues across host providers
+      target.postMessage(msg, '*');
+      return true;
+    } catch (e) {
+      showDebug('postMessage to ' + label + ' failed: ' + e.message);
+      return false;
+    }
+  }
+
+  // Decap responds with a handshake first, then the real message:
+  // 1. Send 'authorizing:github' as handshake
+  // 2. Decap responds with 'authorizing:github' on its side
+  // 3. Then we send the real message
+  // But many implementations just send the message directly. Do both.
+
+  if (window.opener && !window.opener.closed) {
+    title.textContent = 'Authorized';
+    show('Token sent. Window will close in 2 seconds.', 'ok');
+    // Send the real message immediately AND after 200ms (Decap handshake compat)
+    trySend(window.opener, 'opener');
+    setTimeout(function(){ trySend(window.opener, 'opener (retry)'); }, 200);
+    setTimeout(function(){ try { window.close(); } catch(e) {} }, 2000);
   } else {
-    document.querySelector('p').textContent = 'Window opener not available — login may have failed. Close and retry from /admin/.';
+    title.textContent = 'No opener window';
+    show('window.opener is null. Either the popup was blocked, or COOP/COEP stripped it.', 'err');
+    showDebug({
+      message: msg,
+      windowOpener: window.opener === null ? 'null (blocked)' : 'undefined',
+      hint: 'If you opened /callback in a new tab manually, this is expected. Retry login from /admin/.'
+    });
   }
 })();
 </script>
