@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Icon comparison — DopaHop</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background: #0F0F23;
+    color: #FAFAFA;
+    padding: 40px 20px 80px;
+    min-height: 100vh;
+  }
+  h1 {
+    font-size: 32px;
+    font-weight: 800;
+    text-align: center;
+    margin-bottom: 8px;
+  }
+  .subtitle {
+    text-align: center;
+    color: #BDBDBD;
+    margin-bottom: 48px;
+  }
+  .container {
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+  .row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+    margin-bottom: 48px;
+  }
+  .col {
+    background: #1A1A2E;
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 20px;
+    padding: 32px;
+    text-align: center;
+  }
+  .col h2 {
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 24px;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: #BDBDBD;
+  }
+  .sizes {
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    gap: 24px;
+    flex-wrap: wrap;
+  }
+  .icon-frame {
+    text-align: center;
+  }
+  .icon-frame img {
+    border-radius: 22%;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3), 0 12px 32px rgba(0,0,0,0.25);
+  }
+  .icon-frame .label {
+    margin-top: 8px;
+    font-size: 12px;
+    color: #757575;
+  }
+  /* Mockup Play Store grid */
+  .store-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 96px);
+    gap: 16px;
+    justify-content: center;
+    align-items: center;
+    background: #FFFFFF;
+    color: #202124;
+    padding: 24px;
+    border-radius: 16px;
+    margin-top: 32px;
+  }
+  .store-grid img {
+    width: 96px;
+    height: 96px;
+    border-radius: 22%;
+    object-fit: cover;
+  }
+  .store-grid .label {
+    font-size: 10px;
+    color: #5f6368;
+    margin-top: 4px;
+    text-align: center;
+  }
+  .store-cell { text-align: center; }
+  .placeholder {
+    width: 96px;
+    height: 96px;
+    border-radius: 22%;
+    background: linear-gradient(135deg, #ddd, #aaa);
+    color: #fff;
+    display: grid;
+    place-items: center;
+    font-weight: 700;
+  }
+</style>
+</head>
+<body>
+<div class="container">
+  <h1>Confronto icona DopaHop</h1>
+  <p class="subtitle">Vecchia silhouette vs nuova mascotte Hop con depth</p>
+
+  <div class="row">
+    <div class="col">
+      <h2>Attuale (silhouette piatta)</h2>
+      <div class="sizes">
+        <div class="icon-frame">
+          <img src="/img/icon.png" alt="Old icon 192" width="192" height="192">
+          <div class="label">192 × 192</div>
+        </div>
+        <div class="icon-frame">
+          <img src="/img/icon.png" alt="Old icon 96" width="96" height="96">
+          <div class="label">96 × 96</div>
+        </div>
+        <div class="icon-frame">
+          <img src="/img/icon.png" alt="Old icon 48" width="48" height="48">
+          <div class="label">48 × 48</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col">
+      <h2>Proposta (mascotte Hop, gradient + depth)</h2>
+      <div class="sizes">
+        <div class="icon-frame">
+          <img src="/img/icon-hop.svg" alt="New icon 192" width="192" height="192">
+          <div class="label">192 × 192</div>
+        </div>
+        <div class="icon-frame">
+          <img src="/img/icon-hop.svg" alt="New icon 96" width="96" height="96">
+          <div class="label">96 × 96</div>
+        </div>
+        <div class="icon-frame">
+          <img src="/img/icon-hop.svg" alt="New icon 48" width="48" height="48">
+          <div class="label">48 × 48</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <h2 style="text-align:center; font-size:18px; margin-bottom:16px; color:#BDBDBD; text-transform:uppercase; letter-spacing:0.08em;">Mockup Play Store grid (96×96)</h2>
+  <div class="store-grid">
+    <div class="store-cell"><div class="placeholder">A</div><div class="label">App generica 1</div></div>
+    <div class="store-cell"><img src="/img/icon.png" alt=""><div class="label">DopaHop (vecchio)</div></div>
+    <div class="store-cell"><img src="/img/icon-hop.svg" alt=""><div class="label">DopaHop (nuovo)</div></div>
+    <div class="store-cell"><div class="placeholder" style="background:linear-gradient(135deg,#3B82F6,#8B5CF6)">B</div><div class="label">App generica 2</div></div>
+  </div>
+
+  <p style="text-align:center; margin-top:48px; color:#757575; font-size:13px;">
+    Per usare la nuova icona: rasterizzare <code>icon-hop.svg</code> in PNG 1024×1024 (es. via <a style="color:#FFB703" href="https://cloudconvert.com/svg-to-png" target="_blank">cloudconvert.com</a>) e sostituire <code>public/img/icon.png</code>.
+  </p>
+</div>
+</body>
+</html>
