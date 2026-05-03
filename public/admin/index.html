@@ -8,7 +8,21 @@
 <link rel="icon" type="image/png" href="/img/icon.png" />
 </head>
 <body>
-<!-- Sveltia CMS — fork modern di Decap, OAuth GitHub diretto via Sveltia hosted proxy -->
-<script type="module" src="https://unpkg.com/@sveltia/cms/dist/sveltia-cms.js"></script>
+<!-- Decap CMS via Netlify Identity + git-gateway -->
+<!-- Apri questo pannello SOLO da verdant-zabaione-bc977b.netlify.app/admin/ -->
+<!-- (non da dopahop-site.pages.dev/admin/, perché Identity gira su Netlify) -->
+<script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+<script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
+<script>
+  if (window.netlifyIdentity) {
+    window.netlifyIdentity.on('init', (user) => {
+      if (!user) {
+        window.netlifyIdentity.on('login', () => {
+          document.location.href = '/admin/';
+        });
+      }
+    });
+  }
+</script>
 </body>
 </html>

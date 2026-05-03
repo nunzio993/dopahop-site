@@ -11,11 +11,11 @@
 # ────────────────────────────────────────────────────────────
 
 backend:
-  name: github
-  repo: nunzio993/dopahop-site
+  name: git-gateway
   branch: main
-  # Sveltia CMS usa il suo proxy OAuth gratuito ufficiale (sveltia-cms.dev)
-  # Niente Netlify, niente popup cross-origin, niente cookie 3rd party hell.
+  # git-gateway: Netlify Identity proxy commit → GitHub repo nunzio993/dopahop-site.
+  # Apri il pannello da: https://verdant-zabaione-bc977b.netlify.app/admin/
+  # NON da dopahop-site.pages.dev/admin/ (Identity widget gira solo sul dominio Netlify).
 
 # Per setup iniziale veloce senza OAuth, usare:
 #   backend:
