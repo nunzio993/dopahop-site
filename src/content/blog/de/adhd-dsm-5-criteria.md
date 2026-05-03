@@ -1,14 +1,20 @@
 ---
+locale: de
 title: "ADHS nach DSM-5: Kriterien und was sie wirklich heißen"
-description: "ADHS-Diagnose nach DSM-5: Kriterien Schritt für Schritt, warum bei Erwachsenen weniger Symptome reichen, und wann der Weg zum Facharzt sinnvoll ist."
-excerpt: "Was die DSM-5 wirklich verlangt — ohne Fachjargon, von einem ADHS-Kopf zum nächsten."
+description: "ADHS-Diagnose nach DSM-5: Kriterien Schritt für Schritt, warum bei
+  Erwachsenen weniger Symptome reichen, und wann der Weg zum Facharzt sinnvoll
+  ist."
+excerpt: Was die DSM-5 wirklich verlangt — ohne Fachjargon, von einem ADHS-Kopf
+  zum nächsten.
 pubDate: 2026-05-04
 updatedDate: 2026-05-04
-tags: ["ADHS", "Diagnose", "DSM-5"]
-locale: de
-draft: true
-author: "DopaHop Team"
-translationKey: "adhd-dsm-5-criteria"
+tags:
+  - ADHS
+  - Diagnose
+  - DSM-5
+author: DopaHop Team
+translationKey: adhd-dsm-5-criteria
+draft: false
 ---
 
 **ADHS nach DSM-5** klingt wie etwas, das nur Psychiater verstehen sollten. In Wahrheit lohnt es sich, die Kriterien selbst zu kennen, vor allem wenn du gerade darüber nachdenkst, ob das, was du seit Jahren mit dir herumträgst, einen Namen hat. Wenn du dich ständig fragst, warum du Termine vergisst, die andere mühelos im Kopf behalten, oder warum du eine kurze E-Mail dreimal anfängst und nicht zu Ende bringst — dann ist es kein "Charakterproblem". Die diagnostische Operationalisierung von ADHS ist messbar, steht in einem Manual, das weltweit verwendet wird, und folgt klaren Regeln. In diesem Artikel gehen wir die DSM-5-Kriterien durch, wo sie sich von der ICD-11 unterscheiden, was sich bei Erwachsenen ändert, und wann der Schritt zum Hausarzt oder Facharzt wirklich sinnvoll ist.
