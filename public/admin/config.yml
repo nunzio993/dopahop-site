@@ -42,7 +42,8 @@ collections:
     label_singular: "Articolo"
     folder: "src/content/blog"
     create: true
-    slug: "{{locale}}/{{year}}-{{month}}-{{day}}-{{slug}}"
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    path: "{{locale}}/{{slug}}"
     extension: "md"
     format: "frontmatter"
     summary: "[{{locale}}] {{title}} — {{pubDate}}"
