@@ -19,17 +19,29 @@ Se manca, chiedi all'utente lo slug.
 
 1. **Verifica esistenza file IT**:
    - Path: `D:/dopahop/site/src/content/blog/it/<slug>.md`
-   - Se non esiste, ferma e segnala
+   - Se non esiste, ferma e segnala "File IT non trovato. Hai sbagliato slug? Lancia `/draft-article` prima."
+
+1b. **Pre-flight check del file IT** (prima di spendere ~4× API per traduzioni):
+
+   - **Frontmatter YAML parseable**: le prime righe tra `---` devono essere YAML valido. Estrai title, description, slug, locale, draft, translationKey.
+   - **`locale` deve essere `it`**: se diverso, ferma e segnala "il file non è in italiano".
+   - **Body word count >= 800**: se troppo corto, segnala "il file IT ha solo X parole, traduzione potrebbe valer poco. Procedere comunque? (sì/no)"
+   - **Verifica file destinazione**: per ogni `<locale>` in `[en, es, de, fr]`, controlla se `src/content/blog/<locale>/<slug>.md` esiste già.
+     - Se almeno uno esiste: chiedi all'utente "le traduzioni in [lista lingue] esistono già. Sovrascrivere? (sì/no/skip-esistenti)"
+     - `sì` = sovrascrivi tutto
+     - `no` = ferma
+     - `skip-esistenti` = traduci solo le lingue mancanti (spawna meno sub-agent)
+
+   Se almeno un check fallisce hard (file rotto, locale sbagliato), ferma e segnala. NON spawnare sub-agent.
 
 2. **Verifica che `draft` sia `false` nel frontmatter IT**:
-   - Leggi il frontmatter
    - Se `draft: true`, chiedi all'utente: "Il file IT è ancora in `draft: true`. Procedo comunque a tradurlo come bozza? (sì/no)"
    - Se sì, le traduzioni avranno anch'esse `draft: true`
    - Se no, ferma
 
 3. **Leggi `BRAND_VOICE.md`** (sezione 9 ha il glossario ADHD localizzato per ogni lingua)
 
-4. **Spawna 4 sub-agent in parallelo** (single message con 4 Agent tool calls), uno per lingua. Ciascuno ha questo brief (sostituisci [LOCALE], [LOCALE_NAME], [GLOSSARIO_LOCALE], [PATH_OUT]):
+4. **Spawna sub-agent in parallelo** (single message con N Agent tool calls — N = lingue da tradurre, max 4). Ciascuno ha questo brief (sostituisci [LOCALE], [LOCALE_NAME], [GLOSSARIO_LOCALE], [PATH_OUT]):
 
 ### Brief comune
 

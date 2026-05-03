@@ -80,7 +80,22 @@ Sostituisci `[TOPIC]` con il topic vero e `[SLUG]` con lo slug calcolato.
 
 5. **Aspetta** che il sub-agent finisca. Quando ha scritto il file:
 
-6. **Se il topic è stato preso dalla coda** (nessun argomento esplicito):
+5b. **Validation step** — verifica che il file rispetti i minimi PRIMA di committare:
+
+   - **Frontmatter YAML valido**: leggi il file, le prime ~15 righe devono essere tra `---` con `title`, `description`, `pubDate`, `locale: it`, `draft: true`, `translationKey` presenti.
+   - **Title 30-65 char**: tollera leggera deviazione dal range 50-60.
+   - **Description 130-170 char**: tollera leggera deviazione.
+   - **Body word count**: conta le parole del body (escluso frontmatter). Deve essere **>= 1.000** (target 1.200-2.500). Se sotto 1.000 = fallimento.
+   - **Almeno 4 H2** (linee che iniziano con `## `).
+   - **Almeno 1 internal link** a `/#cosa-fa` o a `/blog/` (regex: `\]\(/(#cosa-fa|blog/)`).
+
+   **Se uno di questi check fallisce:**
+   - Mostra all'utente cosa è andato storto (es. "il sub-agent ha scritto solo 720 parole, target è 1.200+")
+   - Spawna **una sola volta** un nuovo sub-agent IT madrelingua con feedback esplicito (es. "il file precedente aveva solo 720 parole e 2 H2. Riscrivilo rispettando: minimo 1.200 parole, almeno 4 H2, [...]")
+   - Se anche il retry fallisce, ferma e segnala all'utente: "il sub-agent non riesce a generare un articolo che rispetta i minimi. Topic: '<topic>'. Forse il topic è troppo specifico o troppo generico — valuta di riformularlo o saltarlo."
+   - In caso di fallimento doppio: NON rimuovere il topic da `BLOG_TOPICS.md`, NON committare.
+
+6. **Se il topic è stato preso dalla coda** (nessun argomento esplicito) **E il check è passato**:
    - Edita `BLOG_TOPICS.md` rimuovendo la riga del topic usato (mantieni intatto il resto)
 
 7. **Commit + push**:

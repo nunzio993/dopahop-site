@@ -156,11 +156,13 @@ Usa H3 solo se serve davvero. Massimo 2-3 H3 per H2.
 
 ### Lunghezza target
 
-- **Articoli informational** (definizioni, sintomi, meccanismi): **1.000-1.500 parole**
-- **Articoli how-to** (strategie pratiche, guide): **1.200-1.800 parole**
-- **Articoli short-form** (FAQ, definizioni rapide): **600-900 parole**
+Aggiornato dopo benchmark Inflow (vedi sezione 11):
 
-Sotto 600 parole Google considera "thin content". Sopra 2.500 perde retention.
+- **Articoli informational** (definizioni, sintomi, meccanismi): **1.200-2.000 parole**
+- **Articoli how-to** (strategie pratiche, guide): **1.500-2.500 parole**
+- **Articoli short-form** (FAQ, definizioni rapide): **800-1.200 parole**
+
+Sotto 800 parole Google considera "thin content". Sopra 3.000 perde retention nella maggior parte dei casi.
 
 ### Densità keyword
 
@@ -293,7 +295,41 @@ Genera con Midjourney / DALL-E / Sora con prompt allineati al brand:
 
 ---
 
-## 11. Checklist pre-publish
+## 11. Benchmark: pattern da blog ADHD di successo
+
+Riferimento: **[Inflow](https://www.getinflow.io/blog)** (~16.000 utenti app, blog editoriale ADHD da imitare per struttura). Analisi struttura loro articoli (maggio 2026):
+
+### Pattern che imitiamo
+
+- **Lunghezza articoli: 1.500-3.000 parole** (più ranking, più dwell time). Aggiornato il nostro target lunghezza a 1.200-2.500 parole.
+- **Reading time estimate** visibile in alto (es. "9 min di lettura"). Già implementato nel nostro template Astro.
+- **Categorie tematiche** macro per facilitare browsing: ADHD 101, Management, Comorbidità, Salute, Lifestyle, Lavoro/Studio, Relazioni. Possiamo aggiungere come secondo livello di tag in futuro.
+- **Tone conversazionale + personale**: prima persona quando ha senso ("quando ho cambiato lavoro la quarta volta"), umore leggero (es. una battuta o GIF), aneddoti.
+- **Inline CTA multipli al prodotto**: non solo chiusura, ma 1-2 menzioni mid-article (es. "se ti capita spesso di X, prova [modulo Y di DopaHop]"). Naturali, mai pesanti.
+- **Bold strategico** per concetti chiave (es. **dopamine pooling**, **task initiation**). Aiuta skim reading.
+- **Pull quotes / blockquote** per enfasi visiva su passaggi forti.
+- **Author byline + bio breve** (1-2 righe — autore + qualifica/storia ADHD personale). Per ora usiamo "DopaHop Team" come autore generico, ma valutare in futuro firme reali.
+- **Disclaimer medico standard** in chiusura per ogni articolo che tocca clinica.
+
+### Pattern Inflow che NON imitiamo (deliberato)
+
+- **Zero citazioni accademiche**: Inflow scrive per testimonianza + dati interni. DopaHop alza l'asticella → cita fonti (CHADD, AIDAI, ISS, DSM-5, PubMed) per ogni claim clinico. È un nostro differenziatore di credibilità.
+- **Quiz/onboarding lead magnet aggressivo**: Inflow inserisce "fai il quiz" molte volte. DopaHop non ha un quiz, e tira meno la conversione. Manteniamo CTA leggero ("Hop ti aspetta su Google Play").
+- **GIF e meme inline**: Inflow li usa. Per noi è opzionale — se rallenta il caricamento o appare gimmicky, evita.
+
+### Variante intro: storytelling vs claim
+
+Inflow apre spesso con **narrativa personale** (es. "Quando ho cambiato lavoro la quarta volta in 3 anni…") prima di entrare nel topic. Più engaging, ma ritarda la keyword.
+
+DopaHop può alternare:
+- **Stile claim** (default, vedi sezione 5): "ADHD e procrastinazione **non sono la stessa cosa**…" — keyword nei primi 100 char, SEO-first
+- **Stile narrativo** (variante): "Quando hai ADHD e cerchi di rispondere a una mail, ma ti accorgi di stare sistemando le penne per la terza volta…" — più engaging, keyword entro 200-250 char
+
+Entrambi accettabili. Default consigliato: claim per articoli very SEO-targeted (definizioni, sintomi), narrativo per articoli lifestyle/strategie.
+
+---
+
+## 12. Checklist pre-publish
 
 Prima di cambiare `draft: true → false`, verifica:
 
