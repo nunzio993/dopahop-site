@@ -140,7 +140,7 @@ const breadcrumbSchema = {
 
   <main>
     <article class="post">
-      <header class:list={['post-hero', { 'has-cover': !!post.data.cover }]}>
+      <div class:list={['post-hero', { 'has-cover': !!post.data.cover }]}>
         {post.data.cover && (
           <div class="post-hero-bg" aria-hidden="true">
             <img src={post.data.cover} alt="" />
@@ -185,7 +185,7 @@ const breadcrumbSchema = {
             </div>
           </div>
         </div>
-      </header>
+      </div>
 
       {post.data.cover && (
         <div class="post-cover-section reveal">
