@@ -64,6 +64,7 @@ export interface BlogStrings {
   appCardTitle: string;
   appCardSubtitle: string;
   appCardCta: string;
+  tocLabel: string;
 }
 
 export interface LandingStrings {

@@ -260,5 +260,6 @@ export const en: LandingStrings = {
     appCardSubtitle:
       'Free Android app: Pomodoro, medication reminders, brain dump, focus sounds.',
     appCardCta: 'Download free',
+    tocLabel: 'Contents',
   },
 };

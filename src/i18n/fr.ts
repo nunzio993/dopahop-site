@@ -260,5 +260,6 @@ export const fr: LandingStrings = {
     appCardSubtitle:
       'App gratuite pour Android : Pomodoro, rappels médicaments, brain dump, focus sounds.',
     appCardCta: 'Télécharger gratuitement',
+    tocLabel: 'Sommaire',
   },
 };
