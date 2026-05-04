@@ -10,15 +10,32 @@ Pubblica un articolo blog in tutte le 5 lingue (IT/EN/ES/DE/FR) flippando `draft
 
 ## Argomento
 
-- **OBBLIGATORIO**: slug dell'articolo (lo stesso slug ASCII usato da `/write-article`, es. `adhd-dsm-5-criteria`)
-- Esempio invocazione: `/publish-article adhd-dsm-5-criteria`
+- **Senza argomento**: il comando auto-rileva i draft pendenti e ti propone quale pubblicare
+- **Con argomento**: usa quello slug specifico (es. `/publish-article adhd-dsm-5-criteria`)
 
 ## Esegui questi step
 
-### 1. Valida lo slug
+### 1. Determina lo slug
 
-- Se l'utente NON ha passato un argomento: ferma e chiedi "Quale slug vuoi pubblicare?"
-- Memorizza lo slug ricevuto. Validalo: deve matchare `^[a-z0-9-]+$`
+**Se l'utente HA passato un argomento**:
+- Memorizza lo slug ricevuto. Validalo: deve matchare `^[a-z0-9-]+$`. Vai allo step 2.
+
+**Se l'utente NON ha passato un argomento**:
+- Scansiona ricorsivamente `src/content/blog/{it,en,es,de,fr}/*.md`
+- Per ogni file leggi il frontmatter e identifica quelli con `draft: true`
+- Estrai lo slug dal nome file (rimuovi `.md` e prefisso locale)
+- Raggruppa per slug univoco
+- Casi:
+  - **0 slug in draft**: ferma e segnala "Nessun articolo in draft. Niente da pubblicare."
+  - **1 slug univoco**: usalo direttamente, salta lo step di prompt e vai a step 2 con quello
+  - **2+ slug univoci**: elenca all'utente i candidati con count di lingue per slug:
+    ```
+    Trovati 2 articoli in draft:
+    - adhd-dsm-5-criteria (5 lingue)
+    - adhd-procrastination-real-mechanism (3 lingue)
+    Quale pubblichi?
+    ```
+    Aspetta che l'utente risponda con uno degli slug. Se ambiguo, richiedi.
 
 ### 2. Localizza e ispeziona i 5 file
 
@@ -86,7 +103,7 @@ Stampa:
 
 ## Errori comuni da gestire
 
-- **Argomento mancante** → ferma e chiedi
+- **Nessun draft trovato** (nessun argomento + nessun file con `draft: true`) → ferma "Niente da pubblicare"
 - **Slug invalido** (caratteri strani, accenti) → ferma con esempio del formato corretto
 - **Tutti i file mancanti** → typo nello slug, suggerisci `ls src/content/blog/it/` per vedere gli slug disponibili
 - **Tutti già pubblicati** → no-op, riporta lo stato

@@ -69,7 +69,14 @@ Se padroneggi anche EN, fai uno spot-check del file `src/content/blog/en/<slug>.
 ### Step 3 — Pubblica i 5 articoli (~5 sec automatici)
 
 ```
-/publish-article <slug>
+/publish-article
+```
+
+Senza argomento, auto-rileva i draft. Se ce n'è solo uno in coda, lo usa direttamente. Se più di uno, ti chiede quale.
+
+In alternativa, slug esplicito:
+```
+/publish-article adhd-dsm-5-criteria
 ```
 
 Cosa succede automaticamente:
