@@ -1,14 +1,19 @@
 ---
+locale: es
 title: "TDAH infantil vs adulto: cómo cambia la misma condición"
-description: "TDAH infantil y TDAH adulto: por qué los síntomas se transforman, qué se mantiene, qué se enmascara y cómo reconocerse en cualquier etapa de la vida."
-excerpt: "El TDAH no se va al cumplir 18. Solo cambia de disfraz."
+description: "TDAH infantil y TDAH adulto: por qué los síntomas se transforman,
+  qué se mantiene, qué se enmascara y cómo reconocerse en cualquier etapa de la
+  vida."
+excerpt: El TDAH no se va al cumplir 18. Solo cambia de disfraz.
 pubDate: 2026-05-04
 updatedDate: 2026-05-04
-tags: ["TDAH", "infancia", "adultos"]
-locale: es
-draft: true
-author: "DopaHop"
-translationKey: "adhd-children-vs-adults"
+tags:
+  - TDAH
+  - infancia
+  - adultos
+author: DopaHop
+translationKey: adhd-children-vs-adults
+draft: false
 ---
 
 **TDAH infantil y TDAH adulto** son la misma condición leída en dos páginas distintas del mismo libro. Si te diagnosticaron de pequeño y a los 28 piensas "esto ya no se parece a lo de antes", no te lo estás imaginando: el cuadro se transforma. Si nadie lo vio en tu infancia y a los 35 lees una lista de síntomas adultos y reconoces una vida entera, tampoco te lo estás imaginando: probablemente nunca dejó de estar ahí, solo cambió de forma. En este artículo vemos qué se transforma, qué se mantiene estable, por qué la edad adulta enmascara el cuadro, y cómo orientarse si llegaste tarde al diagnóstico.
