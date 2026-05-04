@@ -1,6 +1,16 @@
 # Workflow blog DopaHop — passi settimanali
 
-Pipeline operativa per produrre 1 articolo in 5 lingue native (IT/EN/ES/DE/FR) in 5-35 min.
+Pipeline operativa per produrre articoli in 5 lingue native (IT/EN/ES/DE/FR).
+
+**Tre livelli di automazione, scegli a seconda di quanto controllo umano vuoi:**
+
+| Comando | Cosa fa | Quando usarlo |
+|---|---|---|
+| `/auto-blog [N] [days]` | End-to-end: scrive, audita, revisiona, scheduledi pubblica N articoli a intervalli | Massimo throughput, batch grandi (10-30), zero touch |
+| `/write-article` + `/publish-article` | Scrive 5 draft → editi IT → pubblichi | Vuoi controllo umano sull'IT prima di publish |
+| Decap admin (browser) | Stessi file, UI grafica | Mobile/tablet senza terminale |
+
+Il setup sotto descrive il flow `/write-article` + `/publish-article` (manuale-friendly). Per il flow full-auto vedi `.claude/commands/auto-blog.md`.
 
 ---
 
@@ -26,6 +36,9 @@ File di riferimento nel repo:
 - `BRAND_VOICE.md` — regole copy DopaHop + ground truth feature app
 - `BLOG_SEO_TEMPLATE.md` — struttura SEO articolo + benchmark Inflow
 - `.claude/commands/write-article.md` — slash command che genera 5 articoli paralleli
+- `.claude/commands/publish-article.md` — slash command che flippa draft → published
+- `.claude/commands/auto-blog.md` — slash command full-auto end-to-end (scrittura + audit + publish + scheduling)
+- `.github/workflows/daily-rebuild.yml` — cron giornaliero che ribuilda Cloudflare per articoli scheduled
 
 ---
 

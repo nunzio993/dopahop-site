@@ -1,0 +1,39 @@
+name: daily-rebuild
+
+# Triggers a Cloudflare Pages rebuild every day at 06:00 UTC so articles
+# with a future `pubDate` become visible the day they are scheduled for.
+# Pairs with the `data.pubDate <= new Date()` filter in the Astro page
+# entries: future-dated articles are excluded from the build until their
+# date arrives, then the next daily rebuild includes them.
+#
+# Setup (one time):
+# 1. Cloudflare Dashboard → Pages → dopahop-site → Settings →
+#    Builds & deployments → Deploy hooks → Create
+# 2. Copy the hook URL (looks like
+#    https://api.cloudflare.com/client/v4/pages/webhooks/deploy_hooks/<id>)
+# 3. GitHub repo → Settings → Secrets and variables → Actions →
+#    New repository secret. Name: CLOUDFLARE_DEPLOY_HOOK
+#    Value: the hook URL from step 2
+#
+# Without the secret, the workflow runs but the curl returns an error.
+# The trigger still ran, just no rebuild was kicked. Falls back gracefully.
+
+on:
+  schedule:
+    # 06:00 UTC = 07:00 in Italian winter time, 08:00 in summer time
+    - cron: '0 6 * * *'
+  workflow_dispatch:  # Allow manual trigger from GitHub UI
+
+jobs:
+  trigger-rebuild:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Trigger Cloudflare Pages deploy
+        env:
+          HOOK: ${{ secrets.CLOUDFLARE_DEPLOY_HOOK }}
+        run: |
+          if [ -z "$HOOK" ]; then
+            echo "::warning::CLOUDFLARE_DEPLOY_HOOK secret not set. Skipping rebuild."
+            exit 0
+          fi
+          curl -fsSL -X POST "$HOOK" && echo "Rebuild triggered."

@@ -4,7 +4,7 @@ import BlogList from '../../../../components/BlogList.astro';
 import { de } from '../../../../i18n/de';
 
 export async function getStaticPaths() {
-  const posts = await getCollection('blog', ({ data }) => data.locale === 'de' && !data.draft);
+  const posts = await getCollection('blog', ({ data }) => data.locale === 'de' && !data.draft && data.pubDate <= new Date());
   const tagMap = new Map<string, typeof posts>();
   for (const post of posts) {
     for (const tag of post.data.tags) {

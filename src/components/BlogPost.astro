@@ -21,7 +21,7 @@ const tocHeadings = headings.filter((h) => h.depth === 2);
 const playStoreUrl = 'https://play.google.com/store/apps/details?id=com.dopahop.android';
 
 const allLocalePosts = await getCollection('blog', ({ data, slug }) =>
-  data.locale === locale && !data.draft && slug !== post.slug,
+  data.locale === locale && !data.draft && slug !== post.slug && data.pubDate <= new Date(),
 );
 const currentTags = new Set(post.data.tags.map((tag) => tag.toLowerCase()));
 const related = allLocalePosts

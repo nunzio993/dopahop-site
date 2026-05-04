@@ -4,7 +4,7 @@ import BlogPost from '../../../components/BlogPost.astro';
 import { de } from '../../../i18n/de';
 
 export async function getStaticPaths() {
-  const allPosts = await getCollection('blog', ({ data }) => !data.draft);
+  const allPosts = await getCollection('blog', ({ data }) => !data.draft && data.pubDate <= new Date());
   const localePosts = allPosts.filter((p) => p.data.locale === 'de');
   return localePosts.map((post) => {
     const cleanSlug = post.slug.replace(/^de\//, '');
