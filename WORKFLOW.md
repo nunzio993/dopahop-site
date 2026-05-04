@@ -66,25 +66,22 @@ Se padroneggi anche EN, fai uno spot-check del file `src/content/blog/en/<slug>.
 
 **ES/DE/FR**: ti fidi del sub-agent madrelingua. Non puoi editarli (non parli quelle lingue) e va bene così. Se in futuro un madrelingua ti scrive "frase X è strana", correggi puntualmente.
 
-### Step 3 — Promuovi i 5 a published
+### Step 3 — Pubblica i 5 articoli (~5 sec automatici)
 
-Cambia nel frontmatter di OGNI file delle 5 lingue:
-```yaml
-draft: true  →  draft: false
+```
+/publish-article <slug>
 ```
 
-Il modo più rapido: aprilo da Decap CMS (vedi 5 articoli linkati al `translationKey` comune) e clicca "Publish" su ognuno. Oppure trova/sostituisci `draft: true` → `draft: false` su tutti i 5 file via IDE.
-
-### Step 4 — Commit + push (se non già automatico)
-
-Se hai editato manualmente:
-```bash
-git add src/content/blog/
-git commit -m "publish(blog): <slug> (5 langs)"
-git push
-```
+Cosa succede automaticamente:
+1. Lo slash command trova i 5 file `src/content/blog/{it,en,es,de,fr}/<slug>.md`
+2. Per ogni file con `draft: true`, flippa a `draft: false`
+3. Mostra summary + chiede conferma
+4. Commit `publish(blog): <slug> (5 langs)`
+5. `git push` automatico
 
 Cloudflare ribuilda. In 1-2 min sono tutti live.
+
+**Alternativa lenta** (se sei senza terminale, da mobile/tablet): apri https://dopahop-site.pages.dev/admin/, login GitHub, naviga ai 5 articoli draft, flippa "Pubblica" su ognuno e mergia le PR. ~15-20 click.
 
 ### Step 5 — Verifica (opzionale)
 
@@ -105,9 +102,8 @@ Se uno non rende (404, layout rotto), apri l'issue e fix.
 |---|---|
 | 1. /write-article (5 sub-agent paralleli) | ~3 min (automatico) |
 | 2. Edit IT (+ EN spot-check) | 5-30 min |
-| 3. draft → false (5 file) | 1-2 min |
-| 4. Commit/push | 30 sec |
-| 5. Verifica live | 1-2 min |
+| 3. /publish-article (commit + push) | ~5 sec (automatico) |
+| 4. Verifica live (Cloudflare ribuilda) | 1-2 min |
 | **Totale** | **~10-40 min per articolo in 5 lingue** |
 
 A 1-2 articoli/settimana → 4-8 articoli/mese → **20-40 pagine/mese** in 5 lingue.
@@ -118,13 +114,15 @@ Coda attuale: ~290 topic = oltre 5 anni di contenuti a 1 articolo/settimana.
 
 ## Pubblicazione bozze direttamente da Decap CMS
 
-In alternativa al flusso Markdown editing manuale:
+Solo come fallback se sei senza terminale (mobile/tablet):
 1. Apri https://dopahop-site.pages.dev/admin/
 2. Login GitHub
 3. Vai a Blog → vedi i 5 articoli draft (uno per lingua, stesso `translationKey`)
 4. Edita visualmente quello IT (Decap mostra preview live)
-5. Quando pronto, sblocca `draft → false` e salva tutti e 5
-6. Decap committa automaticamente — Cloudflare ribuilda
+5. Quando pronto, flippa `draft → false` e salva tutti e 5
+6. Decap apre 5 PR in editorial workflow — devi mergiarle a mano
+
+⚠️ Da terminale, `/publish-article <slug>` fa lo stesso in 5 secondi senza PR.
 
 ---
 
@@ -166,6 +164,7 @@ Verifica:
 - `BRAND_VOICE.md` → regole voice (input dei 5 sub-agent madrelingua)
 - `BLOG_SEO_TEMPLATE.md` → struttura SEO (input dei 5 sub-agent)
 - `.claude/commands/write-article.md` → slash command 5 articoli paralleli
+- `.claude/commands/publish-article.md` → slash command flippa draft → published su tutti i 5
 - `src/content/blog/{it,en,es,de,fr}/<slug>.md` → articoli per lingua
 - `src/content/config.ts` → schema frontmatter (NON modificare)
 
