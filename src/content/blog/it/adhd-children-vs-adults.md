@@ -134,7 +134,7 @@ In Italia ci sono percorsi diagnostici per bambini, adolescenti e adulti. Non c'
 
 ### Se mio figlio ha ADHD, c'è il rischio che lo abbia anche io?
 
-L'ereditarietà dell'ADHD è alta secondo gli studi attuali — l'una delle più alte tra i disturbi del neurosviluppo. Molti genitori si riconoscono nei sintomi del figlio una volta che questi vengono nominati. Se ti capita, parlarne con un clinico è una buona idea.
+L'ereditarietà dell'ADHD è alta secondo gli studi attuali — circa il 70-80% nelle stime da studi sui gemelli, comparabile a quella di altri disturbi del neurosviluppo come l'autismo. Molti genitori si riconoscono nei sintomi del figlio una volta che questi vengono nominati. Se ti capita, parlarne con un clinico è una buona idea.
 
 ### Una diagnosi tardiva cambia davvero qualcosa?
 
