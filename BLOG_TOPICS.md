@@ -6,7 +6,6 @@ Ordina i topic come vuoi: il primo della lista è il prossimo a uscire.
 
 ---
 
-- Differenza tra ADHD infantile e adulto
 - ADHD e funzioni esecutive: cosa si rompe davvero
 - ADHD inattentivo vs iperattivo: differenze funzionali
 - Diagnosi tardiva: perché succede e conseguenze
