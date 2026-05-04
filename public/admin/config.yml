@@ -23,7 +23,14 @@ backend:
 #     name: test-repo
 # (non commit reale, solo simulazione editing)
 
-publish_mode: editorial_workflow       # draft → review → publish
+# Simple-publish: ogni save in Decap committa direttamente su main.
+# Niente PR-per-articolo. Per pubblicare i 5 fratelli in colpo solo
+# da terminale, usa /publish-article. Da browser, edita ogni articolo
+# e flippa "Bozza" off + Pubblica.
+# (Per riabilitare il flow Draft → In Review → Ready → Published,
+# decommenta la riga sotto.)
+# publish_mode: editorial_workflow
+
 media_folder: "public/img/blog"        # dove le immagini caricate finiscono
 public_folder: "/img/blog"             # path pubblico
 
@@ -85,7 +92,7 @@ collections:
       - { label: "Data aggiornamento", name: "updatedDate", widget: "datetime", required: false }
       - { label: "Cover image", name: "cover", widget: "image", required: false }
       - { label: "Tag", name: "tags", widget: "list", default: [], required: false }
-      - { label: "Autore", name: "author", widget: "string", default: "DopaHop Team" }
+      - { label: "Autore", name: "author", widget: "string", default: "DopaHop" }
       - { label: "Translation key — stesso valore tra lingue per abilitare hreflang", name: "translationKey", widget: "string", required: false }
       - { label: "Bozza", name: "draft", widget: "boolean", default: true }
       - { label: "Contenuto", name: "body", widget: "markdown" }
