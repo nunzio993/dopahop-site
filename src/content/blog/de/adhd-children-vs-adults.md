@@ -1,7 +1,11 @@
 ---
+locale: de
 title: "ADHS bei Kindern und Erwachsenen: was sich wirklich ändert"
-description: "ADHS bei Kindern und Erwachsenen: warum dieselbe Diagnose im Lebenslauf anders aussieht, was bleibt, was sich verschiebt, und wann der Schritt zur Abklärung sinnvoll ist."
-excerpt: "Dieselbe Diagnose, anderes Bild: was sich von der Kindheit bis ins Erwachsenenalter verändert."
+description: "ADHS bei Kindern und Erwachsenen: warum dieselbe Diagnose im
+  Lebenslauf anders aussieht, was bleibt, was sich verschiebt, und wann der
+  Schritt zur Abklärung sinnvoll ist."
+excerpt: "Dieselbe Diagnose, anderes Bild: was sich von der Kindheit bis ins
+  Erwachsenenalter verändert."
 pubDate: 2026-05-04
 updatedDate: 2026-05-04
 tags:
@@ -9,10 +13,9 @@ tags:
   - Erwachsene
   - Kinder
   - Diagnose
-locale: de
-draft: true
-author: "DopaHop"
-translationKey: "adhd-children-vs-adults"
+author: DopaHop
+translationKey: adhd-children-vs-adults
+draft: false
 ---
 
 **ADHS bei Kindern und Erwachsenen** ist nicht zwei verschiedene Sachen — es ist dieselbe neurobiologische Geschichte, die in unterschiedlichen Lebensphasen unterschiedlich aussieht. Wenn du als Kind nicht stillsitzen konntest und heute als Erwachsene innerlich rastlos bist, ohne dass es jemand sieht, ist das kein Widerspruch. Es ist die normale Entwicklung der Symptome. Trotzdem führt genau dieser Wandel dazu, dass viele Erwachsene jahrelang nicht erkannt werden — sie passen nicht mehr ins Klischee vom hyperaktiven Jungen, der von der Bank fällt. In diesem Artikel schauen wir, was bei ADHS gleich bleibt, was sich verschiebt, warum Frauen besonders oft spät diagnostiziert werden, und wie der Weg zur Abklärung im deutschen System aussieht.
