@@ -1,4 +1,5 @@
 ---
+import { getCollection } from 'astro:content';
 import type { CollectionEntry } from 'astro:content';
 import type { LandingStrings, Locale } from '../i18n/types';
 import BaseLayout from '../layouts/BaseLayout.astro';
@@ -13,6 +14,25 @@ export interface Props {
 }
 
 const { locale, strings: t, post, translations } = Astro.props;
+
+const playStoreUrl = 'https://play.google.com/store/apps/details?id=com.dopahop.android';
+
+const allLocalePosts = await getCollection('blog', ({ data, slug }) =>
+  data.locale === locale && !data.draft && slug !== post.slug,
+);
+const currentTags = new Set(post.data.tags.map((tag) => tag.toLowerCase()));
+const related = allLocalePosts
+  .map((p) => ({
+    post: p,
+    overlap: p.data.tags.filter((tag) => currentTags.has(tag.toLowerCase())).length,
+  }))
+  .filter((r) => r.overlap > 0)
+  .sort((a, b) => {
+    if (b.overlap !== a.overlap) return b.overlap - a.overlap;
+    return b.post.data.pubDate.getTime() - a.post.data.pubDate.getTime();
+  })
+  .slice(0, 3)
+  .map((r) => r.post);
 
 const homePathByLocale: Record<Locale, string> = {
   it: '/',
@@ -254,6 +274,43 @@ const faqSchema = faqItems.length > 0
             <slot />
           </div>
 
+          <aside class="post-inline-cta" id="post-inline-cta" hidden aria-label={t.blog.appCardTitle}>
+            <img src="/img/icon.png" alt="" width="56" height="56" class="post-inline-cta-icon" aria-hidden="true" loading="lazy" />
+            <div class="post-inline-cta-text">
+              <p class="post-inline-cta-title">{t.blog.appCardTitle}</p>
+              <p class="post-inline-cta-subtitle">{t.blog.appCardSubtitle}</p>
+            </div>
+            <a href={playStoreUrl} class="post-inline-cta-btn">
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" width="14" height="14"><path d="M3.6 1.5L13.5 12 3.6 22.5c-.6-.4-1-1-1-1.7V3.2c0-.7.4-1.3 1-1.7zM14.6 13.1l2.5 2.6-12.4 7.1 9.9-9.7zm0-2.2l-9.9-9.7 12.4 7.1-2.5 2.6zm6.6.7c.8.4 1.3 1.2 1.3 2.1 0 .9-.5 1.7-1.3 2.1l-2.7 1.6-2.8-2.7 2.8-2.7 2.7 1.6z"/></svg>
+              {t.blog.appCardCta}
+            </a>
+          </aside>
+
+          {related.length > 0 && (
+            <section class="post-related reveal" aria-label={t.blog.relatedPosts}>
+              <h2 class="post-related-title">{t.blog.relatedPosts}</h2>
+              <ul class="post-related-list">
+                {related.map((rp) => {
+                  const wc = rp.body.split(/\s+/).filter(Boolean).length;
+                  const minR = Math.max(1, Math.round(wc / 200));
+                  return (
+                    <li class="post-related-item">
+                      <a href={postUrl(rp)} class="post-related-link">
+                        <h3 class="post-related-card-title">{rp.data.title}</h3>
+                        <p class="post-related-excerpt">{rp.data.excerpt ?? rp.data.description}</p>
+                        <div class="post-related-meta">
+                          <time datetime={rp.data.pubDate.toISOString()}>{dateFormatter.format(rp.data.pubDate)}</time>
+                          <span aria-hidden="true">·</span>
+                          <span>{minR} {t.blog.minRead}</span>
+                        </div>
+                      </a>
+                    </li>
+                  );
+                })}
+              </ul>
+            </section>
+          )}
+
           {translations.length > 0 && (
             <aside class="post-translations reveal" aria-label="Translations">
               <span class="post-translations-label">{t.langSwitcher.label}</span>
@@ -303,6 +360,20 @@ const faqSchema = faqItems.length > 0
       window.addEventListener('scroll', () => {
         header.classList.toggle('scrolled', window.scrollY > 8);
       });
+    }
+
+    // Inline app CTA: move it inside .post-body before a mid-article H2
+    const cta = document.getElementById('post-inline-cta');
+    const body = document.querySelector('.post-body');
+    if (cta && body) {
+      const h2s = body.querySelectorAll(':scope > h2');
+      if (h2s.length >= 2) {
+        const idx = Math.floor(h2s.length / 2);
+        body.insertBefore(cta, h2s[idx]);
+        cta.hidden = false;
+      } else {
+        cta.remove();
+      }
     }
 
     // Reading progress bar
@@ -737,11 +808,162 @@ const faqSchema = faqItems.length > 0
   }
   .post-back-link:hover { gap: 12px; }
 
+  /* ── INLINE APP CTA (mid-article) ── */
+  .post-inline-cta {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    margin: 48px 0;
+    padding: 22px 24px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-left: 4px solid var(--primary);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-sm);
+    /* break visually from serif body */
+    font-family: var(--sans);
+  }
+  /* Higher-specificity selectors so .post-body :global(img/a) rules
+     don't override after JS moves the CTA inside .post-body */
+  .post-inline-cta .post-inline-cta-icon {
+    width: 56px;
+    height: 56px;
+    border-radius: 14px;
+    flex-shrink: 0;
+    box-shadow: var(--shadow-brand);
+    margin: 0;
+    border: none;
+  }
+  .post-inline-cta-text {
+    flex: 1;
+    min-width: 0;
+  }
+  .post-inline-cta-title {
+    font-size: 17px;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    color: var(--ink);
+    margin: 0 0 4px;
+    line-height: 1.25;
+  }
+  .post-inline-cta-subtitle {
+    font-size: 14px;
+    color: var(--ink-soft);
+    margin: 0;
+    line-height: 1.5;
+  }
+  .post-inline-cta .post-inline-cta-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--primary);
+    color: var(--bg);
+    padding: 10px 18px;
+    border-radius: var(--radius-md);
+    font-weight: 700;
+    font-size: 14px;
+    flex-shrink: 0;
+    box-shadow: var(--shadow-brand);
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+    text-decoration: none;
+  }
+  .post-inline-cta .post-inline-cta-btn:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 8px 20px rgba(255, 183, 3, 0.35);
+    color: var(--bg);
+    text-decoration: none;
+  }
+
+  /* ── RELATED POSTS ── */
+  .post-related {
+    margin-top: 56px;
+    padding-top: 32px;
+    border-top: 1px solid var(--border);
+  }
+  .post-related-title {
+    font-family: var(--sans);
+    font-size: 13px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--ink-muted);
+    margin-bottom: 18px;
+  }
+  .post-related-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 16px;
+  }
+  .post-related-item {
+    display: block;
+  }
+  .post-related-link {
+    display: block;
+    padding: 18px 20px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-md);
+    color: inherit;
+    text-decoration: none;
+    transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+    height: 100%;
+  }
+  .post-related-link:hover {
+    transform: translateY(-2px);
+    border-color: var(--primary);
+    box-shadow: var(--shadow-md);
+  }
+  .post-related-card-title {
+    font-family: var(--sans);
+    font-size: 15.5px;
+    font-weight: 700;
+    letter-spacing: -0.015em;
+    line-height: 1.3;
+    color: var(--ink);
+    margin: 0 0 8px;
+  }
+  .post-related-excerpt {
+    font-family: var(--sans);
+    font-size: 13px;
+    color: var(--ink-soft);
+    line-height: 1.5;
+    margin: 0 0 12px;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+  .post-related-meta {
+    font-family: var(--sans);
+    font-size: 11.5px;
+    color: var(--ink-muted);
+    font-weight: 600;
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+  }
+
   /* ── RESPONSIVE ── */
   @media (max-width: 720px) {
     .post-hero { padding: 40px 0 24px; }
     .post-body :global(h2)::before { left: -12px; width: 2px; }
     .post-body { font-size: 18px; }
+    .post-inline-cta {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 14px;
+      padding: 20px;
+      margin: 36px 0;
+    }
+    .post-inline-cta-btn {
+      width: 100%;
+      justify-content: center;
+    }
     /* Drop cap disabled on mobile — float + large font breaks layout on narrow viewports */
     .post-body :global(p:first-of-type::first-letter) {
       font-size: inherit;
