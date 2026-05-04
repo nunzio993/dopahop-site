@@ -1,17 +1,20 @@
 ---
+locale: en
 title: "Childhood ADHD vs Adult ADHD: How It Shifts Over Time"
-description: "Childhood ADHD and adult ADHD are the same condition shown through different stages of life. How symptoms shift, what gets missed in adults, and what to do."
-excerpt: "Same wiring, different decade. How ADHD looks at 8, 18, 38, and what changes in between."
+description: Childhood ADHD and adult ADHD are the same condition shown through
+  different stages of life. How symptoms shift, what gets missed in adults, and
+  what to do.
+excerpt: Same wiring, different decade. How ADHD looks at 8, 18, 38, and what
+  changes in between.
 pubDate: 2026-05-04
 updatedDate: 2026-05-04
 tags:
   - ADHD
   - adults
   - children
-locale: en
-draft: true
-author: "DopaHop"
-translationKey: "adhd-children-vs-adults"
+author: DopaHop
+translationKey: adhd-children-vs-adults
+draft: false
 ---
 
 **Childhood ADHD and adult ADHD** are the same neurobiological condition seen at different stages of a life. The wiring doesn't change much — what changes is everything around it: the demands, the masking, the company you keep, and the language people use to describe you. The kid who couldn't sit still becomes the adult who can sit still but can't stop their leg jiggling, can't remember what their boss just said, and can't figure out why a single email has been open for nine days. ADHD doesn't go away at 18. It just gets a costume change and a new vocabulary problem. In this article we'll walk through what shifts across the lifespan, why so many adults didn't get diagnosed as kids, and what the same person's life can look like at 8, 18, and 38 — without pretending the textbook picture is the whole picture.
