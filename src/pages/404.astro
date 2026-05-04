@@ -1,0 +1,161 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import SiteHeader from '../components/SiteHeader.astro';
+import SiteFooter from '../components/SiteFooter.astro';
+import { it } from '../i18n/it';
+
+const strings = {
+  it: {
+    pageTitle: 'Pagina non trovata',
+    heading: 'Hop si è perso.',
+    body: "Non c'è niente qui. Forse il link era vecchio, forse ti sei perso anche tu. Niente di grave.",
+    ctaHome: 'Torna alla home',
+    ctaBlog: 'Vai al blog',
+  },
+  en: {
+    pageTitle: 'Page not found',
+    heading: 'Hop wandered off.',
+    body: 'Nothing here. Maybe the link was old, maybe you got a bit lost too. No big deal.',
+    ctaHome: 'Back to home',
+    ctaBlog: 'Go to the blog',
+  },
+  es: {
+    pageTitle: 'Página no encontrada',
+    heading: 'Hop se ha despistado.',
+    body: 'Aquí no hay nada. A lo mejor el enlace era antiguo, a lo mejor tú también te has despistado. No pasa nada.',
+    ctaHome: 'Volver al inicio',
+    ctaBlog: 'Ir al blog',
+  },
+  de: {
+    pageTitle: 'Seite nicht gefunden',
+    heading: 'Hop hat sich verlaufen.',
+    body: 'Hier ist nichts. Vielleicht war der Link alt, vielleicht hast auch du dich verlaufen. Halb so wild.',
+    ctaHome: 'Zur Startseite',
+    ctaBlog: 'Zum Blog',
+  },
+  fr: {
+    pageTitle: 'Page introuvable',
+    heading: "Hop s'est perdu.",
+    body: "Il n'y a rien par ici. Le lien est peut-être vieux, ou tu t'es peut-être perdu aussi. Pas grave.",
+    ctaHome: "Retour à l'accueil",
+    ctaBlog: 'Aller au blog',
+  },
+};
+
+const homeHref = { it: '/', en: '/en/', es: '/es/', de: '/de/', fr: '/fr/' };
+const blogHref = { it: '/blog/', en: '/en/blog/', es: '/es/blog/', de: '/de/blog/', fr: '/fr/blog/' };
+---
+
+<BaseLayout
+  title={`${strings.it.pageTitle} — DopaHop`}
+  description={strings.it.body}
+  locale="it"
+>
+  <div class="ambient">
+    <div class="glow glow-1"></div>
+    <div class="glow glow-2"></div>
+  </div>
+
+  <SiteHeader locale="it" strings={it} />
+
+  <main class="not-found">
+    <div class="container">
+      <div class="not-found-inner">
+        <span class="not-found-num" aria-hidden="true">404</span>
+        <h1 class="not-found-heading" data-i18n="heading">{strings.it.heading}</h1>
+        <p class="not-found-body" data-i18n="body">{strings.it.body}</p>
+        <div class="not-found-cta-row">
+          <a id="nf-home" href={homeHref.it} class="cta-primary" data-i18n="ctaHome">{strings.it.ctaHome}</a>
+          <a id="nf-blog" href={blogHref.it} class="cta-ghost" data-i18n="ctaBlog">{strings.it.ctaBlog}</a>
+        </div>
+        <img class="not-found-mascot" src="/img/icon-hop.svg" alt="" aria-hidden="true" width="128" height="128" />
+      </div>
+    </div>
+  </main>
+
+  <SiteFooter locale="it" strings={it} />
+
+  <script is:inline define:vars={{ strings, homeHref, blogHref }}>
+    const path = window.location.pathname;
+    const locale = path.startsWith('/en/') ? 'en'
+      : path.startsWith('/es/') ? 'es'
+      : path.startsWith('/de/') ? 'de'
+      : path.startsWith('/fr/') ? 'fr'
+      : 'it';
+    if (locale !== 'it') {
+      const t = strings[locale];
+      document.documentElement.lang = locale;
+      document.title = `${t.pageTitle} — DopaHop`;
+      document.querySelectorAll('[data-i18n]').forEach((el) => {
+        const k = el.dataset.i18n;
+        if (t[k]) el.textContent = t[k];
+      });
+    }
+    const home = document.getElementById('nf-home');
+    const blog = document.getElementById('nf-blog');
+    if (home) home.href = homeHref[locale];
+    if (blog) blog.href = blogHref[locale];
+  </script>
+</BaseLayout>
+
+<style>
+  .not-found {
+    padding: 80px 0 96px;
+    min-height: calc(100vh - 320px);
+    display: grid;
+    place-items: center;
+  }
+  .not-found-inner {
+    max-width: 640px;
+    margin: 0 auto;
+    text-align: center;
+    position: relative;
+  }
+  .not-found-num {
+    font-family: var(--serif);
+    font-size: clamp(120px, 20vw, 220px);
+    font-weight: 400;
+    font-style: italic;
+    letter-spacing: -0.04em;
+    line-height: 0.9;
+    color: var(--primary);
+    display: block;
+    margin-bottom: 18px;
+    opacity: 0.92;
+  }
+  .not-found-heading {
+    font-size: clamp(28px, 4vw, 40px);
+    font-weight: 800;
+    letter-spacing: -0.025em;
+    line-height: 1.15;
+    margin-bottom: 14px;
+    color: var(--ink);
+  }
+  .not-found-body {
+    font-size: clamp(16px, 1.7vw, 18px);
+    color: var(--ink-soft);
+    line-height: 1.55;
+    max-width: 520px;
+    margin: 0 auto 32px;
+  }
+  .not-found-cta-row {
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 40px;
+  }
+  .not-found-mascot {
+    width: 128px;
+    height: 128px;
+    border-radius: 28px;
+    margin: 0 auto;
+    box-shadow: var(--shadow-md);
+    opacity: 0.95;
+  }
+  @media (max-width: 540px) {
+    .not-found { padding: 56px 0 72px; }
+    .not-found-cta-row { flex-direction: column; align-items: stretch; }
+    .not-found-cta-row a { width: 100%; justify-content: center; }
+  }
+</style>
