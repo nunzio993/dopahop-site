@@ -1,14 +1,20 @@
 ---
+locale: it
 title: "ADHD nei bambini e negli adulti: cosa cambia davvero"
-description: "ADHD bambini e adulti: come cambiano iperattività, attenzione, scuola e lavoro. Cosa resta uguale, cosa si trasforma e perché tante diagnosi arrivano tardi."
-excerpt: "Iperattività che diventa irrequietezza interna, scuola che diventa lavoro: cosa cambia davvero."
+description: "ADHD bambini e adulti: come cambiano iperattività, attenzione,
+  scuola e lavoro. Cosa resta uguale, cosa si trasforma e perché tante diagnosi
+  arrivano tardi."
+excerpt: "Iperattività che diventa irrequietezza interna, scuola che diventa
+  lavoro: cosa cambia davvero."
 pubDate: 2026-05-04
 updatedDate: 2026-05-04
-tags: ["ADHD", "diagnosi", "adulti"]
-locale: it
-draft: true
-author: "DopaHop"
-translationKey: "adhd-children-vs-adults"
+tags:
+  - ADHD
+  - diagnosi
+  - adulti
+author: DopaHop
+translationKey: adhd-children-vs-adults
+draft: false
 ---
 
 **ADHD bambini e adulti** sono lo stesso disturbo, ma sembrano due cose diverse. Il bambino che non sta fermo a tavola e l'adulto di 38 anni che cambia lavoro per la quarta volta in tre anni hanno la stessa cornice neurobiologica — solo che il primo lo si vede subito, e il secondo, spesso, no. Quando l'iperattività motoria si interiorizza in irrequietezza mentale, e quando la scuola diventa un lavoro che sa mascherare, il quadro diventa sfumato. In questo articolo capiamo cosa resta uguale tra le due età, cosa si trasforma davvero, perché tante diagnosi arrivano tardi, e come funziona il percorso in Italia se ti riconosci adesso.
