@@ -6,16 +6,6 @@ Ordina i topic come vuoi: il primo della lista è il prossimo a uscire.
 
 ---
 
-- ADHD inattentivo vs iperattivo: differenze funzionali
-- Diagnosi tardiva: perché succede e conseguenze
-- ADHD e dopamina: modello neurobiologico
-- ADHD e procrastinazione: meccanismo reale, non "pigrizia"
-- ADHD e disregolazione emotiva
-- ADHD e sonno: cicli circadiani alterati
-- ADHD e dipendenze comportamentali (gaming, social)
-- ADHD e uso di sostanze: rischio e pattern
-- ADHD e ansia: comorbidità e confusione diagnostica
-- ADHD e depressione: relazione bidirezionale
 - ADHD e autostima: costruzione e distorsioni
 - ADHD e relazioni: dinamiche tipiche
 - ADHD e lavoro: pattern di performance discontinua
