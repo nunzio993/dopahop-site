@@ -37,6 +37,18 @@ const grad = palette[hashIdx(seed)];
   style={`--c-from: ${grad.from}; --c-to: ${grad.to};`}
   aria-hidden="true"
 >
+  <svg class="auto-cover-mascot" viewBox="0 0 220 260" preserveAspectRatio="xMaxYMax meet" aria-hidden="true">
+    <g fill="currentColor">
+      <ellipse cx="80" cy="48" rx="10" ry="36" transform="rotate(-12 80 48)"/>
+      <ellipse cx="124" cy="42" rx="10" ry="38"/>
+      <ellipse cx="102" cy="180" rx="50" ry="55"/>
+      <circle cx="102" cy="108" r="46"/>
+      <ellipse cx="58" cy="178" rx="10" ry="22" transform="rotate(-25 58 178)"/>
+      <ellipse cx="148" cy="180" rx="9" ry="20"/>
+      <ellipse cx="80" cy="232" rx="14" ry="7"/>
+      <ellipse cx="120" cy="232" rx="14" ry="7"/>
+    </g>
+  </svg>
   <span class="auto-cover-wordmark">DopaHop</span>
   <p class="auto-cover-title">{title}</p>
 </div>
@@ -66,6 +78,7 @@ const grad = palette[hashIdx(seed)];
   }
   .auto-cover-wordmark {
     position: relative;
+    z-index: 2;
     font-family: var(--sans);
     font-weight: 800;
     font-size: clamp(10px, 3.5cqi, 18px);
@@ -76,6 +89,7 @@ const grad = palette[hashIdx(seed)];
   }
   .auto-cover-title {
     position: relative;
+    z-index: 2;
     font-family: var(--serif);
     font-style: italic;
     font-weight: 500;
@@ -86,11 +100,29 @@ const grad = palette[hashIdx(seed)];
     text-shadow: 0 2px 12px rgba(0, 0, 0, 0.2);
     margin: 0;
     align-self: center;
+    /* Even line breaks on modern browsers (no widow words) */
+    text-wrap: balance;
     /* Cap to 4 lines for safety on long titles */
     display: -webkit-box;
     -webkit-line-clamp: 4;
     -webkit-box-orient: vertical;
     overflow: hidden;
+  }
+  /* Hop mascot watermark — peeks from bottom-right, low contrast */
+  .auto-cover-mascot {
+    position: absolute;
+    right: -7%;
+    bottom: -10%;
+    width: 42%;
+    height: auto;
+    color: rgba(255, 255, 255, 0.18);
+    pointer-events: none;
+    z-index: 0;
+  }
+  .auto-cover.is-compact .auto-cover-mascot {
+    width: 38%;
+    right: -6%;
+    bottom: -9%;
   }
   .auto-cover.is-compact {
     padding: 5% 6%;
