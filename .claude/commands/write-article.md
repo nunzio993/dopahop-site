@@ -116,7 +116,7 @@ updatedDate: 2026-05-04
 tags: ["[ADHD localizzato]", "<altri 2-3 tag rilevanti nella tua lingua>"]
 locale: [LOCALE]
 draft: true
-author: "DopaHop Team"
+author: "DopaHop"
 translationKey: "[SLUG]"
 ---
 ```

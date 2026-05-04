@@ -1,0 +1,103 @@
+---
+export interface Props {
+  title: string;
+  tags?: string[];
+  /**
+   * If true, render a compact mode (smaller wordmark + tighter padding)
+   * for tiny thumbnails. Defaults to false.
+   */
+  compact?: boolean;
+}
+
+const { title, tags = [], compact = false } = Astro.props;
+
+// 6 cover gradient pairs. Index picked deterministically from first tag
+// (or title if no tags) so an article always gets the same cover.
+const palette: ReadonlyArray<{ from: string; to: string }> = [
+  { from: '#FFCE4A', to: '#D99E00' }, // brand yellow
+  { from: '#7FE0DC', to: '#3BA89F' }, // teal
+  { from: '#D4C9FF', to: '#8E7DE0' }, // lavender
+  { from: '#FF8CB1', to: '#D04880' }, // rose
+  { from: '#8DD391', to: '#3D9A41' }, // green
+  { from: '#85CFE0', to: '#3A89A0' }, // cyan
+];
+
+function hashIdx(seed: string): number {
+  let h = 0;
+  for (let i = 0; i < seed.length; i++) h = (h * 31 + seed.charCodeAt(i)) >>> 0;
+  return h % palette.length;
+}
+
+const seed = (tags[0] ?? title).toLowerCase();
+const grad = palette[hashIdx(seed)];
+---
+
+<div
+  class:list={['auto-cover', { 'is-compact': compact }]}
+  style={`--c-from: ${grad.from}; --c-to: ${grad.to};`}
+  aria-hidden="true"
+>
+  <span class="auto-cover-wordmark">DopaHop</span>
+  <p class="auto-cover-title">{title}</p>
+</div>
+
+<style>
+  .auto-cover {
+    container-type: inline-size;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    aspect-ratio: 16 / 9;
+    background: linear-gradient(135deg, var(--c-from) 0%, var(--c-to) 100%);
+    overflow: hidden;
+    display: grid;
+    grid-template-rows: auto 1fr;
+    gap: 4%;
+    padding: 6% 7%;
+    color: #fff;
+  }
+  /* Soft inner highlight: subtle radial bloom top-left for depth */
+  .auto-cover::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at 18% 14%, rgba(255, 255, 255, 0.22) 0%, transparent 55%);
+    pointer-events: none;
+  }
+  .auto-cover-wordmark {
+    position: relative;
+    font-family: var(--sans);
+    font-weight: 800;
+    font-size: clamp(10px, 3.5cqi, 18px);
+    letter-spacing: -0.01em;
+    color: rgba(255, 255, 255, 0.85);
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.18);
+    text-transform: uppercase;
+  }
+  .auto-cover-title {
+    position: relative;
+    font-family: var(--serif);
+    font-style: italic;
+    font-weight: 500;
+    font-size: clamp(20px, 11cqi, 72px);
+    line-height: 1.05;
+    letter-spacing: -0.025em;
+    color: #fff;
+    text-shadow: 0 2px 12px rgba(0, 0, 0, 0.2);
+    margin: 0;
+    align-self: center;
+    /* Cap to 4 lines for safety on long titles */
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+  .auto-cover.is-compact {
+    padding: 5% 6%;
+    gap: 3%;
+  }
+  .auto-cover.is-compact .auto-cover-title {
+    font-size: clamp(16px, 9cqi, 38px);
+    -webkit-line-clamp: 3;
+  }
+</style>

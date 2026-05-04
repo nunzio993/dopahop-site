@@ -4,6 +4,7 @@ import type { LandingStrings, Locale } from '../i18n/types';
 import BaseLayout from '../layouts/BaseLayout.astro';
 import SiteHeader from './SiteHeader.astro';
 import SiteFooter from './SiteFooter.astro';
+import BlogAutoCover from './BlogAutoCover.astro';
 
 export interface Props {
   locale: Locale;
@@ -168,7 +169,7 @@ const blogListSchema = {
                       {post.data.cover ? (
                         <img src={post.data.cover} alt={post.data.title} loading="lazy" />
                       ) : (
-                        <img src="/img/icon.png" alt="" class="blog-cover-placeholder-icon" aria-hidden="true" loading="lazy" />
+                        <BlogAutoCover title={post.data.title} tags={post.data.tags} compact />
                       )}
                     </div>
                     <div class="blog-card-body">
@@ -469,19 +470,13 @@ const blogListSchema = {
     transform: scale(1.04);
   }
   .blog-card-cover.is-placeholder {
-    background: #FFB703;
-    display: block;
+    /* Auto-generated cover takes 100%; no fallback bg needed */
+    background: transparent;
   }
-  .blog-card-cover.is-placeholder img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center;
-    opacity: 1;
-    filter: none;
+  .blog-card-cover .auto-cover {
     transition: transform 0.4s ease;
   }
-  .blog-card:hover .blog-card-cover.is-placeholder img {
+  .blog-card:hover .blog-card-cover .auto-cover {
     transform: scale(1.04);
   }
   .blog-card-body {
