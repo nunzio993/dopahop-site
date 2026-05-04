@@ -1,14 +1,19 @@
 ---
+locale: fr
 title: "TDAH enfant et adulte : comment ça change avec l'âge"
-description: "TDAH chez l'enfant vs adulte : les mêmes mécanismes cérébraux, des manifestations très différentes. Pourquoi tu te reconnais maintenant et pas à 8 ans."
-excerpt: "Le TDAH ne disparaît pas en grandissant — il change de costume. Voici comment."
+description: "TDAH chez l'enfant vs adulte : les mêmes mécanismes cérébraux, des
+  manifestations très différentes. Pourquoi tu te reconnais maintenant et pas à
+  8 ans."
+excerpt: Le TDAH ne disparaît pas en grandissant — il change de costume. Voici comment.
 pubDate: 2026-05-04
 updatedDate: 2026-05-04
-tags: ["TDAH", "adulte", "enfance"]
-locale: fr
-draft: true
-author: "DopaHop"
-translationKey: "adhd-children-vs-adults"
+tags:
+  - TDAH
+  - adulte
+  - enfance
+author: DopaHop
+translationKey: adhd-children-vs-adults
+draft: false
 ---
 
 **TDAH chez l'enfant et chez l'adulte** : ce n'est pas la même chose, et en même temps c'est exactement la même chose. Quand tu vois un gamin de 8 ans qui n'arrête pas de bouger en classe, qui interrompt la maîtresse trois fois par minute et qui perd son cartable une fois sur deux, tu reconnais "le" TDAH cliché. Quand toi, à 34 ans, tu fixes l'écran de ton ordinateur depuis quarante minutes parce que tu n'arrives pas à commencer un mail de cinq lignes, tu te dis que ça n'a probablement rien à voir. Sauf que si. C'est le même trouble neurodéveloppemental — mais l'agitation visible de l'enfant a juste muté en un truc plus discret, plus internalisé, plus invalidant à sa manière. Dans cet article on regarde comment le TDAH change de visage entre l'enfance et l'âge adulte, pourquoi tant d'adultes reçoivent un diagnostic tardif, et ce que ça veut dire concrètement au quotidien.
