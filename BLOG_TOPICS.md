@@ -6,9 +6,6 @@ Ordina i topic come vuoi: il primo della lista è il prossimo a uscire.
 
 ---
 
-- ADHD e autostima: costruzione e distorsioni
-- ADHD e relazioni: dinamiche tipiche
-- ADHD e lavoro: pattern di performance discontinua
 - ADHD e università: strategie reali di sopravvivenza
 - ADHD e multitasking: mito vs realtà
 - ADHD e iperfocus: vantaggio o trappola
