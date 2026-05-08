@@ -6,9 +6,6 @@ Ordina i topic come vuoi: il primo della lista è il prossimo a uscire.
 
 ---
 
-- ADHD e università: strategie reali di sopravvivenza
-- ADHD e multitasking: mito vs realtà
-- ADHD e iperfocus: vantaggio o trappola
 - ADHD e gestione del tempo: percezione distorta
 - ADHD e memoria di lavoro: limiti concreti
 - ADHD e decision making impulsivo
