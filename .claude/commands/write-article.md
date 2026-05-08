@@ -74,6 +74,14 @@ TOPIC: **[TOPIC]**
    - FAQ section a fine articolo (3-5 domande)
    - Disclaimer in chiusura se topic clinico
 
+3. `D:/dopahop/site/BLOG_CITATIONS.md` — safelist di paper ADHD verificati. REGOLA RIGIDA:
+   - Per citare nominativamente uno studio (autori + rivista + anno) USA SOLO entry presenti in questo file
+   - Per claim non coperti da una entry: formulazione generica ("la ricerca mostra…", "diverse meta-analisi indicano…") SENZA nominare autori/rivista/anno
+   - Per numeri/percentuali da paper: usa SOLO valori esplicitamente nel campo `finding_key` dell'entry. Per altri valori quantitativi, usa range qualitativi ("una quota significativa", "la maggioranza")
+   - Rispetta `population` (bambini/adolescenti/adulti): NON applicare uno studio sui bambini ad affermazioni sugli adulti, e viceversa
+   - Rispetta i `warning` di entry specifiche (es. "Hyperfocusing Scale" non "ASRS-Hyperfocus Scale")
+   - In dubbio → formulazione generica. Meglio cauto che sbagliato.
+
 ## Localizzazione: scrivi NEL TUO PAESE
 
 [LOCAL_GUIDANCE]
@@ -131,6 +139,7 @@ Body: come da BLOG_SEO_TEMPLATE.md, in [LOCALE_NAME] nativo.
 - Nessun claim clinico senza fonte autorevole del tuo paese
 - CTA solo da feature reali (BRAND_VOICE Sezione 5)
 - Massimo 1 CTA inline + 1 in chiusura
+- **Citazioni di paper**: SOLO da `BLOG_CITATIONS.md` (vedi regola rigida sopra). Non inventare autori/rivista/anno. Non attribuire a un paper della safelist un finding non presente nel suo `finding_key`.
 
 ## Quando hai finito
 
