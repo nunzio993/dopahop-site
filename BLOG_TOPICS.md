@@ -6,8 +6,6 @@ Ordina i topic come vuoi: il primo della lista è il prossimo a uscire.
 
 ---
 
-- ADHD e gestione del tempo: percezione distorta
-- ADHD e memoria di lavoro: limiti concreti
 - ADHD e decision making impulsivo
 - ADHD e creatività: correlazione reale o narrativa
 - ADHD e burnout: dinamica accelerata
