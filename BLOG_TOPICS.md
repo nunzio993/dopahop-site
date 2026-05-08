@@ -6,11 +6,6 @@ Ordina i topic come vuoi: il primo della lista è il prossimo a uscire.
 
 ---
 
-- ADHD e decision making impulsivo
-- ADHD e creatività: correlazione reale o narrativa
-- ADHD e burnout: dinamica accelerata
-- ADHD e alimentazione: ruolo di zuccheri e stimolanti
-- ADHD e attività fisica: impatto su sintomi
 - ADHD e meditazione: cosa funziona davvero
 - ADHD e tecnologia: amplificazione dei sintomi
 - ADHD e ambienti di lavoro strutturati vs liberi
