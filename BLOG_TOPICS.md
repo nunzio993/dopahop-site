@@ -6,8 +6,6 @@ Ordina i topic come vuoi: il primo della lista è il prossimo a uscire.
 
 ---
 
-- ADHD e imprenditorialità: rischio e opportunità
-- ADHD e parenting: crescere un figlio con ADHD
 - ADHD nei genitori: impatto sulla famiglia
 - ADHD e scuola italiana: limiti del sistema
 - ADHD e farmaci stimolanti: effetti reali
