@@ -97,6 +97,17 @@ Quando l'articolo richiede di citare:
 
 NON menzionare l'Italia o riferimenti italiani a meno che il topic specificamente lo richieda.
 
+## Link a moduli DopaHop (anchor universale, NON localizzato)
+
+Per linkare sezioni della landing usa SEMPRE l'ancora italiana, anche nella tua lingua. Le ID HTML della landing (`Landing.astro`) sono uniche per tutte le lingue e restano in italiano:
+- `/#cosa-fa` → sezione "cosa fa l'app"
+- `/#perche` → sezione "perché DopaHop"
+- `/#widget` → sezione widget
+- `/#privacy` → sezione privacy
+- `/#faq` → sezione FAQ
+
+NON tradurre queste ancore (es. NIENTE `/#was-es-tut`, `/#what-it-does`, `/#que-hace`, `/#ce-que-fait`). Anche per articoli FR/DE/EN/ES, l'ancora resta `/#cosa-fa`. Tradurre l'ancora produce un link ROTTO.
+
 ## Internal linking inter-blog (SEO)
 
 PRIMA di scrivere il body, esegui questo step:
