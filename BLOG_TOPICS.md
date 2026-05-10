@@ -6,9 +6,6 @@ Ordina i topic come vuoi: il primo della lista è il prossimo a uscire.
 
 ---
 
-- ADHD e meditazione: cosa funziona davvero
-- ADHD e tecnologia: amplificazione dei sintomi
-- ADHD e ambienti di lavoro strutturati vs liberi
 - ADHD e imprenditorialità: rischio e opportunità
 - ADHD e parenting: crescere un figlio con ADHD
 - ADHD nei genitori: impatto sulla famiglia
