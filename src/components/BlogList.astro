@@ -116,6 +116,7 @@ const blogListSchema = {
   locale={locale}
   canonical={canonical}
   alternateLocales={alternateLocales}
+  noindex={!!tagFilter}
 >
   <script type="application/ld+json" set:html={JSON.stringify(blogListSchema)} />
 
