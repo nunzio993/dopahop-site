@@ -6,8 +6,6 @@ Ordina i topic come vuoi: il primo della lista è il prossimo a uscire.
 
 ---
 
-- ADHD e farmaci stimolanti: effetti reali
-- ADHD e non-stimolanti: quando servono
 - ADHD e terapia cognitivo-comportamentale
 - ADHD e coaching: utilità reale vs marketing
 - ADHD e strumenti digitali (task manager, reminder)
