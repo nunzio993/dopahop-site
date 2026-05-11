@@ -169,6 +169,8 @@ if revisionRound == 3 AND unresolvedFlags > 0:
 
 #### 3d.5 Round 3.5 — Safelist-curator (auto-aggiornamento BLOG_CITATIONS.md)
 
+**OBBLIGATORIO — NON saltare per nessun motivo.** Anche se gli audit non hanno citato paper nominalmente, spawna comunque l'agent: aggiorna almeno il campo `verified` delle entries esistenti consultate dagli auditor. Saltare questo step degrada la safelist nel tempo (smette di crescere → asintoto costo non raggiunto → dipendenza permanente dalle WebSearch dell'auditor). In caso di dubbio sulla necessità, lancia comunque l'agent — costa solo ~25-40k token.
+
 Spawna UN safelist-curator sub-agent con questo brief:
 
 ```
@@ -199,9 +201,15 @@ Output:
 - Lista delle nuove entry (key + topic section)
 
 Vincoli: max 5 WebSearch per arricchire metadati. Se PMID/DOI non recuperabile → entry comunque salvata con campi disponibili (lascia null gli ignoti). NON aggiungere entry se Source checked nell'audit non include URL/PMID/DOI.
+
+REGOLA STRICT zero-tolerance per evitare entries errate (lezione appresa dai batch precedenti):
+- Se auditor cita paper con journal name che non corrisponde alla tua aspettativa → fai WebSearch su PubMed PRIMA di aggiungere
+- Se autori riportati dall'auditor sono parziali o ambigui → cerca nome completo su PubMed
+- Se population (children/adults/review) non chiaramente determinabile dal contesto audit → SKIP entry
+- Mantieni intatte le entries esistenti, NON sovrascrivere mai senza verifica triple
 ```
 
-Aspetta il safelist-curator. NON committare BLOG_CITATIONS.md separatamente — sarà incluso nel commit Round 4 dell'articolo.
+Aspetta il safelist-curator. Includi sempre il numero di entries aggiunte/aggiornate nel report finale all'utente — se 0/0 da N batch consecutivi, segnala che la safelist non sta crescendo (potrebbe indicare uno skip silenzioso). NON committare BLOG_CITATIONS.md separatamente — sarà incluso nel commit Round 4 dell'articolo.
 
 #### 3e. Round 4 — Commit articolo
 

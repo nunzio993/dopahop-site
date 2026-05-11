@@ -234,6 +234,191 @@ Entries are sorted alphabetically within each section by `key` for stable diffs.
 - verified: 2026-05-08
 - warning: "Lo strumento si chiama 'Hyperfocusing Scale' (non 'ASRS-Hyperfocus Scale')."
 
+## Diet / nutrition
+
+### bloch-2011-omega3-meta
+- authors: "Bloch, M.H., Qawasmi, A."
+- year: 2011
+- journal: "Journal of the American Academy of Child & Adolescent Psychiatry"
+- citation: "50(10), 991-1000"
+- pmid: 21961774
+- doi: "10.1016/j.jaac.2011.06.008"
+- population: "bambini (10 RCT, n=699)"
+- finding_key: "Meta-analisi di 10 RCT su supplementazione di acidi grassi omega-3 in bambini con sintomi ADHD: effetto piccolo ma significativo nel migliorare i sintomi. Dosi più alte di EPA (eicosapentaenoic acid) correlate con maggiore efficacia. Modesta rispetto a opzioni farmacologiche standard, ma 'reasonably effective' considerando il profilo di sicurezza."
+- use_for: ["omega-3 ADHD bambini", "EPA dose-response", "supplementazione meta-analisi", "effect size piccolo significativo"]
+- verified: 2026-05-11
+
+### hoover-1994-sugar-expectancy
+- authors: "Hoover, D.W., Milich, R."
+- year: 1994
+- journal: "Journal of Abnormal Child Psychology"
+- citation: "22(4), 501-515"
+- pmid: 7963081
+- doi: "10.1007/BF02168088"
+- population: "bambini (35 maschi 5-7 anni) e loro madri"
+- finding_key: "RCT in cui alle madri viene detto che i figli hanno ricevuto una dose alta di zucchero, mentre tutti i bambini ricevono aspartame placebo. Le madri nella condizione 'expectancy' percepiscono i figli come significativamente più iperattivi e mostrano maggiore controllo comportamentale (prossimità, critiche, attenzione). Effetto particolarmente marcato nelle madri cognitivamente rigide."
+- use_for: ["expectancy effect zucchero", "percezione genitoriale iperattività", "placebo aspartame", "sugar myth"]
+- verified: 2026-05-11
+
+### nigg-2012-food-colorings-meta
+- authors: "Nigg, J.T., Lewis, K., Edinger, T., Falk, M."
+- year: 2012
+- journal: "Journal of the American Academy of Child & Adolescent Psychiatry"
+- citation: "51(1), 86-97.e8"
+- pmid: 22176942
+- doi: "10.1016/j.jaac.2011.10.015"
+- population: "bambini (meta-analisi 24 studi)"
+- finding_key: "Meta-analisi su coloranti alimentari sintetici e ADHD. Outcome riportati dai genitori mostrano beneficio modesto (g=0.18, 95% CI 0.08-0.24, p=.0007), che si indebolisce dopo correzione per publication bias. Studi di alta qualità con soli additivi coloranti: effetto affidabile (g=0.22). Circa l'8% dei bambini con ADHD può sperimentare sintomi connessi ai coloranti sintetici."
+- use_for: ["coloranti alimentari ADHD", "additivi sintetici meta-analisi", "8% bambini sensibili", "publication bias coloranti"]
+- verified: 2026-05-11
+
+### rios-hernandez-2017-mediterranean
+- authors: "Ríos-Hernández, A., Alda, J.A., Farran-Codina, A., Ferreira-García, E., Izquierdo-Pulido, M."
+- year: 2017
+- journal: "Pediatrics"
+- citation: "139(2), e20162027"
+- pmid: 28138007
+- doi: "10.1542/peds.2016-2027"
+- population: "bambini/adolescenti (60 ADHD newly diagnosed, 60 controlli — case-control)"
+- finding_key: "Studio case-control su 120 bambini/adolescenti: minore aderenza alla dieta mediterranea associata a diagnosi ADHD. Ridotto consumo di frutta, verdura, pasta e riso correlato con ADHD; alto consumo di zuccheri e bevande cola e basso consumo di pesce grasso mostrano associazioni simili."
+- use_for: ["dieta mediterranea ADHD", "pattern alimentari", "case-control bambini Spagna"]
+- verified: 2026-05-11
+- warning: "Studio CASE-CONTROL/cross-sectional, NON longitudinale: associazione, non causalità."
+
+### wolraich-1995-sugar-meta
+- authors: "Wolraich, M.L., Wilson, D.B., White, J.W."
+- year: 1995
+- journal: "JAMA"
+- citation: "274(20), 1617-1621"
+- pmid: 7474248
+- doi: "10.1001/jama.1995.03530200053037"
+- population: "bambini (meta-analisi 23 studi within-subject)"
+- finding_key: "Meta-analisi di 23 studi within-subject design: lo zucchero NON influenza il comportamento o la performance cognitiva dei bambini. Effect size individuali da -0.14 a +0.30 in 14 costrutti, tutti gli intervalli di confidenza includono zero. Le credenze parentali derivano probabilmente da 'expectancy and common association' più che da effetti fisiologici reali."
+- use_for: ["zucchero non causa iperattività", "sugar myth meta-analisi JAMA", "expectancy parentale", "zero effetto comportamentale"]
+- verified: 2026-05-11
+
+## Heritability
+
+### faraone-2019-genetics-adhd
+- authors: "Faraone, S.V., Larsson, H."
+- year: 2019
+- journal: "Molecular Psychiatry"
+- citation: "24(4), 562-575"
+- pmid: 29892054
+- doi: "10.1038/s41380-018-0070-0"
+- population: "review (genetica ADHD, evidenze familiari/gemellari/adozione + GWAS + CNV)"
+- finding_key: "Review della genetica dell'ADHD. Ereditabilità alta ~74% da studi familiari, gemellari e adozione. Circa un terzo dell'ereditabilità deriva da componente poligenica con molte varianti comuni a piccolo effetto; copy number variants rare contribuiscono ulteriormente. GWAS ha implicato diversi loci a livello di significatività genome-wide."
+- use_for: ["ereditabilità ADHD 74%", "genetica ADHD review", "componente poligenica", "GWAS ADHD", "studi gemellari familiari adozione"]
+- verified: 2026-05-11
+
+## Reward / dopamine
+
+### plichta-2014-ventral-striatal
+- authors: "Plichta, M.M., Scheres, A."
+- year: 2014
+- journal: "Neuroscience & Biobehavioral Reviews"
+- citation: "38, 125-134"
+- pmid: 23928090
+- doi: "10.1016/j.neubiorev.2013.07.012"
+- population: "review meta-analitica fMRI (ADHD vs popolazione sana)"
+- finding_key: "Meta-analisi di studi fMRI su anticipazione di reward in ADHD: ipo-responsività ventro-striatale (VS) con effect size medio (Cohen's d=0.48-0.58). Paradosso: in soggetti sani, impulsività di tratto correla con MAGGIORE attivazione VS, mentre in ADHD è ridotta. Tre framework teorici proposti per riconciliare i pattern: U-rovesciata, moderatore genetico, modello unrelated."
+- use_for: ["ipo-responsività ventro-striatale ADHD", "reward anticipation fMRI", "Cohen's d 0.48-0.58", "paradosso impulsività ADHD vs sani"]
+- verified: 2026-05-11
+
+## Executive function
+
+### hervey-2004-adult-ef-meta
+- authors: "Hervey, A.S., Epstein, J.N., Curry, J.F."
+- year: 2004
+- journal: "Neuropsychology"
+- citation: "18(3), 485-503"
+- pmid: 15291727
+- doi: "10.1037/0894-4105.18.3.485"
+- population: "adulti (meta-analisi 33 studi)"
+- finding_key: "Meta-analisi di 33 studi su neuropsicologia degli adulti con ADHD. Deficit espressi in molteplici domini: attenzione, inibizione comportamentale, memoria. Performance normale nel simple reaction time, suggerendo impairment selettivo (non globale). Importanti deficit di inibizione comportamentale e working memory come meccanismi centrali."
+- use_for: ["adulti ADHD neuropsicologia meta-analisi", "deficit attenzione inibizione memoria", "simple reaction time normale", "selettivo non globale"]
+- verified: 2026-05-11
+
+### willcutt-2005-ef-theory-meta
+- authors: "Willcutt, E.G., Doyle, A.E., Nigg, J.T., Faraone, S.V., Pennington, B.F."
+- year: 2005
+- journal: "Biological Psychiatry"
+- citation: "57(11), 1336-1346"
+- pmid: 15950006
+- doi: "10.1016/j.biopsych.2005.02.006"
+- population: "meta-analisi 83 studi (3.734 ADHD vs 2.969 controlli, bambini/adolescenti/adulti)"
+- finding_key: "Meta-analisi della validità della teoria executive function dell'ADHD. Effect size in range medio (0.46-0.69) su tutti i compiti EF. Effetti più forti su response inhibition, vigilance, working memory, planning. Deficit non spiegati da QI, achievement scolastico o sintomi di altri disturbi. Conclusione: deficit EF 'né necessari né sufficienti' a causare tutti i casi di ADHD — uno dei meccanismi, non l'unico."
+- use_for: ["EF theory ADHD meta-analisi", "effect size 0.46-0.69 EF", "response inhibition vigilance WM planning", "EF non necessario non sufficiente", "Willcutt 2005"]
+- verified: 2026-05-11
+
+## Delay aversion / discounting
+
+### jackson-2016-delay-discounting-meta
+- authors: "Jackson, J.N.S., MacKillop, J."
+- year: 2016
+- journal: "Biological Psychiatry: Cognitive Neuroscience and Neuroimaging"
+- citation: "1(4), 316-325"
+- pmid: 27722208
+- doi: "10.1016/j.bpsc.2016.01.007"
+- population: "meta-analisi 21 studi case-control (25 confronti, N=3.913)"
+- finding_key: "Meta-analisi su monetary delay discounting in ADHD vs controlli. Effect size medio (Cohen's d=0.43, p<10⁻¹⁵): individui con ADHD mostrano discounting elevato di ricompense future. Nessuna variazione significativa per età dei partecipanti, ricompense reali vs ipotetiche, o presenza di comorbidità (CD/ODD)."
+- use_for: ["delay discounting meta-analisi ADHD", "Cohen's d 0.43 discounting", "robusto attraverso età e setting", "monetary discounting case-control"]
+- verified: 2026-05-11
+
+### marx-2021-delay-aversion-meta
+- authors: "Marx, I., Hacker, T., Yu, X., Cortese, S., Sonuga-Barke, E."
+- year: 2021
+- journal: "Journal of Attention Disorders"
+- citation: "25(2), 171-187"
+- pmid: 29806533
+- doi: "10.1177/1087054718772138"
+- population: "meta-analisi 37 confronti di gruppo (3.763 partecipanti, 53% ADHD)"
+- finding_key: "Meta-analisi comparativa su scelta di piccole ricompense immediate vs grandi ritardate, paragonando simple choice paradigm (SCP, 22 confronti) e temporal discounting paradigm (TDP, 15 confronti). Effect size piccoli-medi in entrambi i paradigmi. Offrire ricompense reali (vs ipotetiche) nel SCP quasi raddoppia l'odds ratio per ADHD. Conclusione: avversione al ritardo più forte del normale + effetto demotivante di ricompense ipotetiche promuovono la scelta impulsiva."
+- use_for: ["delay aversion meta-analisi", "small immediate vs large delayed", "SCP vs TDP", "ricompense reali vs ipotetiche", "Marx 2021"]
+- verified: 2026-05-11
+
+### sonuga-barke-2003-dual-pathway
+- authors: "Sonuga-Barke, E.J.S."
+- year: 2003
+- journal: "Neuroscience & Biobehavioral Reviews"
+- citation: "27(7), 593-604"
+- pmid: 14624804
+- doi: "10.1016/j.neubiorev.2003.08.005"
+- population: "modello teorico (review concettuale)"
+- finding_key: "Modello dual pathway dell'ADHD: due sotto-tipi psico-pato-fisiologici con diversi pathway dello sviluppo. (1) Pathway esecutivo — disturbi nei circuiti fronto-dorsale-striatali e branche dopaminergiche meso-corticali. (2) Pathway motivazionale/delay aversion — alterati processi di reward, circuiti fronto-ventro-striatali e branche meso-limbiche al nucleus accumbens."
+- use_for: ["dual pathway model Sonuga-Barke", "delay aversion teoria", "due sotto-tipi ADHD", "fronto-dorsale vs fronto-ventrale", "circuiti reward ADHD"]
+- verified: 2026-05-11
+
+## Entrepreneurship
+
+### wiklund-2017-adhd-entrepreneurship
+- authors: "Wiklund, J., Yu, W., Tucker, R., Marino, L.D."
+- year: 2017
+- journal: "Journal of Business Venturing"
+- citation: "32(6), 627-656"
+- pmid: null
+- doi: "10.1016/j.jbusvent.2017.07.002"
+- population: "adulti (modello teorico + ipotesi su imprenditori)"
+- finding_key: "Integrazione delle letterature ADHD, impulsività e imprenditorialità. Il tratto multifaceted di impulsività media la relazione tra sintomi ADHD e preferenze imprenditoriali, comportamento di start-up e performance. I sintomi di iperattività hanno un effetto positivo nel contesto imprenditoriale, principalmente attraverso la dimensione sensation-seeking dell'impulsività."
+- use_for: ["ADHD imprenditorialità", "impulsività mediator", "sensation-seeking imprenditori", "Wiklund 2017", "iperattività effetto positivo entrepreneurship"]
+- verified: 2026-05-11
+- warning: "Pubblicazione in business journal — NO PMID (non in PubMed). Verifica via DOI/Journal of Business Venturing."
+
+## ADHD in school / college
+
+### dupaul-2009-college-adhd
+- authors: "DuPaul, G.J., Weyandt, L.L., O'Dell, S.M., Varejao, M."
+- year: 2009
+- journal: "Journal of Attention Disorders"
+- citation: "13(3), 234-250"
+- pmid: 19620623
+- doi: "10.1177/1087054709340650"
+- population: "review (studenti universitari con ADHD)"
+- finding_key: "Review su studenti universitari con ADHD. Prevalenza: 2-8% della popolazione universitaria riporta sintomi ADHD clinicamente significativi; almeno il 25% degli studenti con disabilità ha diagnosi ADHD. Evidenze consistenti di deficit accademici associati ad ADHD. Evidenze su funzionamento sociale, psicologico e neuropsicologico ancora poco chiare. ~7% degli studenti riporta uso non prescritto di stimolanti."
+- use_for: ["college students ADHD prevalenza 2-8%", "deficit accademici università", "uso non prescritto stimolanti 7%", "DuPaul 2009 review"]
+- verified: 2026-05-11
+- warning: "Review del 2009 con limitazioni metodologiche segnalate dagli autori (campioni piccoli, diagnosi spesso non confermata). Per dati più recenti citare con cautela."
+
 ## Implementation intentions / planning
 
 ### gollwitzer-2006-implementation-intentions
