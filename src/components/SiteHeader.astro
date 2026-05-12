@@ -1,5 +1,6 @@
 ---
 import type { LandingStrings, Locale } from '../i18n/types';
+import Picture from './Picture.astro';
 
 export interface Props {
   locale: Locale;
@@ -33,7 +34,7 @@ const blogHref = `${homeHref}blog/`.replace(/\/+/g, '/');
   <div class="container">
     <div class="header-inner">
       <a href={homeHref} class="logo">
-        <img src="/img/icon.png" alt="DopaHop" class="logo-img" width="34" height="34" />
+        <Picture src="/img/icon.png" alt="DopaHop" class="logo-img" width={34} height={34} loading="eager" fetchpriority="high" />
         DopaHop
       </a>
       <nav class="nav">

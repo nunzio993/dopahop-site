@@ -3,6 +3,7 @@ import type { LandingStrings, Locale } from '../i18n/types';
 import BaseLayout from '../layouts/BaseLayout.astro';
 import SiteHeader from './SiteHeader.astro';
 import SiteFooter from './SiteFooter.astro';
+import Picture from './Picture.astro';
 
 export interface Props {
   locale: Locale;
@@ -209,7 +210,7 @@ const faqSchema = {
           {t.widget.items.map((w) => (
             <div class="widget-card reveal">
               <div class="widget-card-img">
-                <img src={`/img/${w.src}.png`} alt={w.title} loading="lazy" />
+                <Picture src={`/img/${w.src}.png`} alt={w.title} width={640} height={360} loading="lazy" />
               </div>
               <h4>{w.title}</h4>
               <p>{w.desc}</p>

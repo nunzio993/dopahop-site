@@ -3,6 +3,7 @@ import type { LandingStrings, Locale } from '../i18n/types';
 import BaseLayout from '../layouts/BaseLayout.astro';
 import SiteHeader from './SiteHeader.astro';
 import SiteFooter from './SiteFooter.astro';
+import Picture from './Picture.astro';
 import {
   AUTHOR_NAME,
   AUTHOR_FULL_NAME,
@@ -81,13 +82,14 @@ const role = AUTHOR_ROLE[locale];
         <div class="container container-narrow">
           <p class="about-eyebrow">{t.about.eyebrow}</p>
           <div class="about-hero-inner">
-            <img
+            <Picture
               src={AUTHOR_PHOTO}
               alt={AUTHOR_FULL_NAME}
               class="about-photo"
-              width="160"
-              height="160"
+              width={160}
+              height={160}
               loading="eager"
+              fetchpriority="high"
             />
             <div>
               <h1 class="about-name">{t.about.heading}</h1>

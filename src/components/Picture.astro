@@ -1,0 +1,71 @@
+---
+// Picture.astro — Drop-in replacement for <img src="/img/foo.png">.
+// Emits a <picture> with AVIF + WebP sources (auto-discovered as siblings
+// of the original file) and falls back to the original PNG/JPG.
+//
+// Original sibling files must be generated beforehand:
+//   node scripts/optimize-images.mjs
+//
+// Usage:
+//   <Picture src="/img/icon.png" alt="DopaHop" width={34} height={34} />
+
+export interface Props {
+  src: string;
+  alt: string;
+  width?: number;
+  height?: number;
+  loading?: 'lazy' | 'eager';
+  decoding?: 'sync' | 'async' | 'auto';
+  fetchpriority?: 'high' | 'low' | 'auto';
+  class?: string;
+  /** If false, skip <picture> wrapper even for png/jpg. Useful when sibling
+   *  webp/avif files don't exist (e.g., dynamic blog covers). */
+  optimize?: boolean;
+}
+
+const {
+  src,
+  alt,
+  width,
+  height,
+  loading = 'lazy',
+  decoding = 'async',
+  fetchpriority,
+  class: className,
+  optimize = true,
+} = Astro.props;
+
+const extMatch = src.match(/\.(png|jpe?g)$/i);
+const useOptimized = optimize && !!extMatch && !src.startsWith('http');
+const base = extMatch ? src.slice(0, -extMatch[0].length) : src;
+const avifSrc = useOptimized ? `${base}.avif` : null;
+const webpSrc = useOptimized ? `${base}.webp` : null;
+---
+
+{useOptimized ? (
+  <picture>
+    {avifSrc && <source srcset={avifSrc} type="image/avif" />}
+    {webpSrc && <source srcset={webpSrc} type="image/webp" />}
+    <img
+      src={src}
+      alt={alt}
+      width={width}
+      height={height}
+      loading={loading}
+      decoding={decoding}
+      fetchpriority={fetchpriority}
+      class={className}
+    />
+  </picture>
+) : (
+  <img
+    src={src}
+    alt={alt}
+    width={width}
+    height={height}
+    loading={loading}
+    decoding={decoding}
+    fetchpriority={fetchpriority}
+    class={className}
+  />
+)}

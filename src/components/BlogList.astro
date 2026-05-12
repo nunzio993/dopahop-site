@@ -5,6 +5,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import SiteHeader from './SiteHeader.astro';
 import SiteFooter from './SiteFooter.astro';
 import BlogAutoCover from './BlogAutoCover.astro';
+import Picture from './Picture.astro';
 
 export interface Props {
   locale: Locale;
@@ -200,7 +201,7 @@ const blogListSchema = {
 
           <aside class="blog-sidebar reveal">
             <div class="sidebar-card sidebar-app">
-              <img src="/img/icon.png" alt="DopaHop" class="sidebar-app-icon" width="56" height="56" />
+              <Picture src="/img/icon.png" alt="DopaHop" class="sidebar-app-icon" width={56} height={56} />
               <h3 class="sidebar-app-title">{t.blog.appCardTitle}</h3>
               <p class="sidebar-app-subtitle">{t.blog.appCardSubtitle}</p>
               <a href={playStoreUrl} class="sidebar-app-cta">

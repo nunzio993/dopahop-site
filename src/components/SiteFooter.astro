@@ -1,5 +1,6 @@
 ---
 import type { LandingStrings, Locale } from '../i18n/types';
+import Picture from './Picture.astro';
 
 export interface Props {
   locale: Locale;
@@ -27,7 +28,7 @@ const blogHref = `${homeHref}blog/`.replace(/\/+/g, '/');
     <div class="footer-grid">
       <div class="footer-brand">
         <a href={homeHref} class="logo">
-          <img src="/img/icon.png" alt="DopaHop" class="logo-img" width="34" height="34" />
+          <Picture src="/img/icon.png" alt="DopaHop" class="logo-img" width={34} height={34} />
           DopaHop
         </a>
         <p>{t.footer.tagline}</p>
