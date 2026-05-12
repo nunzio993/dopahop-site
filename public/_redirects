@@ -1,0 +1,4 @@
+# Compatibility rewrites for legacy crawlers/tools that look for /sitemap.xml
+# instead of the canonical /sitemap-index.xml (Astro 5 + @astrojs/sitemap 3.x).
+# Status 200 = rewrite (no redirect), same content served at both URLs.
+/sitemap.xml  /sitemap-index.xml  200
