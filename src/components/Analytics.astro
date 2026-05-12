@@ -1,0 +1,223 @@
+---
+import type { Locale } from '../i18n/types';
+
+export interface Props {
+  locale: Locale;
+}
+
+const { locale } = Astro.props;
+const gaId = 'G-K6XEZ21D5P';
+const privacyPolicyUrl = 'https://nunzio993.github.io/dopahop-assets/privacy-policy.html';
+const isProd = import.meta.env.PROD;
+---
+
+{isProd && (
+  <>
+    <link rel="preconnect" href="https://www.googletagmanager.com" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orestbida/cookieconsent@3.0.1/dist/cookieconsent.css" />
+    <script
+      is:inline
+      defer
+      src="https://cdn.jsdelivr.net/gh/orestbida/cookieconsent@3.0.1/dist/cookieconsent.umd.js"
+    />
+
+    <script
+      is:inline
+      define:vars={{ gaId, locale, privacyPolicyUrl }}
+      set:html={`
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){ dataLayer.push(arguments); }
+        window.gtag = gtag;
+
+        function loadGA() {
+          if (window.__gaLoaded) return;
+          window.__gaLoaded = true;
+          var s = document.createElement('script');
+          s.async = true;
+          s.src = 'https://www.googletagmanager.com/gtag/js?id=' + ${JSON.stringify(gaId)};
+          document.head.appendChild(s);
+          gtag('js', new Date());
+          gtag('config', ${JSON.stringify(gaId)}, { anonymize_ip: true });
+        }
+
+        function initConsent() {
+          if (typeof CookieConsent === 'undefined') {
+            setTimeout(initConsent, 50);
+            return;
+          }
+          CookieConsent.run({
+            guiOptions: {
+              consentModal: { layout: 'box', position: 'bottom right', equalWeightButtons: false, flipButtons: false },
+              preferencesModal: { layout: 'box', position: 'right', equalWeightButtons: true, flipButtons: false }
+            },
+            categories: {
+              necessary: { enabled: true, readOnly: true },
+              analytics: {
+                autoClear: {
+                  cookies: [
+                    { name: /^_ga/ },
+                    { name: '_gid' }
+                  ]
+                }
+              }
+            },
+            language: {
+              default: ${JSON.stringify(locale)},
+              translations: {
+                it: {
+                  consentModal: {
+                    title: 'Cookie su DopaHop',
+                    description: 'Usiamo cookie tecnici (necessari) e, se acconsenti, cookie di analisi per capire come viene usato il sito. Niente profilazione, niente pubblicità. Puoi cambiare idea in qualsiasi momento.',
+                    acceptAllBtn: 'Accetta tutto',
+                    acceptNecessaryBtn: 'Solo necessari',
+                    showPreferencesBtn: 'Personalizza',
+                    footer: '<a href=\\\"' + privacyPolicyUrl + '\\\" target=\\\"_blank\\\" rel=\\\"noopener\\\">Privacy Policy</a>'
+                  },
+                  preferencesModal: {
+                    title: 'Preferenze cookie',
+                    acceptAllBtn: 'Accetta tutto',
+                    acceptNecessaryBtn: 'Solo necessari',
+                    savePreferencesBtn: 'Salva preferenze',
+                    closeIconLabel: 'Chiudi',
+                    sections: [
+                      { title: 'Cookie strettamente necessari', description: 'Servono per il funzionamento del sito. Non possono essere disattivati.', linkedCategory: 'necessary' },
+                      { title: 'Cookie di analisi', description: 'Google Analytics ci aiuta a capire come viene usato il sito. IP anonimizzato, nessuna profilazione pubblicitaria.', linkedCategory: 'analytics' },
+                      { title: 'Altre informazioni', description: 'Per dettagli leggi la nostra <a href=\\\"' + privacyPolicyUrl + '\\\" target=\\\"_blank\\\">Privacy Policy</a>.' }
+                    ]
+                  }
+                },
+                en: {
+                  consentModal: {
+                    title: 'Cookies on DopaHop',
+                    description: 'We use technical (necessary) cookies and, with your consent, analytics cookies to understand how the site is used. No profiling, no ads. You can change your mind anytime.',
+                    acceptAllBtn: 'Accept all',
+                    acceptNecessaryBtn: 'Necessary only',
+                    showPreferencesBtn: 'Customize',
+                    footer: '<a href=\\\"' + privacyPolicyUrl + '\\\" target=\\\"_blank\\\" rel=\\\"noopener\\\">Privacy Policy</a>'
+                  },
+                  preferencesModal: {
+                    title: 'Cookie preferences',
+                    acceptAllBtn: 'Accept all',
+                    acceptNecessaryBtn: 'Necessary only',
+                    savePreferencesBtn: 'Save preferences',
+                    closeIconLabel: 'Close',
+                    sections: [
+                      { title: 'Strictly necessary cookies', description: 'Required for the site to work. Cannot be disabled.', linkedCategory: 'necessary' },
+                      { title: 'Analytics cookies', description: 'Google Analytics helps us understand how the site is used. IP anonymized, no ad profiling.', linkedCategory: 'analytics' },
+                      { title: 'More info', description: 'See our <a href=\\\"' + privacyPolicyUrl + '\\\" target=\\\"_blank\\\">Privacy Policy</a> for details.' }
+                    ]
+                  }
+                },
+                es: {
+                  consentModal: {
+                    title: 'Cookies en DopaHop',
+                    description: 'Usamos cookies técnicas (necesarias) y, con tu consentimiento, cookies analíticas para entender cómo se usa el sitio. Sin perfilado, sin anuncios. Puedes cambiar de idea cuando quieras.',
+                    acceptAllBtn: 'Aceptar todo',
+                    acceptNecessaryBtn: 'Solo necesarias',
+                    showPreferencesBtn: 'Personalizar',
+                    footer: '<a href=\\\"' + privacyPolicyUrl + '\\\" target=\\\"_blank\\\" rel=\\\"noopener\\\">Política de Privacidad</a>'
+                  },
+                  preferencesModal: {
+                    title: 'Preferencias de cookies',
+                    acceptAllBtn: 'Aceptar todo',
+                    acceptNecessaryBtn: 'Solo necesarias',
+                    savePreferencesBtn: 'Guardar preferencias',
+                    closeIconLabel: 'Cerrar',
+                    sections: [
+                      { title: 'Cookies estrictamente necesarias', description: 'Necesarias para que el sitio funcione. No se pueden desactivar.', linkedCategory: 'necessary' },
+                      { title: 'Cookies analíticas', description: 'Google Analytics nos ayuda a entender cómo se usa el sitio. IP anonimizada, sin perfilado publicitario.', linkedCategory: 'analytics' },
+                      { title: 'Más información', description: 'Consulta nuestra <a href=\\\"' + privacyPolicyUrl + '\\\" target=\\\"_blank\\\">Política de Privacidad</a> para más detalles.' }
+                    ]
+                  }
+                },
+                de: {
+                  consentModal: {
+                    title: 'Cookies auf DopaHop',
+                    description: 'Wir verwenden technische (notwendige) Cookies und, mit deiner Zustimmung, Analyse-Cookies, um zu verstehen, wie die Seite genutzt wird. Kein Profiling, keine Werbung. Du kannst deine Meinung jederzeit ändern.',
+                    acceptAllBtn: 'Alle akzeptieren',
+                    acceptNecessaryBtn: 'Nur notwendige',
+                    showPreferencesBtn: 'Anpassen',
+                    footer: '<a href=\\\"' + privacyPolicyUrl + '\\\" target=\\\"_blank\\\" rel=\\\"noopener\\\">Datenschutzerklärung</a>'
+                  },
+                  preferencesModal: {
+                    title: 'Cookie-Einstellungen',
+                    acceptAllBtn: 'Alle akzeptieren',
+                    acceptNecessaryBtn: 'Nur notwendige',
+                    savePreferencesBtn: 'Einstellungen speichern',
+                    closeIconLabel: 'Schließen',
+                    sections: [
+                      { title: 'Streng notwendige Cookies', description: 'Erforderlich für die Funktion der Seite. Können nicht deaktiviert werden.', linkedCategory: 'necessary' },
+                      { title: 'Analyse-Cookies', description: 'Google Analytics hilft uns zu verstehen, wie die Seite genutzt wird. IP anonymisiert, kein Werbe-Profiling.', linkedCategory: 'analytics' },
+                      { title: 'Weitere Informationen', description: 'Details in unserer <a href=\\\"' + privacyPolicyUrl + '\\\" target=\\\"_blank\\\">Datenschutzerklärung</a>.' }
+                    ]
+                  }
+                },
+                fr: {
+                  consentModal: {
+                    title: 'Cookies sur DopaHop',
+                    description: 'Nous utilisons des cookies techniques (nécessaires) et, avec ton accord, des cookies d\\'analyse pour comprendre comment le site est utilisé. Pas de profilage, pas de publicité. Tu peux changer d\\'avis à tout moment.',
+                    acceptAllBtn: 'Tout accepter',
+                    acceptNecessaryBtn: 'Nécessaires uniquement',
+                    showPreferencesBtn: 'Personnaliser',
+                    footer: '<a href=\\\"' + privacyPolicyUrl + '\\\" target=\\\"_blank\\\" rel=\\\"noopener\\\">Politique de confidentialité</a>'
+                  },
+                  preferencesModal: {
+                    title: 'Préférences cookies',
+                    acceptAllBtn: 'Tout accepter',
+                    acceptNecessaryBtn: 'Nécessaires uniquement',
+                    savePreferencesBtn: 'Enregistrer les préférences',
+                    closeIconLabel: 'Fermer',
+                    sections: [
+                      { title: 'Cookies strictement nécessaires', description: 'Nécessaires au fonctionnement du site. Ne peuvent pas être désactivés.', linkedCategory: 'necessary' },
+                      { title: 'Cookies d\\'analyse', description: 'Google Analytics nous aide à comprendre comment le site est utilisé. IP anonymisée, pas de profilage publicitaire.', linkedCategory: 'analytics' },
+                      { title: 'Plus d\\'informations', description: 'Voir notre <a href=\\\"' + privacyPolicyUrl + '\\\" target=\\\"_blank\\\">Politique de confidentialité</a> pour plus de détails.' }
+                    ]
+                  }
+                }
+              }
+            },
+            onConsent: function() {
+              if (CookieConsent.acceptedCategory('analytics')) loadGA();
+            },
+            onChange: function() {
+              if (CookieConsent.acceptedCategory('analytics')) loadGA();
+            }
+          });
+        }
+
+        if (document.readyState === 'loading') {
+          document.addEventListener('DOMContentLoaded', initConsent);
+        } else {
+          initConsent();
+        }
+      `}
+    />
+
+    <style is:inline set:html={`
+      /* Brand DopaHop overrides for cookie consent */
+      :root {
+        --cc-bg: #1A1A2E;
+        --cc-primary-color: #FAFAFA;
+        --cc-secondary-color: #BDBDBD;
+        --cc-btn-primary-bg: #FFB703;
+        --cc-btn-primary-color: #0F0F23;
+        --cc-btn-primary-hover-bg: #FFCE4A;
+        --cc-btn-secondary-bg: rgba(255, 255, 255, 0.08);
+        --cc-btn-secondary-color: #FAFAFA;
+        --cc-btn-secondary-hover-bg: rgba(255, 255, 255, 0.14);
+        --cc-toggle-bg-off: #3a3a55;
+        --cc-toggle-bg-on: #FFB703;
+        --cc-toggle-bg-readonly: #2a2a40;
+        --cc-toggle-knob-bg: #FAFAFA;
+        --cc-toggle-knob-icon-color: #0F0F23;
+        --cc-cookie-category-block-bg: rgba(255, 255, 255, 0.04);
+        --cc-cookie-category-block-bg-hover: rgba(255, 255, 255, 0.08);
+        --cc-cookie-category-block-border: rgba(255, 255, 255, 0.08);
+        --cc-section-border: rgba(255, 255, 255, 0.08);
+        --cc-overlay-bg: rgba(15, 15, 35, 0.7);
+        --cc-btn-border-radius: 12px;
+        --cc-modal-border-radius: 20px;
+      }
+    `} />
+  </>
+)}

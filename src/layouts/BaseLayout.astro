@@ -1,4 +1,6 @@
 ---
+import Analytics from '../components/Analytics.astro';
+
 export interface AlternateLocale {
   code: string;
   href: string;
@@ -107,6 +109,7 @@ const alternateLocales: AlternateLocale[] = customAlternateLocales ?? [
 </head>
 <body class:list={[`theme-${theme}`]}>
   <slot />
+  <Analytics locale={locale} />
 </body>
 </html>
 
