@@ -7,7 +7,7 @@ updatedDate: 2026-05-22
 tags: ["ADHD", "emotional regulation", "DESR", "mental health"]
 locale: en
 draft: false
-author: "DopaHop"
+author: "Nunzio C."
 translationKey: "adhd-emotional-dysregulation"
 ---
 

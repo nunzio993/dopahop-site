@@ -7,7 +7,7 @@ updatedDate: 2026-06-22
 tags: ["TDAH", "mémoire de travail", "fonctions exécutives", "adulte"]
 locale: fr
 draft: false
-author: "DopaHop"
+author: "Nunzio C."
 translationKey: "adhd-working-memory-real-limits"
 ---
 

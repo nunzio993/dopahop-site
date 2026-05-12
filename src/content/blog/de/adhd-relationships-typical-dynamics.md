@@ -7,7 +7,7 @@ updatedDate: 2026-06-10
 tags: ["ADHS", "Beziehungen", "Erwachsene", "Kommunikation"]
 locale: de
 draft: false
-author: "DopaHop"
+author: "Nunzio C."
 translationKey: "adhd-relationships-typical-dynamics"
 ---
 

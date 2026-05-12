@@ -7,7 +7,7 @@ updatedDate: 2026-07-18
 tags: ["TDAH", "medicación", "estimulantes", "adultos"]
 locale: es
 draft: false
-author: "DopaHop"
+author: "Nunzio C."
 translationKey: "adhd-stimulant-medications-real-effects"
 ---
 

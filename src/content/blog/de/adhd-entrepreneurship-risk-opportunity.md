@@ -7,7 +7,7 @@ updatedDate: 2026-07-10
 tags: ["ADHS", "Unternehmertum", "Selbständigkeit", "Karriere"]
 locale: de
 draft: false
-author: "DopaHop"
+author: "Nunzio C."
 translationKey: "adhd-entrepreneurship-risk-opportunity"
 ---
 

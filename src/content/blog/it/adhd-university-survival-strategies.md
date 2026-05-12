@@ -7,7 +7,7 @@ updatedDate: 2026-06-14
 tags: ["ADHD", "università", "studio", "funzioni esecutive"]
 locale: it
 draft: false
-author: "DopaHop"
+author: "Nunzio C."
 translationKey: "adhd-university-survival-strategies"
 ---
 

@@ -7,7 +7,7 @@ updatedDate: 2026-06-08
 tags: ["TDAH", "autoestima", "adultos", "salud mental"]
 locale: es
 draft: false
-author: "DopaHop"
+author: "Nunzio C."
 translationKey: "adhd-self-esteem-construction-distortions"
 ---
 

@@ -7,7 +7,7 @@ updatedDate: 2026-06-14
 tags: ["TDAH", "université", "études", "aménagements"]
 locale: fr
 draft: false
-author: "DopaHop"
+author: "Nunzio C."
 translationKey: "adhd-university-survival-strategies"
 ---
 

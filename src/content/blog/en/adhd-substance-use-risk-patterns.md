@@ -7,7 +7,7 @@ updatedDate: 2026-05-31
 tags: ["ADHD", "addiction", "substance use", "treatment"]
 locale: en
 draft: false
-author: "DopaHop"
+author: "Nunzio C."
 translationKey: "adhd-substance-use-risk-patterns"
 ---
 

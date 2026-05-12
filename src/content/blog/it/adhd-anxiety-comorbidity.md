@@ -7,7 +7,7 @@ updatedDate: 2026-06-03
 tags: ["ADHD", "ansia", "comorbidità", "diagnosi"]
 locale: it
 draft: false
-author: "DopaHop"
+author: "Nunzio C."
 translationKey: "adhd-anxiety-comorbidity"
 ---
 

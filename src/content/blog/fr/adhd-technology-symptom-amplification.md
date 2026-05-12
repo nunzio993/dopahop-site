@@ -7,7 +7,7 @@ updatedDate: 2026-07-06
 tags: ["TDAH", "technologie", "réseaux sociaux", "dopamine"]
 locale: fr
 draft: false
-author: "DopaHop"
+author: "Nunzio C."
 translationKey: "adhd-technology-symptom-amplification"
 ---
 

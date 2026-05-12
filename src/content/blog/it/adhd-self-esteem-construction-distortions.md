@@ -7,7 +7,7 @@ updatedDate: 2026-06-08
 tags: ["ADHD", "autostima", "vergogna", "rejection sensitivity"]
 locale: it
 draft: false
-author: "DopaHop"
+author: "Nunzio C."
 translationKey: "adhd-self-esteem-construction-distortions"
 ---
 

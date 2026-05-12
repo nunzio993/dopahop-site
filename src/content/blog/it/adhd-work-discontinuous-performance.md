@@ -7,7 +7,7 @@ updatedDate: 2026-06-12
 tags: ["ADHD", "lavoro", "hyperfocus"]
 locale: it
 draft: false
-author: "DopaHop"
+author: "Nunzio C."
 translationKey: "adhd-work-discontinuous-performance"
 ---
 

@@ -7,7 +7,7 @@ updatedDate: 2026-06-24
 tags: ["ADHS", "Impulsivität", "Entscheidungen", "Selbstregulation"]
 locale: de
 draft: false
-author: "DopaHop"
+author: "Nunzio C."
 translationKey: "adhd-impulsive-decision-making"
 ---
 

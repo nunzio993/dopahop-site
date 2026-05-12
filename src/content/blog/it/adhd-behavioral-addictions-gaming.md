@@ -7,7 +7,7 @@ updatedDate: 2026-05-28
 tags: ["ADHD", "dipendenze", "gaming", "social media"]
 locale: it
 draft: false
-author: "DopaHop"
+author: "Nunzio C."
 translationKey: "adhd-behavioral-addictions-gaming"
 ---
 

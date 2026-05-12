@@ -65,6 +65,17 @@ export interface BlogStrings {
   appCardSubtitle: string;
   appCardCta: string;
   tocLabel: string;
+  authorReadMore: string;
+  authorLinkedin: string;
+}
+
+export interface AboutStrings {
+  metaTitle: string;
+  metaDescription: string;
+  eyebrow: string;
+  heading: string;
+  ctaPrimary: string;
+  ctaSecondary: string;
 }
 
 export interface LandingStrings {
@@ -149,4 +160,5 @@ export interface LandingStrings {
     label: string;
   };
   blog: BlogStrings;
+  about: AboutStrings;
 }

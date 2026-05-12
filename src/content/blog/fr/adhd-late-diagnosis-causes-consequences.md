@@ -7,7 +7,7 @@ updatedDate: 2026-05-13
 tags: ["TDAH", "diagnostic", "adulte", "diagnostic tardif"]
 locale: fr
 draft: false
-author: "DopaHop"
+author: "Nunzio C."
 translationKey: "adhd-late-diagnosis-causes-consequences"
 ---
 

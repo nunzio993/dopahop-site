@@ -7,7 +7,7 @@ updatedDate: 2026-06-14
 tags: ["TDAH", "universidad", "estudio", "adultos"]
 locale: es
 draft: false
-author: "DopaHop"
+author: "Nunzio C."
 translationKey: "adhd-university-survival-strategies"
 ---
 

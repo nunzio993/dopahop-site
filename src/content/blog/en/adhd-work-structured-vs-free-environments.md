@@ -7,7 +7,7 @@ updatedDate: 2026-07-08
 tags: ["ADHD", "work", "remote work", "accommodations"]
 locale: en
 draft: false
-author: "DopaHop"
+author: "Nunzio C."
 translationKey: "adhd-work-structured-vs-free-environments"
 ---
 

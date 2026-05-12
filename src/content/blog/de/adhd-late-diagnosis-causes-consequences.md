@@ -11,7 +11,7 @@ tags:
   - Selbstbild
 locale: de
 draft: false
-author: "DopaHop"
+author: "Nunzio C."
 translationKey: "adhd-late-diagnosis-causes-consequences"
 ---
 

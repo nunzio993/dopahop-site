@@ -7,7 +7,7 @@ updatedDate: 2026-05-19
 tags: ["ADHD", "procrastinazione", "neurobiologia", "funzioni esecutive"]
 locale: it
 draft: false
-author: "DopaHop"
+author: "Nunzio C."
 translationKey: "adhd-procrastination-real-mechanism"
 ---
 

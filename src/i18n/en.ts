@@ -261,5 +261,16 @@ export const en: LandingStrings = {
       'Free Android app: Pomodoro, medication reminders, brain dump, focus sounds.',
     appCardCta: 'Download free',
     tocLabel: 'Contents',
+    authorReadMore: 'More about Nunzio →',
+    authorLinkedin: 'LinkedIn',
+  },
+  about: {
+    metaTitle: 'About — Nunzio, founder of DopaHop',
+    metaDescription:
+      "I'm Nunzio, founder of DopaHop, diagnosed with ADHD as an adult. I build gentle tools for neurodivergent brains — the app waits for you, it doesn't scold you.",
+    eyebrow: 'About',
+    heading: 'Nunzio — founder of DopaHop',
+    ctaPrimary: 'Get DopaHop free',
+    ctaSecondary: 'Read the blog',
   },
 };

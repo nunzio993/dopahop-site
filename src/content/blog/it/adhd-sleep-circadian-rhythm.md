@@ -7,7 +7,7 @@ updatedDate: 2026-05-25
 tags: ["ADHD", "sonno", "ritmo circadiano", "neurobiologia"]
 locale: it
 draft: false
-author: "DopaHop"
+author: "Nunzio C."
 translationKey: "adhd-sleep-circadian-rhythm"
 ---
 

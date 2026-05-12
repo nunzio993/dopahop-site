@@ -7,7 +7,7 @@ updatedDate: 2026-07-08
 tags: ["ADHS", "Arbeit", "Homeoffice", "Selbstregulation"]
 locale: de
 draft: false
-author: "DopaHop"
+author: "Nunzio C."
 translationKey: "adhd-work-structured-vs-free-environments"
 ---
 

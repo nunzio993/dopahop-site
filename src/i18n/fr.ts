@@ -261,5 +261,16 @@ export const fr: LandingStrings = {
       'App gratuite pour Android : Pomodoro, rappels médicaments, brain dump, focus sounds.',
     appCardCta: 'Télécharger gratuitement',
     tocLabel: 'Sommaire',
+    authorReadMore: 'Plus sur Nunzio →',
+    authorLinkedin: 'LinkedIn',
+  },
+  about: {
+    metaTitle: 'À propos — Nunzio, fondateur de DopaHop',
+    metaDescription:
+      "Je suis Nunzio, fondateur de DopaHop, diagnostiqué TDAH à l'âge adulte. Je construis des outils doux pour cerveaux neurodivergents — l'appli t'attend, elle ne te gronde pas.",
+    eyebrow: 'À propos',
+    heading: 'Nunzio — fondateur de DopaHop',
+    ctaPrimary: 'Télécharger DopaHop gratuitement',
+    ctaSecondary: 'Lire le blog',
   },
 };

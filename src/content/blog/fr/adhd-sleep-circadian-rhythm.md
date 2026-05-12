@@ -7,7 +7,7 @@ updatedDate: 2026-05-25
 tags: ["TDAH", "sommeil", "rythme circadien", "mélatonine"]
 locale: fr
 draft: false
-author: "DopaHop"
+author: "Nunzio C."
 translationKey: "adhd-sleep-circadian-rhythm"
 ---
 

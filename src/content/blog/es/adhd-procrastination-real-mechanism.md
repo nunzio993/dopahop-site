@@ -7,7 +7,7 @@ updatedDate: 2026-05-19
 tags: ["TDAH", "procrastinación", "neurobiología", "adultos"]
 locale: es
 draft: false
-author: "DopaHop"
+author: "Nunzio C."
 translationKey: "adhd-procrastination-real-mechanism"
 ---
 

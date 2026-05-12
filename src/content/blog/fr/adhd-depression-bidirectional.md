@@ -7,7 +7,7 @@ updatedDate: 2026-06-06
 tags: ["TDAH", "dépression", "comorbidité", "diagnostic"]
 locale: fr
 draft: false
-author: "DopaHop"
+author: "Nunzio C."
 translationKey: "adhd-depression-bidirectional"
 ---
 

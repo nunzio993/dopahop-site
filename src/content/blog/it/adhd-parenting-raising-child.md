@@ -7,7 +7,7 @@ updatedDate: 2026-07-12
 tags: ["ADHD", "parenting", "bambini", "famiglia"]
 locale: it
 draft: false
-author: "DopaHop"
+author: "Nunzio C."
 translationKey: "adhd-parenting-raising-child"
 ---
 

@@ -7,7 +7,7 @@ updatedDate: 2026-06-03
 tags: ["TDAH", "anxiété", "comorbidité", "diagnostic"]
 locale: fr
 draft: false
-author: "DopaHop"
+author: "Nunzio C."
 translationKey: "adhd-anxiety-comorbidity"
 ---
 

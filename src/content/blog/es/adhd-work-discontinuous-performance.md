@@ -7,7 +7,7 @@ updatedDate: 2026-06-12
 tags: ["TDAH", "trabajo", "rendimiento", "adultos"]
 locale: es
 draft: false
-author: "DopaHop"
+author: "Nunzio C."
 translationKey: "adhd-work-discontinuous-performance"
 ---
 

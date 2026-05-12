@@ -7,7 +7,7 @@ updatedDate: 2026-07-10
 tags: ["TDAH", "entrepreneuriat", "indépendant", "fonctions exécutives"]
 locale: fr
 draft: false
-author: "DopaHop"
+author: "Nunzio C."
 translationKey: "adhd-entrepreneurship-risk-opportunity"
 ---
 

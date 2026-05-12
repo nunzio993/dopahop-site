@@ -9,7 +9,7 @@ tags:
   - funciones ejecutivas
   - disfunción ejecutiva
   - adultos
-author: DopaHop
+author: "Nunzio C."
 translationKey: adhd-executive-functions-what-breaks
 locale: es
 draft: false

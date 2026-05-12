@@ -7,7 +7,7 @@ updatedDate: 2026-06-10
 tags: ["ADHD", "relazioni", "coppia"]
 locale: it
 draft: false
-author: "DopaHop"
+author: "Nunzio C."
 translationKey: "adhd-relationships-typical-dynamics"
 ---
 

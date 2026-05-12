@@ -7,7 +7,7 @@ updatedDate: 2026-07-04
 tags: ["ADHD", "meditazione", "mindfulness", "regolazione emotiva"]
 locale: it
 draft: false
-author: "DopaHop"
+author: "Nunzio C."
 translationKey: "adhd-meditation-real-evidence"
 ---
 

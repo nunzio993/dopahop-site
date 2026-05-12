@@ -7,7 +7,7 @@ updatedDate: 2026-06-10
 tags: ["ADHD", "relationships", "RSD", "communication"]
 locale: en
 draft: false
-author: "DopaHop"
+author: "Nunzio C."
 translationKey: "adhd-relationships-typical-dynamics"
 ---
 

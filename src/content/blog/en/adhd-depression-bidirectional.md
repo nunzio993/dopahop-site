@@ -7,7 +7,7 @@ updatedDate: 2026-06-06
 tags: ["ADHD", "depression", "comorbidity", "mental health"]
 locale: en
 draft: false
-author: "DopaHop"
+author: "Nunzio C."
 translationKey: "adhd-depression-bidirectional"
 ---
 

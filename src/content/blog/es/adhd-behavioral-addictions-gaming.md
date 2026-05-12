@@ -7,7 +7,7 @@ updatedDate: 2026-05-28
 tags: ["TDAH", "adicciones", "gaming", "redes sociales"]
 locale: es
 draft: false
-author: "DopaHop"
+author: "Nunzio C."
 translationKey: "adhd-behavioral-addictions-gaming"
 ---
 

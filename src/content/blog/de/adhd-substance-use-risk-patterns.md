@@ -7,7 +7,7 @@ updatedDate: 2026-05-31
 tags: ["ADHS", "Sucht", "Substanzgebrauch", "Komorbidität"]
 locale: de
 draft: false
-author: "DopaHop"
+author: "Nunzio C."
 translationKey: "adhd-substance-use-risk-patterns"
 ---
 

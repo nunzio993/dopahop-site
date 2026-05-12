@@ -7,7 +7,7 @@ updatedDate: 2026-06-03
 tags: ["ADHS", "Angst", "Komorbidität", "Erwachsene"]
 locale: de
 draft: false
-author: "DopaHop"
+author: "Nunzio C."
 translationKey: "adhd-anxiety-comorbidity"
 ---
 

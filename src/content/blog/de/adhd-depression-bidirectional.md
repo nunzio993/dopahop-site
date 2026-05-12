@@ -7,7 +7,7 @@ updatedDate: 2026-06-06
 tags: ["ADHS", "Depression", "Komorbidität", "Erwachsene"]
 locale: de
 draft: false
-author: "DopaHop"
+author: "Nunzio C."
 translationKey: "adhd-depression-bidirectional"
 ---
 

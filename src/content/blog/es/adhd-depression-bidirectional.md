@@ -7,7 +7,7 @@ updatedDate: 2026-06-06
 tags: ["TDAH", "depresión", "comorbilidad", "salud mental"]
 locale: es
 draft: false
-author: "DopaHop"
+author: "Nunzio C."
 translationKey: "adhd-depression-bidirectional"
 ---
 

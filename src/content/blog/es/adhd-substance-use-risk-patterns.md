@@ -7,7 +7,7 @@ updatedDate: 2026-05-31
 tags: ["TDAH", "adicciones", "salud mental", "adultos"]
 locale: es
 draft: false
-author: "DopaHop"
+author: "Nunzio C."
 translationKey: "adhd-substance-use-risk-patterns"
 ---
 

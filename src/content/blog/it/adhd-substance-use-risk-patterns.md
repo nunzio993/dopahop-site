@@ -7,7 +7,7 @@ updatedDate: 2026-05-31
 tags: ["ADHD", "dipendenze", "sostanze", "salute mentale"]
 locale: it
 draft: false
-author: "DopaHop"
+author: "Nunzio C."
 translationKey: "adhd-substance-use-risk-patterns"
 ---
 

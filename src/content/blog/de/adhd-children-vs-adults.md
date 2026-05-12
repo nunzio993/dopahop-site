@@ -13,7 +13,7 @@ tags:
   - Erwachsene
   - Kinder
   - Diagnose
-author: DopaHop
+author: "Nunzio C."
 translationKey: adhd-children-vs-adults
 draft: false
 ---

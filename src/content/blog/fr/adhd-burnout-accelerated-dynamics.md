@@ -7,7 +7,7 @@ updatedDate: 2026-06-28
 tags: ["TDAH", "burnout", "énergie", "fonctions exécutives"]
 locale: fr
 draft: false
-author: "DopaHop"
+author: "Nunzio C."
 translationKey: "adhd-burnout-accelerated-dynamics"
 ---
 

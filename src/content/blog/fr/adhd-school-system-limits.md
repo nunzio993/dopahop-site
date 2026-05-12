@@ -7,7 +7,7 @@ updatedDate: 2026-07-16
 tags: ["TDAH", "école", "éducation", "famille"]
 locale: fr
 draft: false
-author: "DopaHop"
+author: "Nunzio C."
 translationKey: "adhd-school-system-limits"
 ---
 

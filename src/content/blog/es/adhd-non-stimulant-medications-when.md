@@ -7,7 +7,7 @@ updatedDate: 2026-07-20
 tags: ["TDAH", "medicación", "atomoxetina", "guanfacina"]
 locale: es
 draft: false
-author: "DopaHop"
+author: "Nunzio C."
 translationKey: "adhd-non-stimulant-medications-when"
 ---
 

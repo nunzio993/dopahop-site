@@ -7,7 +7,7 @@ updatedDate: 2026-06-20
 tags: ["ADHS", "Zeitwahrnehmung", "Zeitmanagement", "Time Blindness"]
 locale: de
 draft: false
-author: "DopaHop"
+author: "Nunzio C."
 translationKey: "adhd-time-management-distorted-perception"
 ---
 

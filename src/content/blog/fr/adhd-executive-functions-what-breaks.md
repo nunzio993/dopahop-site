@@ -7,7 +7,7 @@ updatedDate: 2026-05-07
 tags: ["TDAH", "fonctions exécutives", "dysfonction exécutive", "adulte"]
 locale: fr
 draft: false
-author: "DopaHop"
+author: "Nunzio C."
 translationKey: "adhd-executive-functions-what-breaks"
 ---
 

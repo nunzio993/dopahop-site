@@ -7,7 +7,7 @@ updatedDate: 2026-06-30
 tags: ["TDAH", "alimentación", "azúcar", "nutrición"]
 locale: es
 draft: false
-author: "DopaHop"
+author: "Nunzio C."
 translationKey: "adhd-nutrition-sugar-stimulants"
 ---
 

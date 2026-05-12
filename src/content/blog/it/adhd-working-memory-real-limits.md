@@ -7,7 +7,7 @@ updatedDate: 2026-06-22
 tags: ["ADHD", "memoria di lavoro", "funzioni esecutive", "neurobiologia"]
 locale: it
 draft: false
-author: "DopaHop"
+author: "Nunzio C."
 translationKey: "adhd-working-memory-real-limits"
 ---
 

@@ -7,7 +7,7 @@ updatedDate: 2026-07-18
 tags: ["ADHS", "Medikamente", "Stimulanzien", "Methylphenidat"]
 locale: de
 draft: false
-author: "DopaHop"
+author: "Nunzio C."
 translationKey: "adhd-stimulant-medications-real-effects"
 ---
 

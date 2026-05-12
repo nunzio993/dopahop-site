@@ -7,7 +7,7 @@ updatedDate: 2026-07-06
 tags: ["ADHD", "technology", "social media", "screen time"]
 locale: en
 draft: false
-author: "DopaHop"
+author: "Nunzio C."
 translationKey: "adhd-technology-symptom-amplification"
 ---
 

@@ -7,7 +7,7 @@ updatedDate: 2026-06-03
 tags: ["TDAH", "ansiedad", "comorbilidad", "adultos"]
 locale: es
 draft: false
-author: "DopaHop"
+author: "Nunzio C."
 translationKey: "adhd-anxiety-comorbidity"
 ---
 

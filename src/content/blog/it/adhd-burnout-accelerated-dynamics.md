@@ -7,7 +7,7 @@ updatedDate: 2026-06-28
 tags: ["ADHD", "burnout", "energia", "funzioni esecutive"]
 locale: it
 draft: false
-author: "DopaHop"
+author: "Nunzio C."
 translationKey: "adhd-burnout-accelerated-dynamics"
 ---
 

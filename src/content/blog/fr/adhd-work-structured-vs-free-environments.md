@@ -7,7 +7,7 @@ updatedDate: 2026-07-08
 tags: ["TDAH", "travail", "télétravail", "fonctions exécutives"]
 locale: fr
 draft: false
-author: "DopaHop"
+author: "Nunzio C."
 translationKey: "adhd-work-structured-vs-free-environments"
 ---
 

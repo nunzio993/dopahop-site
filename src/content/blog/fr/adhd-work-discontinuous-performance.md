@@ -7,7 +7,7 @@ updatedDate: 2026-06-12
 tags: ["TDAH", "travail", "aménagements", "performance"]
 locale: fr
 draft: false
-author: "DopaHop"
+author: "Nunzio C."
 translationKey: "adhd-work-discontinuous-performance"
 ---
 

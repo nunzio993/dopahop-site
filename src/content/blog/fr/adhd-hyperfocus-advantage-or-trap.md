@@ -7,7 +7,7 @@ updatedDate: 2026-06-18
 tags: ["TDAH", "hyperfocus", "attention", "fonctions exécutives"]
 locale: fr
 draft: false
-author: "DopaHop"
+author: "Nunzio C."
 translationKey: "adhd-hyperfocus-advantage-or-trap"
 ---
 

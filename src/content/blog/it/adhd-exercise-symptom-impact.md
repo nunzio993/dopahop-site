@@ -7,7 +7,7 @@ updatedDate: 2026-07-02
 tags: ["ADHD", "esercizio", "sport", "abitudini"]
 locale: it
 draft: false
-author: "DopaHop"
+author: "Nunzio C."
 translationKey: "adhd-exercise-symptom-impact"
 ---
 

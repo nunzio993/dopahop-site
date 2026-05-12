@@ -7,7 +7,7 @@ updatedDate: 2026-06-22
 tags: ["ADHS", "Arbeitsgedächtnis", "exekutive Funktionen", "Erwachsene"]
 locale: de
 draft: false
-author: "DopaHop"
+author: "Nunzio C."
 translationKey: "adhd-working-memory-real-limits"
 ---
 

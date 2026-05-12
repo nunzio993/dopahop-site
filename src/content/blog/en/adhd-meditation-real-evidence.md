@@ -7,7 +7,7 @@ updatedDate: 2026-07-04
 tags: ["ADHD", "meditation", "mindfulness", "mental health"]
 locale: en
 draft: false
-author: "DopaHop"
+author: "Nunzio C."
 translationKey: "adhd-meditation-real-evidence"
 ---
 

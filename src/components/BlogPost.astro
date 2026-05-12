@@ -6,6 +6,15 @@ import type { LandingStrings, Locale } from '../i18n/types';
 import BaseLayout from '../layouts/BaseLayout.astro';
 import SiteHeader from './SiteHeader.astro';
 import SiteFooter from './SiteFooter.astro';
+import {
+  AUTHOR_NAME,
+  AUTHOR_PHOTO,
+  AUTHOR_LINKEDIN,
+  AUTHOR_BIO_SHORT,
+  AUTHOR_ROLE,
+  authorAboutUrl,
+  authorPersonSchema,
+} from '../data/author';
 
 export interface Props {
   locale: Locale;
@@ -87,6 +96,12 @@ const alternateLocales = (() => {
   return entries;
 })();
 
+const aboutHref = authorAboutUrl(locale);
+const isOwnAuthor = post.data.author === AUTHOR_NAME;
+const authorSchema = isOwnAuthor
+  ? authorPersonSchema(locale, siteUrl)
+  : { '@type': 'Person', name: post.data.author };
+
 const blogPostingSchema = {
   '@context': 'https://schema.org',
   '@type': 'BlogPosting',
@@ -95,7 +110,7 @@ const blogPostingSchema = {
   image: fullCoverUrl,
   datePublished: post.data.pubDate.toISOString(),
   dateModified: (post.data.updatedDate ?? post.data.pubDate).toISOString(),
-  author: { '@type': 'Person', name: post.data.author },
+  author: authorSchema,
   publisher: {
     '@type': 'Organization',
     name: 'DopaHop',
@@ -242,7 +257,12 @@ const faqSchema = faqItems.length > 0
             <div class="post-meta">
               <span class="post-meta-item">
                 <span class="post-meta-icon" aria-hidden="true">✎</span>
-                {t.blog.by} <strong>{post.data.author}</strong>
+                {t.blog.by}{' '}
+                {isOwnAuthor ? (
+                  <a href={aboutHref} class="post-meta-author-link"><strong>{post.data.author}</strong></a>
+                ) : (
+                  <strong>{post.data.author}</strong>
+                )}
               </span>
               <span class="post-meta-divider" aria-hidden="true">·</span>
               <span class="post-meta-item">
@@ -329,12 +349,46 @@ const faqSchema = faqItems.length > 0
           )}
 
           <div class="post-author-card reveal">
-            <div class="post-author-avatar" aria-hidden="true">
-              {post.data.author.split(' ').map((w) => w[0]).join('').slice(0, 2)}
-            </div>
-            <div>
+            {isOwnAuthor ? (
+              <img
+                src={AUTHOR_PHOTO}
+                alt={AUTHOR_NAME}
+                class="post-author-photo"
+                width="64"
+                height="64"
+                loading="lazy"
+              />
+            ) : (
+              <div class="post-author-avatar" aria-hidden="true">
+                {post.data.author.split(' ').map((w) => w[0]).join('').slice(0, 2)}
+              </div>
+            )}
+            <div class="post-author-text">
               <div class="post-author-label">{t.blog.by}</div>
-              <div class="post-author-name">{post.data.author}</div>
+              <div class="post-author-name">
+                {isOwnAuthor ? (
+                  <a href={aboutHref}>{post.data.author}</a>
+                ) : (
+                  post.data.author
+                )}
+              </div>
+              {isOwnAuthor && (
+                <>
+                  <p class="post-author-role">{AUTHOR_ROLE[locale]}</p>
+                  <p class="post-author-bio">{AUTHOR_BIO_SHORT[locale]}</p>
+                  <div class="post-author-links">
+                    <a href={aboutHref} class="post-author-link">{t.blog.authorReadMore}</a>
+                    <a
+                      href={AUTHOR_LINKEDIN}
+                      rel="me noopener"
+                      target="_blank"
+                      class="post-author-link post-author-link-ghost"
+                    >
+                      {t.blog.authorLinkedin} ↗
+                    </a>
+                  </div>
+                </>
+              )}
             </div>
           </div>
 
@@ -860,26 +914,40 @@ const faqSchema = faqItems.length > 0
   /* ── AUTHOR CARD ── */
   .post-author-card {
     margin-top: 40px;
-    padding: 22px 24px;
+    padding: 24px;
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     gap: 18px;
     background: var(--surface);
     border: 1px solid var(--border);
     border-radius: var(--radius-lg);
   }
   .post-author-avatar {
-    width: 52px;
-    height: 52px;
+    width: 64px;
+    height: 64px;
     border-radius: 50%;
     background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
     display: grid;
     place-items: center;
     font-weight: 800;
     color: var(--bg);
-    font-size: 18px;
+    font-size: 20px;
     flex-shrink: 0;
     letter-spacing: -0.02em;
+  }
+  .post-author-photo {
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid var(--border-strong);
+    background: var(--surface-elevated);
+    flex-shrink: 0;
+    margin: 0;
+  }
+  .post-author-text {
+    flex: 1;
+    min-width: 0;
   }
   .post-author-label {
     font-size: 11px;
@@ -887,13 +955,72 @@ const faqSchema = faqItems.length > 0
     letter-spacing: 0.1em;
     color: var(--ink-muted);
     font-weight: 700;
-    margin-bottom: 2px;
+    margin-bottom: 4px;
   }
   .post-author-name {
-    font-size: 16px;
+    font-size: 17px;
     font-weight: 700;
     color: var(--ink);
     letter-spacing: -0.01em;
+    margin-bottom: 4px;
+  }
+  .post-author-name a {
+    color: var(--ink);
+    text-decoration: none;
+  }
+  .post-author-name a:hover {
+    color: var(--primary-dark);
+  }
+  .post-author-role {
+    font-family: var(--sans);
+    font-size: 13px;
+    color: var(--ink-muted);
+    margin: 0 0 10px;
+    line-height: 1.4;
+  }
+  .post-author-bio {
+    font-family: var(--sans);
+    font-size: 14px;
+    color: var(--ink-soft);
+    line-height: 1.55;
+    margin: 0 0 14px;
+  }
+  .post-author-links {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+  .post-author-link {
+    font-family: var(--sans);
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--primary-dark);
+    text-decoration: none;
+    padding: 6px 12px;
+    border-radius: var(--radius-full);
+    background: rgba(255, 183, 3, 0.12);
+    transition: background 0.15s ease, color 0.15s ease;
+  }
+  .post-author-link:hover {
+    background: rgba(255, 183, 3, 0.22);
+  }
+  .post-author-link-ghost {
+    background: transparent;
+    color: var(--ink-soft);
+    border: 1px solid var(--border-strong);
+  }
+  .post-author-link-ghost:hover {
+    color: var(--ink);
+    border-color: var(--primary);
+    background: transparent;
+  }
+  .post-meta-author-link {
+    color: inherit;
+    text-decoration: none;
+    border-bottom: 1px dotted rgba(255, 255, 255, 0.3);
+  }
+  .post-meta-author-link:hover {
+    border-bottom-color: var(--primary);
   }
 
   /* ── BACK LINK ── */

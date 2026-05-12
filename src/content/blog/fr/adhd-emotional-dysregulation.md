@@ -7,7 +7,7 @@ updatedDate: 2026-05-22
 tags: ["TDAH", "émotions", "dysrégulation", "neuroatypie"]
 locale: fr
 draft: false
-author: "DopaHop"
+author: "Nunzio C."
 translationKey: "adhd-emotional-dysregulation"
 ---
 

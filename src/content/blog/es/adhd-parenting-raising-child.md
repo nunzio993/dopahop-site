@@ -7,7 +7,7 @@ updatedDate: 2026-07-12
 tags: ["TDAH", "crianza", "infancia", "familia"]
 locale: es
 draft: false
-author: "DopaHop"
+author: "Nunzio C."
 translationKey: "adhd-parenting-raising-child"
 ---
 

@@ -7,7 +7,7 @@ updatedDate: 2026-06-08
 tags: ["ADHS", "Selbstwert", "Erwachsene", "Selbstbild"]
 locale: de
 draft: false
-author: "DopaHop"
+author: "Nunzio C."
 translationKey: "adhd-self-esteem-construction-distortions"
 ---
 

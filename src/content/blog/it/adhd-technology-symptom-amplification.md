@@ -7,7 +7,7 @@ updatedDate: 2026-07-06
 tags: ["ADHD", "tecnologia", "social media", "dopamina"]
 locale: it
 draft: false
-author: "DopaHop"
+author: "Nunzio C."
 translationKey: "adhd-technology-symptom-amplification"
 ---
 

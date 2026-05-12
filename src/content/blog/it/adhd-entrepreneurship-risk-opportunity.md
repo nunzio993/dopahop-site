@@ -7,7 +7,7 @@ updatedDate: 2026-07-10
 tags: ["ADHD", "imprenditorialità", "lavoro autonomo", "funzioni esecutive"]
 locale: it
 draft: false
-author: "DopaHop"
+author: "Nunzio C."
 translationKey: "adhd-entrepreneurship-risk-opportunity"
 ---
 

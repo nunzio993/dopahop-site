@@ -7,7 +7,7 @@ updatedDate: 2026-05-19
 tags: ["TDAH", "procrastination", "dopamine", "fonctions exécutives"]
 locale: fr
 draft: false
-author: "DopaHop"
+author: "Nunzio C."
 translationKey: "adhd-procrastination-real-mechanism"
 ---
 

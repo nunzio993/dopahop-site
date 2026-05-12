@@ -11,7 +11,7 @@ tags:
   - salud mental
 locale: es
 draft: false
-author: "DopaHop"
+author: "Nunzio C."
 translationKey: "adhd-late-diagnosis-causes-consequences"
 ---
 

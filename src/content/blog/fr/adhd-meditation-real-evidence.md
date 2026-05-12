@@ -7,7 +7,7 @@ updatedDate: 2026-07-04
 tags: ["TDAH", "méditation", "mindfulness", "régulation émotionnelle"]
 locale: fr
 draft: false
-author: "DopaHop"
+author: "Nunzio C."
 translationKey: "adhd-meditation-real-evidence"
 ---
 

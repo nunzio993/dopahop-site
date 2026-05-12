@@ -7,7 +7,7 @@ updatedDate: 2026-07-02
 tags: ["TDAH", "activité physique", "sport", "fonctions exécutives"]
 locale: fr
 draft: false
-author: "DopaHop"
+author: "Nunzio C."
 translationKey: "adhd-exercise-symptom-impact"
 ---
 

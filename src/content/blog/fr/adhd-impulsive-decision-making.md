@@ -7,7 +7,7 @@ updatedDate: 2026-06-24
 tags: ["TDAH", "impulsivité", "décisions", "neurobiologie"]
 locale: fr
 draft: false
-author: "DopaHop"
+author: "Nunzio C."
 translationKey: "adhd-impulsive-decision-making"
 ---
 

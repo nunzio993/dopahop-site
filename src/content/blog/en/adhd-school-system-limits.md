@@ -7,7 +7,7 @@ updatedDate: 2026-07-16
 tags: ["ADHD", "school", "education", "advocacy"]
 locale: en
 draft: false
-author: "DopaHop"
+author: "Nunzio C."
 translationKey: "adhd-school-system-limits"
 ---
 

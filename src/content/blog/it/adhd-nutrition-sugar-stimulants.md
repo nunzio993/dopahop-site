@@ -7,7 +7,7 @@ updatedDate: 2026-06-30
 tags: ["ADHD", "alimentazione", "zucchero", "caffeina"]
 locale: it
 draft: false
-author: "DopaHop"
+author: "Nunzio C."
 translationKey: "adhd-nutrition-sugar-stimulants"
 ---
 

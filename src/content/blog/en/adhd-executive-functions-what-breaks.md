@@ -7,7 +7,7 @@ updatedDate: 2026-05-07
 tags: ["ADHD", "executive function", "working memory", "task initiation"]
 locale: en
 draft: false
-author: "DopaHop"
+author: "Nunzio C."
 translationKey: "adhd-executive-functions-what-breaks"
 ---
 

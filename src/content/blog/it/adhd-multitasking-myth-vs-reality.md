@@ -7,7 +7,7 @@ updatedDate: 2026-06-16
 tags: ["ADHD", "multitasking", "produttività", "funzioni esecutive"]
 locale: it
 draft: false
-author: "DopaHop"
+author: "Nunzio C."
 translationKey: "adhd-multitasking-myth-vs-reality"
 ---
 

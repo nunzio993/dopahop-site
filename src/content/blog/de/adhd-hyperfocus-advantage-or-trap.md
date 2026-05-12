@@ -7,7 +7,7 @@ updatedDate: 2026-06-18
 tags: ["ADHS", "Hyperfokus", "Aufmerksamkeit", "Selbstregulation"]
 locale: de
 draft: false
-author: "DopaHop"
+author: "Nunzio C."
 translationKey: "adhd-hyperfocus-advantage-or-trap"
 ---
 

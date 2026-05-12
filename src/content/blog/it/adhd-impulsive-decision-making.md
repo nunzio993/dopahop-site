@@ -7,7 +7,7 @@ updatedDate: 2026-06-24
 tags: ["ADHD", "impulsività", "decision making", "funzioni esecutive"]
 locale: it
 draft: false
-author: "DopaHop"
+author: "Nunzio C."
 translationKey: "adhd-impulsive-decision-making"
 ---
 

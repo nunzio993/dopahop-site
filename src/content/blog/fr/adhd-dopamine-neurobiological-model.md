@@ -7,7 +7,7 @@ updatedDate: 2026-05-16
 tags: ["TDAH", "neurobiologie", "dopamine", "récompense"]
 locale: fr
 draft: false
-author: "DopaHop"
+author: "Nunzio C."
 translationKey: "adhd-dopamine-neurobiological-model"
 ---
 

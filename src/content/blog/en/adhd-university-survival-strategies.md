@@ -7,7 +7,7 @@ updatedDate: 2026-06-14
 tags: ["ADHD", "college", "university", "study"]
 locale: en
 draft: false
-author: "DopaHop"
+author: "Nunzio C."
 translationKey: "adhd-university-survival-strategies"
 ---
 

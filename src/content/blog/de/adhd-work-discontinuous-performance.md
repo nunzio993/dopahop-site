@@ -7,7 +7,7 @@ updatedDate: 2026-06-12
 tags: ["ADHS", "Beruf", "Erwachsene", "Anpassungen"]
 locale: de
 draft: false
-author: "DopaHop"
+author: "Nunzio C."
 translationKey: "adhd-work-discontinuous-performance"
 ---
 

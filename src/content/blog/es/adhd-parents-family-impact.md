@@ -7,7 +7,7 @@ updatedDate: 2026-07-14
 tags: ["TDAH", "padres", "familia", "adultos"]
 locale: es
 draft: false
-author: "DopaHop"
+author: "Nunzio C."
 translationKey: "adhd-parents-family-impact"
 ---
 

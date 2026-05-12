@@ -1,0 +1,244 @@
+---
+import type { LandingStrings, Locale } from '../i18n/types';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import SiteHeader from './SiteHeader.astro';
+import SiteFooter from './SiteFooter.astro';
+import {
+  AUTHOR_NAME,
+  AUTHOR_FULL_NAME,
+  AUTHOR_PHOTO,
+  AUTHOR_LINKEDIN,
+  AUTHOR_ROLE,
+  AUTHOR_BIO_LONG,
+  authorAboutUrl,
+  authorPersonSchema,
+} from '../data/author';
+
+export interface Props {
+  locale: Locale;
+  strings: LandingStrings;
+}
+
+const { locale, strings: t } = Astro.props;
+
+const siteUrl = 'https://dopahop.app';
+const playStoreUrl = 'https://play.google.com/store/apps/details?id=com.dopahop.android';
+const aboutPath = authorAboutUrl(locale);
+const canonical = new URL(aboutPath, siteUrl).toString();
+
+const homePathByLocale: Record<Locale, string> = {
+  it: '/',
+  en: '/en/',
+  es: '/es/',
+  de: '/de/',
+  fr: '/fr/',
+};
+const blogHref = `${homePathByLocale[locale]}blog/`.replace(/\/+/g, '/');
+
+const alternateLocales: { code: string; href: string }[] = (['it', 'en', 'es', 'de', 'fr'] as Locale[]).map((lc) => ({
+  code: lc as string,
+  href: new URL(authorAboutUrl(lc), siteUrl).toString(),
+}));
+alternateLocales.push({ code: 'x-default', href: new URL(authorAboutUrl('it'), siteUrl).toString() });
+
+const personSchema = {
+  '@context': 'https://schema.org',
+  ...authorPersonSchema(locale, siteUrl),
+};
+
+const aboutPageSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'AboutPage',
+  url: canonical,
+  inLanguage: locale,
+  name: t.about.heading,
+  description: t.about.metaDescription,
+  mainEntity: { '@id': new URL(aboutPath, siteUrl).toString() + '#person' },
+};
+
+const bioParagraphs = AUTHOR_BIO_LONG[locale];
+const role = AUTHOR_ROLE[locale];
+---
+
+<BaseLayout
+  title={t.about.metaTitle}
+  description={t.about.metaDescription}
+  locale={locale}
+  canonical={canonical}
+  image={AUTHOR_PHOTO}
+  alternateLocales={alternateLocales}
+  ogType="website"
+  theme="light"
+>
+  <script type="application/ld+json" set:html={JSON.stringify(personSchema)} />
+  <script type="application/ld+json" set:html={JSON.stringify(aboutPageSchema)} />
+
+  <SiteHeader locale={locale} strings={t} />
+
+  <main>
+    <article class="about">
+      <div class="about-hero">
+        <div class="container container-narrow">
+          <p class="about-eyebrow">{t.about.eyebrow}</p>
+          <div class="about-hero-inner">
+            <img
+              src={AUTHOR_PHOTO}
+              alt={AUTHOR_FULL_NAME}
+              class="about-photo"
+              width="160"
+              height="160"
+              loading="eager"
+            />
+            <div>
+              <h1 class="about-name">{t.about.heading}</h1>
+              <p class="about-role">{role}</p>
+              <div class="about-links">
+                <a href={AUTHOR_LINKEDIN} rel="me noopener" target="_blank" class="about-link">
+                  {t.blog.authorLinkedin} ↗
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="about-body">
+        <div class="container container-narrow">
+          {bioParagraphs.map((p) => <p class="about-paragraph">{p}</p>)}
+
+          <div class="about-cta">
+            <a href={playStoreUrl} class="about-btn about-btn-primary">{t.about.ctaPrimary}</a>
+            <a href={blogHref} class="about-btn about-btn-ghost">{t.about.ctaSecondary}</a>
+          </div>
+        </div>
+      </div>
+    </article>
+  </main>
+
+  <SiteFooter locale={locale} strings={t} />
+</BaseLayout>
+
+<style>
+  main { background: var(--bg); }
+  .about-hero {
+    background: linear-gradient(180deg, #0F0F23 0%, #15152E 60%, #1A1A2E 100%);
+    color: #FAFAFA;
+    padding: 64px 0 56px;
+  }
+  .about-eyebrow {
+    font-size: 12px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--primary);
+    margin-bottom: 18px;
+  }
+  .about-hero-inner {
+    display: flex;
+    gap: 28px;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+  .about-photo {
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid rgba(255, 183, 3, 0.4);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+    background: #2a2a45;
+    flex-shrink: 0;
+  }
+  .about-name {
+    font-size: clamp(28px, 4.6vw, 44px);
+    font-weight: 800;
+    letter-spacing: -0.03em;
+    line-height: 1.1;
+    color: #FAFAFA;
+    margin-bottom: 10px;
+  }
+  .about-role {
+    font-size: 16px;
+    color: rgba(255, 255, 255, 0.7);
+    line-height: 1.5;
+    margin-bottom: 18px;
+  }
+  .about-links {
+    display: flex;
+    gap: 14px;
+    flex-wrap: wrap;
+  }
+  .about-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 14px;
+    font-weight: 600;
+    padding: 7px 14px;
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.14);
+    border-radius: var(--radius-full);
+    color: #FAFAFA;
+    transition: background 0.15s ease, border-color 0.15s ease;
+  }
+  .about-link:hover {
+    background: rgba(255, 255, 255, 0.14);
+    border-color: var(--primary);
+  }
+
+  .about-body {
+    padding: 48px 0 96px;
+  }
+  .about-paragraph {
+    font-family: var(--serif-body);
+    font-size: 19px;
+    line-height: 1.7;
+    color: var(--ink);
+    margin-bottom: 22px;
+  }
+  .about-paragraph:last-of-type {
+    margin-bottom: 36px;
+  }
+
+  .about-cta {
+    margin-top: 40px;
+    padding-top: 32px;
+    border-top: 1px solid var(--border);
+    display: flex;
+    gap: 14px;
+    flex-wrap: wrap;
+  }
+  .about-btn {
+    display: inline-flex;
+    align-items: center;
+    padding: 12px 22px;
+    border-radius: var(--radius-md);
+    font-weight: 700;
+    font-size: 15px;
+    text-decoration: none;
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+  }
+  .about-btn-primary {
+    background: var(--primary);
+    color: #0F0F23;
+    box-shadow: var(--shadow-brand);
+  }
+  .about-btn-primary:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 10px 24px rgba(255, 183, 3, 0.35);
+  }
+  .about-btn-ghost {
+    background: transparent;
+    color: var(--ink);
+    border: 1px solid var(--border-strong);
+  }
+  .about-btn-ghost:hover {
+    border-color: var(--primary);
+    color: var(--primary-dark);
+  }
+
+  @media (max-width: 560px) {
+    .about-hero-inner { flex-direction: column; align-items: flex-start; gap: 18px; }
+    .about-photo { width: 120px; height: 120px; }
+  }
+</style>

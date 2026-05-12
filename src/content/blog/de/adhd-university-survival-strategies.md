@@ -7,7 +7,7 @@ updatedDate: 2026-06-14
 tags: ["ADHS", "Studium", "Universität", "Erwachsene"]
 locale: de
 draft: false
-author: "DopaHop"
+author: "Nunzio C."
 translationKey: "adhd-university-survival-strategies"
 ---
 

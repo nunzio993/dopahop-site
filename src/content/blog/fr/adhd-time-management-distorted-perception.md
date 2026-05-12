@@ -7,7 +7,7 @@ updatedDate: 2026-06-20
 tags: ["TDAH", "time blindness", "gestion du temps", "fonctions exécutives"]
 locale: fr
 draft: false
-author: "DopaHop"
+author: "Nunzio C."
 translationKey: "adhd-time-management-distorted-perception"
 ---
 

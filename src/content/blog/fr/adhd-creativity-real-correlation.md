@@ -7,7 +7,7 @@ updatedDate: 2026-06-26
 tags: ["TDAH", "créativité", "pensée divergente", "adulte"]
 locale: fr
 draft: false
-author: "DopaHop"
+author: "Nunzio C."
 translationKey: "adhd-creativity-real-correlation"
 ---
 

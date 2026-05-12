@@ -7,7 +7,7 @@ updatedDate: 2026-07-02
 tags: ["ADHD", "exercise", "physical activity", "mental health"]
 locale: en
 draft: false
-author: "DopaHop"
+author: "Nunzio C."
 translationKey: "adhd-exercise-symptom-impact"
 ---
 

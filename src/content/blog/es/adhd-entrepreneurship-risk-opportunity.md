@@ -1,13 +1,13 @@
 ---
 title: "TDAH y emprendimiento: riesgo y oportunidad real"
 description: "TDAH y emprendimiento: por qué los mismos rasgos que ayudan a montar algo suelen ser los que lo hunden, y qué estructura externa hace que funcione."
-excerpt: "No eres "emprendedor por naturaleza" por tener TDAH. Pero hay una manera realista de montártelo."
+excerpt: "No eres \"emprendedor por naturaleza\" por tener TDAH. Pero hay una manera realista de montártelo."
 pubDate: 2026-07-10
 updatedDate: 2026-07-10
 tags: ["TDAH", "emprendimiento", "autónomo", "adultos"]
 locale: es
 draft: false
-author: "DopaHop"
+author: "Nunzio C."
 translationKey: "adhd-entrepreneurship-risk-opportunity"
 ---
 

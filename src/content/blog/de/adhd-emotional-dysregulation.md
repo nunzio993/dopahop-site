@@ -7,7 +7,7 @@ updatedDate: 2026-05-22
 tags: ["ADHS", "Emotionen", "exekutive Funktionen", "Selbstregulation"]
 locale: de
 draft: false
-author: "DopaHop"
+author: "Nunzio C."
 translationKey: "adhd-emotional-dysregulation"
 ---
 

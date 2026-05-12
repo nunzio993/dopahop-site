@@ -7,7 +7,7 @@ updatedDate: 2026-06-26
 tags: ["ADHS", "Kreativität", "divergentes Denken", "Selbstbild"]
 locale: de
 draft: false
-author: "DopaHop"
+author: "Nunzio C."
 translationKey: "adhd-creativity-real-correlation"
 ---
 

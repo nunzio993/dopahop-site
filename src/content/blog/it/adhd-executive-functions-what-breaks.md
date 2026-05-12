@@ -7,7 +7,7 @@ updatedDate: 2026-05-07
 tags: ["ADHD", "funzioni esecutive", "neurobiologia"]
 locale: it
 draft: false
-author: "DopaHop"
+author: "Nunzio C."
 translationKey: "adhd-executive-functions-what-breaks"
 ---
 

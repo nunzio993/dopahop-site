@@ -7,7 +7,7 @@ updatedDate: 2026-07-14
 tags: ["ADHS", "Eltern", "Familie", "Erwachsene"]
 locale: de
 draft: false
-author: "DopaHop"
+author: "Nunzio C."
 translationKey: "adhd-parents-family-impact"
 ---
 

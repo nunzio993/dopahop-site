@@ -7,7 +7,7 @@ updatedDate: 2026-07-08
 tags: ["ADHD", "lavoro", "smart working", "funzioni esecutive"]
 locale: it
 draft: false
-author: "DopaHop"
+author: "Nunzio C."
 translationKey: "adhd-work-structured-vs-free-environments"
 ---
 

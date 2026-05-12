@@ -7,7 +7,7 @@ updatedDate: 2026-06-22
 tags: ["ADHD", "working memory", "executive functions", "cognitive science"]
 locale: en
 draft: false
-author: "DopaHop"
+author: "Nunzio C."
 translationKey: "adhd-working-memory-real-limits"
 ---
 

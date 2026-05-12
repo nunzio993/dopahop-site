@@ -7,7 +7,7 @@ updatedDate: 2026-07-20
 tags: ["ADHS", "Medikamente", "Atomoxetin", "Guanfacin"]
 locale: de
 draft: false
-author: "DopaHop"
+author: "Nunzio C."
 translationKey: "adhd-non-stimulant-medications-when"
 ---
 

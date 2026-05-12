@@ -7,7 +7,7 @@ updatedDate: 2026-06-16
 tags: ["TDAH", "multitâche", "productivité", "fonctions exécutives"]
 locale: fr
 draft: false
-author: "DopaHop"
+author: "Nunzio C."
 translationKey: "adhd-multitasking-myth-vs-reality"
 ---
 

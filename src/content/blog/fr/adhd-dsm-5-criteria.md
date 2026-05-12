@@ -12,7 +12,7 @@ tags:
   - TDAH
   - diagnostic
   - DSM-5
-author: DopaHop
+author: "Nunzio C."
 translationKey: adhd-dsm-5-criteria
 draft: false
 ---

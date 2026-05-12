@@ -11,7 +11,7 @@ tags:
   - TDAH
   - adulte
   - enfance
-author: DopaHop
+author: "Nunzio C."
 translationKey: adhd-children-vs-adults
 draft: false
 ---

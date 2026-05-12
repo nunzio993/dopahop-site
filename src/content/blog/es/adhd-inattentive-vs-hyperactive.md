@@ -11,7 +11,7 @@ tags:
   - adultos
 locale: es
 draft: false
-author: "DopaHop"
+author: "Nunzio C."
 translationKey: "adhd-inattentive-vs-hyperactive"
 ---
 

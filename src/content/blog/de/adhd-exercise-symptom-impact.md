@@ -7,7 +7,7 @@ updatedDate: 2026-07-02
 tags: ["ADHS", "Bewegung", "Sport", "Selbstmanagement"]
 locale: de
 draft: false
-author: "DopaHop"
+author: "Nunzio C."
 translationKey: "adhd-exercise-symptom-impact"
 ---
 

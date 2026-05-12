@@ -7,7 +7,7 @@ updatedDate: 2026-06-12
 tags: ["ADHD", "work", "productivity", "accommodations"]
 locale: en
 draft: false
-author: "DopaHop"
+author: "Nunzio C."
 translationKey: "adhd-work-discontinuous-performance"
 ---
 

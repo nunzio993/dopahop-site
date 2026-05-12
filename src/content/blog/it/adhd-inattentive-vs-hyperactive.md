@@ -7,7 +7,7 @@ updatedDate: 2026-05-10
 tags: ["ADHD", "diagnosi", "sottotipi"]
 locale: it
 draft: false
-author: "DopaHop"
+author: "Nunzio C."
 translationKey: "adhd-inattentive-vs-hyperactive"
 ---
 

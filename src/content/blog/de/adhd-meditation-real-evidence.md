@@ -7,7 +7,7 @@ updatedDate: 2026-07-04
 tags: ["ADHS", "Meditation", "Achtsamkeit", "Selbstregulation"]
 locale: de
 draft: false
-author: "DopaHop"
+author: "Nunzio C."
 translationKey: "adhd-meditation-real-evidence"
 ---
 

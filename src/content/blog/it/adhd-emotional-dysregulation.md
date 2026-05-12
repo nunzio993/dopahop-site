@@ -7,7 +7,7 @@ updatedDate: 2026-05-22
 tags: ["ADHD", "emozioni", "disregolazione emotiva", "neurobiologia"]
 locale: it
 draft: false
-author: "DopaHop"
+author: "Nunzio C."
 translationKey: "adhd-emotional-dysregulation"
 ---
 

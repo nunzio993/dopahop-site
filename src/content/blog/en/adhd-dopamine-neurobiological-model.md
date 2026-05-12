@@ -7,7 +7,7 @@ updatedDate: 2026-05-16
 tags: ["ADHD", "neurobiology", "dopamine", "reward system"]
 locale: en
 draft: false
-author: "DopaHop"
+author: "Nunzio C."
 translationKey: "adhd-dopamine-neurobiological-model"
 ---
 

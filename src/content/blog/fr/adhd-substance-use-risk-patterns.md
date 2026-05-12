@@ -7,7 +7,7 @@ updatedDate: 2026-05-31
 tags: ["TDAH", "addictions", "substances", "comorbidité"]
 locale: fr
 draft: false
-author: "DopaHop"
+author: "Nunzio C."
 translationKey: "adhd-substance-use-risk-patterns"
 ---
 

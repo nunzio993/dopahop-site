@@ -7,7 +7,7 @@ updatedDate: 2026-07-06
 tags: ["TDAH", "tecnología", "redes sociales", "hábitos digitales"]
 locale: es
 draft: false
-author: "DopaHop"
+author: "Nunzio C."
 translationKey: "adhd-technology-symptom-amplification"
 ---
 

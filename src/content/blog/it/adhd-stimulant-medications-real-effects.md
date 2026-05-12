@@ -7,7 +7,7 @@ updatedDate: 2026-07-18
 tags: ["ADHD", "farmaci", "stimolanti", "terapia"]
 locale: it
 draft: false
-author: "DopaHop"
+author: "Nunzio C."
 translationKey: "adhd-stimulant-medications-real-effects"
 ---
 

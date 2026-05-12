@@ -7,7 +7,7 @@ updatedDate: 2026-05-19
 tags: ["ADHD", "procrastination", "time blindness", "motivation"]
 locale: en
 draft: false
-author: "DopaHop"
+author: "Nunzio C."
 translationKey: "adhd-procrastination-real-mechanism"
 ---
 

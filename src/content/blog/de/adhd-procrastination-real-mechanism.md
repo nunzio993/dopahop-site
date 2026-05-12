@@ -11,7 +11,7 @@ tags:
   - Motivation
 locale: de
 draft: false
-author: "DopaHop"
+author: "Nunzio C."
 translationKey: "adhd-procrastination-real-mechanism"
 ---
 

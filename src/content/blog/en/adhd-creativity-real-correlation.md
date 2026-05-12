@@ -7,7 +7,7 @@ updatedDate: 2026-06-26
 tags: ["ADHD", "creativity", "divergent thinking", "neurodivergence"]
 locale: en
 draft: false
-author: "DopaHop"
+author: "Nunzio C."
 translationKey: "adhd-creativity-real-correlation"
 ---
 

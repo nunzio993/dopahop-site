@@ -7,7 +7,7 @@ updatedDate: 2026-06-08
 tags: ["TDAH", "estime de soi", "honte", "diagnostic tardif"]
 locale: fr
 draft: false
-author: "DopaHop"
+author: "Nunzio C."
 translationKey: "adhd-self-esteem-construction-distortions"
 ---
 

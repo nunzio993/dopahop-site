@@ -7,7 +7,7 @@ updatedDate: 2026-05-22
 tags: ["TDAH", "emociones", "regulación emocional", "adultos"]
 locale: es
 draft: false
-author: "DopaHop"
+author: "Nunzio C."
 translationKey: "adhd-emotional-dysregulation"
 ---
 

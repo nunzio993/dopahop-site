@@ -7,7 +7,7 @@ updatedDate: 2026-05-25
 tags: ["ADHD", "sleep", "circadian rhythm", "insomnia"]
 locale: en
 draft: false
-author: "DopaHop"
+author: "Nunzio C."
 translationKey: "adhd-sleep-circadian-rhythm"
 ---
 

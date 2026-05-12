@@ -7,7 +7,7 @@ updatedDate: 2026-06-08
 tags: ["ADHD", "self-esteem", "rejection sensitivity", "mental health"]
 locale: en
 draft: false
-author: "DopaHop"
+author: "Nunzio C."
 translationKey: "adhd-self-esteem-construction-distortions"
 ---
 

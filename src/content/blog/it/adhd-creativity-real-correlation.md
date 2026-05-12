@@ -7,7 +7,7 @@ updatedDate: 2026-06-26
 tags: ["ADHD", "creatività", "pensiero divergente", "funzioni esecutive"]
 locale: it
 draft: false
-author: "DopaHop"
+author: "Nunzio C."
 translationKey: "adhd-creativity-real-correlation"
 ---
 
