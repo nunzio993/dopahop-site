@@ -15,10 +15,16 @@ const isProd = import.meta.env.PROD;
   <>
     <link rel="preconnect" href="https://www.googletagmanager.com" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orestbida/cookieconsent@3.0.1/dist/cookieconsent.css" />
+
+    {/* GA4 with Consent Mode v2: gtag.js loads immediately but with all
+        consent categories defaulted to "denied". Google sends cookieless
+        pings (no client ID, no cookies) for traffic modeling. When the
+        user accepts via the banner, we call gtag('consent', 'update', ...)
+        to switch analytics_storage to "granted". */}
     <script
       is:inline
-      defer
-      src="https://cdn.jsdelivr.net/gh/orestbida/cookieconsent@3.0.1/dist/cookieconsent.umd.js"
+      async
+      src={`https://www.googletagmanager.com/gtag/js?id=${gaId}`}
     />
 
     <script
@@ -29,15 +35,33 @@ const isProd = import.meta.env.PROD;
         function gtag(){ dataLayer.push(arguments); }
         window.gtag = gtag;
 
-        function loadGA() {
-          if (window.__gaLoaded) return;
-          window.__gaLoaded = true;
-          var s = document.createElement('script');
-          s.async = true;
-          s.src = 'https://www.googletagmanager.com/gtag/js?id=' + ${JSON.stringify(gaId)};
-          document.head.appendChild(s);
-          gtag('js', new Date());
-          gtag('config', ${JSON.stringify(gaId)}, { anonymize_ip: true });
+        // Consent Mode v2 — set defaults BEFORE config.
+        // All denied; will be updated on user choice.
+        gtag('consent', 'default', {
+          ad_storage: 'denied',
+          ad_user_data: 'denied',
+          ad_personalization: 'denied',
+          analytics_storage: 'denied',
+          functionality_storage: 'granted',
+          security_storage: 'granted',
+          wait_for_update: 500
+        });
+
+        gtag('js', new Date());
+        gtag('config', ${JSON.stringify(gaId)}, {
+          anonymize_ip: true,
+          allow_google_signals: false,
+          allow_ad_personalization_signals: false
+        });
+        // Allow GA to read URL info from cookieless pings
+        gtag('set', 'url_passthrough', true);
+        // Don't pass user data in URL params
+        gtag('set', 'ads_data_redaction', true);
+
+        function applyConsent(accepted) {
+          gtag('consent', 'update', {
+            analytics_storage: accepted ? 'granted' : 'denied'
+          });
         }
 
         function initConsent() {
@@ -177,10 +201,10 @@ const isProd = import.meta.env.PROD;
               }
             },
             onConsent: function() {
-              if (CookieConsent.acceptedCategory('analytics')) loadGA();
+              applyConsent(CookieConsent.acceptedCategory('analytics'));
             },
             onChange: function() {
-              if (CookieConsent.acceptedCategory('analytics')) loadGA();
+              applyConsent(CookieConsent.acceptedCategory('analytics'));
             }
           });
         }
@@ -191,6 +215,12 @@ const isProd = import.meta.env.PROD;
           initConsent();
         }
       `}
+    />
+
+    <script
+      is:inline
+      defer
+      src="https://cdn.jsdelivr.net/gh/orestbida/cookieconsent@3.0.1/dist/cookieconsent.umd.js"
     />
 
     <style is:inline set:html={`
