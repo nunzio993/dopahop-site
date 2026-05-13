@@ -309,7 +309,7 @@ Entries are sorted alphabetically within each section by `key` for stable diffs.
 - population: "review (genetica ADHD, evidenze familiari/gemellari/adozione + GWAS + CNV)"
 - finding_key: "Review della genetica dell'ADHD. Ereditabilità alta ~74% da studi familiari, gemellari e adozione. Circa un terzo dell'ereditabilità deriva da componente poligenica con molte varianti comuni a piccolo effetto; copy number variants rare contribuiscono ulteriormente. GWAS ha implicato diversi loci a livello di significatività genome-wide."
 - use_for: ["ereditabilità ADHD 74%", "genetica ADHD review", "componente poligenica", "GWAS ADHD", "studi gemellari familiari adozione"]
-- verified: 2026-05-11
+- verified: 2026-05-13
 
 ## Reward / dopamine
 
@@ -337,7 +337,7 @@ Entries are sorted alphabetically within each section by `key` for stable diffs.
 - population: "adulti (meta-analisi 33 studi)"
 - finding_key: "Meta-analisi di 33 studi su neuropsicologia degli adulti con ADHD. Deficit espressi in molteplici domini: attenzione, inibizione comportamentale, memoria. Performance normale nel simple reaction time, suggerendo impairment selettivo (non globale). Importanti deficit di inibizione comportamentale e working memory come meccanismi centrali."
 - use_for: ["adulti ADHD neuropsicologia meta-analisi", "deficit attenzione inibizione memoria", "simple reaction time normale", "selettivo non globale"]
-- verified: 2026-05-11
+- verified: 2026-05-13
 
 ### willcutt-2005-ef-theory-meta
 - authors: "Willcutt, E.G., Doyle, A.E., Nigg, J.T., Faraone, S.V., Pennington, B.F."
@@ -349,7 +349,7 @@ Entries are sorted alphabetically within each section by `key` for stable diffs.
 - population: "meta-analisi 83 studi (3.734 ADHD vs 2.969 controlli, bambini/adolescenti/adulti)"
 - finding_key: "Meta-analisi della validità della teoria executive function dell'ADHD. Effect size in range medio (0.46-0.69) su tutti i compiti EF. Effetti più forti su response inhibition, vigilance, working memory, planning. Deficit non spiegati da QI, achievement scolastico o sintomi di altri disturbi. Conclusione: deficit EF 'né necessari né sufficienti' a causare tutti i casi di ADHD — uno dei meccanismi, non l'unico."
 - use_for: ["EF theory ADHD meta-analisi", "effect size 0.46-0.69 EF", "response inhibition vigilance WM planning", "EF non necessario non sufficiente", "Willcutt 2005"]
-- verified: 2026-05-11
+- verified: 2026-05-13
 
 ## Delay aversion / discounting
 
@@ -431,7 +431,7 @@ Entries are sorted alphabetically within each section by `key` for stable diffs.
 - population: "meta-analisi (94 studi, popolazione generale)"
 - finding_key: "Meta-analisi mostra che le implementation intentions ('quando X accade, farò Y') hanno effect size medio-grande (d=.65) sul raggiungimento degli obiettivi. Gli intenti difficili vengono completati ~3 volte più spesso con implementation intentions."
 - use_for: ["implementation intentions", "Gollwitzer if-then planning", "d=.65 effect size", "x3 difficult goals"]
-- verified: 2026-05-08
+- verified: 2026-05-13
 
 ## Flow
 
@@ -447,6 +447,44 @@ Entries are sorted alphabetically within each section by `key` for stable diffs.
 - use_for: ["flow Csikszentmihalyi", "condizioni canoniche flow", "bilancio sfida-abilità"]
 - verified: 2026-05-08
 - warning: "DA NON CONFONDERE con hyperfocus ADHD: il flow è volontariamente innescato e termina rinfrancati; l'iperfocus ADHD è involontario e tipicamente termina in crash."
+
+## Treatment / CBT
+
+### li-2024-cbt-plus-pharmacotherapy-meta
+- authors: "Li, Y., Zhang, L."
+- year: 2024
+- journal: "Journal of Attention Disorders"
+- citation: "28(4) (online December 12, 2023)"
+- pmid: 38084075
+- doi: "10.1177/10870547231214969"
+- population: "adulti (meta-analisi 6 RCT)"
+- finding_key: "Meta-analisi di 6 RCT che confronta CBT + farmacoterapia (CBT+M) vs farmacoterapia sola (M) in adulti con ADHD. CBT+M più efficace di M nel migliorare i sintomi ADHD al follow-up di 3 mesi. Tuttavia, ai follow-up di 6 e 9 mesi non si osservano differenze statisticamente significative. Conclusione: vantaggio della combinata si mantiene per almeno 3 mesi; raccomandato intensificare CBT dopo 3 mesi."
+- use_for: ["CBT + farmacoterapia adulti ADHD", "vantaggio combinata 3 mesi", "attenuazione effetto 6-9 mesi", "Li Zhang 2024 meta-analisi"]
+- verified: 2026-05-13
+
+### liu-2023-cbt-beyond-core-symptoms
+- authors: "Liu, C.I., Hua, M.H., Lu, M.L., Goh, K.K."
+- year: 2023
+- journal: "Psychology and Psychotherapy: Theory, Research and Practice"
+- citation: "96(3), 543-559"
+- pmid: 36794797
+- doi: "10.1111/papt.12455"
+- population: "adulti (meta-analisi 28 RCT)"
+- finding_key: "Meta-analisi di 28 RCT su interventi CBT-based per adulti ADHD. CBT efficace nel ridurre sia sintomi core ADHD sia sintomi emotivi (depressione, ansia). Riduzioni di depressione e ansia predette dalla riduzione dei sintomi ADHD core. Osservati anche aumenti di self-esteem e qualità della vita. Sia terapia individuale sia di gruppo significativamente superiori a controlli attivi/treatment-as-usual/waitlist. CBT tradizionale equiparabile a altri approcci CBT su sintomi core ma superiore sui sintomi emotivi."
+- use_for: ["CBT adulti ADHD oltre sintomi core", "CBT comorbidità ansia depressione", "self-esteem qualità vita CBT", "individuale vs gruppo CBT"]
+- verified: 2026-05-13
+
+### young-2020-cbt-adult-adhd-meta
+- authors: "Young, Z., Moghaddam, N., Tickle, A."
+- year: 2020
+- journal: "Journal of Attention Disorders"
+- citation: "24(6), 875-888"
+- pmid: 27554190
+- doi: "10.1177/1087054716664413"
+- population: "adulti (revisione sistematica 9 RCT, meta-analisi su 8)"
+- finding_key: "Revisione sistematica di 9 RCT e meta-analisi di 8 RCT su CBT per adulti con ADHD. CBT superiore a waiting list con effect size moderato-grande (SMD=0.76, 95% CI [0.21, 1.31], p=.006) e superiore a controlli attivi con effect size piccolo-moderato (SMD=0.43, 95% CI [0.14, 0.71], p=.004). Supporto all'efficacia della CBT nel ridurre sintomi ADHD post-intervento."
+- use_for: ["CBT adulti ADHD meta-analisi", "SMD 0.76 vs waitlist", "SMD 0.43 vs active control", "Young Moghaddam Tickle 2020"]
+- verified: 2026-05-13
 
 ---
 
