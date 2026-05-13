@@ -472,7 +472,7 @@ Entries are sorted alphabetically within each section by `key` for stable diffs.
 - population: "adulti (meta-analisi 28 RCT)"
 - finding_key: "Meta-analisi di 28 RCT su interventi CBT-based per adulti ADHD. CBT efficace nel ridurre sia sintomi core ADHD sia sintomi emotivi (depressione, ansia). Riduzioni di depressione e ansia predette dalla riduzione dei sintomi ADHD core. Osservati anche aumenti di self-esteem e qualità della vita. Sia terapia individuale sia di gruppo significativamente superiori a controlli attivi/treatment-as-usual/waitlist. CBT tradizionale equiparabile a altri approcci CBT su sintomi core ma superiore sui sintomi emotivi."
 - use_for: ["CBT adulti ADHD oltre sintomi core", "CBT comorbidità ansia depressione", "self-esteem qualità vita CBT", "individuale vs gruppo CBT"]
-- verified: 2026-05-13
+- verified: 2026-05-14
 
 ### young-2020-cbt-adult-adhd-meta
 - authors: "Young, Z., Moghaddam, N., Tickle, A."
@@ -484,7 +484,7 @@ Entries are sorted alphabetically within each section by `key` for stable diffs.
 - population: "adulti (revisione sistematica 9 RCT, meta-analisi su 8)"
 - finding_key: "Revisione sistematica di 9 RCT e meta-analisi di 8 RCT su CBT per adulti con ADHD. CBT superiore a waiting list con effect size moderato-grande (SMD=0.76, 95% CI [0.21, 1.31], p=.006) e superiore a controlli attivi con effect size piccolo-moderato (SMD=0.43, 95% CI [0.14, 0.71], p=.004). Supporto all'efficacia della CBT nel ridurre sintomi ADHD post-intervento."
 - use_for: ["CBT adulti ADHD meta-analisi", "SMD 0.76 vs waitlist", "SMD 0.43 vs active control", "Young Moghaddam Tickle 2020"]
-- verified: 2026-05-13
+- verified: 2026-05-14
 
 ---
 
