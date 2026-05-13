@@ -6,9 +6,6 @@ Ordina i topic come vuoi: il primo della lista è il prossimo a uscire.
 
 ---
 
-- ADHD e terapia cognitivo-comportamentale
-- ADHD e coaching: utilità reale vs marketing
-- ADHD e strumenti digitali (task manager, reminder)
 - ADHD e routine: costruzione vs fallimento
 - ADHD e disciplina: perché i metodi standard falliscono
 - ADHD e gestione delle priorità
