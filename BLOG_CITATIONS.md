@@ -416,7 +416,7 @@ Entries are sorted alphabetically within each section by `key` for stable diffs.
 - population: "review (studenti universitari con ADHD)"
 - finding_key: "Review su studenti universitari con ADHD. Prevalenza: 2-8% della popolazione universitaria riporta sintomi ADHD clinicamente significativi; almeno il 25% degli studenti con disabilità ha diagnosi ADHD. Evidenze consistenti di deficit accademici associati ad ADHD. Evidenze su funzionamento sociale, psicologico e neuropsicologico ancora poco chiare. ~7% degli studenti riporta uso non prescritto di stimolanti."
 - use_for: ["college students ADHD prevalenza 2-8%", "deficit accademici università", "uso non prescritto stimolanti 7%", "DuPaul 2009 review"]
-- verified: 2026-05-11
+- verified: 2026-05-14
 - warning: "Review del 2009 con limitazioni metodologiche segnalate dagli autori (campioni piccoli, diagnosi spesso non confermata). Per dati più recenti citare con cautela."
 
 ## Implementation intentions / planning
