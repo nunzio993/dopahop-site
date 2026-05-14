@@ -936,7 +936,7 @@ const faqSchema = faqItems.length > 0
     flex-shrink: 0;
     letter-spacing: -0.02em;
   }
-  .post-author-photo {
+  :global(.post-author-photo) {
     width: 64px;
     height: 64px;
     border-radius: 50%;
@@ -944,6 +944,8 @@ const faqSchema = faqItems.length > 0
     border: 2px solid var(--border-strong);
     background: var(--surface-elevated);
     flex-shrink: 0;
+    display: block;
+  }
     margin: 0;
   }
   .post-author-text {
@@ -1058,7 +1060,7 @@ const faqSchema = faqItems.length > 0
   }
   /* Higher-specificity selectors so .post-body :global(img/a) rules
      don't override after JS moves the CTA inside .post-body */
-  .post-inline-cta .post-inline-cta-icon {
+  .post-inline-cta :global(.post-inline-cta-icon) {
     width: 56px;
     height: 56px;
     border-radius: 14px;
@@ -1066,6 +1068,8 @@ const faqSchema = faqItems.length > 0
     box-shadow: var(--shadow-brand);
     margin: 0;
     border: none;
+    display: block;
+    object-fit: cover;
   }
   .post-inline-cta-text {
     flex: 1;

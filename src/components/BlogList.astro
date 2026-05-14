@@ -363,11 +363,14 @@ const blogListSchema = {
     text-align: center;
     padding: 28px 22px;
   }
-  .sidebar-app-icon {
+  :global(.sidebar-app-icon) {
+    width: 56px;
+    height: 56px;
     border-radius: 14px;
     box-shadow: var(--shadow-brand);
     margin: 0 auto 14px;
     display: block;
+    object-fit: cover;
   }
   .sidebar-app-title {
     font-size: 19px;
