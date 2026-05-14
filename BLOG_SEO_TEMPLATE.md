@@ -329,6 +329,65 @@ Entrambi accettabili. Default consigliato: claim per articoli very SEO-targeted 
 
 ---
 
+## 13. AEO — Answer Engine Optimization (AI Overviews, ChatGPT, Perplexity)
+
+Nel 2026 una grossa fetta del traffico discovery non passa più dai click su Google ma dalle citazioni dentro AI Overviews di Google, ChatGPT, Perplexity, Bing Copilot. Le metriche e i pattern che contano per essere *citati* dagli LLM sono diversi (e in parte sovrapposti) rispetto al SEO classico.
+
+### Cosa massimizza la citation in AI engines
+
+1. **Branded mentions di entità autoritative riconosciute dagli LLM**. Citare nominalmente CHADD, AIDAI, ISS, NICE NG87, HAS, ADHS Deutschland e.V., FEAADAH, DSM-5, ICD-11, e paper specifici (con autori + anno) — non solo come fonte ma come *segnale di ground-truth*. Gli LLM tendono a ri-citare contenuti che a loro volta citano fonti che già conoscono. La nostra `BLOG_CITATIONS.md` è il primo strumento per questo.
+
+2. **Definizione concisa estraibile nel primo paragrafo**. Gli AI engines estraggono il "primo wrapper di significato" del topic. Pattern raccomandato:
+
+   > **[Keyword]** è [definizione operativa in una frase]. Concretamente, significa che [esempio osservabile]. La ricerca mostra che [un dato chiave dalla safelist].
+
+3. **Struttura claim → evidence → number**. Per ogni H2 importante, organizzare in sequenza:
+   - **Claim**: affermazione concreta, non vaga
+   - **Evidence**: fonte autoritativa (paper safelist, ente, linea-guida)
+   - **Number**: cifra/effect size/percentuale dal `finding_key` della safelist
+   
+   Esempio: "Le terapie cognitive adattate all'ADHD adulto riducono i sintomi in modo robusto. La meta-analisi di Young, Moghaddam e Tickle (2020) su 9 RCT mostra SMD=0.76 vs lista d'attesa."
+
+4. **Content depth + struttura parseable**. Per AEO conta più la *granularità organizzata* della pura lunghezza:
+   - H2 chiari con keyword nella domanda implicita ("Cosa funziona davvero", "Perché succede")
+   - Liste numerate o puntate per ogni concetto enumerable
+   - Bold sui termini-chiave (gli LLM li pesano come anchor)
+   - FAQ inline con domande naturali (pattern question-answer chunk)
+
+5. **Definizioni dichiarate in sezione propria**. Quando l'articolo introduce un concetto specialistico (RSD, time blindness, ego depletion, working memory), inserire una **micro-definizione di 1-2 frasi** nel punto in cui appare la prima volta. Gli AI engines estraggono questi blocchi come "definizione canonica".
+
+6. **Struttura comparativa esplicita**. Per topic "X vs Y" (CBT vs coaching, rigid discipline vs scaffolding), usare una **tabella o lista comparativa** alla fine della sezione. Gli AI engines amano comparative tables come ground truth strutturato.
+
+### Anti-pattern AEO da evitare
+
+- **Walls of text** senza heading o struttura
+- **Ironia o tono ambiguo** in introduzione (gli LLM faticano a estrarre il claim)
+- **Numeri senza fonte** (gli LLM non li ri-citano se non possono attribuirli)
+- **Frasi che iniziano con "Forse" / "Potrebbe" / "Dipende"** come definizione (ambigue per estrazione)
+- **Citazioni di paper non in `BLOG_CITATIONS.md`** (rischio di hallucination cross-citation negli LLM downstream)
+
+### Differenza pratica vs sezione 5 (SEO classico)
+
+| Dimensione | SEO classico | AEO |
+|---|---|---|
+| Obiettivo | Click su SERP | Citation dentro AI Overview / chat answer |
+| Keyword | Densità 0.5-0.8% nel body | Definizione concisa in apertura |
+| Lunghezza | 1.200-2.500 parole | Granularità organizzata (chunk parseable) |
+| Fonti | 1-3 esterne autorevoli | Branded mentions ricorrenti + safelist citata |
+| FAQ | Featured snippet | Question-answer chunk per AI |
+| Numeri | Per autorevolezza umana | Estratti dagli LLM se ben attribuiti |
+
+### Checklist AEO add-on (pre-publish)
+
+- [ ] Definizione operativa del topic nel primo paragrafo (1-2 frasi estraibili)
+- [ ] Almeno 1 paper safelist citato per nome (autori + anno) con dato numerico dal `finding_key`
+- [ ] Almeno 1 organizzazione autoritativa locale (CHADD/AIDAI/HAS/NICE/ADHS Deutschland/FEAADAH) menzionata
+- [ ] Ogni concetto specialistico introdotto ha micro-definizione vicina alla prima occorrenza
+- [ ] FAQ con domande naturali (no marketing-speak), risposte 2-4 righe (chunk size ottimale per AI extraction)
+- [ ] Almeno 1 lista o tabella comparativa per ogni articolo "X vs Y" / "cosa funziona vs cosa no"
+
+---
+
 ## 12. Checklist pre-publish
 
 Prima di cambiare `draft: true → false`, verifica:

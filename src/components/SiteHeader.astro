@@ -51,7 +51,7 @@ const blogHref = `${homeHref}blog/`.replace(/\/+/g, '/');
             <a
               href={homePathByLocale[lc]}
               class:list={['lang-link', { active: lc === locale }]}
-              hreflang={lc}
+              hreflang={lc === 'it' ? 'it-IT' : lc === 'en' ? 'en-US' : lc === 'es' ? 'es-ES' : lc === 'de' ? 'de-DE' : 'fr-FR'}
               aria-current={lc === locale ? 'page' : undefined}
             >
               {localeLabels[lc]}

@@ -341,7 +341,7 @@ const faqSchema = faqItems.length > 0
               <span class="post-translations-label">{t.langSwitcher.label}</span>
               <div class="post-translations-links">
                 {translations.map((tr) => (
-                  <a href={postUrl(tr)} hreflang={tr.data.locale} class="post-translation-link">
+                  <a href={postUrl(tr)} hreflang={tr.data.locale === 'it' ? 'it-IT' : tr.data.locale === 'en' ? 'en-US' : tr.data.locale === 'es' ? 'es-ES' : tr.data.locale === 'de' ? 'de-DE' : 'fr-FR'} class="post-translation-link">
                     {tr.data.locale.toUpperCase()}
                   </a>
                 ))}

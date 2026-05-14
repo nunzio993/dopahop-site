@@ -64,9 +64,16 @@ const alternateLocales: AlternateLocale[] = customAlternateLocales ?? [
   <meta name="description" content={description} />
   <meta name="theme-color" content={theme === 'light' ? '#FAFAFA' : '#0F0F23'} />
 
-  {alternateLocales.map(({ code, href }) => (
-    <link rel="alternate" hreflang={code} href={href} />
-  ))}
+  {alternateLocales.map(({ code, href }) => {
+    const hreflangCode = code === 'x-default' ? 'x-default'
+      : code === 'it' ? 'it-IT'
+      : code === 'en' ? 'en-US'
+      : code === 'es' ? 'es-ES'
+      : code === 'de' ? 'de-DE'
+      : code === 'fr' ? 'fr-FR'
+      : code;
+    return <link rel="alternate" hreflang={hreflangCode} href={href} />;
+  })}
 
   <meta property="og:title" content={title} />
   <meta property="og:description" content={description} />
