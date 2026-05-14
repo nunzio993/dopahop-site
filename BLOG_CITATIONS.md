@@ -309,7 +309,7 @@ Entries are sorted alphabetically within each section by `key` for stable diffs.
 - population: "review (genetica ADHD, evidenze familiari/gemellari/adozione + GWAS + CNV)"
 - finding_key: "Review della genetica dell'ADHD. Ereditabilità alta ~74% da studi familiari, gemellari e adozione. Circa un terzo dell'ereditabilità deriva da componente poligenica con molte varianti comuni a piccolo effetto; copy number variants rare contribuiscono ulteriormente. GWAS ha implicato diversi loci a livello di significatività genome-wide."
 - use_for: ["ereditabilità ADHD 74%", "genetica ADHD review", "componente poligenica", "GWAS ADHD", "studi gemellari familiari adozione"]
-- verified: 2026-05-13
+- verified: 2026-05-14
 
 ## Reward / dopamine
 
