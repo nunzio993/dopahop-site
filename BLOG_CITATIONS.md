@@ -54,7 +54,7 @@ Entries are sorted alphabetically within each section by `key` for stable diffs.
 - population: "modello teorico"
 - finding_key: "Modello originale della working memory con tre componenti: phonological loop (loop fonologico), visuospatial sketchpad (taccuino visuo-spaziale), central executive (esecutivo centrale)."
 - use_for: ["modello working memory", "Baddeley & Hitch", "componenti memoria di lavoro"]
-- verified: 2026-05-08
+- verified: 2026-05-14
 
 ### baddeley-2000-episodic-buffer
 - authors: "Baddeley, A.D."
@@ -66,7 +66,7 @@ Entries are sorted alphabetically within each section by `key` for stable diffs.
 - population: "modello teorico"
 - finding_key: "Aggiunta del quarto componente al modello Baddeley & Hitch (1974): episodic buffer, che integra informazioni multimodali e le lega alla memoria a lungo termine."
 - use_for: ["episodic buffer", "Baddeley 2000", "estensione modello working memory"]
-- verified: 2026-05-08
+- verified: 2026-05-14
 
 ### kasper-2012-wm-children
 - authors: "Kasper, L.J., Alderson, R.M., Hudec, K.L."
@@ -180,7 +180,7 @@ Entries are sorted alphabetically within each section by `key` for stable diffs.
 - population: "adulti generali (NON specifico ADHD)"
 - finding_key: "Studio classico sui costi cognitivi del task-switching. Frasi attribuibili (via APA): 'mental blocks created by shifting between tasks can cost as much as 40 percent of someone's productive time'. Modello a due stadi: goal shifting + rule activation."
 - use_for: ["task-switching cost", "40% productivity cost", "goal shifting rule activation"]
-- verified: 2026-05-08
+- verified: 2026-05-14
 - warning: "Studio NON specifico per ADHD. Per applicare ad ADHD, usare formulazione 'amplificato in ADHD' senza attribuire il dato del 40% direttamente all'ADHD."
 
 ### watson-2010-supertaskers
@@ -387,7 +387,7 @@ Entries are sorted alphabetically within each section by `key` for stable diffs.
 - population: "modello teorico (review concettuale)"
 - finding_key: "Modello dual pathway dell'ADHD: due sotto-tipi psico-pato-fisiologici con diversi pathway dello sviluppo. (1) Pathway esecutivo — disturbi nei circuiti fronto-dorsale-striatali e branche dopaminergiche meso-corticali. (2) Pathway motivazionale/delay aversion — alterati processi di reward, circuiti fronto-ventro-striatali e branche meso-limbiche al nucleus accumbens."
 - use_for: ["dual pathway model Sonuga-Barke", "delay aversion teoria", "due sotto-tipi ADHD", "fronto-dorsale vs fronto-ventrale", "circuiti reward ADHD"]
-- verified: 2026-05-11
+- verified: 2026-05-14
 
 ## Entrepreneurship
 
