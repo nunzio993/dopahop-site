@@ -117,7 +117,7 @@ Entries are sorted alphabetically within each section by `key` for stable diffs.
 - population: "review (bambini, adolescenti, adulti)"
 - finding_key: "Rassegna sistematica su timing deficits in ADHD attraverso milliseconds, seconds, minutes e intervalli più lunghi. Deficit consistenti in tre domini: motor timing, perceptual timing, temporal foresight. Disfunzioni nei circuiti fronto-striato-cerebellari e fronto-parietali."
 - use_for: ["review timing ADHD", "circuiti fronto-striato-cerebellari", "deficit timing multidominio"]
-- verified: 2026-05-08
+- verified: 2026-05-14
 
 ### toplak-2005-time-discrimination
 - authors: "Toplak, M.E., Tannock, R."
@@ -129,7 +129,7 @@ Entries are sorted alphabetically within each section by `key` for stable diffs.
 - population: "adolescenti (46 ADHD, 44 controlli)"
 - finding_key: "Adolescenti con ADHD hanno soglie più alte (peggio) in tutti i compiti di duration discrimination rispetto ai controlli. Deficit replicati in molti studi successivi."
 - use_for: ["duration discrimination ADHD", "soglie discriminazione temporale"]
-- verified: 2026-05-08
+- verified: 2026-05-14
 
 ### toplak-2006-temporal-processing-review
 - authors: "Toplak, M.E., Dockstader, C., Tannock, R."
@@ -168,7 +168,7 @@ Entries are sorted alphabetically within each section by `key` for stable diffs.
 - population: "adulti generali (studenti universitari, NON ADHD)"
 - finding_key: "Heavy media multitaskers performano peggio in compiti di cognitive control inclusi task-switching. Suggerisce che chi si percepisce buon multitasker tende a esserlo meno in test oggettivi. Studio su popolazione generale."
 - use_for: ["heavy media multitaskers", "self-perception vs performance multitasking"]
-- verified: 2026-05-08
+- verified: 2026-05-14
 
 ### rubinstein-2001-task-switching
 - authors: "Rubinstein, J.S., Meyer, D.E., Evans, J.E."
@@ -207,7 +207,7 @@ Entries are sorted alphabetically within each section by `key` for stable diffs.
 - population: "review (ADHD, autismo, schizofrenia, flow)"
 - finding_key: "Rassegna sistematica che propone una definizione operativa dell'iperfocus (4 criteri: engagement intenso, attenzione sostenuta, ridotta percezione di stimoli non-task, performance migliorata). Niente consensus precedente sulla definizione. Iperfocus come attenzione sostenuta paradossale che non si disengage facilmente."
 - use_for: ["definizione operativa hyperfocus", "iperfocus paradossale", "no consensus definition"]
-- verified: 2026-05-08
+- verified: 2026-05-14
 
 ### hupfeld-2019-hyperfocus-adults
 - authors: "Hupfeld, K.E., Abagis, T.R., Shah, P."
@@ -219,7 +219,7 @@ Entries are sorted alphabetically within each section by `key` for stable diffs.
 - population: "adulti (pilota n=251, replicazione n=372 — totale ~623)"
 - finding_key: "Adulti con sintomatologia ADHD più alta riportano maggior frequenza e maggiori valori dispositivi di iperfocus, attraverso scuola, hobby e screen time. Non studio di 'intensità' o 'problematicità'."
 - use_for: ["iperfocus adulti ADHD", "frequenza dispositiva", "settings school/hobbies/screen"]
-- verified: 2026-05-08
+- verified: 2026-05-14
 
 ### ozel-kizil-2016-hyperfocus-scale
 - authors: "Ozel-Kizil, E.T., Kokurcan, A., Aksoy, U.M., Kanat, B.B., Sakarya, D., Bastug, G., Colak, B., Altunoz, U., Kirici, S., Demirbas, H., Oncu, B."
@@ -401,7 +401,7 @@ Entries are sorted alphabetically within each section by `key` for stable diffs.
 - population: "adulti (modello teorico + ipotesi su imprenditori)"
 - finding_key: "Integrazione delle letterature ADHD, impulsività e imprenditorialità. Il tratto multifaceted di impulsività media la relazione tra sintomi ADHD e preferenze imprenditoriali, comportamento di start-up e performance. I sintomi di iperattività hanno un effetto positivo nel contesto imprenditoriale, principalmente attraverso la dimensione sensation-seeking dell'impulsività."
 - use_for: ["ADHD imprenditorialità", "impulsività mediator", "sensation-seeking imprenditori", "Wiklund 2017", "iperattività effetto positivo entrepreneurship"]
-- verified: 2026-05-11
+- verified: 2026-05-14
 - warning: "Pubblicazione in business journal — NO PMID (non in PubMed). Verifica via DOI/Journal of Business Venturing."
 
 ## ADHD in school / college
@@ -445,7 +445,7 @@ Entries are sorted alphabetically within each section by `key` for stable diffs.
 - population: "modello teorico"
 - finding_key: "Concetto di 'flow' (esperienza ottimale) introdotto formalmente. Condizioni canoniche: bilancio sfida/abilità, obiettivi chiari, feedback immediato, fusione azione/coscienza, perdita autoconsapevolezza, distorsione del tempo."
 - use_for: ["flow Csikszentmihalyi", "condizioni canoniche flow", "bilancio sfida-abilità"]
-- verified: 2026-05-08
+- verified: 2026-05-14
 - warning: "DA NON CONFONDERE con hyperfocus ADHD: il flow è volontariamente innescato e termina rinfrancati; l'iperfocus ADHD è involontario e tipicamente termina in crash."
 
 ## Treatment / CBT
