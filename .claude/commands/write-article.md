@@ -119,6 +119,8 @@ PRIMA di scrivere il body, esegui questo step:
 
 Questo step è cruciale per il SEO: Google premia il sito con link interni inter-articolo (boost ranking + crawl).
 
+**CAP MASSIMO: 3-4 link inter-blog per articolo.** Mai oltre 4. Default 1-2. Si conta `/blog/<slug>/` (non si contano gli anchor `/#cosa-fa` ai moduli DopaHop, che sono separati e gestiti dal CTA inline). Densità superiore a 4 link inter-blog su un articolo di 1.500-2.500 parole genera distrazione visiva (audience ADHD) + segnale di over-optimization a Google. Se trovi più di 2-3 articoli candidati molto correlati, scegli i 2 migliori e basta.
+
 ## Output
 
 Scrivi un file Markdown completo a:

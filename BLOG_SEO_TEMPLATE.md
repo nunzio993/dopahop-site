@@ -211,12 +211,14 @@ In ogni articolo cita almeno 1 modulo DopaHop pertinente:
 | Mood | Mood check-in | `[mood check-in](/#cosa-fa)` |
 | Focus | Focus sounds | `[focus sounds](/#cosa-fa)` |
 
-### Internal link a altri articoli del blog (1-2 per articolo)
+### Internal link a altri articoli del blog (1-2 per articolo, MAX 3-4)
 
 Quando un argomento si collega a un altro articolo già pubblicato:
 ```markdown
 Vedi anche: [ADHD e funzioni esecutive: cosa si rompe davvero](/blog/adhd-funzioni-esecutive-cosa-si-rompe/)
 ```
+
+**CAP MASSIMO: 3-4 link inter-blog per articolo.** Default consigliato 1-2. Mai oltre 4. Si conta solo `/blog/<slug>/` (gli anchor `/#cosa-fa` ai moduli DopaHop NON contano: sono CTA inline separati, gestiti in sezione 7). Sopra 4 link inter-blog su un articolo di 1.500-2.500 parole genera distrazione visiva (audience ADHD!) + segnale di over-optimization SEO. Se identifichi 5+ articoli candidati molto correlati, scegli i 2-3 migliori e basta.
 
 ### Link esterni a fonti autorevoli (1-3 per articolo clinico)
 
