@@ -105,7 +105,7 @@ Entries are sorted alphabetically within each section by `key` for stable diffs.
 - population: "modello teorico (bambini, esteso ad adulti)"
 - finding_key: "ADHD come disturbo dell'autoregolazione attraverso il tempo. Concetti di 'temporal myopia', 'time horizon' ridotto, dicotomia 'now/not-now'. Inibizione comportamentale come deficit primario."
 - use_for: ["time horizon Barkley", "temporal myopia", "now/not-now", "self-regulation across time"]
-- verified: 2026-05-08
+- verified: 2026-05-14
 
 ### noreika-2013-timing-review
 - authors: "Noreika, V., Falter, C.M., Rubia, K."
@@ -363,7 +363,7 @@ Entries are sorted alphabetically within each section by `key` for stable diffs.
 - population: "meta-analisi 21 studi case-control (25 confronti, N=3.913)"
 - finding_key: "Meta-analisi su monetary delay discounting in ADHD vs controlli. Effect size medio (Cohen's d=0.43, p<10⁻¹⁵): individui con ADHD mostrano discounting elevato di ricompense future. Nessuna variazione significativa per età dei partecipanti, ricompense reali vs ipotetiche, o presenza di comorbidità (CD/ODD)."
 - use_for: ["delay discounting meta-analisi ADHD", "Cohen's d 0.43 discounting", "robusto attraverso età e setting", "monetary discounting case-control"]
-- verified: 2026-05-11
+- verified: 2026-05-14
 
 ### marx-2021-delay-aversion-meta
 - authors: "Marx, I., Hacker, T., Yu, X., Cortese, S., Sonuga-Barke, E."
