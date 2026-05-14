@@ -42,7 +42,7 @@ Entries are sorted alphabetically within each section by `key` for stable diffs.
 - population: "adulti"
 - finding_key: "Meta-analisi su working memory in adulti ADHD. Effect size moderato. Deficit più marcati in compiti che richiedono manipolazione attiva (central executive) rispetto a semplice ripetizione/storage."
 - use_for: ["working memory adulti ADHD", "central executive deficit adulti", "manipolazione vs storage"]
-- verified: 2026-05-08
+- verified: 2026-05-14
 
 ### baddeley-1974-wm-model
 - authors: "Baddeley, A.D., Hitch, G.J."
