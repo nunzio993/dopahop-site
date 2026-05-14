@@ -156,7 +156,7 @@ Entries are sorted alphabetically within each section by `key` for stable diffs.
 - population: "adulti generali (popolazione lavorativa)"
 - finding_key: "In media servono ~23 minuti e 15 secondi per tornare al livello di concentrazione originale dopo un'interruzione. Studio su lavoratori della conoscenza, non specifico ADHD."
 - use_for: ["costo delle interruzioni", "23 minuti recupero attenzione", "knowledge worker interruptions"]
-- verified: 2026-05-08
+- verified: 2026-05-14
 
 ### ophir-2009-media-multitasking
 - authors: "Ophir, E., Nass, C., Wagner, A.D."
@@ -375,7 +375,7 @@ Entries are sorted alphabetically within each section by `key` for stable diffs.
 - population: "meta-analisi 37 confronti di gruppo (3.763 partecipanti, 53% ADHD)"
 - finding_key: "Meta-analisi comparativa su scelta di piccole ricompense immediate vs grandi ritardate, paragonando simple choice paradigm (SCP, 22 confronti) e temporal discounting paradigm (TDP, 15 confronti). Effect size piccoli-medi in entrambi i paradigmi. Offrire ricompense reali (vs ipotetiche) nel SCP quasi raddoppia l'odds ratio per ADHD. Conclusione: avversione al ritardo più forte del normale + effetto demotivante di ricompense ipotetiche promuovono la scelta impulsiva."
 - use_for: ["delay aversion meta-analisi", "small immediate vs large delayed", "SCP vs TDP", "ricompense reali vs ipotetiche", "Marx 2021"]
-- verified: 2026-05-11
+- verified: 2026-05-14
 
 ### sonuga-barke-2003-dual-pathway
 - authors: "Sonuga-Barke, E.J.S."
