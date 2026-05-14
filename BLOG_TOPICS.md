@@ -6,9 +6,6 @@ Ordina i topic come vuoi: il primo della lista è il prossimo a uscire.
 
 ---
 
-- ADHD e routine: costruzione vs fallimento
-- ADHD e disciplina: perché i metodi standard falliscono
-- ADHD e gestione delle priorità
 - ADHD e overload cognitivo
 - ADHD e ambiente: design dello spazio di lavoro
 - ADHD e finanze personali: impulsività e debito
