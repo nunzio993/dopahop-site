@@ -6,11 +6,6 @@ Ordina i topic come vuoi: il primo della lista è il prossimo a uscire.
 
 ---
 
-- ADHD e carriera IT: vantaggi e criticità
-- ADHD e social media: loop dopaminergici
-- ADHD e relazioni sentimentali instabili
-- ADHD e mascheramento sociale
-- ADHD nelle donne: sottodiagnosi e bias
 - ADHD e diagnosi differenziale (bipolare, borderline, ansia)
 - ADHD e micro-tasking: scomposizione operativa del lavoro
 - ADHD e "task switching cost": impatto misurabile
