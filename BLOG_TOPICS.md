@@ -6,9 +6,6 @@ Ordina i topic come vuoi: il primo della lista è il prossimo a uscire.
 
 ---
 
-- ADHD e overload cognitivo
-- ADHD e ambiente: design dello spazio di lavoro
-- ADHD e finanze personali: impulsività e debito
 - ADHD e carriera IT: vantaggi e criticità
 - ADHD e social media: loop dopaminergici
 - ADHD e relazioni sentimentali instabili
