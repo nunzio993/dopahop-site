@@ -6,9 +6,6 @@ Ordina i topic come vuoi: il primo della lista è il prossimo a uscire.
 
 ---
 
-- ADHD e diagnosi differenziale (bipolare, borderline, ansia)
-- ADHD e micro-tasking: scomposizione operativa del lavoro
-- ADHD e "task switching cost": impatto misurabile
 - ADHD e reward immediato: progettazione degli incentivi
 - ADHD e fallimento dei sistemi di produttività standard
 - ADHD e GTD: cosa non funziona
