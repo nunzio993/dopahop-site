@@ -42,7 +42,7 @@ Entries are sorted alphabetically within each section by `key` for stable diffs.
 - population: "adulti"
 - finding_key: "Meta-analisi su working memory in adulti ADHD. Effect size moderato. Deficit più marcati in compiti che richiedono manipolazione attiva (central executive) rispetto a semplice ripetizione/storage."
 - use_for: ["working memory adulti ADHD", "central executive deficit adulti", "manipolazione vs storage"]
-- verified: 2026-05-14
+- verified: 2026-05-16
 
 ### baddeley-1974-wm-model
 - authors: "Baddeley, A.D., Hitch, G.J."
@@ -105,7 +105,7 @@ Entries are sorted alphabetically within each section by `key` for stable diffs.
 - population: "modello teorico (bambini, esteso ad adulti)"
 - finding_key: "ADHD come disturbo dell'autoregolazione attraverso il tempo. Concetti di 'temporal myopia', 'time horizon' ridotto, dicotomia 'now/not-now'. Inibizione comportamentale come deficit primario."
 - use_for: ["time horizon Barkley", "temporal myopia", "now/not-now", "self-regulation across time"]
-- verified: 2026-05-14
+- verified: 2026-05-16
 
 ### noreika-2013-timing-review
 - authors: "Noreika, V., Falter, C.M., Rubia, K."
@@ -180,7 +180,7 @@ Entries are sorted alphabetically within each section by `key` for stable diffs.
 - population: "adulti generali (NON specifico ADHD)"
 - finding_key: "Studio classico sui costi cognitivi del task-switching. Frasi attribuibili (via APA): 'mental blocks created by shifting between tasks can cost as much as 40 percent of someone's productive time'. Modello a due stadi: goal shifting + rule activation."
 - use_for: ["task-switching cost", "40% productivity cost", "goal shifting rule activation"]
-- verified: 2026-05-14
+- verified: 2026-05-16
 - warning: "Studio NON specifico per ADHD. Per applicare ad ADHD, usare formulazione 'amplificato in ADHD' senza attribuire il dato del 40% direttamente all'ADHD."
 
 ### watson-2010-supertaskers
@@ -323,7 +323,7 @@ Entries are sorted alphabetically within each section by `key` for stable diffs.
 - population: "review meta-analitica fMRI (ADHD vs popolazione sana)"
 - finding_key: "Meta-analisi di studi fMRI su anticipazione di reward in ADHD: ipo-responsività ventro-striatale (VS) con effect size medio (Cohen's d=0.48-0.58). Paradosso: in soggetti sani, impulsività di tratto correla con MAGGIORE attivazione VS, mentre in ADHD è ridotta. Tre framework teorici proposti per riconciliare i pattern: U-rovesciata, moderatore genetico, modello unrelated."
 - use_for: ["ipo-responsività ventro-striatale ADHD", "reward anticipation fMRI", "Cohen's d 0.48-0.58", "paradosso impulsività ADHD vs sani"]
-- verified: 2026-05-14
+- verified: 2026-05-16
 
 ## Executive function
 
@@ -363,7 +363,7 @@ Entries are sorted alphabetically within each section by `key` for stable diffs.
 - population: "meta-analisi 21 studi case-control (25 confronti, N=3.913)"
 - finding_key: "Meta-analisi su monetary delay discounting in ADHD vs controlli. Effect size medio (Cohen's d=0.43, p<10⁻¹⁵): individui con ADHD mostrano discounting elevato di ricompense future. Nessuna variazione significativa per età dei partecipanti, ricompense reali vs ipotetiche, o presenza di comorbidità (CD/ODD)."
 - use_for: ["delay discounting meta-analisi ADHD", "Cohen's d 0.43 discounting", "robusto attraverso età e setting", "monetary discounting case-control"]
-- verified: 2026-05-14
+- verified: 2026-05-16
 
 ### marx-2021-delay-aversion-meta
 - authors: "Marx, I., Hacker, T., Yu, X., Cortese, S., Sonuga-Barke, E."
@@ -375,7 +375,7 @@ Entries are sorted alphabetically within each section by `key` for stable diffs.
 - population: "meta-analisi 37 confronti di gruppo (3.763 partecipanti, 53% ADHD)"
 - finding_key: "Meta-analisi comparativa su scelta di piccole ricompense immediate vs grandi ritardate, paragonando simple choice paradigm (SCP, 22 confronti) e temporal discounting paradigm (TDP, 15 confronti). Effect size piccoli-medi in entrambi i paradigmi. Offrire ricompense reali (vs ipotetiche) nel SCP quasi raddoppia l'odds ratio per ADHD. Conclusione: avversione al ritardo più forte del normale + effetto demotivante di ricompense ipotetiche promuovono la scelta impulsiva."
 - use_for: ["delay aversion meta-analisi", "small immediate vs large delayed", "SCP vs TDP", "ricompense reali vs ipotetiche", "Marx 2021"]
-- verified: 2026-05-14
+- verified: 2026-05-16
 
 ### sonuga-barke-2003-dual-pathway
 - authors: "Sonuga-Barke, E.J.S."
@@ -431,7 +431,7 @@ Entries are sorted alphabetically within each section by `key` for stable diffs.
 - population: "meta-analisi (94 studi, popolazione generale)"
 - finding_key: "Meta-analisi mostra che le implementation intentions ('quando X accade, farò Y') hanno effect size medio-grande (d=.65) sul raggiungimento degli obiettivi. Gli intenti difficili vengono completati ~3 volte più spesso con implementation intentions."
 - use_for: ["implementation intentions", "Gollwitzer if-then planning", "d=.65 effect size", "x3 difficult goals"]
-- verified: 2026-05-14
+- verified: 2026-05-16
 
 ## Flow
 
