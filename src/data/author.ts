@@ -74,10 +74,6 @@ export function authorPersonSchema(locale: Locale, siteUrl: string) {
     description: AUTHOR_BIO_SHORT[locale],
     knowsAbout: AUTHOR_KNOWS_ABOUT,
     sameAs: [AUTHOR_LINKEDIN],
-    worksFor: {
-      '@type': 'Organization',
-      name: 'DopaHop',
-      url: siteUrl,
-    },
+    worksFor: { '@id': `${siteUrl}/#organization` },
   };
 }

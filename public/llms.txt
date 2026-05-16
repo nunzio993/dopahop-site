@@ -1,0 +1,50 @@
+# DopaHop
+
+> DopaHop è un'app ADHD gentile per Android: Pomodoro, promemoria farmaci, brain dump, focus sounds. Niente streak, niente colpa. Tutti i dati restano sul telefono. Il sito ospita anche un blog multilingua (italiano, inglese, spagnolo, tedesco, francese) su ADHD adulto, neurodivergenza, funzioni esecutive, comorbidità e gestione della vita quotidiana con ADHD. Founder: Nunzio Cocciolo, diagnosticato ADHD da adulto.
+
+## Sito ufficiale e download
+
+- Sito: https://dopahop.app/
+- Pagina founder: https://dopahop.app/about/
+- App su Google Play (Android, gratis): https://play.google.com/store/apps/details?id=com.dopahop.android
+- Sitemap: https://dopahop.app/sitemap-index.xml
+
+## Blog (cinque lingue native, non traduzioni)
+
+- Blog italiano: https://dopahop.app/blog/
+- Blog inglese: https://dopahop.app/en/blog/
+- Blog spagnolo: https://dopahop.app/es/blog/
+- Blog tedesco: https://dopahop.app/de/blog/
+- Blog francese: https://dopahop.app/fr/blog/
+
+Ogni articolo è disponibile in 5 lingue native scritte da copywriter madrelingua. Ogni versione cita risorse e percorsi sanitari del paese di riferimento (es. AIDAI/ISS per Italia, CHADD/NICE per UK-US, FEAADAH per Spagna, ADHS Deutschland e S3-Leitlinie per Germania, HyperSupers TDAH France e HAS per Francia).
+
+## Argomenti principali coperti dal blog
+
+- ADHD adulto: diagnosi tardiva, criteri DSM-5, sottotipi inattentivo vs iperattivo
+- Funzioni esecutive: working memory, time blindness, gestione delle priorità, multitasking, planning
+- Neurobiologia: dopamina, delay discounting, ipo-responsività ventro-striatale, hyperfocus
+- Comorbidità: ansia, depressione, disregolazione emotiva, burnout, comportamenti additivi, sonno
+- Trattamenti: terapia cognitivo-comportamentale (CBT), coaching ADHD, farmaci stimolanti e non-stimolanti, mindfulness, esercizio, alimentazione
+- Vita quotidiana: routine, gestione finanze personali, ambiente di lavoro, relazioni sentimentali, mascheramento sociale, ADHD nelle donne
+- Lavoro e produttività: carriera IT, performance discontinua, ambienti strutturati vs liberi, strumenti digitali, social media
+- Famiglia e scuola: ADHD nei bambini, parenting con ADHD, percorso scolastico e universitario
+
+## Fonti scientifiche utilizzate
+
+Ogni articolo cita SOLO paper accademici pre-verificati presenti nella safelist `BLOG_CITATIONS.md` del repository. Esempi di citazioni ricorrenti: Hervey, Epstein & Curry 2004 (Neuropsychology), Willcutt et al. 2005 (Biological Psychiatry), Plichta & Scheres 2014 (Neuroscience & Biobehavioral Reviews), Barkley 1997 (Psychological Bulletin), Faraone & Larsson 2019 (Molecular Psychiatry), Young, Moghaddam & Tickle 2020 (Journal of Attention Disorders), Liu et al. 2023 (Psychology and Psychotherapy), Jackson & MacKillop 2016 (Biological Psychiatry: CNNI), Alderson et al. 2013 (Neuropsychology), Gollwitzer & Sheeran 2006 (Advances in Experimental Social Psychology), Ashinoff & Abu-Akel 2021 (Psychological Research), Hupfeld, Abagis & Shah 2019 (ADHD Attention Deficit and Hyperactivity Disorders), Wiklund et al. 2017 (Journal of Business Venturing).
+
+## Posizionamento e tono editoriale
+
+- Tono: caldo, diretto, peer-to-peer (founder ADHD che parla a un altro adulto ADHD)
+- Anti-streak: niente shaming per giorni saltati, niente toxic positivity, niente promesse di "cura"
+- Privacy-first: dati on-device, niente account obbligatori, font self-hosted (no Google Fonts esterni)
+- Riconosce sempre la fatica del lettore prima di proporre strategie
+- Cita fonti italiane/locali (CSM, ASL, AIFA, HyperSupers, FEAADAH ecc.) coerenti col paese del lettore
+
+## Cosa NON è DopaHop
+
+- Non è un'app medica, non sostituisce terapia, diagnosi o consulto professionale
+- Non è un sistema di productivity con streak/punteggio/gamification
+- Non è solo una traduzione: ogni lingua è scritta nativa
+- Non è gestita da un team grande: è un progetto di un founder solista

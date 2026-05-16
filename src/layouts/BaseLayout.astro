@@ -93,19 +93,59 @@ const alternateLocales: AlternateLocale[] = customAlternateLocales ?? [
 
   <script type="application/ld+json" set:html={JSON.stringify({
     "@context": "https://schema.org",
-    "@type": "MobileApplication",
-    "name": "DopaHop",
-    "operatingSystem": "Android",
-    "applicationCategory": "HealthApplication",
-    "description": description,
-    "url": "https://dopahop.app",
-    "downloadUrl": "https://play.google.com/store/apps/details?id=com.dopahop.android",
-    "image": fullImage,
-    "offers": {
-      "@type": "Offer",
-      "price": "0",
-      "priceCurrency": "EUR",
-    },
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://dopahop.app/#organization",
+        "name": "DopaHop",
+        "url": "https://dopahop.app",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://dopahop.app/img/icon.png",
+          "width": 1024,
+          "height": 1024,
+        },
+        "description": "DopaHop è un'app ADHD gentile per Android: Pomodoro, promemoria farmaci, brain dump, focus sounds. Niente streak, niente colpa. Privacy on-device.",
+        "foundingDate": "2026-05",
+        "founder": { "@id": "https://dopahop.app/about/#person" },
+        "address": { "@type": "PostalAddress", "addressCountry": "IT" },
+        "areaServed": ["IT", "GB", "US", "ES", "DE", "FR", "AT", "CH"],
+        "sameAs": ["https://play.google.com/store/apps/details?id=com.dopahop.android"],
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://dopahop.app/#website",
+        "url": "https://dopahop.app",
+        "name": "DopaHop",
+        "description": "App ADHD gentile per adulti e blog multilingua su ADHD, neurodivergenza e funzioni esecutive.",
+        "publisher": { "@id": "https://dopahop.app/#organization" },
+        "inLanguage": ["it", "en", "es", "de", "fr"],
+        "potentialAction": {
+          "@type": "SearchAction",
+          "target": {
+            "@type": "EntryPoint",
+            "urlTemplate": "https://dopahop.app/blog/?q={search_term_string}",
+          },
+          "query-input": "required name=search_term_string",
+        },
+      },
+      {
+        "@type": "MobileApplication",
+        "name": "DopaHop",
+        "operatingSystem": "Android",
+        "applicationCategory": "HealthApplication",
+        "description": description,
+        "url": "https://dopahop.app",
+        "downloadUrl": "https://play.google.com/store/apps/details?id=com.dopahop.android",
+        "image": fullImage,
+        "publisher": { "@id": "https://dopahop.app/#organization" },
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "EUR",
+        },
+      },
+    ],
   })} />
 
   <link rel="preload" href="/fonts/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa1ZL7.woff2" as="font" type="font/woff2" crossorigin />

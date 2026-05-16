@@ -112,14 +112,7 @@ const blogPostingSchema = {
   datePublished: post.data.pubDate.toISOString(),
   dateModified: (post.data.updatedDate ?? post.data.pubDate).toISOString(),
   author: authorSchema,
-  publisher: {
-    '@type': 'Organization',
-    name: 'DopaHop',
-    logo: {
-      '@type': 'ImageObject',
-      url: new URL('/img/icon.png', siteUrl).toString(),
-    },
-  },
+  publisher: { '@id': `${siteUrl}/#organization` },
   mainEntityOfPage: { '@type': 'WebPage', '@id': canonical },
   inLanguage: locale,
   keywords: post.data.tags.join(', '),
