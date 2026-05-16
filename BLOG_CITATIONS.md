@@ -156,7 +156,7 @@ Entries are sorted alphabetically within each section by `key` for stable diffs.
 - population: "adulti generali (popolazione lavorativa)"
 - finding_key: "In media servono ~23 minuti e 15 secondi per tornare al livello di concentrazione originale dopo un'interruzione. Studio su lavoratori della conoscenza, non specifico ADHD."
 - use_for: ["costo delle interruzioni", "23 minuti recupero attenzione", "knowledge worker interruptions"]
-- verified: 2026-05-14
+- verified: 2026-05-16
 
 ### ophir-2009-media-multitasking
 - authors: "Ophir, E., Nass, C., Wagner, A.D."
@@ -168,7 +168,7 @@ Entries are sorted alphabetically within each section by `key` for stable diffs.
 - population: "adulti generali (studenti universitari, NON ADHD)"
 - finding_key: "Heavy media multitaskers performano peggio in compiti di cognitive control inclusi task-switching. Suggerisce che chi si percepisce buon multitasker tende a esserlo meno in test oggettivi. Studio su popolazione generale."
 - use_for: ["heavy media multitaskers", "self-perception vs performance multitasking"]
-- verified: 2026-05-14
+- verified: 2026-05-16
 
 ### rubinstein-2001-task-switching
 - authors: "Rubinstein, J.S., Meyer, D.E., Evans, J.E."
@@ -193,7 +193,7 @@ Entries are sorted alphabetically within each section by `key` for stable diffs.
 - population: "adulti generali (n=200)"
 - finding_key: "~2.5% dei partecipanti ('supertaskers') non mostra dual-task decrement. La grande maggioranza paga un costo significativo nel multitasking."
 - use_for: ["supertaskers ~2.5%", "rara assenza dual-task cost"]
-- verified: 2026-05-08
+- verified: 2026-05-16
 
 ## Hyperfocus
 
