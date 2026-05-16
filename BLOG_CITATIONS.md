@@ -309,7 +309,7 @@ Entries are sorted alphabetically within each section by `key` for stable diffs.
 - population: "review (genetica ADHD, evidenze familiari/gemellari/adozione + GWAS + CNV)"
 - finding_key: "Review della genetica dell'ADHD. Ereditabilità alta ~74% da studi familiari, gemellari e adozione. Circa un terzo dell'ereditabilità deriva da componente poligenica con molte varianti comuni a piccolo effetto; copy number variants rare contribuiscono ulteriormente. GWAS ha implicato diversi loci a livello di significatività genome-wide."
 - use_for: ["ereditabilità ADHD 74%", "genetica ADHD review", "componente poligenica", "GWAS ADHD", "studi gemellari familiari adozione"]
-- verified: 2026-05-14
+- verified: 2026-05-16
 
 ## Reward / dopamine
 
@@ -337,7 +337,7 @@ Entries are sorted alphabetically within each section by `key` for stable diffs.
 - population: "adulti (meta-analisi 33 studi)"
 - finding_key: "Meta-analisi di 33 studi su neuropsicologia degli adulti con ADHD. Deficit espressi in molteplici domini: attenzione, inibizione comportamentale, memoria. Performance normale nel simple reaction time, suggerendo impairment selettivo (non globale). Importanti deficit di inibizione comportamentale e working memory come meccanismi centrali."
 - use_for: ["adulti ADHD neuropsicologia meta-analisi", "deficit attenzione inibizione memoria", "simple reaction time normale", "selettivo non globale"]
-- verified: 2026-05-14
+- verified: 2026-05-16
 
 ### willcutt-2005-ef-theory-meta
 - authors: "Willcutt, E.G., Doyle, A.E., Nigg, J.T., Faraone, S.V., Pennington, B.F."
@@ -349,7 +349,7 @@ Entries are sorted alphabetically within each section by `key` for stable diffs.
 - population: "meta-analisi 83 studi (3.734 ADHD vs 2.969 controlli, bambini/adolescenti/adulti)"
 - finding_key: "Meta-analisi della validità della teoria executive function dell'ADHD. Effect size in range medio (0.46-0.69) su tutti i compiti EF. Effetti più forti su response inhibition, vigilance, working memory, planning. Deficit non spiegati da QI, achievement scolastico o sintomi di altri disturbi. Conclusione: deficit EF 'né necessari né sufficienti' a causare tutti i casi di ADHD — uno dei meccanismi, non l'unico."
 - use_for: ["EF theory ADHD meta-analisi", "effect size 0.46-0.69 EF", "response inhibition vigilance WM planning", "EF non necessario non sufficiente", "Willcutt 2005"]
-- verified: 2026-05-14
+- verified: 2026-05-16
 
 ## Delay aversion / discounting
 
@@ -472,7 +472,7 @@ Entries are sorted alphabetically within each section by `key` for stable diffs.
 - population: "adulti (meta-analisi 28 RCT)"
 - finding_key: "Meta-analisi di 28 RCT su interventi CBT-based per adulti ADHD. CBT efficace nel ridurre sia sintomi core ADHD sia sintomi emotivi (depressione, ansia). Riduzioni di depressione e ansia predette dalla riduzione dei sintomi ADHD core. Osservati anche aumenti di self-esteem e qualità della vita. Sia terapia individuale sia di gruppo significativamente superiori a controlli attivi/treatment-as-usual/waitlist. CBT tradizionale equiparabile a altri approcci CBT su sintomi core ma superiore sui sintomi emotivi."
 - use_for: ["CBT adulti ADHD oltre sintomi core", "CBT comorbidità ansia depressione", "self-esteem qualità vita CBT", "individuale vs gruppo CBT"]
-- verified: 2026-05-14
+- verified: 2026-05-16
 
 ### young-2020-cbt-adult-adhd-meta
 - authors: "Young, Z., Moghaddam, N., Tickle, A."
@@ -484,7 +484,21 @@ Entries are sorted alphabetically within each section by `key` for stable diffs.
 - population: "adulti (revisione sistematica 9 RCT, meta-analisi su 8)"
 - finding_key: "Revisione sistematica di 9 RCT e meta-analisi di 8 RCT su CBT per adulti con ADHD. CBT superiore a waiting list con effect size moderato-grande (SMD=0.76, 95% CI [0.21, 1.31], p=.006) e superiore a controlli attivi con effect size piccolo-moderato (SMD=0.43, 95% CI [0.14, 0.71], p=.004). Supporto all'efficacia della CBT nel ridurre sintomi ADHD post-intervento."
 - use_for: ["CBT adulti ADHD meta-analisi", "SMD 0.76 vs waitlist", "SMD 0.43 vs active control", "Young Moghaddam Tickle 2020"]
-- verified: 2026-05-14
+- verified: 2026-05-16
+
+## Bipolar / mood disorders
+
+### viktorin-2017-methylphenidate-bipolar-mania
+- authors: "Viktorin, A., Rydén, E., Thase, M.E., Chang, Z., Lundholm, C., D'Onofrio, B.M., Almqvist, C., Magnusson, P.K.E., Lichtenstein, P., Larsson, H., Landén, M."
+- year: 2017
+- journal: "American Journal of Psychiatry"
+- citation: "174(4), 341-348"
+- pmid: 27690517
+- doi: "10.1176/appi.ajp.2016.16040467"
+- population: "adulti con disturbo bipolare e ADHD comorbida (n=2.307, registri nazionali svedesi 2006-2014)"
+- finding_key: "Studio di coorte su 2.307 adulti bipolari che iniziano terapia con metilfenidato. Metilfenidato in monoterapia: aumento marcato del tasso di episodi maniacali entro 3 mesi dall'inizio (hazard ratio 6.7). Con stabilizzatore dell'umore concomitante: nessuna associazione positiva tra metilfenidato e mania emergente. Implicazione clinica: il rischio è sostanzialmente neutralizzato dalla stabilizzazione preventiva."
+- use_for: ["rischio mania stimolanti bipolari adulti", "metilfenidato monoterapia HR 6.7 mania", "stabilizzatore umore protettivo", "ADHD-bipolare comorbidità trattamento", "Viktorin 2017"]
+- verified: 2026-05-16
 
 ---
 
