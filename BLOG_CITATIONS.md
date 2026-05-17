@@ -42,7 +42,7 @@ Entries are sorted alphabetically within each section by `key` for stable diffs.
 - population: "adulti"
 - finding_key: "Meta-analisi su working memory in adulti ADHD. Effect size moderato. Deficit più marcati in compiti che richiedono manipolazione attiva (central executive) rispetto a semplice ripetizione/storage."
 - use_for: ["working memory adulti ADHD", "central executive deficit adulti", "manipolazione vs storage"]
-- verified: 2026-05-16
+- verified: 2026-05-17
 
 ### baddeley-1974-wm-model
 - authors: "Baddeley, A.D., Hitch, G.J."
@@ -337,7 +337,7 @@ Entries are sorted alphabetically within each section by `key` for stable diffs.
 - population: "adulti (meta-analisi 33 studi)"
 - finding_key: "Meta-analisi di 33 studi su neuropsicologia degli adulti con ADHD. Deficit espressi in molteplici domini: attenzione, inibizione comportamentale, memoria. Performance normale nel simple reaction time, suggerendo impairment selettivo (non globale). Importanti deficit di inibizione comportamentale e working memory come meccanismi centrali."
 - use_for: ["adulti ADHD neuropsicologia meta-analisi", "deficit attenzione inibizione memoria", "simple reaction time normale", "selettivo non globale"]
-- verified: 2026-05-16
+- verified: 2026-05-17
 
 ### willcutt-2005-ef-theory-meta
 - authors: "Willcutt, E.G., Doyle, A.E., Nigg, J.T., Faraone, S.V., Pennington, B.F."
@@ -349,7 +349,7 @@ Entries are sorted alphabetically within each section by `key` for stable diffs.
 - population: "meta-analisi 83 studi (3.734 ADHD vs 2.969 controlli, bambini/adolescenti/adulti)"
 - finding_key: "Meta-analisi della validità della teoria executive function dell'ADHD. Effect size in range medio (0.46-0.69) su tutti i compiti EF. Effetti più forti su response inhibition, vigilance, working memory, planning. Deficit non spiegati da QI, achievement scolastico o sintomi di altri disturbi. Conclusione: deficit EF 'né necessari né sufficienti' a causare tutti i casi di ADHD — uno dei meccanismi, non l'unico."
 - use_for: ["EF theory ADHD meta-analisi", "effect size 0.46-0.69 EF", "response inhibition vigilance WM planning", "EF non necessario non sufficiente", "Willcutt 2005"]
-- verified: 2026-05-16
+- verified: 2026-05-17
 
 ## Delay aversion / discounting
 
@@ -431,7 +431,7 @@ Entries are sorted alphabetically within each section by `key` for stable diffs.
 - population: "meta-analisi (94 studi, popolazione generale)"
 - finding_key: "Meta-analisi mostra che le implementation intentions ('quando X accade, farò Y') hanno effect size medio-grande (d=.65) sul raggiungimento degli obiettivi. Gli intenti difficili vengono completati ~3 volte più spesso con implementation intentions."
 - use_for: ["implementation intentions", "Gollwitzer if-then planning", "d=.65 effect size", "x3 difficult goals"]
-- verified: 2026-05-16
+- verified: 2026-05-17
 
 ## Flow
 
@@ -472,7 +472,7 @@ Entries are sorted alphabetically within each section by `key` for stable diffs.
 - population: "adulti (meta-analisi 28 RCT)"
 - finding_key: "Meta-analisi di 28 RCT su interventi CBT-based per adulti ADHD. CBT efficace nel ridurre sia sintomi core ADHD sia sintomi emotivi (depressione, ansia). Riduzioni di depressione e ansia predette dalla riduzione dei sintomi ADHD core. Osservati anche aumenti di self-esteem e qualità della vita. Sia terapia individuale sia di gruppo significativamente superiori a controlli attivi/treatment-as-usual/waitlist. CBT tradizionale equiparabile a altri approcci CBT su sintomi core ma superiore sui sintomi emotivi."
 - use_for: ["CBT adulti ADHD oltre sintomi core", "CBT comorbidità ansia depressione", "self-esteem qualità vita CBT", "individuale vs gruppo CBT"]
-- verified: 2026-05-16
+- verified: 2026-05-17
 
 ### young-2020-cbt-adult-adhd-meta
 - authors: "Young, Z., Moghaddam, N., Tickle, A."
@@ -484,7 +484,7 @@ Entries are sorted alphabetically within each section by `key` for stable diffs.
 - population: "adulti (revisione sistematica 9 RCT, meta-analisi su 8)"
 - finding_key: "Revisione sistematica di 9 RCT e meta-analisi di 8 RCT su CBT per adulti con ADHD. CBT superiore a waiting list con effect size moderato-grande (SMD=0.76, 95% CI [0.21, 1.31], p=.006) e superiore a controlli attivi con effect size piccolo-moderato (SMD=0.43, 95% CI [0.14, 0.71], p=.004). Supporto all'efficacia della CBT nel ridurre sintomi ADHD post-intervento."
 - use_for: ["CBT adulti ADHD meta-analisi", "SMD 0.76 vs waitlist", "SMD 0.43 vs active control", "Young Moghaddam Tickle 2020"]
-- verified: 2026-05-16
+- verified: 2026-05-17
 
 ## Bipolar / mood disorders
 
