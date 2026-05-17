@@ -24,6 +24,7 @@ const { locale, strings: t } = Astro.props;
 
 const siteUrl = 'https://dopahop.app';
 const playStoreUrl = 'https://play.google.com/store/apps/details?id=com.dopahop.android';
+const playBadgeSrc = `/img/store-badges/google-play-${locale}.png`;
 const aboutPath = authorAboutUrl(locale);
 const canonical = new URL(aboutPath, siteUrl).toString();
 
@@ -109,7 +110,9 @@ const role = AUTHOR_ROLE[locale];
           {bioParagraphs.map((p) => <p class="about-paragraph">{p}</p>)}
 
           <div class="about-cta">
-            <a href={playStoreUrl} class="about-btn about-btn-primary">{t.about.ctaPrimary}</a>
+            <a href={playStoreUrl} class="store-badge store-badge--about" aria-label={t.about.ctaPrimary}>
+              <img src={playBadgeSrc} alt={t.about.ctaPrimary} width="180" height="70" loading="lazy" decoding="async" />
+            </a>
             <a href={blogHref} class="about-btn about-btn-ghost">{t.about.ctaSecondary}</a>
           </div>
         </div>

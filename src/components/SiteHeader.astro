@@ -26,6 +26,7 @@ const localeLabels: Record<Locale, string> = {
 const allLocales: Locale[] = ['it', 'en', 'es', 'de', 'fr'];
 
 const playStoreUrl = 'https://play.google.com/store/apps/details?id=com.dopahop.android';
+const playBadgeSrc = `/img/store-badges/google-play-${locale}.png`;
 const homeHref = homePathByLocale[locale];
 const blogHref = `${homeHref}blog/`.replace(/\/+/g, '/');
 ---
@@ -58,8 +59,8 @@ const blogHref = `${homeHref}blog/`.replace(/\/+/g, '/');
             </a>
           ))}
         </div>
-        <a href={playStoreUrl} class="header-cta">
-          {t.nav.download}
+        <a href={playStoreUrl} class="store-badge store-badge--header" aria-label={t.nav.download}>
+          <img src={playBadgeSrc} alt={t.nav.download} width="120" height="46" loading="eager" decoding="async" />
         </a>
       </div>
     </div>
@@ -99,7 +100,7 @@ const blogHref = `${homeHref}blog/`.replace(/\/+/g, '/');
     .lang-switcher { gap: 0; padding: 3px; }
     .lang-link { padding: 4px 7px; font-size: 10px; }
     .header-right { gap: 8px; }
-    .header-cta { padding: 8px 14px; font-size: 13px; }
+    :global(.store-badge--header img) { height: 34px !important; }
   }
 
   /* When body is light themed (blog post), header stays dark — force light text */
@@ -120,8 +121,7 @@ const blogHref = `${homeHref}blog/`.replace(/\/+/g, '/');
     background: var(--primary);
     color: #0F0F23;
   }
-  :global(body.theme-light) .header-cta {
-    background: var(--primary);
-    color: #0F0F23;
+  :global(.store-badge--header img) {
+    height: 38px;
   }
 </style>

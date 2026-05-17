@@ -33,6 +33,7 @@ const sortedPosts = [...posts].sort(
 const latestForSidebar = sortedPosts.slice(0, 5);
 
 const playStoreUrl = 'https://play.google.com/store/apps/details?id=com.dopahop.android';
+const playBadgeSrc = `/img/store-badges/google-play-${locale}.png`;
 
 function postUrl(post: CollectionEntry<'blog'>): string {
   const cleanSlug = post.slug.replace(new RegExp(`^${post.data.locale}/`), '');
@@ -204,9 +205,8 @@ const blogListSchema = {
               <Picture src="/img/icon.png" alt="DopaHop" class="sidebar-app-icon" width={56} height={56} />
               <h3 class="sidebar-app-title">{t.blog.appCardTitle}</h3>
               <p class="sidebar-app-subtitle">{t.blog.appCardSubtitle}</p>
-              <a href={playStoreUrl} class="sidebar-app-cta">
-                <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3.6 1.5L13.5 12 3.6 22.5c-.6-.4-1-1-1-1.7V3.2c0-.7.4-1.3 1-1.7zM14.6 13.1l2.5 2.6-12.4 7.1 9.9-9.7zm0-2.2l-9.9-9.7 12.4 7.1-2.5 2.6zm6.6.7c.8.4 1.3 1.2 1.3 2.1 0 .9-.5 1.7-1.3 2.1l-2.7 1.6-2.8-2.7 2.8-2.7 2.7 1.6z"/></svg>
-                {t.blog.appCardCta}
+              <a href={playStoreUrl} class="store-badge store-badge--sidebar" aria-label={t.blog.appCardCta}>
+                <img src={playBadgeSrc} alt={t.blog.appCardCta} width="170" height="66" loading="lazy" decoding="async" />
               </a>
             </div>
 

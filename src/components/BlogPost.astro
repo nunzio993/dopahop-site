@@ -29,6 +29,7 @@ const { locale, strings: t, post, translations, headings = [] } = Astro.props;
 const tocHeadings = headings.filter((h) => h.depth === 2);
 
 const playStoreUrl = 'https://play.google.com/store/apps/details?id=com.dopahop.android';
+const playBadgeSrc = `/img/store-badges/google-play-${locale}.png`;
 
 const allLocalePosts = await getCollection('blog', ({ data, slug }) =>
   data.locale === locale && !data.draft && slug !== post.slug && data.pubDate <= new Date(),
@@ -298,9 +299,8 @@ const faqSchema = faqItems.length > 0
               <p class="post-inline-cta-title">{t.blog.appCardTitle}</p>
               <p class="post-inline-cta-subtitle">{t.blog.appCardSubtitle}</p>
             </div>
-            <a href={playStoreUrl} class="post-inline-cta-btn">
-              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" width="14" height="14"><path d="M3.6 1.5L13.5 12 3.6 22.5c-.6-.4-1-1-1-1.7V3.2c0-.7.4-1.3 1-1.7zM14.6 13.1l2.5 2.6-12.4 7.1 9.9-9.7zm0-2.2l-9.9-9.7 12.4 7.1-2.5 2.6zm6.6.7c.8.4 1.3 1.2 1.3 2.1 0 .9-.5 1.7-1.3 2.1l-2.7 1.6-2.8-2.7 2.8-2.7 2.7 1.6z"/></svg>
-              {t.blog.appCardCta}
+            <a href={playStoreUrl} class="store-badge store-badge--inline" aria-label={t.blog.appCardCta}>
+              <img src={playBadgeSrc} alt={t.blog.appCardCta} width="150" height="58" loading="lazy" decoding="async" />
             </a>
           </aside>
 
