@@ -1,0 +1,17 @@
+name = "dopahop-site"
+compatibility_date = "2026-01-01"
+pages_build_output_dir = "./dist"
+
+# D1 database for iOS waitlist signups.
+# Schema lives in migrations/0001_waitlist_create.sql.
+[[d1_databases]]
+binding = "WAITLIST_DB"
+database_name = "dopahop_waitlist"
+database_id = "2fe428dd-42a9-49c5-b5dc-3c553e8757c5"
+
+# Build-time variables (public, embedded into the static bundle by Astro).
+# Secrets (TURNSTILE_SECRET_KEY, IP_HASH_SALT) are set via:
+#   npx wrangler pages secret put TURNSTILE_SECRET_KEY --project-name dopahop-site
+#   npx wrangler pages secret put IP_HASH_SALT --project-name dopahop-site
+[vars]
+PUBLIC_TURNSTILE_SITE_KEY = "0x4AAAAAADRBwGKohwLsJm-3"
