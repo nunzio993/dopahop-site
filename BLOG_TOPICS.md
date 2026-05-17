@@ -6,8 +6,6 @@ Ordina i topic come vuoi: il primo della lista è il prossimo a uscire.
 
 ---
 
-- ADHD e reward immediato: progettazione degli incentivi
-- ADHD e fallimento dei sistemi di produttività standard
 - ADHD e GTD: cosa non funziona
 - ADHD e Kanban personale: limiti pratici
 - ADHD e time blocking: adattamenti necessari
