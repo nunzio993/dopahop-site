@@ -78,6 +78,34 @@ export interface AboutStrings {
   ctaSecondary: string;
 }
 
+export interface PlatformStrings {
+  availableOn: string;
+  iosComingLink: string;
+}
+
+export interface WaitlistStrings {
+  metaTitle: string;
+  metaDescription: string;
+  eyebrow: string;
+  heading: SplitTitle;
+  intro: string;
+  formEmailLabel: string;
+  formEmailPlaceholder: string;
+  formUseCaseLabel: string;
+  formUseCasePlaceholder: string;
+  formUseCaseOptional: string;
+  formSubmit: string;
+  formSubmitting: string;
+  privacyNote: string;
+  successTitle: string;
+  successBody: string;
+  errorGeneric: string;
+  errorInvalidEmail: string;
+  errorAlreadyJoined: string;
+  errorTurnstile: string;
+  backToHome: string;
+}
+
 export interface LandingStrings {
   meta: {
     title: string;
@@ -101,6 +129,7 @@ export interface LandingStrings {
     cardOverwhelm: string;
     cardStatLevel: string;
   };
+  platform: PlatformStrings;
   perche: {
     eyebrow: string;
     title: SplitTitle;
@@ -161,4 +190,5 @@ export interface LandingStrings {
   };
   blog: BlogStrings;
   about: AboutStrings;
+  waitlist: WaitlistStrings;
 }

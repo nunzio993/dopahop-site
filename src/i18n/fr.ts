@@ -29,6 +29,10 @@ export const fr: LandingStrings = {
     cardOverwhelm: 'Dépassé ?',
     cardStatLevel: '131 jusqu\'au niveau suivant',
   },
+  platform: {
+    availableOn: 'Disponible sur Android',
+    iosComingLink: 'iOS bientôt — rejoins la liste d\'attente',
+  },
   perche: {
     eyebrow: 'Pourquoi DopaHop',
     title: {
@@ -272,5 +276,32 @@ export const fr: LandingStrings = {
     heading: 'Nunzio — fondateur de DopaHop',
     ctaPrimary: 'Télécharger DopaHop gratuitement',
     ctaSecondary: 'Lire le blog',
+  },
+  waitlist: {
+    metaTitle: "Liste d'attente iOS — DopaHop",
+    metaDescription:
+      "Rejoins la liste d'attente pour DopaHop sur iOS. On t'écrit dès que c'est prêt — pas de spam.",
+    eyebrow: "Liste d'attente",
+    heading: { pre: 'DopaHop ', italic: 'arrive', post: ' sur iOS.' },
+    intro:
+      "Pour l'instant, on est sur Android. Laisse-nous ton email et on te prévient dès que la version iOS est prête. Pas de newsletter, pas de spam — juste un message quand l'app est téléchargeable.",
+    formEmailLabel: 'Email',
+    formEmailPlaceholder: 'toi@exemple.fr',
+    formUseCaseLabel: "Pour quoi l'utiliserais-tu ? (optionnel)",
+    formUseCasePlaceholder:
+      'Exemples : organiser mes journées, ne pas oublier les médicaments, garder le focus au boulot…',
+    formUseCaseOptional: 'Ça nous aide à comprendre quoi construire en premier.',
+    formSubmit: 'Rejoindre la liste',
+    formSubmitting: 'Envoi en cours…',
+    privacyNote:
+      "On utilise ton email uniquement pour t'avertir du lancement iOS. Tu peux demander ta suppression à tout moment.",
+    successTitle: 'Tu es sur la liste. ✨',
+    successBody:
+      "On t'écrira dès que DopaHop pour iOS sera disponible. En attendant, l'app Android est prête quand tu l'es.",
+    errorGeneric: "Quelque chose s'est mal passé. Réessaie dans un instant.",
+    errorInvalidEmail: 'Vérifie ton adresse email.',
+    errorAlreadyJoined: 'Tu es déjà sur la liste. À très vite.',
+    errorTurnstile: 'Vérification anti-spam échouée. Recharge la page et réessaie.',
+    backToHome: "← Retour à l'accueil",
   },
 };

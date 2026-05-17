@@ -29,6 +29,10 @@ export const en: LandingStrings = {
     cardOverwhelm: 'Overwhelmed?',
     cardStatLevel: '131 to next level',
   },
+  platform: {
+    availableOn: 'Available on Android',
+    iosComingLink: 'iOS coming — join the waitlist',
+  },
   perche: {
     eyebrow: 'Why DopaHop',
     title: {
@@ -272,5 +276,32 @@ export const en: LandingStrings = {
     heading: 'Nunzio — founder of DopaHop',
     ctaPrimary: 'Get DopaHop free',
     ctaSecondary: 'Read the blog',
+  },
+  waitlist: {
+    metaTitle: 'iOS Waitlist — DopaHop',
+    metaDescription:
+      "Join the waitlist for DopaHop on iOS. We'll email you the moment it's ready — no spam.",
+    eyebrow: 'iOS waitlist',
+    heading: { pre: 'DopaHop is ', italic: 'coming', post: ' to iOS.' },
+    intro:
+      "Right now we're on Android. Leave your email and we'll let you know the moment the iOS version is ready. No newsletter, no spam — just one message when the app is downloadable.",
+    formEmailLabel: 'Email',
+    formEmailPlaceholder: 'you@example.com',
+    formUseCaseLabel: 'What would you use it for? (optional)',
+    formUseCasePlaceholder:
+      'Examples: planning my days, remembering meds, keeping focus during work…',
+    formUseCaseOptional: 'Helps us understand what to build first.',
+    formSubmit: 'Join the waitlist',
+    formSubmitting: 'Sending…',
+    privacyNote:
+      'We use your email only to notify you when iOS launches. You can request removal at any time.',
+    successTitle: "You're on the list. ✨",
+    successBody:
+      "We'll email you the moment DopaHop for iOS is available. Meanwhile, the Android app is ready when you are.",
+    errorGeneric: 'Something went wrong. Please try again in a moment.',
+    errorInvalidEmail: 'Please check your email address.',
+    errorAlreadyJoined: "You're already on the list. Talk soon.",
+    errorTurnstile: 'Anti-spam check failed. Reload the page and retry.',
+    backToHome: '← Back to home',
   },
 };

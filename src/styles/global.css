@@ -209,6 +209,57 @@ nav.nav a:hover { color: var(--ink); }
   background: var(--surface-elevated);
   border-color: var(--ink-muted);
 }
+.platform-line {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+  margin: 4px 0 18px;
+  font-size: 13.5px;
+  color: var(--ink-muted);
+  line-height: 1.4;
+}
+.platform-line__badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--ink);
+  font-weight: 500;
+}
+.platform-line__badge svg {
+  flex-shrink: 0;
+  color: var(--ink-muted);
+}
+.platform-line__sep {
+  opacity: 0.5;
+}
+.platform-line__link {
+  color: var(--primary);
+  font-weight: 500;
+  text-decoration: none;
+  transition: opacity 0.2s ease;
+}
+.platform-line__link:hover {
+  opacity: 0.75;
+  text-decoration: underline;
+}
+.platform-line--final {
+  justify-content: center;
+  margin-top: 14px;
+  color: rgba(255, 255, 255, 0.7);
+}
+.platform-line--final .platform-line__badge {
+  color: rgba(255, 255, 255, 0.92);
+}
+.platform-line--final .platform-line__link {
+  color: var(--bg);
+  text-decoration: underline;
+  text-decoration-color: rgba(255, 255, 255, 0.35);
+  text-underline-offset: 3px;
+}
+.platform-line--final .platform-line__link:hover {
+  text-decoration-color: var(--bg);
+}
 .hero-meta {
   font-size: 13px;
   color: var(--ink-muted);

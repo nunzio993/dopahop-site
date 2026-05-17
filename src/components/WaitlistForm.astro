@@ -1,0 +1,290 @@
+---
+import type { Locale } from '../i18n/types';
+import type { WaitlistStrings } from '../i18n/types';
+
+export interface Props {
+  locale: Locale;
+  strings: WaitlistStrings;
+}
+
+const { locale, strings: w } = Astro.props;
+const turnstileSiteKey = import.meta.env.PUBLIC_TURNSTILE_SITE_KEY ?? '';
+---
+
+<form
+  id="waitlist-form"
+  class="waitlist-form"
+  data-locale={locale}
+  data-msg-generic={w.errorGeneric}
+  data-msg-invalid={w.errorInvalidEmail}
+  data-msg-already={w.errorAlreadyJoined}
+  data-msg-turnstile={w.errorTurnstile}
+  data-msg-submitting={w.formSubmitting}
+  data-msg-submit={w.formSubmit}
+  novalidate
+>
+  <div class="waitlist-form__row">
+    <label class="waitlist-form__label" for="wl-email">{w.formEmailLabel}</label>
+    <input
+      id="wl-email"
+      name="email"
+      type="email"
+      required
+      autocomplete="email"
+      inputmode="email"
+      placeholder={w.formEmailPlaceholder}
+      class="waitlist-form__input"
+    />
+  </div>
+
+  <div class="waitlist-form__row">
+    <label class="waitlist-form__label" for="wl-use-case">{w.formUseCaseLabel}</label>
+    <textarea
+      id="wl-use-case"
+      name="use_case"
+      rows="3"
+      maxlength="500"
+      placeholder={w.formUseCasePlaceholder}
+      class="waitlist-form__textarea"
+    ></textarea>
+    <p class="waitlist-form__hint">{w.formUseCaseOptional}</p>
+  </div>
+
+  {turnstileSiteKey && (
+    <div
+      class="cf-turnstile waitlist-form__turnstile"
+      data-sitekey={turnstileSiteKey}
+      data-theme="auto"
+      data-size="flexible"
+    ></div>
+  )}
+
+  <button type="submit" class="waitlist-form__submit cta-primary">
+    {w.formSubmit}
+  </button>
+
+  <p class="waitlist-form__privacy">{w.privacyNote}</p>
+
+  <div
+    id="waitlist-status"
+    class="waitlist-form__status"
+    role="status"
+    aria-live="polite"
+    hidden
+  ></div>
+</form>
+
+<div id="waitlist-success" class="waitlist-success" hidden>
+  <div class="waitlist-success__icon">✨</div>
+  <h2 class="waitlist-success__title">{w.successTitle}</h2>
+  <p class="waitlist-success__body">{w.successBody}</p>
+</div>
+
+{turnstileSiteKey && (
+  <script
+    is:inline
+    src="https://challenges.cloudflare.com/turnstile/v0/api.js"
+    async
+    defer
+  ></script>
+)}
+
+<script is:inline>
+  (() => {
+    const form = document.getElementById('waitlist-form');
+    if (!form) return;
+    const status = document.getElementById('waitlist-status');
+    const success = document.getElementById('waitlist-success');
+    const submitBtn = form.querySelector('button[type="submit"]');
+    const submitLabel = form.getAttribute('data-msg-submit');
+    const submittingLabel = form.getAttribute('data-msg-submitting');
+
+    function showStatus(msg) {
+      status.textContent = msg;
+      status.hidden = false;
+      status.classList.remove('waitlist-form__status--ok');
+      status.classList.add('waitlist-form__status--err');
+    }
+
+    function clearStatus() {
+      status.hidden = true;
+      status.textContent = '';
+    }
+
+    function emailValid(email) {
+      return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+    }
+
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      clearStatus();
+
+      const email = form.email.value.trim();
+      const useCase = form.use_case.value.trim();
+      const locale = form.getAttribute('data-locale');
+
+      if (!emailValid(email)) {
+        showStatus(form.getAttribute('data-msg-invalid'));
+        return;
+      }
+
+      let turnstileToken = '';
+      const tWidget = form.querySelector('.cf-turnstile');
+      if (tWidget && window.turnstile) {
+        const widgetId = tWidget.getAttribute('data-widget-id');
+        try {
+          turnstileToken = window.turnstile.getResponse(widgetId || undefined) || '';
+        } catch (_) {
+          turnstileToken = '';
+        }
+        if (!turnstileToken) {
+          showStatus(form.getAttribute('data-msg-turnstile'));
+          return;
+        }
+      }
+
+      submitBtn.disabled = true;
+      submitBtn.textContent = submittingLabel;
+
+      try {
+        const res = await fetch('/api/waitlist-ios', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            email,
+            use_case: useCase || null,
+            locale,
+            turnstile_token: turnstileToken,
+          }),
+        });
+
+        if (res.ok) {
+          form.hidden = true;
+          success.hidden = false;
+          return;
+        }
+
+        const data = await res.json().catch(() => ({}));
+        if (res.status === 409) {
+          showStatus(form.getAttribute('data-msg-already'));
+        } else if (res.status === 400 && data.code === 'invalid_email') {
+          showStatus(form.getAttribute('data-msg-invalid'));
+        } else if (res.status === 400 && data.code === 'turnstile_failed') {
+          showStatus(form.getAttribute('data-msg-turnstile'));
+        } else {
+          showStatus(form.getAttribute('data-msg-generic'));
+        }
+      } catch (_) {
+        showStatus(form.getAttribute('data-msg-generic'));
+      } finally {
+        submitBtn.disabled = false;
+        submitBtn.textContent = submitLabel;
+        if (window.turnstile) {
+          try { window.turnstile.reset(); } catch (_) {}
+        }
+      }
+    });
+  })();
+</script>
+
+<style is:global>
+  .waitlist-form {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    max-width: 520px;
+    margin-top: 28px;
+  }
+  .waitlist-form__row {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+  .waitlist-form__label {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--ink);
+  }
+  .waitlist-form__input,
+  .waitlist-form__textarea {
+    width: 100%;
+    padding: 12px 14px;
+    border-radius: var(--radius-md);
+    background: var(--surface);
+    color: var(--ink);
+    border: 1px solid var(--border-strong);
+    font-family: var(--sans);
+    font-size: 15px;
+    line-height: 1.4;
+    transition: border-color 0.15s ease, background 0.15s ease;
+  }
+  .waitlist-form__input:focus,
+  .waitlist-form__textarea:focus {
+    outline: none;
+    border-color: var(--primary);
+    background: var(--surface-elevated);
+  }
+  .waitlist-form__textarea {
+    resize: vertical;
+    min-height: 80px;
+  }
+  .waitlist-form__hint {
+    font-size: 12.5px;
+    color: var(--ink-muted);
+    margin-top: 2px;
+  }
+  .waitlist-form__turnstile {
+    margin: 4px 0;
+  }
+  .waitlist-form__submit {
+    align-self: flex-start;
+  }
+  .waitlist-form__submit:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+  }
+  .waitlist-form__privacy {
+    font-size: 12.5px;
+    color: var(--ink-muted);
+    line-height: 1.5;
+    margin-top: -4px;
+  }
+  .waitlist-form__status {
+    padding: 12px 14px;
+    border-radius: var(--radius-md);
+    font-size: 14px;
+    line-height: 1.4;
+  }
+  .waitlist-form__status--err {
+    background: rgba(231, 76, 60, 0.12);
+    color: #ff8a7a;
+    border: 1px solid rgba(231, 76, 60, 0.25);
+  }
+  .waitlist-success {
+    max-width: 520px;
+    margin-top: 28px;
+    padding: 32px 28px;
+    border-radius: var(--radius-lg);
+    background: linear-gradient(180deg, rgba(255, 183, 3, 0.12), rgba(78, 205, 196, 0.08));
+    border: 1px solid rgba(255, 183, 3, 0.25);
+    text-align: left;
+  }
+  .waitlist-success__icon {
+    font-size: 32px;
+    margin-bottom: 12px;
+  }
+  .waitlist-success__title {
+    font-family: var(--serif);
+    font-style: italic;
+    font-weight: 400;
+    font-size: 28px;
+    line-height: 1.2;
+    color: var(--ink);
+    margin-bottom: 10px;
+  }
+  .waitlist-success__body {
+    color: var(--ink-soft);
+    font-size: 15.5px;
+    line-height: 1.55;
+  }
+</style>

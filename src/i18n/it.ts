@@ -29,6 +29,10 @@ export const it: LandingStrings = {
     cardOverwhelm: 'Sopraffatto?',
     cardStatLevel: '131 al prossimo livello',
   },
+  platform: {
+    availableOn: 'Disponibile su Android',
+    iosComingLink: 'iOS in arrivo — entra in lista',
+  },
   perche: {
     eyebrow: 'Perché DopaHop',
     title: {
@@ -272,5 +276,32 @@ export const it: LandingStrings = {
     heading: 'Nunzio — founder di DopaHop',
     ctaPrimary: 'Scarica DopaHop gratis',
     ctaSecondary: 'Leggi il blog',
+  },
+  waitlist: {
+    metaTitle: "Lista d'attesa iOS — DopaHop",
+    metaDescription:
+      "Entra nella lista d'attesa per DopaHop su iOS. Ti scriviamo appena è pronta — niente spam.",
+    eyebrow: "Lista d'attesa",
+    heading: { pre: 'DopaHop ', italic: 'sta arrivando', post: ' su iOS.' },
+    intro:
+      "Per ora siamo su Android. Lasciaci la tua email: ti scriviamo appena la versione iOS sarà pronta. Nessuna newsletter, nessuno spam — solo un messaggio quando l'app è scaricabile.",
+    formEmailLabel: 'Email',
+    formEmailPlaceholder: 'la-tua@email.it',
+    formUseCaseLabel: 'A cosa pensi di usarla? (opzionale)',
+    formUseCasePlaceholder:
+      'Esempi: organizzare le giornate, ricordare i farmaci, gestire il focus durante il lavoro…',
+    formUseCaseOptional: 'Ci aiuta a capire cosa è più importante costruire prima.',
+    formSubmit: 'Entra in lista',
+    formSubmitting: 'Invio in corso…',
+    privacyNote:
+      'Usiamo la tua email solo per avvisarti del lancio iOS. Puoi chiedere la cancellazione in qualsiasi momento.',
+    successTitle: 'Sei in lista. ✨',
+    successBody:
+      "Ti scriviamo appena DopaHop per iOS sarà disponibile. Nel frattempo, puoi provare l'app su Android.",
+    errorGeneric: 'Qualcosa è andato storto. Riprova tra poco.',
+    errorInvalidEmail: "Controlla l'indirizzo email.",
+    errorAlreadyJoined: 'Sei già in lista. A presto.',
+    errorTurnstile: 'Verifica anti-spam fallita. Ricarica la pagina e riprova.',
+    backToHome: '← Torna alla home',
   },
 };

@@ -1,0 +1,117 @@
+---
+import type { LandingStrings, Locale } from '../i18n/types';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import SiteHeader from './SiteHeader.astro';
+import SiteFooter from './SiteFooter.astro';
+import WaitlistForm from './WaitlistForm.astro';
+
+export interface Props {
+  locale: Locale;
+  strings: LandingStrings;
+}
+
+const { locale, strings: t } = Astro.props;
+const w = t.waitlist;
+
+const siteUrl = 'https://dopahop.app';
+const pathByLocale: Record<Locale, string> = {
+  it: '/ios-waitlist/',
+  en: '/en/ios-waitlist/',
+  es: '/es/ios-waitlist/',
+  de: '/de/ios-waitlist/',
+  fr: '/fr/ios-waitlist/',
+};
+const canonical = new URL(pathByLocale[locale], siteUrl).toString();
+
+const alternateLocales = (['it', 'en', 'es', 'de', 'fr'] as Locale[]).map((lc) => ({
+  code: lc as string,
+  href: new URL(pathByLocale[lc], siteUrl).toString(),
+}));
+alternateLocales.push({ code: 'x-default', href: new URL(pathByLocale.it, siteUrl).toString() });
+
+const homePathByLocale: Record<Locale, string> = {
+  it: '/',
+  en: '/en/',
+  es: '/es/',
+  de: '/de/',
+  fr: '/fr/',
+};
+const homeHref = homePathByLocale[locale];
+---
+
+<BaseLayout
+  title={w.metaTitle}
+  description={w.metaDescription}
+  locale={locale}
+  canonical={canonical}
+  alternateLocales={alternateLocales}
+>
+  <SiteHeader locale={locale} strings={t} />
+
+  <main>
+    <section class="waitlist-section">
+      <div class="container">
+        <div class="waitlist-card">
+          <div class="eyebrow">{w.eyebrow}</div>
+          <h1 class="waitlist-heading">
+            {w.heading.pre}<span class="serif">{w.heading.italic}</span>{w.heading.post ?? ''}
+          </h1>
+          <p class="waitlist-intro">{w.intro}</p>
+
+          <WaitlistForm locale={locale} strings={w} />
+
+          <a href={homeHref} class="waitlist-back">{w.backToHome}</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <SiteFooter locale={locale} strings={t} />
+</BaseLayout>
+
+<style is:global>
+  .waitlist-section {
+    padding: 96px 0 64px;
+  }
+  .waitlist-card {
+    max-width: 680px;
+    margin: 0 auto;
+  }
+  .waitlist-card .eyebrow {
+    margin-bottom: 14px;
+  }
+  .waitlist-heading {
+    font-size: clamp(36px, 5vw, 52px);
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    margin-bottom: 18px;
+    color: var(--ink);
+  }
+  .waitlist-heading .serif {
+    font-family: var(--serif);
+    font-style: italic;
+    font-weight: 400;
+  }
+  .waitlist-intro {
+    font-size: 17px;
+    line-height: 1.6;
+    color: var(--ink-soft);
+    margin-bottom: 4px;
+    max-width: 560px;
+  }
+  .waitlist-back {
+    display: inline-block;
+    margin-top: 36px;
+    font-size: 14.5px;
+    color: var(--ink-muted);
+    transition: color 0.15s ease;
+  }
+  .waitlist-back:hover {
+    color: var(--ink);
+  }
+  @media (max-width: 640px) {
+    .waitlist-section {
+      padding: 64px 0 48px;
+    }
+  }
+</style>

@@ -29,6 +29,10 @@ export const de: LandingStrings = {
     cardOverwhelm: 'Überfordert?',
     cardStatLevel: '131 bis zum nächsten Level',
   },
+  platform: {
+    availableOn: 'Verfügbar für Android',
+    iosComingLink: 'iOS folgt bald — auf die Warteliste',
+  },
   perche: {
     eyebrow: 'Warum DopaHop',
     title: {
@@ -272,5 +276,33 @@ export const de: LandingStrings = {
     heading: 'Nunzio — Gründer von DopaHop',
     ctaPrimary: 'DopaHop kostenlos laden',
     ctaSecondary: 'Zum Blog',
+  },
+  waitlist: {
+    metaTitle: 'iOS Warteliste — DopaHop',
+    metaDescription:
+      'Trag dich in die Warteliste für DopaHop auf iOS ein. Wir schreiben dir, sobald die App bereit ist — kein Spam.',
+    eyebrow: 'iOS Warteliste',
+    heading: { pre: 'DopaHop ', italic: 'kommt', post: ' für iOS.' },
+    intro:
+      'Aktuell sind wir nur auf Android. Lass uns deine E-Mail-Adresse da: wir melden uns, sobald die iOS-Version verfügbar ist. Kein Newsletter, kein Spam — nur eine Nachricht, wenn die App ladbar ist.',
+    formEmailLabel: 'E-Mail',
+    formEmailPlaceholder: 'du@beispiel.de',
+    formUseCaseLabel: 'Wofür würdest du sie nutzen? (optional)',
+    formUseCasePlaceholder:
+      'Beispiele: Tagesplanung, Medikamenten-Erinnerung, Fokus bei der Arbeit…',
+    formUseCaseOptional: 'Hilft uns zu verstehen, was wir zuerst bauen sollten.',
+    formSubmit: 'Auf die Warteliste',
+    formSubmitting: 'Sende…',
+    privacyNote:
+      'Wir nutzen deine E-Mail nur, um dich beim iOS-Launch zu benachrichtigen. Du kannst dich jederzeit abmelden.',
+    successTitle: 'Du bist auf der Liste. ✨',
+    successBody:
+      'Wir schreiben dir, sobald DopaHop für iOS verfügbar ist. Bis dahin wartet die Android-App auf dich.',
+    errorGeneric: 'Etwas ist schiefgelaufen. Bitte versuch es gleich nochmal.',
+    errorInvalidEmail: 'Bitte prüf deine E-Mail-Adresse.',
+    errorAlreadyJoined: 'Du bist schon auf der Liste. Bis bald.',
+    errorTurnstile:
+      'Anti-Spam-Prüfung fehlgeschlagen. Lade die Seite neu und versuch es nochmal.',
+    backToHome: '← Zurück zur Startseite',
   },
 };
