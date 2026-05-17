@@ -30,6 +30,7 @@ const tocHeadings = headings.filter((h) => h.depth === 2);
 
 const playStoreUrl = 'https://play.google.com/store/apps/details?id=com.dopahop.android';
 const playBadgeSrc = `/img/store-badges/google-play-${locale}.png`;
+const waitlistHref = locale === 'it' ? '/ios-waitlist/' : `/${locale}/ios-waitlist/`;
 
 const allLocalePosts = await getCollection('blog', ({ data, slug }) =>
   data.locale === locale && !data.draft && slug !== post.slug && data.pubDate <= new Date(),
@@ -299,9 +300,12 @@ const faqSchema = faqItems.length > 0
               <p class="post-inline-cta-title">{t.blog.appCardTitle}</p>
               <p class="post-inline-cta-subtitle">{t.blog.appCardSubtitle}</p>
             </div>
-            <a href={playStoreUrl} class="store-badge store-badge--inline" aria-label={t.blog.appCardCta}>
-              <img src={playBadgeSrc} alt={t.blog.appCardCta} width="150" height="58" loading="lazy" decoding="async" />
-            </a>
+            <div class="post-inline-cta-actions">
+              <a href={playStoreUrl} class="store-badge store-badge--inline" aria-label={t.blog.appCardCta}>
+                <img src={playBadgeSrc} alt={t.blog.appCardCta} width="150" height="58" loading="lazy" decoding="async" />
+              </a>
+              <a href={waitlistHref} class="ios-hint">{t.platform.iosComingLink} →</a>
+            </div>
           </aside>
 
           {related.length > 0 && (
@@ -1102,6 +1106,22 @@ const faqSchema = faqItems.length > 0
     box-shadow: 0 8px 20px rgba(255, 183, 3, 0.35);
     color: var(--bg);
     text-decoration: none;
+  }
+  .post-inline-cta-actions {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 4px;
+    flex-shrink: 0;
+  }
+  .post-inline-cta-actions :global(.ios-hint) {
+    margin-top: 2px;
+    font-size: 11.5px;
+  }
+  @media (max-width: 640px) {
+    .post-inline-cta-actions {
+      align-items: stretch;
+    }
   }
 
   /* ── RELATED POSTS ── */

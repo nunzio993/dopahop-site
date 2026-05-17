@@ -25,6 +25,7 @@ const { locale, strings: t } = Astro.props;
 const siteUrl = 'https://dopahop.app';
 const playStoreUrl = 'https://play.google.com/store/apps/details?id=com.dopahop.android';
 const playBadgeSrc = `/img/store-badges/google-play-${locale}.png`;
+const waitlistHref = locale === 'it' ? '/ios-waitlist/' : `/${locale}/ios-waitlist/`;
 const aboutPath = authorAboutUrl(locale);
 const canonical = new URL(aboutPath, siteUrl).toString();
 
@@ -115,6 +116,11 @@ const role = AUTHOR_ROLE[locale];
             </a>
             <a href={blogHref} class="about-btn about-btn-ghost">{t.about.ctaSecondary}</a>
           </div>
+          <p class="about-ios-hint">
+            <span class="about-ios-hint__badge">{t.platform.availableOn}</span>
+            <span class="about-ios-hint__sep" aria-hidden="true">·</span>
+            <a href={waitlistHref} class="about-ios-hint__link">{t.platform.iosComingLink} →</a>
+          </p>
         </div>
       </div>
     </article>
@@ -212,6 +218,32 @@ const role = AUTHOR_ROLE[locale];
     display: flex;
     gap: 14px;
     flex-wrap: wrap;
+    align-items: center;
+  }
+  .about-ios-hint {
+    margin-top: 14px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 10px;
+    font-size: 13.5px;
+    color: var(--ink-muted);
+    line-height: 1.4;
+  }
+  .about-ios-hint__badge {
+    color: var(--ink-soft);
+    font-weight: 500;
+  }
+  .about-ios-hint__sep { opacity: 0.5; }
+  .about-ios-hint__link {
+    color: var(--primary);
+    font-weight: 500;
+    text-decoration: none;
+    transition: opacity 0.15s ease;
+  }
+  .about-ios-hint__link:hover {
+    opacity: 0.75;
+    text-decoration: underline;
   }
   .about-btn {
     display: inline-flex;

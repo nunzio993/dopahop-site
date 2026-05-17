@@ -232,6 +232,7 @@ export const de: LandingStrings = {
     contactHeader: 'Schreib uns',
     appLinks: {
       googlePlay: 'Google Play',
+      iosWaitlist: 'iOS Warteliste',
       cosaFa: 'Was sie macht',
       widget: 'Widgets',
       faq: 'FAQ',

@@ -34,6 +34,7 @@ const latestForSidebar = sortedPosts.slice(0, 5);
 
 const playStoreUrl = 'https://play.google.com/store/apps/details?id=com.dopahop.android';
 const playBadgeSrc = `/img/store-badges/google-play-${locale}.png`;
+const waitlistHref = locale === 'it' ? '/ios-waitlist/' : `/${locale}/ios-waitlist/`;
 
 function postUrl(post: CollectionEntry<'blog'>): string {
   const cleanSlug = post.slug.replace(new RegExp(`^${post.data.locale}/`), '');
@@ -208,6 +209,7 @@ const blogListSchema = {
               <a href={playStoreUrl} class="store-badge store-badge--sidebar" aria-label={t.blog.appCardCta}>
                 <img src={playBadgeSrc} alt={t.blog.appCardCta} width="170" height="66" loading="lazy" decoding="async" />
               </a>
+              <a href={waitlistHref} class="ios-hint">{t.platform.iosComingLink} →</a>
             </div>
 
             {latestForSidebar.length > 0 && (

@@ -178,6 +178,7 @@ export interface LandingStrings {
     contactHeader: string;
     appLinks: {
       googlePlay: string;
+      iosWaitlist: string;
       cosaFa: string;
       widget: string;
       faq: string;
