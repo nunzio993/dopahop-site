@@ -171,8 +171,36 @@ nav.nav a:hover { color: var(--ink); }
 .cta-row {
   display: flex;
   flex-wrap: wrap;
+  align-items: center;
   gap: 12px;
   margin-bottom: 14px;
+}
+.store-badge {
+  display: inline-flex;
+  align-items: center;
+  line-height: 0;
+  border-radius: var(--radius-md);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.store-badge img {
+  display: block;
+  height: 56px;
+  width: auto;
+  border-radius: var(--radius-md);
+}
+.store-badge:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.35);
+}
+.store-badge:focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: 3px;
+}
+.store-badge--final img {
+  height: 64px;
+}
+.final-cta .store-badge--final:hover {
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.25);
 }
 .cta-primary {
   background: var(--primary);

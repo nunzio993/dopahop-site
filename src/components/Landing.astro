@@ -15,6 +15,7 @@ const { locale, strings: t } = Astro.props;
 const playStoreUrl = 'https://play.google.com/store/apps/details?id=com.dopahop.android';
 const privacyPolicyUrl = 'https://nunzio993.github.io/dopahop-assets/privacy-policy.html';
 const waitlistUrl = locale === 'it' ? '/ios-waitlist/' : `/${locale}/ios-waitlist/`;
+const playBadgeSrc = `/img/store-badges/google-play-${locale}.png`;
 
 const faqSchema = {
   '@context': 'https://schema.org',
@@ -97,9 +98,8 @@ const faqSchema = {
             </h1>
             <p class="hero-pitch">{t.hero.pitch}</p>
             <div class="cta-row">
-              <a href={playStoreUrl} class="cta-primary">
-                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M3.6 1.5L13.5 12 3.6 22.5c-.6-.4-1-1-1-1.7V3.2c0-.7.4-1.3 1-1.7zM14.6 13.1l2.5 2.6-12.4 7.1 9.9-9.7zm0-2.2l-9.9-9.7 12.4 7.1-2.5 2.6zm6.6.7c.8.4 1.3 1.2 1.3 2.1 0 .9-.5 1.7-1.3 2.1l-2.7 1.6-2.8-2.7 2.8-2.7 2.7 1.6z"/></svg>
-                {t.hero.ctaPrimary}
+              <a href={playStoreUrl} class="store-badge" aria-label={t.hero.ctaPrimary}>
+                <img src={playBadgeSrc} alt={t.hero.ctaPrimary} width="180" height="70" loading="eager" decoding="async" />
               </a>
               <a href="#cosa-fa" class="cta-ghost">{t.hero.ctaGhost}</a>
             </div>
@@ -295,9 +295,8 @@ const faqSchema = {
               {t.finalCta.title.pre}<span class="serif">{t.finalCta.title.italic}</span>{t.finalCta.title.post ?? ''}
             </h2>
             <p>{t.finalCta.body}</p>
-            <a href={playStoreUrl} class="cta-primary">
-              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M3.6 1.5L13.5 12 3.6 22.5c-.6-.4-1-1-1-1.7V3.2c0-.7.4-1.3 1-1.7zM14.6 13.1l2.5 2.6-12.4 7.1 9.9-9.7zm0-2.2l-9.9-9.7 12.4 7.1-2.5 2.6zm6.6.7c.8.4 1.3 1.2 1.3 2.1 0 .9-.5 1.7-1.3 2.1l-2.7 1.6-2.8-2.7 2.8-2.7 2.7 1.6z"/></svg>
-              {t.finalCta.cta}
+            <a href={playStoreUrl} class="store-badge store-badge--final" aria-label={t.finalCta.cta}>
+              <img src={playBadgeSrc} alt={t.finalCta.cta} width="200" height="78" loading="lazy" decoding="async" />
             </a>
             <p class="platform-line platform-line--final">
               <span class="platform-line__badge">{t.platform.availableOn}</span>
