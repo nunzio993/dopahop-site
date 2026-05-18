@@ -51,6 +51,27 @@ Esempi:
 
 ---
 
+## 🎯 SEO Strategy
+
+### `/seo-triage [count] [--dry-run]`
+**Strategic Tier 1 SEO triage**. 5 sub-agent madrelingua paralleli fanno SERP analysis nel proprio locale per ognuno dei topic in `BLOG_TOPICS.md`. Output: 5 ranking decouppati per locale + master priority queue aggregata. Zero costo $.
+
+- **count** (opzionale) → processa solo prime N topic (utile per test)
+- **--dry-run** (opzionale) → produce i 6 file output ma NON sovrascrive `BLOG_TOPICS.md`
+- Output: `BLOG_TOPICS_<LOCALE>.md` × 5 + `BLOG_TOPICS_TRIAGED.md` + swap di `BLOG_TOPICS.md` (con backup `.bak`)
+- Tempo: ~30-90 min per 246 topic
+- Frequenza: ogni 2-3 mesi quando aggiungi >50 topic nuovi, o quando il DA cresce
+
+Esempi:
+```
+/seo-triage                # triage completo, swap automatico
+/seo-triage 30             # test su prime 30, swap
+/seo-triage --dry-run      # tutti, NO swap (review manuale)
+/seo-triage 30 --dry-run   # test su 30, NO swap
+```
+
+---
+
 ## 🚀 Pubblicazione manuale
 
 ### `/publish-article [slug]`
@@ -83,6 +104,13 @@ Questo comando. Mostra la lista che stai leggendo.
 /auto-blog 30 3
 ```
 Lanciato di sera/weekend. Riempi 90 giorni di scheduling. Tu fai zero.
+
+**SEO triage + batch ottimizzato (workflow consigliato per mercati non-EN)**:
+```
+/seo-triage              # 1 volta ogni 2-3 mesi
+/auto-blog 30 3          # poi consuma dalla queue riordinata per priority
+```
+Il triage ri-ordina `BLOG_TOPICS.md` per chance reali di ranking nei 5 locali. `/auto-blog` continua a leggere dall'alto, ma ora i primi topic sono quelli con max score cross-locale.
 
 **Controllo umano sull'IT prima di publish**:
 ```
