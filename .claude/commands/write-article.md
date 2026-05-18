@@ -21,26 +21,30 @@ Genera 5 articoli "fratelli" sullo stesso topic, uno per lingua, ognuno scritto 
 - Altrimenti: leggi `BLOG_TOPICS.md`, prendi la prima riga `- ` non commentata. Memorizza il testo completo
 - Se la coda è vuota e nessun argomento: ferma e segnala
 
-### 2. Calcola lo slug (IN INGLESE, universale per tutte le 5 lingue)
+### 2. Calcola gli slug (UNO PER LOCALE, in lingua nativa)
 
-Lo slug deve essere identico tra le 5 lingue (per `translationKey` + hreflang reciproci).
+**Architettura slug a partire da maggio 2026 (sito >2 settimane)**:
+- **`translationKey`**: stringa canonica in INGLESE, identica tra le 5 lingue. È la chiave logica per matchare le traduzioni (hreflang, language switcher). NON è una URL.
+- **Slug file (= URL path)**: in LINGUA NATIVA per ogni locale. Migliora CTR organico e marginalmente ranking nei mercati non-EN.
 
-Pattern: traduci il topic in inglese essenziale, poi:
-- Lowercase
-- Solo caratteri ASCII (no accenti)
-- Trattini al posto di spazi/punti
-- Rimuovi articoli/preposizioni superflue
-- Max 6-7 parole
+Pattern translationKey (inglese, come prima):
+- Lowercase, ASCII, kebab-case, max 6-7 parole, "adhd-" prefix
+- Esempi: `adhd-dsm-5-criteria`, `adhd-procrastination-real-mechanism`
 
-Esempi:
-- `"ADHD: definizione operativa e criteri clinici (DSM-5)"` → `adhd-dsm-5-criteria`
-- `"ADHD e procrastinazione: meccanismo reale, non pigrizia"` → `adhd-procrastination-real-mechanism`
-- `"Differenza tra ADHD infantile e adulto"` → `adhd-children-vs-adults`
-- `"ADHD e dopamina: modello neurobiologico"` → `adhd-dopamine-neurobiological-model`
+Pattern slug nativo per locale (NUOVO):
+- Lowercase, ASCII (rimuovi accenti: à→a, é→e, ñ→n, ü→ue, ß→ss)
+- Kebab-case, max 6-7 parole, acronimo locale all'inizio
+- Rimuovi articoli/preposizioni superflue (il/lo/la/le/das/der/die/el/the/le/la/un)
+- Esempi (translationKey → slug per locale):
+  - `adhd-dsm-5-criteria` → IT `adhd-dsm-5-criteri` | EN `adhd-dsm-5-criteria` | ES `tdah-dsm-5-criterios` | DE `adhs-dsm-5-kriterien` | FR `tdah-dsm-5-criteres`
+  - `adhd-procrastination-real-mechanism` → IT `adhd-procrastinazione-meccanismo-reale` | EN `adhd-procrastination-real-mechanism` | ES `tdah-procrastinacion-mecanismo-real` | DE `adhs-prokrastination-realer-mechanismus` | FR `tdah-procrastination-mecanisme-reel`
+  - `adhd-dopamine-neurobiological-model` → IT `adhd-dopamina-modello-neurobiologico` | EN `adhd-dopamine-neurobiological-model` | ES `tdah-dopamina-modelo-neurobiologico` | DE `adhs-dopamin-neurobiologisches-modell` | FR `tdah-dopamine-modele-neurobiologique`
+
+**Eccezione**: articoli LIVE (pubDate ≤ today) creati prima del maggio 2026 mantengono slug inglese ovunque. NON migrare retroattivamente per non perdere SEO equity (anche se minima).
 
 ### 3. Verifica file destinazione
 
-Per ogni `<locale>` in `[it, en, es, de, fr]`, controlla se `src/content/blog/<locale>/<slug>.md` esiste già.
+Per ogni `<locale>` in `[it, en, es, de, fr]`, controlla se `src/content/blog/<locale>/<slug-locale>.md` esiste già.
 - Se almeno uno esiste: chiedi all'utente "Articoli con questo slug esistono già in [lingue]. Sovrascrivere? (sì/no/skip-esistenti)"
 - `sì` = sovrascrive tutto
 - `no` = ferma
@@ -138,7 +142,7 @@ tags: ["[ADHD localizzato]", "<altri 2-3 tag rilevanti nella tua lingua>"]
 locale: [LOCALE]
 draft: true
 author: "Nunzio C."
-translationKey: "[SLUG]"
+translationKey: "[TRANSLATION_KEY_ENGLISH]"
 ---
 ```
 
@@ -169,13 +173,15 @@ NON scrivere altri file oltre al `.md`.
 
 ### 5. Per ciascun sub-agent, sostituisci
 
+PATH_OUT usa lo slug nativo per locale (vedi Step 2). TRANSLATION_KEY_ENGLISH è lo stesso identico per tutti i 5 sub-agent (è la chiave logica).
+
 | Locale | LOCALE | LOCALE_NAME | PATH_OUT |
 |---|---|---|---|
-| IT | it | italiano (registro caldo, naturale, no schwa) | `D:/dopahop/site/src/content/blog/it/<slug>.md` |
-| EN | en | English (UK/US neutral, lean US for "mom") | `D:/dopahop/site/src/content/blog/en/<slug>.md` |
-| ES | es | español (España neutro, tuteo, no vosotros) | `D:/dopahop/site/src/content/blog/es/<slug>.md` |
-| DE | de | Deutsch (Standarddeutsch, Du-Form, no Sie) | `D:/dopahop/site/src/content/blog/de/<slug>.md` |
-| FR | fr | français (France standard, tutoiement, no vous) | `D:/dopahop/site/src/content/blog/fr/<slug>.md` |
+| IT | it | italiano (registro caldo, naturale, no schwa) | `C:/progetti/apps/dopahop-site/src/content/blog/it/<slug-it>.md` |
+| EN | en | English (UK/US neutral, lean US for "mom") | `C:/progetti/apps/dopahop-site/src/content/blog/en/<slug-en>.md` |
+| ES | es | español (España neutro, tuteo, no vosotros) | `C:/progetti/apps/dopahop-site/src/content/blog/es/<slug-es>.md` |
+| DE | de | Deutsch (Standarddeutsch, Du-Form, no Sie) | `C:/progetti/apps/dopahop-site/src/content/blog/de/<slug-de>.md` |
+| FR | fr | français (France standard, tutoiement, no vous) | `C:/progetti/apps/dopahop-site/src/content/blog/fr/<slug-fr>.md` |
 
 ### LOCAL_GUIDANCE per locale
 
@@ -194,7 +200,8 @@ NON scrivere altri file oltre al `.md`.
 Aspetta che tutti gli N sub-agent finiscano. Per ciascuno verifica:
 - File esiste e ha frontmatter YAML valido
 - `locale` corretto (matches expected)
-- `translationKey` uguale tra tutti
+- `translationKey` uguale tra tutti (chiave logica inglese)
+- Slug file (= filename) in lingua nativa per ogni locale, diverso tra IT/EN/ES/DE/FR
 - Title 30-65 char
 - Description 130-170 char
 - Body word count ≥ 1.000 (target 1.200-2.500)

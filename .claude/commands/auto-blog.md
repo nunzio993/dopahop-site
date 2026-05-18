@@ -54,11 +54,13 @@ Round 6: Push singolo a fine batch
 - Leggi `BLOG_TOPICS.md`
 - Estrai le prime `count` righe che iniziano con `- ` (escludi commenti e linee vuote)
 - Se disponibili `< count`: ferma e segnala "Solo M topic in coda, batch ridotto a M" — chiedi se procedere con M
-- Per ogni topic, calcola lo slug (ASCII, kebab-case, max 6-7 parole, in inglese; vedi esempi in `.claude/commands/write-article.md` Step 2)
+- Per ogni topic, calcola:
+  - **translationKey** (canonical English): `adhd-<topic-english-slug>` — chiave logica per matchare le 5 lingue (NON è una URL). Stesso identico tra le 5 lingue.
+  - **5 slug nativi** (uno per locale): IT `adhd-...`, EN `adhd-...` (= translationKey), ES `tdah-...`, DE `adhs-...`, FR `tdah-...`. Pattern in `.claude/commands/write-article.md` Step 2.
 
 ### 2. Verifica conflitti slug
 
-Per ogni slug, controlla `src/content/blog/{it,en,es,de,fr}/<slug>.md` non esista già. Se conflitto: chiedi utente skip / abort.
+Per ogni slug nativo per locale, controlla `src/content/blog/<locale>/<slug-locale>.md` non esista già. Anche `translationKey` non deve collidere con quello di altri articoli (grep nei frontmatter). Se conflitto: chiedi utente skip / abort.
 
 ### 3. Pipeline per articolo (loop sequenziale)
 
@@ -219,16 +221,16 @@ Se l'articolo ha `needs_review: true` (residual flags dopo Round 3 cap):
 # (campo va inserito dopo `draft: false`, formato: `needs_review: true`)
 ```
 
-Commit:
+Commit (path file con slug NATIVO per locale; commit message usa translationKey come identificatore):
 ```bash
-git -C D:/dopahop/site add \
-  src/content/blog/it/<slug>.md \
-  src/content/blog/en/<slug>.md \
-  src/content/blog/es/<slug>.md \
-  src/content/blog/de/<slug>.md \
-  src/content/blog/fr/<slug>.md \
+git add \
+  src/content/blog/it/<slug-it>.md \
+  src/content/blog/en/<slug-en>.md \
+  src/content/blog/es/<slug-es>.md \
+  src/content/blog/de/<slug-de>.md \
+  src/content/blog/fr/<slug-fr>.md \
   BLOG_CITATIONS.md
-git -C D:/dopahop/site commit -m "auto-blog: <slug> (5 langs, scheduled <pubDate ISO>)"
+git commit -m "auto-blog: <translationKey> (5 langs native slugs, scheduled <pubDate ISO>)"
 ```
 
 NON push qui. Push alla fine. BLOG_CITATIONS.md è committato insieme all'articolo perché le nuove entry derivano dall'audit di QUESTO articolo specifico.
