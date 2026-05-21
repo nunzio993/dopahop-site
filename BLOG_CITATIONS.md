@@ -42,7 +42,7 @@ Entries are sorted alphabetically within each section by `key` for stable diffs.
 - population: "adulti"
 - finding_key: "Meta-analisi su working memory in adulti ADHD. Effect size moderato. Deficit più marcati in compiti che richiedono manipolazione attiva (central executive) rispetto a semplice ripetizione/storage."
 - use_for: ["working memory adulti ADHD", "central executive deficit adulti", "manipolazione vs storage"]
-- verified: 2026-05-17
+- verified: 2026-05-21
 
 ### baddeley-1974-wm-model
 - authors: "Baddeley, A.D., Hitch, G.J."
@@ -401,7 +401,7 @@ Entries are sorted alphabetically within each section by `key` for stable diffs.
 - population: "adulti (modello teorico + ipotesi su imprenditori)"
 - finding_key: "Integrazione delle letterature ADHD, impulsività e imprenditorialità. Il tratto multifaceted di impulsività media la relazione tra sintomi ADHD e preferenze imprenditoriali, comportamento di start-up e performance. I sintomi di iperattività hanno un effetto positivo nel contesto imprenditoriale, principalmente attraverso la dimensione sensation-seeking dell'impulsività."
 - use_for: ["ADHD imprenditorialità", "impulsività mediator", "sensation-seeking imprenditori", "Wiklund 2017", "iperattività effetto positivo entrepreneurship"]
-- verified: 2026-05-14
+- verified: 2026-05-21
 - warning: "Pubblicazione in business journal — NO PMID (non in PubMed). Verifica via DOI/Journal of Business Venturing."
 
 ## ADHD in school / college
