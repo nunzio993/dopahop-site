@@ -105,7 +105,7 @@ Entries are sorted alphabetically within each section by `key` for stable diffs.
 - population: "modello teorico (bambini, esteso ad adulti)"
 - finding_key: "ADHD come disturbo dell'autoregolazione attraverso il tempo. Concetti di 'temporal myopia', 'time horizon' ridotto, dicotomia 'now/not-now'. Inibizione comportamentale come deficit primario."
 - use_for: ["time horizon Barkley", "temporal myopia", "now/not-now", "self-regulation across time"]
-- verified: 2026-05-17
+- verified: 2026-05-21
 
 ### noreika-2013-timing-review
 - authors: "Noreika, V., Falter, C.M., Rubia, K."
@@ -323,7 +323,7 @@ Entries are sorted alphabetically within each section by `key` for stable diffs.
 - population: "review meta-analitica fMRI (ADHD vs popolazione sana)"
 - finding_key: "Meta-analisi di studi fMRI su anticipazione di reward in ADHD: ipo-responsività ventro-striatale (VS) con effect size medio (Cohen's d=0.48-0.58). Paradosso: in soggetti sani, impulsività di tratto correla con MAGGIORE attivazione VS, mentre in ADHD è ridotta. Tre framework teorici proposti per riconciliare i pattern: U-rovesciata, moderatore genetico, modello unrelated."
 - use_for: ["ipo-responsività ventro-striatale ADHD", "reward anticipation fMRI", "Cohen's d 0.48-0.58", "paradosso impulsività ADHD vs sani"]
-- verified: 2026-05-17
+- verified: 2026-05-21
 
 ## Executive function
 
@@ -349,7 +349,7 @@ Entries are sorted alphabetically within each section by `key` for stable diffs.
 - population: "meta-analisi 83 studi (3.734 ADHD vs 2.969 controlli, bambini/adolescenti/adulti)"
 - finding_key: "Meta-analisi della validità della teoria executive function dell'ADHD. Effect size in range medio (0.46-0.69) su tutti i compiti EF. Effetti più forti su response inhibition, vigilance, working memory, planning. Deficit non spiegati da QI, achievement scolastico o sintomi di altri disturbi. Conclusione: deficit EF 'né necessari né sufficienti' a causare tutti i casi di ADHD — uno dei meccanismi, non l'unico."
 - use_for: ["EF theory ADHD meta-analisi", "effect size 0.46-0.69 EF", "response inhibition vigilance WM planning", "EF non necessario non sufficiente", "Willcutt 2005"]
-- verified: 2026-05-17
+- verified: 2026-05-21
 
 ## Delay aversion / discounting
 
@@ -363,7 +363,7 @@ Entries are sorted alphabetically within each section by `key` for stable diffs.
 - population: "meta-analisi 21 studi case-control (25 confronti, N=3.913)"
 - finding_key: "Meta-analisi su monetary delay discounting in ADHD vs controlli. Effect size medio (Cohen's d=0.43, p<10⁻¹⁵): individui con ADHD mostrano discounting elevato di ricompense future. Nessuna variazione significativa per età dei partecipanti, ricompense reali vs ipotetiche, o presenza di comorbidità (CD/ODD)."
 - use_for: ["delay discounting meta-analisi ADHD", "Cohen's d 0.43 discounting", "robusto attraverso età e setting", "monetary discounting case-control"]
-- verified: 2026-05-17
+- verified: 2026-05-21
 
 ### marx-2021-delay-aversion-meta
 - authors: "Marx, I., Hacker, T., Yu, X., Cortese, S., Sonuga-Barke, E."
@@ -375,7 +375,7 @@ Entries are sorted alphabetically within each section by `key` for stable diffs.
 - population: "meta-analisi 37 confronti di gruppo (3.763 partecipanti, 53% ADHD)"
 - finding_key: "Meta-analisi comparativa su scelta di piccole ricompense immediate vs grandi ritardate, paragonando simple choice paradigm (SCP, 22 confronti) e temporal discounting paradigm (TDP, 15 confronti). Effect size piccoli-medi in entrambi i paradigmi. Offrire ricompense reali (vs ipotetiche) nel SCP quasi raddoppia l'odds ratio per ADHD. Conclusione: avversione al ritardo più forte del normale + effetto demotivante di ricompense ipotetiche promuovono la scelta impulsiva."
 - use_for: ["delay aversion meta-analisi", "small immediate vs large delayed", "SCP vs TDP", "ricompense reali vs ipotetiche", "Marx 2021"]
-- verified: 2026-05-17
+- verified: 2026-05-21
 
 ### sonuga-barke-2003-dual-pathway
 - authors: "Sonuga-Barke, E.J.S."
@@ -387,7 +387,7 @@ Entries are sorted alphabetically within each section by `key` for stable diffs.
 - population: "modello teorico (review concettuale)"
 - finding_key: "Modello dual pathway dell'ADHD: due sotto-tipi psico-pato-fisiologici con diversi pathway dello sviluppo. (1) Pathway esecutivo — disturbi nei circuiti fronto-dorsale-striatali e branche dopaminergiche meso-corticali. (2) Pathway motivazionale/delay aversion — alterati processi di reward, circuiti fronto-ventro-striatali e branche meso-limbiche al nucleus accumbens."
 - use_for: ["dual pathway model Sonuga-Barke", "delay aversion teoria", "due sotto-tipi ADHD", "fronto-dorsale vs fronto-ventrale", "circuiti reward ADHD"]
-- verified: 2026-05-17
+- verified: 2026-05-21
 
 ## Entrepreneurship
 
@@ -431,7 +431,7 @@ Entries are sorted alphabetically within each section by `key` for stable diffs.
 - population: "meta-analisi (94 studi, popolazione generale)"
 - finding_key: "Meta-analisi mostra che le implementation intentions ('quando X accade, farò Y') hanno effect size medio-grande (d=.65) sul raggiungimento degli obiettivi. Gli intenti difficili vengono completati ~3 volte più spesso con implementation intentions."
 - use_for: ["implementation intentions", "Gollwitzer if-then planning", "d=.65 effect size", "x3 difficult goals"]
-- verified: 2026-05-17
+- verified: 2026-05-21
 
 ## Flow
 
