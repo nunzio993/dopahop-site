@@ -337,7 +337,7 @@ Entries are sorted alphabetically within each section by `key` for stable diffs.
 - population: "adulti (meta-analisi 33 studi)"
 - finding_key: "Meta-analisi di 33 studi su neuropsicologia degli adulti con ADHD. Deficit espressi in molteplici domini: attenzione, inibizione comportamentale, memoria. Performance normale nel simple reaction time, suggerendo impairment selettivo (non globale). Importanti deficit di inibizione comportamentale e working memory come meccanismi centrali."
 - use_for: ["adulti ADHD neuropsicologia meta-analisi", "deficit attenzione inibizione memoria", "simple reaction time normale", "selettivo non globale"]
-- verified: 2026-05-17
+- verified: 2026-05-21
 
 ### willcutt-2005-ef-theory-meta
 - authors: "Willcutt, E.G., Doyle, A.E., Nigg, J.T., Faraone, S.V., Pennington, B.F."
