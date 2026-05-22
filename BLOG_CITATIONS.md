@@ -156,7 +156,7 @@ Entries are sorted alphabetically within each section by `key` for stable diffs.
 - population: "adulti generali (popolazione lavorativa)"
 - finding_key: "In media servono ~23 minuti e 15 secondi per tornare al livello di concentrazione originale dopo un'interruzione. Studio su lavoratori della conoscenza, non specifico ADHD."
 - use_for: ["costo delle interruzioni", "23 minuti recupero attenzione", "knowledge worker interruptions"]
-- verified: 2026-05-16
+- verified: 2026-05-22
 
 ### ophir-2009-media-multitasking
 - authors: "Ophir, E., Nass, C., Wagner, A.D."
