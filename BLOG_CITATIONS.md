@@ -207,7 +207,7 @@ Entries are sorted alphabetically within each section by `key` for stable diffs.
 - population: "review (ADHD, autismo, schizofrenia, flow)"
 - finding_key: "Rassegna sistematica che propone una definizione operativa dell'iperfocus (4 criteri: engagement intenso, attenzione sostenuta, ridotta percezione di stimoli non-task, performance migliorata). Niente consensus precedente sulla definizione. Iperfocus come attenzione sostenuta paradossale che non si disengage facilmente."
 - use_for: ["definizione operativa hyperfocus", "iperfocus paradossale", "no consensus definition"]
-- verified: 2026-05-14
+- verified: 2026-05-22
 
 ### hupfeld-2019-hyperfocus-adults
 - authors: "Hupfeld, K.E., Abagis, T.R., Shah, P."
@@ -219,7 +219,7 @@ Entries are sorted alphabetically within each section by `key` for stable diffs.
 - population: "adulti (pilota n=251, replicazione n=372 — totale ~623)"
 - finding_key: "Adulti con sintomatologia ADHD più alta riportano maggior frequenza e maggiori valori dispositivi di iperfocus, attraverso scuola, hobby e screen time. Non studio di 'intensità' o 'problematicità'."
 - use_for: ["iperfocus adulti ADHD", "frequenza dispositiva", "settings school/hobbies/screen"]
-- verified: 2026-05-14
+- verified: 2026-05-22
 
 ### ozel-kizil-2016-hyperfocus-scale
 - authors: "Ozel-Kizil, E.T., Kokurcan, A., Aksoy, U.M., Kanat, B.B., Sakarya, D., Bastug, G., Colak, B., Altunoz, U., Kirici, S., Demirbas, H., Oncu, B."
@@ -231,7 +231,7 @@ Entries are sorted alphabetically within each section by `key` for stable diffs.
 - population: "adulti (53 ADHD stimulant-naive, 79 ADHD su stimolanti, 65 controlli)"
 - finding_key: "Validazione della Hyperfocusing Scale in adulti ADHD. Entrambi i gruppi ADHD scorano significativamente più alto dei controlli (p<0.001). Iperfocus come dimensione separata dell'ADHD adulto."
 - use_for: ["Hyperfocusing Scale", "iperfocus dimensione separata adulti ADHD"]
-- verified: 2026-05-08
+- verified: 2026-05-22
 - warning: "Lo strumento si chiama 'Hyperfocusing Scale' (non 'ASRS-Hyperfocus Scale')."
 
 ## Diet / nutrition
@@ -445,7 +445,7 @@ Entries are sorted alphabetically within each section by `key` for stable diffs.
 - population: "modello teorico"
 - finding_key: "Concetto di 'flow' (esperienza ottimale) introdotto formalmente. Condizioni canoniche: bilancio sfida/abilità, obiettivi chiari, feedback immediato, fusione azione/coscienza, perdita autoconsapevolezza, distorsione del tempo."
 - use_for: ["flow Csikszentmihalyi", "condizioni canoniche flow", "bilancio sfida-abilità"]
-- verified: 2026-05-14
+- verified: 2026-05-22
 - warning: "DA NON CONFONDERE con hyperfocus ADHD: il flow è volontariamente innescato e termina rinfrancati; l'iperfocus ADHD è involontario e tipicamente termina in crash."
 
 ## Treatment / CBT
