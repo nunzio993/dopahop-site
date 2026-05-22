@@ -180,7 +180,7 @@ Entries are sorted alphabetically within each section by `key` for stable diffs.
 - population: "adulti generali (NON specifico ADHD)"
 - finding_key: "Studio classico sui costi cognitivi del task-switching. Frasi attribuibili (via APA): 'mental blocks created by shifting between tasks can cost as much as 40 percent of someone's productive time'. Modello a due stadi: goal shifting + rule activation."
 - use_for: ["task-switching cost", "40% productivity cost", "goal shifting rule activation"]
-- verified: 2026-05-16
+- verified: 2026-05-22
 - warning: "Studio NON specifico per ADHD. Per applicare ad ADHD, usare formulazione 'amplificato in ADHD' senza attribuire il dato del 40% direttamente all'ADHD."
 
 ### watson-2010-supertaskers

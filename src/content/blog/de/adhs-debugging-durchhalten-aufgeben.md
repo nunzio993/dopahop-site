@@ -101,7 +101,7 @@ DopaHop löst keine Bugs für dich, aber es kann dir die externen Geländer gebe
 
 Ein Werkzeug ersetzt nicht die Fähigkeit, den eigenen Modus zu erkennen. Aber es nimmt dir die Entscheidung im falschen Moment ab — und das ist oft genau der Moment, in dem dein Gehirn die schlechtere Wahl treffen würde.
 
-## Domande frequenti
+## Häufige Fragen
 
 ### Woran merke ich, dass ich im Hyperfokus stecke und nicht produktiv bin?
 
