@@ -54,7 +54,7 @@ Entries are sorted alphabetically within each section by `key` for stable diffs.
 - population: "modello teorico"
 - finding_key: "Modello originale della working memory con tre componenti: phonological loop (loop fonologico), visuospatial sketchpad (taccuino visuo-spaziale), central executive (esecutivo centrale)."
 - use_for: ["modello working memory", "Baddeley & Hitch", "componenti memoria di lavoro"]
-- verified: 2026-05-14
+- verified: 2026-05-22
 
 ### baddeley-2000-episodic-buffer
 - authors: "Baddeley, A.D."
