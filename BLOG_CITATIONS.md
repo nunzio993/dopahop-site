@@ -168,7 +168,7 @@ Entries are sorted alphabetically within each section by `key` for stable diffs.
 - population: "adulti generali (studenti universitari, NON ADHD)"
 - finding_key: "Heavy media multitaskers performano peggio in compiti di cognitive control inclusi task-switching. Suggerisce che chi si percepisce buon multitasker tende a esserlo meno in test oggettivi. Studio su popolazione generale."
 - use_for: ["heavy media multitaskers", "self-perception vs performance multitasking"]
-- verified: 2026-05-16
+- verified: 2026-05-23
 
 ### rubinstein-2001-task-switching
 - authors: "Rubinstein, J.S., Meyer, D.E., Evans, J.E."
