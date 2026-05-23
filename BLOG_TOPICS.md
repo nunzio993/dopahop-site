@@ -8,10 +8,6 @@ Ordina i topic come vuoi: il primo della lista è il prossimo a uscire.
 
 <!-- Riordinata da /seo-triage il 2026-05-18. Master con score visibili in BLOG_TOPICS_TRIAGED.md. -->
 
-- ADHD e settimane di scarico cognitivo
-- ADHD e granularità ottimale dei task
-- ADHD e gating attentivo
-- ADHD e metriche operative personali
 - ADHD e trade-off tra ordine e stimolo
 - ADHD e commitment devices
 - ADHD e backlog personale
