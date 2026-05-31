@@ -33,8 +33,9 @@ const sortedPosts = [...posts].sort(
 const latestForSidebar = sortedPosts.slice(0, 5);
 
 const playStoreUrl = 'https://play.google.com/store/apps/details?id=com.dopahop.android';
+const appStoreUrl = 'https://apps.apple.com/app/id6772196314';
 const playBadgeSrc = `/img/store-badges/google-play-${locale}.png`;
-const waitlistHref = locale === 'it' ? '/ios-waitlist/' : `/${locale}/ios-waitlist/`;
+const appStoreBadgeSrc = `/img/store-badges/app-store-${locale}.svg`;
 
 function postUrl(post: CollectionEntry<'blog'>): string {
   const cleanSlug = post.slug.replace(new RegExp(`^${post.data.locale}/`), '');
@@ -206,10 +207,14 @@ const blogListSchema = {
               <Picture src="/img/icon.png" alt="DopaHop" class="sidebar-app-icon" width={56} height={56} />
               <h3 class="sidebar-app-title">{t.blog.appCardTitle}</h3>
               <p class="sidebar-app-subtitle">{t.blog.appCardSubtitle}</p>
-              <a href={playStoreUrl} class="store-badge store-badge--sidebar" aria-label={t.blog.appCardCta}>
-                <img src={playBadgeSrc} alt={t.blog.appCardCta} width="170" height="66" loading="lazy" decoding="async" />
-              </a>
-              <a href={waitlistHref} class="ios-hint">{t.platform.iosComingLink} →</a>
+              <div class="store-badge-stack">
+                <a href={playStoreUrl} class="store-badge store-badge--sidebar" aria-label={t.blog.appCardCta}>
+                  <img src={playBadgeSrc} alt={t.blog.appCardCta} width="170" height="66" loading="lazy" decoding="async" />
+                </a>
+                <a href={appStoreUrl} class="store-badge store-badge--sidebar" aria-label={t.platform.iosBadgeAlt}>
+                  <img src={appStoreBadgeSrc} alt={t.platform.iosBadgeAlt} width="198" height="66" loading="lazy" decoding="async" />
+                </a>
+              </div>
             </div>
 
             {latestForSidebar.length > 0 && (

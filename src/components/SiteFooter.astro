@@ -17,11 +17,11 @@ const homePathByLocale: Record<Locale, string> = {
   fr: '/fr/',
 };
 const playStoreUrl = 'https://play.google.com/store/apps/details?id=com.dopahop.android';
+const appStoreUrl = 'https://apps.apple.com/app/id6772196314';
 const privacyPolicyUrl = 'https://nunzio993.github.io/dopahop-assets/privacy-policy.html';
 const contactEmail = 'annunziatoco@gmail.com';
 const homeHref = homePathByLocale[locale];
 const blogHref = `${homeHref}blog/`.replace(/\/+/g, '/');
-const waitlistHref = locale === 'it' ? '/ios-waitlist/' : `/${locale}/ios-waitlist/`;
 ---
 
 <footer>
@@ -37,7 +37,7 @@ const waitlistHref = locale === 'it' ? '/ios-waitlist/' : `/${locale}/ios-waitli
       <div class="footer-col">
         <h3>{t.footer.appHeader}</h3>
         <a href={playStoreUrl}>{t.footer.appLinks.googlePlay}</a>
-        <a href={waitlistHref}>{t.footer.appLinks.iosWaitlist}</a>
+        <a href={appStoreUrl}>{t.footer.appLinks.appStore}</a>
         <a href={`${homeHref}#cosa-fa`}>{t.footer.appLinks.cosaFa}</a>
         <a href={`${homeHref}#widget`}>{t.footer.appLinks.widget}</a>
         <a href={blogHref}>{t.nav.blog}</a>

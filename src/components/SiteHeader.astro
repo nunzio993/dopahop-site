@@ -26,7 +26,9 @@ const localeLabels: Record<Locale, string> = {
 const allLocales: Locale[] = ['it', 'en', 'es', 'de', 'fr'];
 
 const playStoreUrl = 'https://play.google.com/store/apps/details?id=com.dopahop.android';
+const appStoreUrl = 'https://apps.apple.com/app/id6772196314';
 const playBadgeSrc = `/img/store-badges/google-play-${locale}.png`;
+const appStoreBadgeSrc = `/img/store-badges/app-store-${locale}.svg`;
 const homeHref = homePathByLocale[locale];
 const blogHref = `${homeHref}blog/`.replace(/\/+/g, '/');
 ---
@@ -61,6 +63,9 @@ const blogHref = `${homeHref}blog/`.replace(/\/+/g, '/');
         </div>
         <a href={playStoreUrl} class="store-badge store-badge--header" aria-label={t.nav.download}>
           <img src={playBadgeSrc} alt={t.nav.download} width="120" height="46" loading="eager" decoding="async" />
+        </a>
+        <a href={appStoreUrl} class="store-badge store-badge--header store-badge--header-ios" aria-label={t.platform.iosBadgeAlt}>
+          <img src={appStoreBadgeSrc} alt={t.platform.iosBadgeAlt} width="138" height="46" loading="eager" decoding="async" />
         </a>
       </div>
     </div>
@@ -101,6 +106,9 @@ const blogHref = `${homeHref}blog/`.replace(/\/+/g, '/');
     .lang-link { padding: 4px 7px; font-size: 10px; }
     .header-right { gap: 8px; }
     :global(.store-badge--header img) { height: 34px !important; }
+    /* Telefono: barra già piena (logo+lingue+1 badge). Tengo solo Google Play;
+       l'hero subito sotto mostra comunque entrambi i badge. */
+    :global(.store-badge--header-ios) { display: none; }
   }
 
   /* When body is light themed (blog post), header stays dark — force light text */

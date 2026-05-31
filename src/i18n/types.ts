@@ -80,7 +80,7 @@ export interface AboutStrings {
 
 export interface PlatformStrings {
   availableOn: string;
-  iosComingLink: string;
+  iosBadgeAlt: string;
 }
 
 export interface WaitlistStrings {
@@ -178,7 +178,7 @@ export interface LandingStrings {
     contactHeader: string;
     appLinks: {
       googlePlay: string;
-      iosWaitlist: string;
+      appStore: string;
       cosaFa: string;
       widget: string;
       faq: string;

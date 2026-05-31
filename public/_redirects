@@ -2,3 +2,16 @@
 # instead of the canonical /sitemap-index.xml (Astro 5 + @astrojs/sitemap 3.x).
 # Status 200 = rewrite (no redirect), same content served at both URLs.
 /sitemap.xml  /sitemap-index.xml  200
+
+# Retired iOS waitlist → localized homepage (app is now live on the App Store).
+# 301 keeps link-equity on dopahop.app instead of leaking it off-domain.
+/ios-waitlist/      /      301
+/ios-waitlist       /      301
+/en/ios-waitlist/   /en/   301
+/en/ios-waitlist    /en/   301
+/es/ios-waitlist/   /es/   301
+/es/ios-waitlist    /es/   301
+/de/ios-waitlist/   /de/   301
+/de/ios-waitlist    /de/   301
+/fr/ios-waitlist/   /fr/   301
+/fr/ios-waitlist    /fr/   301

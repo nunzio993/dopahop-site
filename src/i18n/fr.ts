@@ -30,8 +30,8 @@ export const fr: LandingStrings = {
     cardStatLevel: '131 jusqu\'au niveau suivant',
   },
   platform: {
-    availableOn: 'Disponible sur Android',
-    iosComingLink: 'iOS bientôt — rejoins la liste d\'attente',
+    availableOn: 'Disponible sur Android et iPhone',
+    iosBadgeAlt: 'Télécharger DopaHop dans l\'App Store',
   },
   perche: {
     eyebrow: 'Pourquoi DopaHop',
@@ -232,7 +232,7 @@ export const fr: LandingStrings = {
     contactHeader: 'Écris-nous',
     appLinks: {
       googlePlay: 'Google Play',
-      iosWaitlist: "Liste d'attente iOS",
+      appStore: 'App Store',
       cosaFa: 'Ce que ça fait',
       widget: 'Widgets',
       faq: 'FAQ',

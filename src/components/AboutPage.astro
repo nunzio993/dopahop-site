@@ -24,8 +24,9 @@ const { locale, strings: t } = Astro.props;
 
 const siteUrl = 'https://dopahop.app';
 const playStoreUrl = 'https://play.google.com/store/apps/details?id=com.dopahop.android';
+const appStoreUrl = 'https://apps.apple.com/app/id6772196314';
 const playBadgeSrc = `/img/store-badges/google-play-${locale}.png`;
-const waitlistHref = locale === 'it' ? '/ios-waitlist/' : `/${locale}/ios-waitlist/`;
+const appStoreBadgeSrc = `/img/store-badges/app-store-${locale}.svg`;
 const aboutPath = authorAboutUrl(locale);
 const canonical = new URL(aboutPath, siteUrl).toString();
 
@@ -114,12 +115,13 @@ const role = AUTHOR_ROLE[locale];
             <a href={playStoreUrl} class="store-badge store-badge--about" aria-label={t.about.ctaPrimary}>
               <img src={playBadgeSrc} alt={t.about.ctaPrimary} width="180" height="70" loading="lazy" decoding="async" />
             </a>
+            <a href={appStoreUrl} class="store-badge store-badge--about" aria-label={t.platform.iosBadgeAlt}>
+              <img src={appStoreBadgeSrc} alt={t.platform.iosBadgeAlt} width="210" height="70" loading="lazy" decoding="async" />
+            </a>
             <a href={blogHref} class="about-btn about-btn-ghost">{t.about.ctaSecondary}</a>
           </div>
           <p class="about-ios-hint">
             <span class="about-ios-hint__badge">{t.platform.availableOn}</span>
-            <span class="about-ios-hint__sep" aria-hidden="true">·</span>
-            <a href={waitlistHref} class="about-ios-hint__link">{t.platform.iosComingLink} →</a>
           </p>
         </div>
       </div>
