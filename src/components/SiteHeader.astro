@@ -53,6 +53,7 @@ const blogHref = `${homeHref}blog/`.replace(/\/+/g, '/');
           {allLocales.map((lc) => (
             <a
               href={homePathByLocale[lc]}
+              data-locale={lc}
               class:list={['lang-link', { active: lc === locale }]}
               hreflang={lc === 'it' ? 'it-IT' : lc === 'en' ? 'en-US' : lc === 'es' ? 'es-ES' : lc === 'de' ? 'de-DE' : 'fr-FR'}
               aria-current={lc === locale ? 'page' : undefined}
@@ -71,6 +72,21 @@ const blogHref = `${homeHref}blog/`.replace(/\/+/g, '/');
     </div>
   </div>
 </header>
+
+<script is:inline>
+  // Remember an explicit language choice so the apex "/" Accept-Language redirect
+  // (site/functions/index.js) honours it. Without this, an en-browser visitor who
+  // clicks "IT" (which links to "/") would be bounced straight back to /en/.
+  // Document-level delegation so it works no matter when this runs.
+  (function () {
+    document.addEventListener('click', function (e) {
+      var link = e.target.closest && e.target.closest('.lang-switcher a[data-locale]');
+      if (!link) return;
+      var loc = link.getAttribute('data-locale');
+      if (loc) document.cookie = 'dh_lang=' + loc + '; path=/; max-age=31536000; samesite=lax';
+    });
+  })();
+</script>
 
 <style>
   .header-right {
