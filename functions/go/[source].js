@@ -18,8 +18,9 @@
 const PLAY_ID = 'com.dopahop.android';
 const APPLE_ID = '6772196314';
 // Provider token from App Store Connect → App Analytics → Acquisition → Campaigns →
-// "Generate a campaign link" (the `pt=` value). Same for every app of the team.
-const APPLE_PROVIDER_TOKEN = '';
+// "Generate a campaign link" (the `pt=` value) = the team's App Store Connect
+// provider id. Same for every app of the team.
+const APPLE_PROVIDER_TOKEN = '128928127';
 
 // Keep only what store links accept; App Store `ct` is capped at 40 characters.
 const clean = (s) => (s || '').toLowerCase().replace(/[^a-z0-9_-]/g, '').slice(0, 40);
