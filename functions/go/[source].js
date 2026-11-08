@@ -25,10 +25,44 @@ const APPLE_PROVIDER_TOKEN = '128928127';
 // Keep only what store links accept; App Store `ct` is capped at 40 characters.
 const clean = (s) => (s || '').toLowerCase().replace(/[^a-z0-9_-]/g, '').slice(0, 40);
 
-export function onRequestGet({ request, params }) {
+// Link-preview and crawler fetches, kept apart so they don't inflate human clicks.
+const BOT_UA = /bot|crawl|spider|preview|facebookexternalhit|meta-externalagent|headless|curl|wget/i;
+
+const platformOf = (ua) => {
+  if (BOT_UA.test(ua)) return 'bot';
+  if (/android/i.test(ua)) return 'android';
+  if (/iphone|ipad|ipod/i.test(ua)) return 'ios';
+  return 'other';
+};
+
+// Daily totals only: no IP, no User-Agent, nothing that identifies a person.
+// Migration: migrations/0002_link_clicks.sql.
+const COUNT_CLICK_SQL = `INSERT INTO link_clicks (day, source, campaign, platform, clicks)
+  VALUES (?1, ?2, ?3, ?4, 1)
+  ON CONFLICT (day, source, campaign, platform) DO UPDATE SET clicks = clicks + 1`;
+
+// Never lets counting delay or break the redirect.
+function countClick({ env, waitUntil }, source, campaign, platform) {
+  try {
+    const day = new Date().toISOString().slice(0, 10);
+    waitUntil(
+      env.WAITLIST_DB.prepare(COUNT_CLICK_SQL)
+        .bind(day, source, campaign, platform)
+        .run()
+        .catch((e) => console.error('link_clicks failed', e)),
+    );
+  } catch (e) {
+    console.error('link_clicks failed', e);
+  }
+}
+
+export function onRequestGet(context) {
+  const { request, params } = context;
   const source = clean(params.source) || 'unknown';
   const campaign = clean(new URL(request.url).searchParams.get('c')) || 'bio';
   const ua = request.headers.get('User-Agent') || '';
+
+  countClick(context, source, campaign, platformOf(ua));
 
   let target;
   if (/android/i.test(ua)) {
